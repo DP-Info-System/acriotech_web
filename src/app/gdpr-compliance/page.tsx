@@ -6,7 +6,7 @@ export default function GDPRCompliance() {
       <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
 
         <div>
-          <p style={{ fontSize: '0.85rem', color: '#4B61B8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>Last Updated: July 10, 2026</p>
+          <p style={{ fontSize: '0.85rem', color: '#4B61B8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>Last Updated: 01-Feb-2025</p>
           <h1 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.02em', lineHeight: 1.2, marginBottom: '1.5rem' }}>GDPR — What Acriotech is Doing About It</h1>
           <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.8 }}>Acriotech has always honored its users' rights to data privacy and protection. We have no need to collect and process users' personal information beyond what is required for the functioning of our enterprise products, and this will never change. We have a privacy-conscious culture and view GDPR not as a compliance burden, but as an opportunity to demonstrate our values.</p>
         </div>

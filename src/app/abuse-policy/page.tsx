@@ -6,7 +6,7 @@ export default function AbusePolicy() {
       <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
 
         <div>
-          <p style={{ fontSize: '0.85rem', color: '#4B61B8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>Last Updated: July 10, 2026</p>
+          <p style={{ fontSize: '0.85rem', color: '#4B61B8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>Last Updated: 01-Feb-2025</p>
           <h1 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.02em', lineHeight: 1.2, marginBottom: '1.5rem' }}>Abuse Policy</h1>
           <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.8 }}>Acriotech provides enterprise-grade technology infrastructure and software services. This Abuse Policy governs what constitutes unacceptable use of Acriotech's network, APIs, cloud infrastructure, software platforms, and any services provided to clients and end-users. We are committed to maintaining a safe, reliable, and law-abiding environment for all our clients, their end-users, and the broader internet community.</p>
         </div>

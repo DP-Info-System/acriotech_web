@@ -6,9 +6,9 @@ export default function TermsOfService() {
       <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
 
         <div>
-          <p style={{ fontSize: '0.85rem', color: '#4B61B8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>Effective Date: January 1, 2026 · Last Updated: July 10, 2026</p>
+          <p style={{ fontSize: '0.85rem', color: '#4B61B8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>Last Updated: 01-Feb-2025</p>
           <h1 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.02em', lineHeight: 1.2, marginBottom: '1.5rem' }}>Terms of Service</h1>
-          <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.8 }}>These Terms of Service ("Terms") constitute a legally binding agreement between you (or the organization you represent) and Acrio Tech Global Pvt. Ltd. ("Acriotech"). By accessing our websites, using our software platforms, or engaging Acriotech for professional services, you agree to these Terms in full. If you are entering into these Terms on behalf of an organization, you represent that you have the authority to bind that organization.</p>
+          <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.8 }}>These Terms of Service ("Terms") constitute a legally binding agreement between you (or the organization you represent) and Acriotech Pvt. Ltd. ("Acriotech"). By accessing our websites, using our software platforms, or engaging Acriotech for professional services, you agree to these Terms in full. If you are entering into these Terms on behalf of an organization, you represent that you have the authority to bind that organization.</p>
         </div>
 
         <hr style={{ border: 'none', borderTop: '1px solid #E2E8F0' }} />

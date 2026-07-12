@@ -6,9 +6,9 @@ export default function PrivacyPolicy() {
       <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
 
         <div>
-          <p style={{ fontSize: '0.85rem', color: '#4B61B8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>Effective Date: January 1, 2026 · Last Updated: July 10, 2026</p>
+          <p style={{ fontSize: '0.85rem', color: '#4B61B8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>Last Updated: 01-Feb-2025</p>
           <h1 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.02em', lineHeight: 1.2, marginBottom: '1.5rem' }}>Privacy Policy</h1>
-          <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.8 }}>This Privacy Policy describes how Acrio Tech Global Pvt. Ltd. ("Acriotech", "we", "us", or "our") collects, uses, processes, and shares information about you when you use our websites, software products, and professional services. We are committed to protecting your personal data and being transparent about how we handle it.</p>
+          <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.8 }}>This Privacy Policy describes how Acriotech Pvt. Ltd. ("Acriotech", "we", "us", or "our") collects, uses, processes, and shares information about you when you use our websites, software products, and professional services. We are committed to protecting your personal data and being transparent about how we handle it.</p>
         </div>
 
         <hr style={{ border: 'none', borderTop: '1px solid #E2E8F0' }} />
@@ -18,7 +18,7 @@ export default function PrivacyPolicy() {
           <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, marginBottom: '1rem' }}>Acriotech is the data controller for personal data collected through our marketing website and corporate operations. For data processed as part of our enterprise software services, Acriotech acts as a data processor on behalf of our clients (who are the data controllers).</p>
           <div style={{ padding: '1.5rem', background: '#F8FAFC', borderRadius: '12px', border: '1px solid #E2E8F0' }}>
             <strong>Data Controller</strong><br />
-            Acrio Tech Global Pvt. Ltd.<br />
+            Acriotech Pvt. Ltd.<br />
             14, Shiv Narayan Complex, Virani Circle, Kaliyabid,<br />
             Bhavnagar - 364002, Gujarat, India<br /><br />
             <strong>Data Protection Officer (DPO):</strong> <a href="mailto:privacy@acriotech.com" style={{ color: '#4B61B8' }}>privacy@acriotech.com</a>

@@ -6,7 +6,7 @@ export default function IPRComplaints() {
       <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
 
         <div>
-          <p style={{ fontSize: '0.85rem', color: '#4B61B8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>Last Updated: July 10, 2026</p>
+          <p style={{ fontSize: '0.85rem', color: '#4B61B8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>Last Updated: 01-Feb-2025</p>
           <h1 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.02em', lineHeight: 1.2, marginBottom: '1.5rem' }}>Intellectual Property Rights (IPR) Complaints</h1>
           <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.8 }}>Acriotech deeply respects the intellectual property rights of all creators, innovators, and rights holders. We have adopted comprehensive policies to prevent infringement on our platform and within the software systems we build and operate. This page outlines how to report potential IP violations and how we handle such reports.</p>
         </div>
@@ -55,7 +55,7 @@ export default function IPRComplaints() {
           <div style={{ padding: '2rem', background: '#F8FAFC', borderRadius: '12px', border: '1px solid #E2E8F0' }}>
             <strong>Acriotech Designated Copyright Agent</strong><br /><br />
             Attn: Legal / IP Compliance<br />
-            Acrio Tech Global Pvt. Ltd.<br />
+            Acriotech Pvt. Ltd.<br />
             14, Shiv Narayan Complex, Virani Circle,<br />
             Kaliyabid, Bhavnagar - 364002<br />
             Gujarat, India<br /><br />

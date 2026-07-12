@@ -65,7 +65,7 @@ export async function POST(request: Request) {
       body: JSON.stringify({
         sender: {
           name: 'Acriotech',
-          email: 'sales@acriotech.com'
+          email: 'info@acriotech.com'
         },
         to: [
           {
@@ -113,7 +113,7 @@ export async function POST(request: Request) {
       body: JSON.stringify({
         sender: {
           name: 'Acriotech',
-          email: 'sales@acriotech.com'
+          email: 'info@acriotech.com'
         },
         to: [
           {

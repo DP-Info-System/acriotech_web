@@ -6,7 +6,7 @@ export default function AntiSpamPolicy() {
       <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
 
         <div>
-          <p style={{ fontSize: '0.85rem', color: '#4B61B8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>Last Updated: July 10, 2026</p>
+          <p style={{ fontSize: '0.85rem', color: '#4B61B8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>Last Updated: 01-Feb-2025</p>
           <h1 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.02em', lineHeight: 1.2, marginBottom: '1.5rem' }}>Anti-Spam Policy</h1>
           <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.8 }}>Acriotech maintains a strict zero-tolerance policy against spam and unsolicited commercial communications. This policy applies to Acriotech's own communications and to all clients, partners, and users who leverage Acriotech's infrastructure, APIs, or cloud-based notification services to send communications to third parties.</p>
         </div>

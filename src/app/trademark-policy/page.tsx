@@ -6,7 +6,7 @@ export default function TrademarkPolicy() {
       <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
 
         <div>
-          <p style={{ fontSize: '0.85rem', color: '#4B61B8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>Last Updated: July 10, 2026</p>
+          <p style={{ fontSize: '0.85rem', color: '#4B61B8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>Last Updated: 01-Feb-2025</p>
           <h1 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.02em', lineHeight: 1.2, marginBottom: '1.5rem' }}>Trademark Policy</h1>
           <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.8 }}>The Acriotech brand — including our name, logo, wordmarks, and other brand assets — represents the trust, quality, and commitment to excellence that we have built with our clients and partners. This policy governs how third parties may use Acriotech's trademarks and brand assets, and what is not permitted.</p>
         </div>
@@ -15,7 +15,7 @@ export default function TrademarkPolicy() {
 
         <div>
           <h2 style={{ fontSize: '1.6rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>1. Our Trademarks</h2>
-          <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, marginBottom: '1rem' }}>The following are registered and unregistered trademarks of Acrio Tech Global Pvt. Ltd.:</p>
+          <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, marginBottom: '1rem' }}>The following are registered and unregistered trademarks of Acriotech Pvt. Ltd.:</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem' }}>
             {['Acriotech™ (wordmark)', '"Acrio Tech Global"', 'The Acriotech Logo (stylized "A")', 'Acriotech color palette', 'Product brand names', 'Domain names (acriotech.com, etc.)'].map((item) => (
               <div key={item} style={{ padding: '1rem', background: '#F8FAFC', borderRadius: '10px', border: '1px solid #E2E8F0', fontSize: '0.9rem', color: '#475569', fontWeight: 600 }}>

@@ -151,7 +151,7 @@ export default function ContactUs() {
                 <div>
                   <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.25rem' }}>Enterprise Sales</h3>
                   <p style={{ color: '#475569', marginBottom: '0.5rem' }}>Contact our business development team.</p>
-                  <a href="mailto:sales@acriotech.com" style={{ color: '#3B82F6', fontWeight: 600, textDecoration: 'none' }}>sales@acriotech.com</a>
+                  <a href="mailto:info@acriotech.com" style={{ color: '#3B82F6', fontWeight: 600, textDecoration: 'none' }}>info@acriotech.com</a>
                 </div>
               </div>
 

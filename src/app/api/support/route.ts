@@ -12,7 +12,7 @@ export async function POST(request: Request) {
     }
 
     const apiKey = process.env.BREVO_API_KEY;
-    const senderEmail = process.env.SENDER_EMAIL || 'sales@acriotech.com';
+    const senderEmail = process.env.SENDER_EMAIL || 'info@acriotech.com';
 
     if (!apiKey) {
       console.error("Missing BREVO_API_KEY in environment variables.");

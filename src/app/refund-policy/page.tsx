@@ -6,9 +6,9 @@ export default function RefundPolicy() {
       <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
 
         <div>
-          <p style={{ fontSize: '0.85rem', color: '#4B61B8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>Last Updated: July 10, 2026</p>
+          <p style={{ fontSize: '0.85rem', color: '#4B61B8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>Last Updated: 01-Feb-2025</p>
           <h1 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.02em', lineHeight: 1.2, marginBottom: '1.5rem' }}>Refund & Cancellation Policy</h1>
-          <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.8 }}>Acriotech is committed to delivering measurable value on every engagement. We understand that business circumstances change, and this policy is designed to be fair to both parties. This policy applies to all services and products provided by Acrio Tech Global Pvt. Ltd., subject to any specific terms agreed in a signed Master Services Agreement (MSA) or Statement of Work (SOW).</p>
+          <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.8 }}>Acriotech is committed to delivering measurable value on every engagement. We understand that business circumstances change, and this policy is designed to be fair to both parties. This policy applies to all services and products provided by Acriotech Pvt. Ltd., subject to any specific terms agreed in a signed Master Services Agreement (MSA) or Statement of Work (SOW).</p>
         </div>
 
         <div style={{ padding: '1.5rem', background: '#FEF3C7', borderRadius: '12px', border: '1px solid #FDE68A' }}>
