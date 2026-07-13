@@ -99,7 +99,7 @@ export const knowledgeBase: KnowledgeEntry[] = [
   // --- Company & Contact ---
   {
     keywords: ["contact", "sales", "support", "talk to human", "phone", "email"],
-    response: "You can reach our sales team easily! Just switch to the 'Contact Sales' tab in this chat widget to send us a direct message, or email us at info@acriotech.com."
+    response: "You can reach our sales team easily! Just switch to the 'Contact Sales' tab in this chat widget to send us a direct message, or email us at sales@acriotech.com."
   },
   {
     keywords: ["career", "job", "hiring", "internship", "work for you"],
@@ -115,7 +115,7 @@ export const knowledgeBase: KnowledgeEntry[] = [
   },
   {
     keywords: ["partner", "partnership", "affiliate"],
-    response: "We partner with major technology providers like AWS, Microsoft, and Google. If you're interested in a strategic partnership, please contact info@acriotech.com."
+    response: "We partner with major technology providers like AWS, Microsoft, and Google. If you're interested in a strategic partnership, please contact sales@acriotech.com."
   },
   {
     keywords: ["open source", "github"],
