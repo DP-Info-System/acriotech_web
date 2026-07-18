@@ -108,9 +108,9 @@ export default function CookiePolicy() {
                   ['Google Analytics', 'Website usage analytics and traffic measurement', 'policies.google.com/privacy'],
                   ['Google Ads', 'Conversion tracking for paid advertising', 'policies.google.com/privacy'],
                   ['LinkedIn Insight Tag', 'B2B audience analytics and ad retargeting', 'linkedin.com/legal/privacy-policy'],
-                  ['Intercom', 'Live chat and customer support', 'intercom.com/legal/privacy'],
+                  ['Intercom', 'Live chat and customer support', 'www.intercom.com/legal/privacy'],
                   ['Hotjar', 'Session heatmaps and UX research (with masking)', 'www.hotjar.com/legal/policies/privacy'],
-                  ['Cloudflare', 'Security, CDN, and DDoS protection', 'cloudflare.com/privacypolicy'],
+                  ['Cloudflare', 'Security, CDN, and DDoS protection', 'www.cloudflare.com/privacypolicy/'],
                 ].map(([provider, purpose, policy], idx) => (
                   <tr key={idx} style={{ borderBottom: '1px solid #E2E8F0', background: idx % 2 === 0 ? '#FFFFFF' : '#F8FAFC' }}>
                     <td style={{ padding: '0.75rem 1rem', fontWeight: 600 }}>{provider}</td>
