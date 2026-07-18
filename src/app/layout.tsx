@@ -26,11 +26,13 @@ export const metadata: Metadata = {
     siteName: 'Acriotech',
     locale: 'en_US',
     type: 'website',
+    images: ['https://acriotech.com/icon.png'],
   },
   twitter: {
     card: 'summary_large_image',
     title: "Acriotech | Enterprise Software Engineering",
     description: "Acriotech is an IT and Software Company in Bhavnagar. We build enterprise software, AI systems, automation platforms and cloud infrastructure that help ambitious businesses scale with confidence.",
+    images: ['https://acriotech.com/icon.png'],
   },
   robots: {
     index: true,
