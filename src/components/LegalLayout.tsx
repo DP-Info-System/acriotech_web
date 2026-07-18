@@ -30,7 +30,7 @@ export default function LegalLayout({ children, activePath }: { children: React.
       {/* Hero Header */}
       <div style={{ background: '#0F172A', paddingTop: '10rem', paddingBottom: '4rem' }}>
         <div className="container" style={{ maxWidth: '1200px' }}>
-          <h1 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#FFFFFF' }}>Legal & Compliance Center</h1>
+          <div style={{ fontSize: '2.5rem', fontWeight: 800, color: '#FFFFFF' }}>Legal & Compliance Center</div>
           <p style={{ color: '#94A3B8', fontSize: '1.1rem', marginTop: '1rem' }}>Acriotech policies, terms, and compliance information.</p>
         </div>
       </div>
