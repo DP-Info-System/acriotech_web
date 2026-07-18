@@ -183,7 +183,8 @@ export default function ContactUs() {
                 </div>
                 <div>
                   <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.25rem' }}>Global Headquarters</h3>
-                  <p style={{ color: '#475569', lineHeight: 1.6 }}><strong>Acriotech Global Pvt. Ltd.</strong><br />14, Shiv Narayan Complex, Virani Circle,<br />Kaliyabid, Bhavnagar - 364002<br />Gujarat, India</p>
+                  <p style={{ color: '#475569', lineHeight: 1.6, marginBottom: '0.5rem' }}><strong>Acriotech Global Pvt. Ltd.</strong><br />14, Shiv Narayan Complex, Virani Circle,<br />Kaliyabid, Bhavnagar - 364002<br />Gujarat, India</p>
+                  <a href="https://maps.google.com/?q=14,+Shiv+Narayan+Complex,+Virani+Circle,+Kaliyabid,+Bhavnagar+-+364002,+Gujarat,+India" target="_blank" rel="noopener noreferrer" style={{ color: '#EF4444', fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>View on Google Maps <ArrowRight size={14} /></a>
                 </div>
               </div>
             </div>

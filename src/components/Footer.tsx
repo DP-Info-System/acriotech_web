@@ -234,7 +234,7 @@ export default function Footer() {
              { icon: <Lock size={28} color="#22C55E" strokeWidth={1.5} />, line1: 'GDPR', line2: 'Compliant' },
              { icon: <Cloud size={28} color="#4B61B8" strokeWidth={1.5} />, line1: 'Secure', line2: 'Development' },
              { icon: <Code size={28} color="#22C55E" strokeWidth={1.5} />, line1: 'Cloud', line2: 'Native' },
-             { icon: <MapPin size={28} color="#4B61B8" strokeWidth={1.5} />, line1: 'Made in', line2: 'India' }
+             { icon: <MapPin size={28} color="#4B61B8" strokeWidth={1.5} />, line1: 'Engineered in', line2: 'Bhavnagar' }
            ].map((badge, idx, arr) => (
              <React.Fragment key={badge.line1}>
                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
