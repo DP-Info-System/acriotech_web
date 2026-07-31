@@ -462,6 +462,16 @@ export default function NavBar() {
           </div>
         ))}
       </div>
+
+      <style>{`
+        @media (max-width: 991.98px) {
+          .desktop-nav { display: none !important; }
+          .mobile-menu-btn { display: flex !important; }
+        }
+        @media (min-width: 992px) {
+          .mobile-menu-btn { display: none !important; }
+        }
+      `}</style>
     </header>
   );
 }

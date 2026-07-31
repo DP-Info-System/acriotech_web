@@ -235,443 +235,6 @@ function AINetwork() {
   );
 }
 
-/* ── Cloud Infrastructure: Cloud Ops Dashboard ── */
-function CloudDiagram() {
-  return (
-    <div style={{ width: '100%', maxWidth: '400px', margin: '0 auto' }}>
-      <div style={{ background: '#0F172A', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.06)', boxShadow: '0 8px 32px rgba(0,0,0,0.12)', overflow: 'hidden' }}>
-        {/* Header */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.65rem 1rem', borderBottom: '1px solid rgba(255,255,255,0.06)', background: 'rgba(255,255,255,0.03)' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <Cloud size={14} color="#2563EB" />
-            <span style={{ fontSize: '0.55rem', fontWeight: 700, color: '#FFFFFF' }}>CloudOps Console</span>
-            <span style={{ fontSize: '0.4rem', color: 'rgba(255,255,255,0.4)', fontWeight: 500 }}>us-east-1</span>
-          </div>
-          <span style={{ fontSize: '0.4rem', color: '#22C55E', fontWeight: 600, background: 'rgba(34,197,94,0.1)', padding: '0.1rem 0.5rem', borderRadius: '4px', border: '1px solid rgba(34,197,94,0.12)' }}>● All Healthy</span>
-        </div>
-
-        <div style={{ padding: '0.75rem', display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-          {/* Resource summary */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: '0.4rem' }}>
-            {[
-              { l: 'EC2', v: '24', c: '#2563EB' },
-              { l: 'RDS', v: '8', c: '#06B6D4' },
-              { l: 'Lambda', v: '156', c: '#F59E0B' },
-              { l: 'S3', v: '2.4TB', c: '#22C55E' },
-            ].map((r, i) => (
-              <div key={i} style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '8px', padding: '0.35rem 0.4rem', textAlign: 'center', border: '1px solid rgba(255,255,255,0.04)' }}>
-                <div style={{ fontSize: '0.38rem', color: 'rgba(255,255,255,0.4)', fontWeight: 600, textTransform: 'uppercase' }}>{r.l}</div>
-                <div style={{ fontSize: '0.7rem', fontWeight: 800, color: r.c }}>{r.v}</div>
-              </div>
-            ))}
-          </div>
-
-          {/* Two-column: K8s Cluster + Monitoring */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.55rem' }}>
-            {/* K8s Cluster */}
-            <div style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.06)', overflow: 'hidden' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', padding: '0.4rem 0.55rem', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
-                <Container size={10} color="#2563EB" />
-                <span style={{ fontSize: '0.42rem', fontWeight: 600, color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase', letterSpacing: '0.03em' }}>K8s Cluster</span>
-                <span style={{ fontSize: '0.35rem', color: 'rgba(255,255,255,0.3)', marginLeft: 'auto' }}>3 nodes</span>
-              </div>
-              <div style={{ padding: '0.4rem 0.55rem', display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-                {[
-                  { n: 'worker-1', cpu: 62, mem: 45 },
-                  { n: 'worker-2', cpu: 38, mem: 52 },
-                  { n: 'worker-3', cpu: 81, mem: 73 },
-                  { n: 'master-0', cpu: 22, mem: 34 },
-                ].map((node, i) => (
-                  <div key={i}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.38rem', color: 'rgba(255,255,255,0.4)', marginBottom: '0.1rem' }}>
-                      <span style={{ color: 'rgba(255,255,255,0.6)' }}>{node.n}</span>
-                      <span>{node.cpu}% / {node.mem}%</span>
-                    </div>
-                    <div style={{ height: '3px', borderRadius: '2px', background: 'rgba(255,255,255,0.06)', overflow: 'hidden' }}>
-                      <div style={{ width: `${node.cpu}%`, height: '100%', borderRadius: '2px', background: node.cpu > 75 ? '#F59E0B' : '#2563EB' }} />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Monitoring Graph */}
-            <div style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.06)', overflow: 'hidden' }}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.4rem 0.55rem', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
-                  <Activity size={10} color="#22C55E" />
-                  <span style={{ fontSize: '0.42rem', fontWeight: 600, color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Monitoring</span>
-                </div>
-                <span style={{ fontSize: '0.35rem', color: 'rgba(255,255,255,0.3)' }}>6h</span>
-              </div>
-              <div style={{ padding: '0.5rem 0.55rem' }}>
-                <svg viewBox="0 0 140 50" style={{ width: '100%', height: 'auto' }}>
-                  <path d="M0 45 Q15 35 Q30 40 Q45 25 Q60 30 Q75 15 Q90 20 Q105 10 Q120 15 Q135 8" stroke="#2563EB" strokeWidth="1.5" fill="none" />
-                  <path d="M0 48 Q15 42 Q30 44 Q45 35 Q60 38 Q75 28 Q90 32 Q105 22 Q120 26 Q135 18" stroke="#06B6D4" strokeWidth="1.2" fill="none" opacity="0.5" />
-                  <rect x="120" y="5" width="20" height="45" fill="rgba(37,99,235,0.04)" rx="2" />
-                </svg>
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.35rem', color: 'rgba(255,255,255,0.3)', marginTop: '0.2rem' }}>
-                  <span>CPU: 42%</span>
-                  <span>Mem: 58%</span>
-                  <span>Net: 1.2 Gbps</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Deployment Pipeline */}
-          <div style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.06)', overflow: 'hidden' }}>
-            <div style={{ padding: '0.4rem 0.65rem', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-                <Rocket size={10} color="#22C55E" />
-                <span style={{ fontSize: '0.42rem', fontWeight: 600, color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Deployment Pipeline</span>
-              </div>
-            </div>
-            <div style={{ padding: '0.5rem 0.65rem', display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
-              {[
-                { s: 'Build', st: 'Passed', t: '2m 14s', c: '#22C55E' },
-                { s: 'Test', st: 'Passed', t: '4m 32s', c: '#22C55E' },
-                { s: 'Deploy', st: 'In Progress', t: '1m 08s', c: '#2563EB' },
-                { s: 'Health Check', st: 'Pending', t: '—', c: 'rgba(255,255,255,0.3)' },
-              ].map((d, i) => (
-                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: d.c, flexShrink: 0 }} />
-                  <span style={{ fontSize: '0.42rem', color: 'rgba(255,255,255,0.6)', fontWeight: 500, minWidth: '60px' }}>{d.s}</span>
-                  <div style={{ flex: 1, height: '4px', borderRadius: '2px', background: 'rgba(255,255,255,0.06)', overflow: 'hidden' }}>
-                    <div style={{ width: i === 2 ? '60%' : i < 2 ? '100%' : '0%', height: '100%', borderRadius: '2px', background: d.c }} />
-                  </div>
-                  <span style={{ fontSize: '0.38rem', color: d.c, fontWeight: 600, minWidth: '52px', textAlign: 'right' }}>{d.st}</span>
-                  <span style={{ fontSize: '0.35rem', color: 'rgba(255,255,255,0.25)', minWidth: '36px', textAlign: 'right' }}>{d.t}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-/* ── Digital Products: Premium SaaS App — Desktop + Mobile ── */
-function DigitalProductMockup() {
-  return (
-    <div style={{ width: '100%', maxWidth: '400px', margin: '0 auto', display: 'flex', justifyContent: 'center', gap: '0.65rem', alignItems: 'stretch' }}>
-      {/* ── Desktop App ── */}
-      <div style={{ flex: 1, maxWidth: '248px', background: '#FFFFFF', borderRadius: '14px', border: '1px solid #E2E8F0', boxShadow: '0 8px 32px rgba(0,0,0,0.06)', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-        {/* App chrome */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', padding: '0.4rem 0.65rem', background: '#F8FAFC', borderBottom: '1px solid #F1F5F9' }}>
-          <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#EF4444' }} />
-          <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#F59E0B' }} />
-          <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#22C55E' }} />
-          <div style={{ flex: 1, marginLeft: '0.2rem', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#E2E8F0', borderRadius: '4px', height: '10px' }}>
-            <span style={{ fontSize: '0.28rem', color: '#94A3B8', fontWeight: 500 }}>app.acriotech.io/dashboard</span>
-          </div>
-        </div>
-        {/* Sidebar + main layout */}
-        <div style={{ display: 'flex', flex: 1 }}>
-          {/* Sidebar */}
-          <div style={{ width: '32px', background: '#0F172A', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '0.4rem 0', gap: '0.35rem', flexShrink: 0 }}>
-            <div style={{ width: '16px', height: '16px', borderRadius: '4px', background: 'linear-gradient(135deg, #2563EB, #06B6D4)' }} />
-            <div style={{ width: '14px', height: '14px', borderRadius: '4px', background: '#2563EB' }} />
-            <div style={{ width: '14px', height: '14px', borderRadius: '4px', background: 'rgba(255,255,255,0.08)' }} />
-            <div style={{ width: '14px', height: '14px', borderRadius: '4px', background: 'rgba(255,255,255,0.08)' }} />
-            <div style={{ width: '14px', height: '14px', borderRadius: '4px', background: 'rgba(255,255,255,0.08)' }} />
-            <div style={{ flex: 1 }} />
-            <div style={{ width: '14px', height: '14px', borderRadius: '50%', background: '#7C3AED' }} />
-          </div>
-          {/* Main content */}
-          <div style={{ flex: 1, padding: '0.5rem', display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-            {/* Top header */}
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-              <div>
-                <div style={{ fontSize: '0.4rem', fontWeight: 700, color: '#0F172A' }}>Dashboard</div>
-                <div style={{ fontSize: '0.32rem', color: '#94A3B8' }}>Welcome back, Jane</div>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
-                <div style={{ width: '14px', height: '14px', borderRadius: '4px', background: '#F1F5F9', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#64748B" strokeWidth="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-                </div>
-                <div style={{ width: '16px', height: '16px', borderRadius: '4px', background: 'linear-gradient(135deg, #2563EB, #7C3AED)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <span style={{ fontSize: '0.35rem', fontWeight: 700, color: '#FFFFFF' }}>J</span>
-                </div>
-              </div>
-            </div>
-            {/* KPI cards */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.3rem' }}>
-              {[
-                { l: 'Revenue', v: '$48.2K', c: '#0F172A' },
-                { l: 'Users', v: '12,847', c: '#2563EB' },
-              ].map((k, i) => (
-                <div key={i} style={{ background: '#F8FAFC', borderRadius: '8px', padding: '0.35rem 0.45rem', border: '1px solid #F1F5F9' }}>
-                  <div style={{ fontSize: '0.35rem', color: '#94A3B8', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.03em' }}>{k.l}</div>
-                  <div style={{ fontSize: '0.65rem', fontWeight: 800, color: k.c }}>{k.v}</div>
-                  <div style={{ fontSize: '0.3rem', color: '#22C55E' }}>↑ 12.4%</div>
-                </div>
-              ))}
-            </div>
-            {/* Chart area */}
-            <div style={{ background: '#F8FAFC', borderRadius: '8px', border: '1px solid #F1F5F9', padding: '0.4rem' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.3rem' }}>
-                <span style={{ fontSize: '0.35rem', fontWeight: 600, color: '#475569' }}>Monthly Revenue</span>
-                <span style={{ fontSize: '0.3rem', color: '#2563EB', fontWeight: 600 }}>View</span>
-              </div>
-              <svg viewBox="0 0 160 30" style={{ width: '100%' }}>
-                <path d="M0 28 Q16 22 Q32 24 Q48 16 Q64 18 Q80 10 Q96 14 Q112 6 Q128 10 Q144 4 Q160 6" stroke="#2563EB" strokeWidth="1.5" fill="none" />
-                <path d="M0 30 Q16 26 Q32 28 Q48 22 Q64 24 Q80 18 Q96 20 Q112 12 Q128 16 Q144 10 Q160 12" stroke="#06B6D4" strokeWidth="1" fill="none" opacity="0.4" />
-              </svg>
-            </div>
-            {/* Data table */}
-            <div style={{ background: '#F8FAFC', borderRadius: '8px', border: '1px solid #F1F5F9', overflow: 'hidden' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr', gap: '0.15rem', padding: '0.25rem 0.4rem', fontSize: '0.3rem', fontWeight: 700, color: '#94A3B8', textTransform: 'uppercase', borderBottom: '1px solid #F1F5F9' }}>
-                <span>Name</span>
-                <span>Plan</span>
-                <span>Status</span>
-              </div>
-              {[
-                { n: 'Acme Corp', p: 'Enterprise', s: 'Active', sc: '#22C55E' },
-                { n: 'Globex Inc', p: 'Pro', s: 'Active', sc: '#22C55E' },
-                { n: 'Initech', p: 'Starter', s: 'Past Due', sc: '#F59E0B' },
-              ].map((row, i) => (
-                <div key={i} style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr', gap: '0.15rem', padding: '0.2rem 0.4rem', fontSize: '0.35rem', borderBottom: i < 2 ? '1px solid #F1F5F9' : 'none', alignItems: 'center' }}>
-                  <span style={{ fontWeight: 600, color: '#0F172A' }}>{row.n}</span>
-                  <span style={{ color: '#475569' }}>{row.p}</span>
-                  <span style={{ fontSize: '0.32rem', fontWeight: 600, color: row.sc, background: `${row.sc}10`, padding: '0.05rem 0.25rem', borderRadius: '3px', textAlign: 'center', width: 'fit-content' }}>{row.s}</span>
-                </div>
-              ))}
-            </div>
-            {/* Bottom tabs */}
-            <div style={{ display: 'flex', gap: '0.2rem', marginTop: 'auto' }}>
-              {['Overview', 'Analytics', 'Settings'].map((t, i) => (
-                <div key={i} style={{ fontSize: '0.32rem', fontWeight: 600, color: i === 0 ? '#2563EB' : '#94A3B8', padding: '0.15rem 0.35rem', borderRadius: '4px', background: i === 0 ? 'rgba(37,99,235,0.06)' : 'transparent' }}>{t}</div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* ── Mobile App ── */}
-      <div style={{ width: '92px', flexShrink: 0, display: 'flex', flexDirection: 'column' }}>
-        <div style={{ background: '#0F172A', borderRadius: '16px', padding: '0.4rem 0.3rem', boxShadow: '0 8px 32px rgba(0,0,0,0.2)', flex: 1, display: 'flex', flexDirection: 'column' }}>
-          {/* Status bar */}
-          <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0 0.15rem', marginBottom: '0.35rem' }}>
-            <span style={{ fontSize: '0.3rem', fontWeight: 700, color: 'rgba(255,255,255,0.5)' }}>9:41</span>
-            <div style={{ display: 'flex', gap: '0.12rem' }}>
-              <div style={{ width: '8px', height: '3px', borderRadius: '1px', background: 'rgba(255,255,255,0.3)' }} />
-              <div style={{ width: '6px', height: '3px', borderRadius: '1px', background: 'rgba(255,255,255,0.3)' }} />
-            </div>
-          </div>
-          {/* App header */}
-          <div style={{ background: 'linear-gradient(135deg, #7C3AED, #2563EB)', borderRadius: '8px', padding: '0.35rem 0.4rem', marginBottom: '0.35rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.2rem' }}>
-              <span style={{ fontSize: '0.35rem', fontWeight: 700, color: '#FFFFFF' }}>Analytics</span>
-              <div style={{ width: '10px', height: '10px', borderRadius: '3px', background: 'rgba(255,255,255,0.15)' }} />
-            </div>
-            <div style={{ fontSize: '0.5rem', fontWeight: 800, color: '#FFFFFF' }}>$48.2K</div>
-            <div style={{ fontSize: '0.3rem', color: 'rgba(255,255,255,0.6)' }}>↑ 12.4% this month</div>
-          </div>
-          {/* Content cards */}
-          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-            <div style={{ background: '#FFFFFF', borderRadius: '7px', padding: '0.3rem' }}>
-              <div style={{ height: '3px', borderRadius: '2px', background: '#E2E8F0', width: '70%', marginBottom: '0.2rem' }} />
-              <div style={{ height: '3px', borderRadius: '2px', background: '#F1F5F9', width: '100%' }} />
-              <div style={{ height: '3px', borderRadius: '2px', background: '#F1F5F9', width: '80%', marginTop: '0.1rem' }} />
-            </div>
-            <div style={{ background: '#FFFFFF', borderRadius: '7px', padding: '0.3rem' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.2rem' }}>
-                <span style={{ fontSize: '0.3rem', fontWeight: 600, color: '#0F172A' }}>Active Users</span>
-                <span style={{ fontSize: '0.3rem', fontWeight: 700, color: '#2563EB' }}>847</span>
-              </div>
-              <svg viewBox="0 0 60 14" style={{ width: '100%' }}>
-                <path d="M0 12 L8 10 L16 11 L24 6 L32 8 L40 3 L48 5 L56 2 L60 3" stroke="#2563EB" strokeWidth="1" fill="none" />
-              </svg>
-            </div>
-            <div style={{ background: '#FFFFFF', borderRadius: '7px', padding: '0.3rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.2rem' }}>
-                <div style={{ width: '16px', height: '16px', borderRadius: '4px', background: 'linear-gradient(135deg, #7C3AED, #2563EB)' }} />
-                <div style={{ flex: 1 }}>
-                  <div style={{ height: '3px', borderRadius: '2px', background: '#E2E8F0', width: '60%', marginBottom: '0.1rem' }} />
-                  <div style={{ height: '3px', borderRadius: '2px', background: '#F1F5F9', width: '40%' }} />
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* Tab bar */}
-          <div style={{ display: 'flex', justifyContent: 'space-around', padding: '0.25rem 0 0', borderTop: '1px solid rgba(255,255,255,0.06)', marginTop: 'auto' }}>
-            {['H', 'S', 'P', 'M'].map((t, i) => (
-              <div key={i} style={{ width: '12px', height: '12px', borderRadius: '3px', background: i === 0 ? '#2563EB' : 'rgba(255,255,255,0.06)' }} />
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-/* ── API Management Platform (Postman/Stripe-style) ── */
-function ApiInterface() {
-  return (
-    <div style={{ width: '100%', maxWidth: '400px', margin: '0 auto' }}>
-      <div style={{ background: '#FFFFFF', borderRadius: '16px', border: '1px solid #E2E8F0', boxShadow: '0 8px 32px rgba(0,0,0,0.06)', overflow: 'hidden' }}>
-        {/* Top navigation */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.55rem 1rem', borderBottom: '1px solid #F1F5F9', background: '#FFFFFF' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <div style={{ width: '20px', height: '20px', borderRadius: '6px', background: 'linear-gradient(135deg, #22C55E, #16A34A)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <Network size={11} color="#FFFFFF" />
-            </div>
-            <span style={{ fontSize: '0.55rem', fontWeight: 700, color: '#0F172A' }}>API Platform</span>
-            <span style={{ fontSize: '0.38rem', color: '#64748B', fontWeight: 500, background: '#F1F5F9', padding: '0.08rem 0.4rem', borderRadius: '4px' }}>v2.4.0</span>
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
-            <div style={{ width: '22px', height: '14px', borderRadius: '4px', background: '#F1F5F9', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748B" strokeWidth="2"><circle cx="12" cy="12" r="3"/></svg>
-            </div>
-            <div style={{ width: '18px', height: '14px', borderRadius: '4px', background: '#F1F5F9', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748B" strokeWidth="2"><path d="M12 5v14M5 12h14"/></svg>
-            </div>
-            <div style={{ width: '18px', height: '14px', borderRadius: '4px', background: '#0F172A', display: 'flex', alignItems: 'center', justifyContent: 'center', marginLeft: '0.15rem' }}>
-              <span style={{ fontSize: '0.3rem', fontWeight: 700, color: '#FFFFFF' }}>JD</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Three-col nav tabs */}
-        <div style={{ display: 'flex', borderBottom: '1px solid #F1F5F9', background: '#FAFBFC' }}>
-          {['Endpoints', 'Monitor', 'Settings'].map((tab, i) => (
-            <div key={i} style={{ flex: 1, textAlign: 'center', padding: '0.35rem 0', fontSize: '0.42rem', fontWeight: 600, color: i === 0 ? '#2563EB' : '#94A3B8', borderBottom: i === 0 ? '2px solid #2563EB' : '2px solid transparent' }}>
-              {tab}
-            </div>
-          ))}
-        </div>
-
-        <div style={{ padding: '0.65rem', display: 'flex', flexDirection: 'column', gap: '0.55rem' }}>
-          {/* ── Request Builder ── */}
-          <div style={{ background: '#FFFFFF', borderRadius: '10px', border: '1px solid #E2E8F0', boxShadow: '0 2px 8px rgba(0,0,0,0.02)', overflow: 'hidden' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', padding: '0.4rem 0.65rem', borderBottom: '1px solid #F1F5F9', background: '#FAFBFC' }}>
-              <div style={{ display: 'flex', borderRadius: '6px', overflow: 'hidden', border: '1px solid #E2E8F0' }}>
-                {['GET', 'POST', 'PUT', 'DEL'].map((m, i) => (
-                  <div key={i} style={{ padding: '0.12rem 0.3rem', fontSize: '0.35rem', fontWeight: 700, color: i === 0 ? '#22C55E' : '#94A3B8', background: i === 0 ? 'rgba(34,197,94,0.06)' : '#FFFFFF', borderRight: i < 3 ? '1px solid #E2E8F0' : 'none' }}>{m}</div>
-                ))}
-              </div>
-              <span style={{ flex: 1, fontSize: '0.4rem', fontWeight: 500, color: '#2563EB', fontFamily: 'monospace', background: '#F8FAFC', border: '1px solid #F1F5F9', borderRadius: '6px', padding: '0.2rem 0.4rem', overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis' }}>/api/v2/orders/search</span>
-              <div style={{ fontSize: '0.38rem', fontWeight: 600, color: '#FFFFFF', background: '#2563EB', borderRadius: '6px', padding: '0.2rem 0.5rem' }}>Send</div>
-            </div>
-            {/* Authorization + Headers row */}
-            <div style={{ display: 'flex', gap: '0.4rem', padding: '0.35rem 0.65rem', borderBottom: '1px solid #F1F5F9', background: '#FFFFFF' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
-                <Lock size={8} color="#22C55E" />
-                <span style={{ fontSize: '0.35rem', color: '#22C55E', fontWeight: 600 }}>Bearer ••••••••</span>
-              </div>
-              <span style={{ fontSize: '0.35rem', color: '#CBD5E1' }}>/</span>
-              <div style={{ display: 'flex', gap: '0.25rem' }}>
-                {['Content-Type', 'Accept'].map((h, i) => (
-                  <span key={i} style={{ fontSize: '0.32rem', color: '#64748B', background: '#F1F5F9', padding: '0.05rem 0.3rem', borderRadius: '3px' }}>{h}</span>
-                ))}
-              </div>
-            </div>
-            {/* Response preview */}
-            <div style={{ padding: '0.5rem 0.65rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.25rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-                  <span style={{ fontSize: '0.38rem', fontWeight: 600, color: '#22C55E', background: 'rgba(34,197,94,0.06)', padding: '0.05rem 0.35rem', borderRadius: '3px' }}>200 OK</span>
-                  <span style={{ fontSize: '0.35rem', color: '#94A3B8' }}>142ms · 2.4 KB</span>
-                </div>
-                <span style={{ fontSize: '0.35rem', color: '#2563EB', fontWeight: 600 }}>JSON</span>
-              </div>
-              <div style={{ background: '#0F172A', borderRadius: '8px', padding: '0.5rem 0.65rem', fontFamily: 'monospace', fontSize: '0.38rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.5)' }}>
-                <div><span style={{ color: '#7C3AED' }}>{'{'}</span></div>
-                <div>  <span style={{ color: '#06B6D4' }}>"status"</span>: <span style={{ color: '#22C55E' }}>"ok"</span>,</div>
-                <div>  <span style={{ color: '#06B6D4' }}>"data"</span>: <span style={{ color: '#7C3AED' }}>{'{'}</span></div>
-                <div>    <span style={{ color: '#06B6D4' }}>"orders"</span>: <span style={{ color: '#F59E0B' }}>142</span>,</div>
-                <div>    <span style={{ color: '#06B6D4' }}>"total"</span>: <span style={{ color: '#F59E0B' }}>$24,892</span></div>
-                <div>  <span style={{ color: '#7C3AED' }}>{'}'}</span></div>
-                <div><span style={{ color: '#7C3AED' }}>{'}'}</span></div>
-              </div>
-            </div>
-          </div>
-
-          {/* ── Two-col: Webhook Builder + API Monitoring ── */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
-            {/* Webhook Builder */}
-            <div style={{ background: '#FFFFFF', borderRadius: '10px', border: '1px solid #E2E8F0', boxShadow: '0 2px 8px rgba(0,0,0,0.02)', overflow: 'hidden' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', padding: '0.4rem 0.55rem', borderBottom: '1px solid #F1F5F9', background: '#FAFBFC' }}>
-                <div style={{ width: '10px', height: '10px', borderRadius: '3px', background: '#7C3AED', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <svg width="6" height="6" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </div>
-                <span style={{ fontSize: '0.4rem', fontWeight: 700, color: '#0F172A', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Webhooks</span>
-                <span style={{ fontSize: '0.32rem', color: '#94A3B8', fontWeight: 500, marginLeft: 'auto' }}>4 active</span>
-              </div>
-              <div style={{ padding: '0.4rem 0.55rem', display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
-                {[
-                  { e: 'order.created', t: 'Slack', s: '200', c: '#22C55E' },
-                  { e: 'invoice.paid', t: 'Stripe', s: '200', c: '#22C55E' },
-                  { e: 'user.deleted', t: 'Datadog', s: '500', c: '#EF4444' },
-                  { e: 'deploy.ready', t: 'PagerDuty', s: '200', c: '#22C55E' },
-                ].map((wh, i) => (
-                  <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', padding: '0.15rem 0', borderBottom: i < 3 ? '1px solid #F8FAFC' : 'none' }}>
-                    <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: wh.s === '200' ? '#22C55E' : '#EF4444', flexShrink: 0 }} />
-                    <span style={{ fontSize: '0.35rem', fontWeight: 600, color: '#2563EB', fontFamily: 'monospace', flex: 1, minWidth: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{wh.e}</span>
-                    <span style={{ fontSize: '0.3rem', color: '#94A3B8', minWidth: '26px', textAlign: 'right' }}>{wh.t}</span>
-                    <span style={{ fontSize: '0.3rem', fontWeight: 600, color: wh.c }}>{wh.s}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* API Monitoring */}
-            <div style={{ background: '#FFFFFF', borderRadius: '10px', border: '1px solid #E2E8F0', boxShadow: '0 2px 8px rgba(0,0,0,0.02)', overflow: 'hidden' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', padding: '0.4rem 0.55rem', borderBottom: '1px solid #F1F5F9', background: '#FAFBFC' }}>
-                <Activity size={10} color="#2563EB" />
-                <span style={{ fontSize: '0.4rem', fontWeight: 700, color: '#0F172A', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Monitoring</span>
-                <span style={{ fontSize: '0.32rem', color: '#94A3B8', fontWeight: 500, marginLeft: 'auto' }}>24h</span>
-              </div>
-              <div style={{ padding: '0.4rem 0.55rem' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.25rem', marginBottom: '0.35rem' }}>
-                  <div style={{ background: '#F8FAFC', borderRadius: '6px', padding: '0.25rem 0.35rem', textAlign: 'center', border: '1px solid #F1F5F9' }}>
-                    <div style={{ fontSize: '0.32rem', color: '#94A3B8', fontWeight: 600, textTransform: 'uppercase' }}>Avg Latency</div>
-                    <div style={{ fontSize: '0.55rem', fontWeight: 800, color: '#22C55E' }}>38ms</div>
-                  </div>
-                  <div style={{ background: '#F8FAFC', borderRadius: '6px', padding: '0.25rem 0.35rem', textAlign: 'center', border: '1px solid #F1F5F9' }}>
-                    <div style={{ fontSize: '0.32rem', color: '#94A3B8', fontWeight: 600, textTransform: 'uppercase' }}>Error Rate</div>
-                    <div style={{ fontSize: '0.55rem', fontWeight: 800, color: '#22C55E' }}>0.12%</div>
-                  </div>
-                </div>
-                <svg viewBox="0 0 120 22" style={{ width: '100%' }}>
-                  <path d="M0 18 L10 15 L20 16 L30 10 L40 12 L50 8 L60 10 L70 5 L80 7 L90 3 L100 5 L110 2 L120 4" stroke="#2563EB" strokeWidth="1.2" fill="none" />
-                  <path d="M0 20 L10 18 L20 19 L30 14 L40 16 L50 12 L60 14 L70 9 L80 11 L90 7 L100 9 L110 6 L120 8" stroke="#06B6D4" strokeWidth="0.8" fill="none" opacity="0.4" />
-                </svg>
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.3rem', color: '#94A3B8', marginTop: '0.15rem' }}>
-                  <span>p50: 24ms</span>
-                  <span>p95: 62ms</span>
-                  <span>p99: 145ms</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* ── Integration / Auth keys row ── */}
-          <div style={{ display: 'flex', gap: '0.5rem', background: '#F8FAFC', borderRadius: '10px', border: '1px solid #F1F5F9', padding: '0.45rem 0.65rem' }}>
-            <div style={{ flex: 1 }}>
-              <div style={{ fontSize: '0.35rem', fontWeight: 600, color: '#64748B', textTransform: 'uppercase', letterSpacing: '0.03em', marginBottom: '0.15rem' }}>API Keys</div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
-                <span style={{ fontSize: '0.38rem', fontFamily: 'monospace', color: '#0F172A', fontWeight: 600 }}>sk_live_••••••••</span>
-                <span style={{ fontSize: '0.3rem', color: '#64748B', background: '#E2E8F0', padding: '0.05rem 0.3rem', borderRadius: '3px' }}>Copy</span>
-              </div>
-            </div>
-            <div style={{ width: '1px', background: '#E2E8F0' }} />
-            <div style={{ flex: 1 }}>
-              <div style={{ fontSize: '0.35rem', fontWeight: 600, color: '#64748B', textTransform: 'uppercase', letterSpacing: '0.03em', marginBottom: '0.15rem' }}>Rate Limit</div>
-              <div style={{ fontSize: '0.5rem', fontWeight: 800, color: '#0F172A' }}>8,432<span style={{ fontSize: '0.35rem', fontWeight: 500, color: '#94A3B8' }}> / 10K min</span></div>
-              <div style={{ height: '3px', borderRadius: '2px', background: '#E2E8F0', overflow: 'hidden', marginTop: '0.1rem' }}>
-                <div style={{ width: '84%', height: '100%', borderRadius: '2px', background: '#2563EB' }} />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 // ─── CODE PLAYGROUND ──────────────────────────────────────────────
 function CodeEditorPlayground() {
   const DEFAULT_CODE = `const platform = {\n  company: "Enterprise Software",\n  services: [\n    "Cloud Infrastructure",\n    "AI Solutions",\n    "API Development",\n    "Automation"\n  ],\n  status: "Running"\n};\n\nconsole.log("Initializing Enterprise Platform...");\nconsole.log(\`Company: \${platform.company}\`);\nconsole.log(\`Services: \${platform.services.join(", ")}\`);\nconsole.log(\`Platform Status: \${platform.status}\`);`;
@@ -838,7 +401,7 @@ function HeroSection() {
             ))}
           </div>
 
-          <div style={{ display: 'flex', gap: '2.5rem', alignItems: 'center', marginBottom: '2.5rem' }}>
+          <div className="hero-buttons" style={{ display: 'flex', gap: '2.5rem', alignItems: 'center', marginBottom: '2.5rem' }}>
             <a href="/contact-us" style={{
               display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
               padding: '0.9rem 2rem', background: '#0F172A', color: '#FFFFFF',
@@ -873,7 +436,37 @@ function HeroSection() {
         @media (max-width: 900px) {
           section > .container > div {
             grid-template-columns: 1fr !important;
-            gap: 3rem !important;
+            gap: 2rem !important;
+          }
+          section > .container > div > div:first-child {
+            max-width: 100% !important;
+            text-align: center;
+          }
+          section > .container > div > div:first-child h1 {
+            font-size: clamp(2.2rem, 7vw, 3rem) !important;
+          }
+          section > .container > div > div:first-child p {
+            max-width: 100% !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+          section > .container > div > div:first-child .hero-buttons {
+            justify-content: center !important;
+          }
+          section > .container > div > div:last-child {
+            max-width: 100% !important;
+            width: 100% !important;
+          }
+          section > .container > div > div:last-child > div {
+            max-width: 100% !important;
+          }
+        }
+        @media (max-width: 575.98px) {
+          section > .container > div > div:first-child h1 {
+            font-size: 2rem !important;
+          }
+          section > .container > div > div:first-child p {
+            font-size: 0.9rem !important;
           }
         }
       `}</style>
@@ -1336,7 +929,7 @@ export default function Home() {
           </div>
 
           {/* Capability Cards (Navigation Tabs) */}
-          <div className="row g-3 mb-4 justify-content-center">
+          <div className="row g-3 mb-4 justify-content-center capabilities-scroll">
             {capabilities.map(cap => {
               const Icon = cap.icon;
               const isActive = activeCapability === cap.id;
@@ -1372,9 +965,26 @@ export default function Home() {
             })}
           </div>
 
-          {/* Interactive Dashboard */}
-          <EnterpriseDashboard activeTab={activeCapability} onTabChange={setActiveCapability} />
+          {/* Dashboard — 100% width on all screens */}
+          <div style={{ width: '100%' }}>
+            <EnterpriseDashboard activeTab={activeCapability} onTabChange={setActiveCapability} />
+          </div>
         </div>
+
+        <style>{`
+          @media (max-width: 575.98px) {
+            .capabilities-scroll {
+              display: flex !important; flex-wrap: nowrap !important;
+              overflow-x: auto !important; scroll-snap-type: x mandatory;
+              -webkit-overflow-scrolling: touch; gap: 1rem !important;
+              padding-bottom: 0.75rem; flex-direction: row !important;
+            }
+            .capabilities-scroll > div {
+              flex: 0 0 75% !important; scroll-snap-align: start;
+              max-width: 75% !important; min-width: 220px;
+            }
+          }
+        `}</style>
       </section>
 
       {/* ─── PORTFOLIO (Architecture Excellence) ─── */}
@@ -1430,9 +1040,9 @@ export default function Home() {
                     <img
                       src={project.image}
                       alt={project.title}
+                      className="portfolio-image"
                       style={{
                         width: '100%',
-                        height: '300px',
                         objectFit: 'cover',
                         display: 'block',
                       }}
@@ -1510,6 +1120,12 @@ export default function Home() {
             ))}
           </div>
         </div>
+
+        <style>{`
+          .portfolio-image { height: 300px; }
+          @media (max-width: 991.98px) { .portfolio-image { height: 240px; } }
+          @media (max-width: 575.98px) { .portfolio-image { height: 200px; } }
+        `}</style>
       </section>
 
       {/* ─── ENGINEERING WORKFLOW ─── */}
@@ -1592,8 +1208,8 @@ export default function Home() {
       {/* ─── FAQ ─── */}
       <section style={{ padding: 'var(--spacing-section) 0', background: '#F8FAFC', position: 'relative' }}>
         <div className="container">
-          <div className="row g-5">
-            <div className="col-12 col-md-5 col-lg-4">
+          <div className="row g-5 faq-row">
+            <div className="col-12 col-md-5 col-lg-4 cta-col">
               <h2 style={{ fontSize: 'var(--font-h2)', letterSpacing: '-0.03em', color: '#111827', fontWeight: 800, margin: '0 0 0.75rem 0', lineHeight: 1.1 }}>
                 Frequently Asked Questions
               </h2>
@@ -1638,6 +1254,12 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        <style>{`
+          @media (max-width: 767.98px) {
+            .faq-row .cta-col { margin-bottom: 2rem; }
+          }
+        `}</style>
       </section>
 
       {/* ─── FINAL CTA ─── */}
@@ -1651,7 +1273,7 @@ export default function Home() {
         }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <h2 style={{
+          <h2 className="cta-heading" style={{
             fontSize: 'clamp(2.1rem, 4vw, 3.8rem)', fontWeight: 800,
             lineHeight: 1.15, letterSpacing: '-0.03em', margin: '0 0 1rem 0',
           }}>
@@ -1666,7 +1288,7 @@ export default function Home() {
             Building secure, scalable, and high-performance software for startups, enterprises, and growing businesses.
           </p>
 
-          <div style={{ display: 'flex', gap: '1.25rem', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', marginTop: '2.75rem' }}>
+          <div className="cta-buttons" style={{ display: 'flex', gap: '1.25rem', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', marginTop: '2.75rem' }}>
             <a href="/work" style={{
               padding: '1rem 2.5rem', fontSize: '0.95rem', fontWeight: 600,
               color: '#0F172A', background: '#FFFFFF',
@@ -1696,6 +1318,23 @@ export default function Home() {
           </p>
         </div>
       </section>
+
+      <style>{`
+        html, body { overflow-x: hidden; width: 100%; }
+        @media (max-width: 575.98px) {
+          .cta-heading { font-size: clamp(1.6rem, 8vw, 2.1rem) !important; }
+        }
+
+        @media (max-width: 767.98px) {
+          .container { padding-left: 1rem !important; padding-right: 1rem !important; }
+        }
+        @media (max-width: 575.98px) {
+          .hero-buttons { flex-direction: column !important; gap: 1rem !important; }
+          .hero-buttons a { width: 100%; justify-content: center; min-height: 48px; }
+          .cta-buttons { flex-direction: column !important; width: 100%; }
+          .cta-buttons a { width: 100%; justify-content: center; min-height: 48px; }
+        }
+      `}</style>
 
       <Footer />
     </main>

@@ -61,10 +61,7 @@ export default function Footer() {
         margin: '0 auto',
       }}>
         {/* Main grid: Brand left, Links right */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1.2fr 2.5fr',
-          gap: '4rem',
+        <div className="footer-grid" style={{
           marginBottom: '3rem',
         }}>
           {/* ── Brand Column ── */}
@@ -128,7 +125,7 @@ export default function Footer() {
                 Sales@acriotech.com
               </a>
 
-              <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', marginTop: '0.25rem' }}>
+              <div className="footer-social" style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', marginTop: '0.25rem' }}>
                 <a href="https://www.linkedin.com/company/acrio-tech" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" style={{
                   color: '#94A3B8', transition: 'all 0.2s', display: 'flex',
                   alignItems: 'center', justifyContent: 'center',
@@ -146,7 +143,7 @@ export default function Footer() {
 
           {/* ── Links & Newsletter ── */}
           <div>
-            <div style={{
+            <div className="footer-links-grid" style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 130px), 1fr))',
               gap: '2.5rem', marginBottom: '3rem',
@@ -276,8 +273,8 @@ export default function Footer() {
                 <h4 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0F172A', margin: 0, marginBottom: '0.3rem' }}>Subscribe to Insights</h4>
                 <p style={{ fontSize: '0.9rem', color: '#94A3B8', margin: 0 }}>Latest engineering trends and company updates.</p>
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
-                <div style={{ display: 'flex', gap: '0.5rem' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
+                  <div className="footer-newsletter-inner" style={{ display: 'flex', gap: '0.5rem' }}>
                   <input
                     type="email"
                     aria-label="Email address for newsletter"
@@ -384,6 +381,31 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
+      <style>{`
+        .footer-grid { display: grid; grid-template-columns: 1.2fr 2.5fr; gap: 4rem; margin-bottom: 3rem; }
+        .footer-links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 130px), 1fr)); gap: 2.5rem; margin-bottom: 3rem; }
+        .footer-newsletter-inner { display: flex; gap: 0.5rem; }
+
+        @media (max-width: 991.98px) {
+          .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+          .footer-links-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 767.98px) {
+          .footer-grid { grid-template-columns: 1fr; text-align: center; }
+          .footer-links-grid { grid-template-columns: 1fr; }
+          .footer-grid > div:first-child a { justify-content: center; }
+          .footer-grid > div:first-child > div:first-child { justify-content: center; }
+          .footer-grid > div:first-child p { margin-left: auto; margin-right: auto; }
+          .footer-grid > div:first-child h2 { margin-left: auto; margin-right: auto; }
+          .footer-grid > div:first-child > div:last-child { align-items: center; }
+          .footer-newsletter-inner { flex-direction: column; align-items: center; }
+          .footer-newsletter-inner input { width: 100% !important; }
+          .footer-newsletter-inner button { width: 100%; }
+          .footer-social { justify-content: center !important; }
+          .trust-divider { display: none !important; }
+        }
+      `}</style>
     </footer>
   );
 }
