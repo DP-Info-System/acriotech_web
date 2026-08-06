@@ -284,7 +284,7 @@ export default function Home() {
               <div style={{ position: 'relative', zIndex: 1 }}>
                 <Server size={24} color="#4B61B8" style={{ marginBottom: '1.5rem' }} />
                 <h3 style={{ fontSize: '1.8rem', marginBottom: '1rem' }}>Enterprise Software</h3>
-                <p style={{ maxWidth: '400px' }}>Bespoke, mission-critical applications engineered for uncompromising stability, security, and infinite scalability within complex organizational structures.</p>
+                <p style={{ maxWidth: '400px' }}>Custom enterprise systems built for environments where downtime isn't an option, and security and compliance are architecture decisions, not add-ons.</p>
               </div>
               <div className="geometric-bg-pattern"></div>
             </motion.div>
@@ -293,13 +293,13 @@ export default function Home() {
             <motion.div className="glass-panel bento-card" style={{ gridColumn: 'span 4' }}>
               <Zap size={24} color="#7BAF35" style={{ marginBottom: '1.5rem' }} />
               <h3 style={{ fontSize: '1.4rem', marginBottom: '1rem' }}>Artificial Intelligence</h3>
-              <p style={{ fontSize: '0.9rem' }}>Intelligent neural systems designed to automate workflows and extract cognitive value from enterprise data.</p>
+              <p style={{ fontSize: '0.9rem' }}>Machine learning and neural systems for document processing, forecasting, anomaly detection, and workflow automation — trained on your data, hosted in your environment.</p>
             </motion.div>
 
             <motion.div className="glass-panel bento-card" style={{ gridColumn: 'span 4' }}>
               <Cloud size={24} color="#4B61B8" style={{ marginBottom: '1.5rem' }} />
               <h3 style={{ fontSize: '1.4rem', marginBottom: '1rem' }}>Cloud Infrastructure</h3>
-              <p style={{ fontSize: '0.9rem' }}>Resilient, highly-available cloud environments engineered for zero downtime and global scale.</p>
+              <p style={{ fontSize: '0.9rem' }}>Multi-region cloud and Kubernetes environments designed for high availability — automated recovery, zero-downtime deploys, and full observability.</p>
             </motion.div>
 
             <motion.div className="glass-panel bento-card" style={{ gridColumn: 'span 4' }}>
@@ -311,7 +311,7 @@ export default function Home() {
             <motion.div className="glass-panel bento-card" style={{ gridColumn: 'span 4' }}>
               <Network size={24} color="#4B61B8" style={{ marginBottom: '1.5rem' }} />
               <h3 style={{ fontSize: '1.4rem', marginBottom: '1rem' }}>API & Automation</h3>
-              <p style={{ fontSize: '0.9rem' }}>Robust microservices that act as the connective tissue for digital ecosystems.</p>
+              <p style={{ fontSize: '0.9rem' }}>Microservices and APIs that connect your systems to vendors, partners, and customers — documented, rate-limited, and monitored in production.</p>
             </motion.div>
           </div>
         </div>

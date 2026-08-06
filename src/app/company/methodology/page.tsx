@@ -88,7 +88,7 @@ export default function MethodologyPage() {
       {/* CTA */}
       <section style={{ padding: 'var(--spacing-section) 0', background: '#0F172A', color: '#FFFFFF', textAlign: 'center' }}>
         <div className="container" style={{ maxWidth: '800px', margin: '0 auto', padding: '0 2rem' }}>
-          <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, marginBottom: '1.5rem' }}>Ready to build something robust?</h2>
+          <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, marginBottom: '1.5rem' }}>Ready to put this process to work on your roadmap?</h2>
           <p style={{ fontSize: '1.15rem', color: '#94A3B8', marginBottom: '3rem' }}>Let's discuss your architecture and how our methodology can accelerate your roadmap.</p>
           <Link href="/contact-us" style={{ background: '#38BDF8', color: '#0F172A', padding: '1rem 2.5rem', borderRadius: '8px', fontWeight: 700, fontSize: '1.1rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'transform 0.2s' }}>
             Start a Project <ArrowRight size={18} />

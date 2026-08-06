@@ -41,8 +41,8 @@ const roles = [
 
 const benefits = [
   { icon: Globe2, title: "Work Anywhere", desc: "We are a remote-first organization. Work from wherever you are most productive." },
-  { icon: Zap, title: "Best-in-Class Hardware", desc: "We provide you with the top-tier hardware you need to compile code fast and design seamlessly." },
-  { icon: Heart, title: "Health & Wellness", desc: "Comprehensive global healthcare coverage, prioritizing your physical and mental well-being." },
+  { icon: Zap, title: "Best-in-Class Hardware", desc: "Powerful laptops and large monitors, ordered and configured before your first day — plus budget for any accessories you need." },
+  { icon: Heart, title: "Health & Wellness", desc: "Global health insurance for you and your dependents — including mental health support and a wellness stipend." },
   { icon: Laptop, title: "Continuous Learning", desc: "We sponsor your professional development through conferences, courses, and certifications." },
   { icon: Clock, title: "Flexible Hours", desc: "We focus on outcomes, not hours logged. Design your own schedule around your peak productivity windows." },
   { icon: Coffee, title: "Rest & Recharge", desc: "Unlimited paid time off with a mandatory 4-week minimum. We want you rested and avoiding burnout." }

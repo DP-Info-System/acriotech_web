@@ -100,7 +100,7 @@ export default function CloudInfrastructureSolution() {
             <div style={{ order: 2 }}>
               <div style={{ fontSize: '4rem', fontWeight: 900, color: '#EEF2FF', lineHeight: 1, marginBottom: '1rem' }}>02</div>
               <h3 style={{ fontSize: 'var(--font-h3)', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>Container Orchestration</h3>
-              <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.7 }}>We migrate legacy applications into isolated containers orchestrated by Kubernetes. This unlocks automatic self-healing, seamless scaling during traffic spikes, and granular resource allocation per service.</p>
+              <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.7 }}>We migrate legacy applications into isolated containers orchestrated by Kubernetes. Failed pods restart automatically, autoscaling absorbs traffic spikes, and each service gets its own resource limits.</p>
             </div>
             <div style={{ order: 1, background: '#F8FAFC', padding: '3rem', borderRadius: '16px', border: '1px solid #E2E8F0', position: 'relative', overflow: 'hidden' }}>
                {/* Decorative background elements */}
