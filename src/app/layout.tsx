@@ -14,24 +14,27 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL('https://acriotech.com'),
   title: "Acriotech | Enterprise Software Engineering",
-  description: "Acriotech is an IT and Software Company in Bhavnagar. We build enterprise software, AI systems, automation platforms and cloud infrastructure that help ambitious businesses scale with confidence.",
+  description: "Acriotech is an IT and Software Company in Bhavnagar, India. We build enterprise software, AI systems, automation platforms and cloud infrastructure that help ambitious businesses scale with confidence.",
   keywords: ["Software Company in Bhavnagar", "IT Company in Bhavnagar", "Enterprise Software Bhavnagar", "AI Systems", "Cloud Infrastructure", "Automation Platforms", "Acriotech"],
   authors: [{ name: "Acriotech Pvt. Ltd." }],
   creator: "Acriotech Pvt. Ltd.",
   publisher: "Acriotech Pvt. Ltd.",
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: "Acriotech | Enterprise Software Engineering",
-    description: "Acriotech is an IT and Software Company in Bhavnagar. We build enterprise software, AI systems, automation platforms and cloud infrastructure that help ambitious businesses scale with confidence.",
+    description: "Acriotech is an IT and Software Company in Bhavnagar, India. We build enterprise software, AI systems, automation platforms and cloud infrastructure that help ambitious businesses scale with confidence.",
     url: 'https://acriotech.com',
     siteName: 'Acriotech',
-    locale: 'en_US',
+    locale: 'en_IN',
     type: 'website',
     images: ['https://acriotech.com/icon.png'],
   },
   twitter: {
     card: 'summary_large_image',
     title: "Acriotech | Enterprise Software Engineering",
-    description: "Acriotech is an IT and Software Company in Bhavnagar. We build enterprise software, AI systems, automation platforms and cloud infrastructure that help ambitious businesses scale with confidence.",
+    description: "Acriotech is an IT and Software Company in Bhavnagar, India. We build enterprise software, AI systems, automation platforms and cloud infrastructure that help ambitious businesses scale with confidence.",
     images: ['https://acriotech.com/icon.png'],
   },
   robots: {
@@ -61,16 +64,16 @@ export default function RootLayout({
   return (
     <html lang="en" className={plusJakartaSans.variable}>
       <head>
-        {/* LocalBusiness Schema for Bhavnagar SEO */}
-        <Script
-          id="local-business-schema"
+        {/* Organization + LocalBusiness Schema for Bhavnagar SEO (server-rendered) */}
+        <script
           type="application/ld+json"
-          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "LocalBusiness",
+              "@type": ["Organization", "LocalBusiness"],
+              "@id": "https://acriotech.com/#organization",
               "name": "Acriotech Global Pvt. Ltd.",
+              "description": "Enterprise software, AI and cloud engineering company in Bhavnagar, India.",
               "image": "https://acriotech.com/icon.png",
               "url": "https://acriotech.com",
               "email": "info@acriotech.com",
@@ -87,7 +90,50 @@ export default function RootLayout({
                 "latitude": 21.7645,
                 "longitude": 72.1519
               },
-              "priceRange": "$$$"
+              "hasMap": "https://maps.google.com/?q=14,+Shiv+Narayan+Complex,+Virani+Circle,+Kaliyabid,+Bhavnagar+-+364002,+Gujarat,+India",
+              "sameAs": [
+                "https://www.linkedin.com/company/acrio-tech"
+              ],
+              "areaServed": ["IN", "US", "GB", "AE", "EU"],
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "09:00",
+                "closes": "18:00"
+              },
+              "contactPoint": [
+                {
+                  "@type": "ContactPoint",
+                  "contactType": "sales",
+                  "email": "info@acriotech.com",
+                  "availableLanguage": ["English", "Hindi", "Gujarati"],
+                  "areaServed": "Worldwide"
+                },
+                {
+                  "@type": "ContactPoint",
+                  "contactType": "press",
+                  "email": "press@acriotech.com",
+                  "availableLanguage": "English"
+                },
+                {
+                  "@type": "ContactPoint",
+                  "contactType": "investor relations",
+                  "email": "investors@acriotech.com",
+                  "availableLanguage": "English"
+                },
+                {
+                  "@type": "ContactPoint",
+                  "contactType": "customer feedback",
+                  "email": "feedback@acriotech.com",
+                  "availableLanguage": "English"
+                },
+                {
+                  "@type": "ContactPoint",
+                  "contactType": "social responsibility",
+                  "email": "responsible@acriotech.com",
+                  "availableLanguage": "English"
+                }
+              ]
             }),
           }}
         />
@@ -112,17 +158,17 @@ export default function RootLayout({
         {/* Load Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-NVERY94FZL"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         {/* Load Ahrefs Analytics */}
         <Script
           src="https://analytics.ahrefs.com/analytics.js"
           data-key="0VjxtvAV5Spo9/ii75o6Ag"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         <Script
           id="gtag-init"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];

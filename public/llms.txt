@@ -1,0 +1,24 @@
+# Acriotech
+
+> Enterprise software, AI, cloud and automation engineering.
+
+Acriotech is an enterprise software engineering company in Bhavnagar, Gujarat, India. We design, engineer and evolve enterprise software, AI platforms and cloud infrastructure for mid-market and enterprise organisations worldwide.
+
+## Key resources
+
+- [Enterprise Software Development](https://acriotech.com/solutions/enterprise-software): Bespoke, mission-critical applications engineered for stability, security and scale.
+- [AI & Intelligent Automation](https://acriotech.com/solutions/ai-intelligent-automation): Enterprise AI and intelligent automation with strict operational bounds.
+- [Business Process Automation](https://acriotech.com/solutions/business-process-automation): Automation platforms that make enterprise workflows reliable and auditable.
+- [Cloud Infrastructure](https://acriotech.com/solutions/cloud-infrastructure): Resilient, high-availability cloud environments for zero downtime and global scale.
+- [Legacy System Modernization](https://acriotech.com/solutions/legacy-system-modernization): Safe, zero-downtime legacy migration and modernization.
+- [Data Analytics](https://acriotech.com/solutions/data-analytics): Data engineering, analytics pipelines and business intelligence.
+- [Custom Software Development](https://acriotech.com/solutions/custom-software-development): Bespoke software built for your exact operational reality.
+- [Services](https://acriotech.com/services): Consulting, product discovery, UI/UX design, development, cloud, DevOps, QA and support.
+- [Case Studies](https://acriotech.com/work/featured-projects): Engineering case studies across banking, logistics, healthcare and cloud.
+- [Industries](https://acriotech.com/industries): Manufacturing, healthcare, education, logistics, retail, financial services, hospitality, government and startups.
+
+## Contact
+
+- Enterprise Sales: info@acriotech.com
+- Global HQ: 14, Shiv Narayan Complex, Virani Circle, Kaliyabid, Bhavnagar - 364002, Gujarat, India
+- [Contact page](https://acriotech.com/contact-us)

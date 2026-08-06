@@ -54,10 +54,10 @@ export default function Footer() {
           <div style={{ flex: '1 1 300px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.5rem' }}>
                <div style={{ position: 'relative', width: '38px', height: '38px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                 <img src="/custom-logo.svg" alt="Acriotech Logo Mark" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                 <img src="/custom-logo.svg" alt="Acriotech Logo Mark" width={38} height={38} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                </div>
                <div style={{ display: 'flex', alignItems: 'center', marginTop: '2px' }}>
-                 <img src="/acriotech-name-logo.png" alt="Acriotech" style={{ height: '18px', objectFit: 'contain' }} />
+                 <img src="/acriotech-name-logo.png" alt="Acriotech" width={134} height={18} style={{ height: '18px', objectFit: 'contain' }} />
                </div>
             </div>
             
@@ -86,7 +86,7 @@ export default function Footer() {
                
                {/* Social Links */}
                <div style={{ display: 'flex', gap: '1.2rem', alignItems: 'center', marginTop: '0.5rem' }}>
-                  <a href="https://www.linkedin.com/company/acrio-tech" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" style={{ color: '#475569', transition: 'color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#0F172A'} onMouseLeave={(e) => e.currentTarget.style.color = '#475569'}>
+                  <a href="https://www.linkedin.com/company/acrio-tech" aria-label="LinkedIn" target="_blank" rel="me noopener noreferrer" style={{ color: '#475569', transition: 'color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#0F172A'} onMouseLeave={(e) => e.currentTarget.style.color = '#475569'}>
                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg> 
                   </a>
                </div>
@@ -145,8 +145,9 @@ export default function Footer() {
                 <h4 style={{ fontSize: '0.95rem', color: '#0F172A', fontWeight: 700, marginBottom: '2rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Resources</h4>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1.2rem', fontSize: '0.95rem', fontWeight: 500 }}>
                   {[
-                    { label: 'Case Studies', href: '/work' },
+                    { label: 'Case Studies', href: '/work/featured-projects' },
                     { label: 'Security & Compliance', href: '/security-compliance' },
+                    { label: 'Whitepapers', href: '/insights/whitepapers' },
                     { label: 'Insights & News', href: '/insights' },
                     { label: 'Industries', href: '/industries' }
                   ].map((item) => (
@@ -196,7 +197,7 @@ export default function Footer() {
                       onChange={(e) => setEmail(e.target.value)}
                       disabled={status === 'loading'}
                       className="newsletter-input"
-                      style={{ padding: '0.85rem 1.2rem', borderRadius: '8px', border: '1px solid #E2E8F0', outline: 'none', width: '260px', fontSize: '0.95rem', background: '#F8FAFC' }} 
+                      style={{ padding: '0.85rem 1.2rem', borderRadius: '8px', border: '1px solid #E2E8F0', outline: 'none', width: '260px', maxWidth: '100%', fontSize: '0.95rem', background: '#F8FAFC' }} 
                     />
                     <button 
                       className="newsletter-btn"
@@ -230,20 +231,20 @@ export default function Footer() {
         {/* Middle Band: Trust Badges */}
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '3rem 0', borderTop: '1px solid rgba(15,23,42,0.05)', borderBottom: '1px solid rgba(15,23,42,0.05)', flexWrap: 'wrap', gap: '1.5rem' }}>
            {[
-             { icon: <Shield size={28} color="#4B61B8" strokeWidth={1.5} />, line1: 'ISO', line2: 'Ready' },
-             { icon: <Lock size={28} color="#22C55E" strokeWidth={1.5} />, line1: 'GDPR', line2: 'Compliant' },
-             { icon: <Cloud size={28} color="#4B61B8" strokeWidth={1.5} />, line1: 'Secure', line2: 'Development' },
-             { icon: <Code size={28} color="#22C55E" strokeWidth={1.5} />, line1: 'Cloud', line2: 'Native' },
-             { icon: <MapPin size={28} color="#4B61B8" strokeWidth={1.5} />, line1: 'Engineered in', line2: 'Bhavnagar' }
+             { icon: <Shield size={28} color="#4B61B8" strokeWidth={1.5} />, line1: 'ISO', line2: 'Ready', href: '/security-compliance' },
+             { icon: <Lock size={28} color="#22C55E" strokeWidth={1.5} />, line1: 'GDPR', line2: 'Compliant', href: '/gdpr-compliance' },
+             { icon: <Cloud size={28} color="#4B61B8" strokeWidth={1.5} />, line1: 'Secure', line2: 'Development', href: '/security-compliance' },
+             { icon: <Code size={28} color="#22C55E" strokeWidth={1.5} />, line1: 'Cloud', line2: 'Native', href: '/solutions/cloud-infrastructure' },
+             { icon: <MapPin size={28} color="#4B61B8" strokeWidth={1.5} />, line1: 'Engineered in', line2: 'Bhavnagar', href: '/about-us' }
            ].map((badge, idx, arr) => (
              <React.Fragment key={badge.line1}>
-               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                <a href={badge.href} style={{ display: 'flex', alignItems: 'center', gap: '1rem', textDecoration: 'none' }}>
                   {badge.icon}
                   <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.2 }}>
                      <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#0F172A' }}>{badge.line1}</span>
                      <span style={{ fontSize: '0.8rem', color: '#64748B' }}>{badge.line2}</span>
                   </div>
-               </div>
+                </a>
                {idx < arr.length - 1 && (
                  <div className="trust-divider" style={{ width: '1px', height: '40px', background: 'rgba(15,23,42,0.1)', margin: '0 3rem' }} />
                )}

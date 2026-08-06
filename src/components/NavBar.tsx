@@ -143,10 +143,10 @@ export default function NavBar() {
       >
         <a href="/" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
           <div style={{ position: 'relative', width: '38px', height: '38px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <img src="/custom-logo.svg" alt="Acriotech Logo Mark" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+            <img src="/custom-logo.svg" alt="Acriotech Logo Mark" width={38} height={38} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
           </div>
           <div style={{ display: 'flex', alignItems: 'center', marginTop: '2px' }}>
-            <img src="/acriotech-name-logo.png" alt="Acriotech" style={{ height: '18px', objectFit: 'contain' }} />
+            <img src="/acriotech-name-logo.png" alt="Acriotech" width={134} height={18} style={{ height: '18px', objectFit: 'contain' }} />
           </div>
         </a>
 
