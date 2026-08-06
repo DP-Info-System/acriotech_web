@@ -9,11 +9,14 @@ export function pageMetadata(options: {
   title: string;
   description?: string;
   path: string;
+  ogImage?: string;
+  ogImageAlt?: string;
 }): Metadata {
   const url = `${SITE_URL}${options.path}`;
   const fullTitle = options.title.includes("Acriotech")
     ? options.title
     : `${options.title} | Acriotech`;
+  const imageUrl = options.ogImage ?? "/og-default.png";
   return {
     title: fullTitle,
     description: options.description ?? defaultDescription,
@@ -25,7 +28,16 @@ export function pageMetadata(options: {
       siteName: "Acriotech",
       locale: "en_IN",
       type: "website",
-      images: [`${SITE_URL}/icon.png`],
+      images: [
+        {
+          url: `${SITE_URL}${imageUrl}`,
+          width: 1200,
+          height: 630,
+          alt:
+            options.ogImageAlt ??
+            "Acriotech — Enterprise Software Engineering",
+        },
+      ],
     },
   };
 }
