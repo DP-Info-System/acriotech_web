@@ -339,11 +339,11 @@ export default function Home() {
               <div style={{ background: '#F8FAFC', borderRadius: '16px', height: '400px', marginBottom: '2rem', border: '1px solid rgba(15,23,42,0.05)', overflow: 'hidden', position: 'relative', cursor: 'pointer' }}
                    onMouseEnter={(e) => {
                      const mockup = e.currentTarget.querySelector('.mockup-1') as HTMLElement;
-                     if(mockup) mockup.style.transform = 'translate(-50%, -50%) scale(1.02) translateY(-5px)';
+                     if(mockup) mockup.style.transform = 'scale(1.02) translateY(-5px)';
                    }}
                    onMouseLeave={(e) => {
                      const mockup = e.currentTarget.querySelector('.mockup-1') as HTMLElement;
-                     if(mockup) mockup.style.transform = 'translate(-50%, -50%) scale(1) translateY(0)';
+                     if(mockup) mockup.style.transform = 'scale(1) translateY(0)';
                    }}
               >
                  {/* Clean visual representation */}
@@ -384,11 +384,11 @@ export default function Home() {
               <div style={{ background: '#F8FAFC', borderRadius: '16px', height: '400px', marginBottom: '2rem', border: '1px solid rgba(15,23,42,0.05)', overflow: 'hidden', position: 'relative', cursor: 'pointer' }}
                    onMouseEnter={(e) => {
                      const mockup = e.currentTarget.querySelector('.mockup-2') as HTMLElement;
-                     if(mockup) mockup.style.transform = 'translate(-50%, -50%) scale(1.02) translateY(-5px)';
+                     if(mockup) mockup.style.transform = 'scale(1.02) translateY(-5px)';
                    }}
                    onMouseLeave={(e) => {
                      const mockup = e.currentTarget.querySelector('.mockup-2') as HTMLElement;
-                     if(mockup) mockup.style.transform = 'translate(-50%, -50%) scale(1) translateY(0)';
+                     if(mockup) mockup.style.transform = 'scale(1) translateY(0)';
                    }}
               >
                  {/* Clean visual representation */}
