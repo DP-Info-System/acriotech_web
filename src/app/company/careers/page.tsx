@@ -219,7 +219,7 @@ export default function CareersPage() {
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
                     <label style={{ fontSize: '0.85rem', fontWeight: 600, color: '#475569' }}>Mobile Number</label>
                     <div style={{ display: 'flex', gap: '0.5rem' }}>
-                      <select value={formData.countryCode} onChange={e => setFormData({...formData, countryCode: e.target.value})} style={{ padding: '0.75rem', borderRadius: '8px', border: '1px solid #E2E8F0', fontSize: '0.95rem', background: '#FFFFFF', width: '100px', cursor: 'pointer' }}>
+                      <select value={formData.countryCode} onChange={e => setFormData({...formData, countryCode: e.target.value})} style={{ padding: '0.75rem', borderRadius: '8px', border: '1px solid #E2E8F0', fontSize: '0.95rem', background: '#FFFFFF', width: '150px', cursor: 'pointer' }}>
                         <option value="+1">+1 (US/CA)</option>
                         <option value="+44">+44 (UK)</option>
                         <option value="+91">+91 (IN)</option>
