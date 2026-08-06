@@ -16,7 +16,7 @@ export function pageMetadata(options: {
   const fullTitle = options.title.includes("Acriotech")
     ? options.title
     : `${options.title} | Acriotech`;
-  const imageUrl = options.ogImage ?? "/og-default.png";
+  const imageUrl = options.ogImage ?? "/ogimage.jpeg";
   return {
     title: fullTitle,
     description: options.description ?? defaultDescription,
@@ -31,8 +31,8 @@ export function pageMetadata(options: {
       images: [
         {
           url: `${SITE_URL}${imageUrl}`,
-          width: 1200,
-          height: 630,
+          width: 1024,
+          height: 1024,
           alt:
             options.ogImageAlt ??
             "Acriotech — Enterprise Software Engineering",

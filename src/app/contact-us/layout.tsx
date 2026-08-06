@@ -6,8 +6,8 @@ export const metadata: Metadata = pageMetadata({
   description:
     "Contact Acriotech for enterprise software, AI, cloud and automation inquiries. Route your request to enterprise sales, press, investor relations, careers or feedback.",
   path: "/contact-us",
-  ogImage: "/og-contact-us.png",
-  ogImageAlt: "Contact Acriotech — Enterprise software, AI, cloud & automation engineering",
+  ogImage: "/ogimage.jpeg",
+  ogImageAlt: "Acriotech — Enterprise Software Engineering",
 });
 
 export default function Layout({ children }: { children: React.ReactNode }) {

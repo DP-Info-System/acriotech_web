@@ -29,13 +29,13 @@ export const metadata: Metadata = {
     siteName: 'Acriotech',
     locale: 'en_IN',
     type: 'website',
-    images: ['https://acriotech.com/og-default.png'],
+    images: ['https://acriotech.com/ogimage.jpeg'],
   },
   twitter: {
     card: 'summary_large_image',
     title: "Acriotech | Enterprise Software Engineering",
     description: "Acriotech is an IT and Software Company in Bhavnagar, India. We build enterprise software, AI systems, automation platforms and cloud infrastructure that help ambitious businesses scale with confidence.",
-    images: ['https://acriotech.com/og-default.png'],
+    images: ['https://acriotech.com/ogimage.jpeg'],
   },
   robots: {
     index: true,
@@ -74,7 +74,7 @@ export default function RootLayout({
               "@id": "https://acriotech.com/#organization",
               "name": "Acriotech Global Pvt. Ltd.",
               "description": "Enterprise software, AI and cloud engineering company in Bhavnagar, India.",
-              "image": "https://acriotech.com/og-default.png",
+              "image": "https://acriotech.com/ogimage.jpeg",
               "url": "https://acriotech.com",
               "email": "info@acriotech.com",
               "address": {
