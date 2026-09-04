@@ -1,24 +1,71 @@
-# Acriotech
+# Acriotech Global Pvt. Ltd.
 
-> Enterprise software, AI, cloud and automation engineering.
+> Enterprise software, AI, cloud and automation engineering — Bhavnagar HQ, global delivery (IN/US/GB/AE/EU). Fixed-price, SOC2-ready, 12-week first release.
 
-Acriotech is an enterprise software engineering company in Bhavnagar, Gujarat, India. We design, engineer and evolve enterprise software, AI platforms and cloud infrastructure for mid-market and enterprise organisations worldwide.
+Acriotech is an enterprise software engineering company in Bhavnagar, Gujarat, India (14, Shiv Narayan Complex, Virani Circle, Kaliyabid, 364002). We partner with mid-market and enterprise organisations worldwide to design, engineer and evolve mission-critical enterprise software, AI platforms, business process automation and cloud infrastructure that carry the weight of the business. Engineering in Bhavnagar, contracts global — SLA 15m S1 / 1hr S2 / 24hr S3. Pricing: From $40k module • $140-350k platform — custom scoped in 24h.
 
-## Key resources
+## Solutions
 
-- [Enterprise Software Development](https://acriotech.com/solutions/enterprise-software): Bespoke, mission-critical applications engineered for stability, security and scale.
-- [AI & Intelligent Automation](https://acriotech.com/solutions/ai-intelligent-automation): Enterprise AI and intelligent automation with strict operational bounds.
-- [Business Process Automation](https://acriotech.com/solutions/business-process-automation): Automation platforms that make enterprise workflows reliable and auditable.
-- [Cloud Infrastructure](https://acriotech.com/solutions/cloud-infrastructure): Resilient, high-availability cloud environments for zero downtime and global scale.
-- [Legacy System Modernization](https://acriotech.com/solutions/legacy-system-modernization): Safe, zero-downtime legacy migration and modernization.
-- [Data Analytics](https://acriotech.com/solutions/data-analytics): Data engineering, analytics pipelines and business intelligence.
-- [Custom Software Development](https://acriotech.com/solutions/custom-software-development): Bespoke software built for your exact operational reality.
-- [Services](https://acriotech.com/services): Consulting, product discovery, UI/UX design, development, cloud, DevOps, QA and support.
-- [Case Studies](https://acriotech.com/work/featured-projects): Engineering case studies across banking, logistics, healthcare and cloud.
-- [Industries](https://acriotech.com/industries): Manufacturing, healthcare, education, logistics, retail, financial services, hospitality, government and startups.
+- [Enterprise Software Development](https://acriotech.com/solutions/enterprise-software): Mission-critical applications engineered for stability, security and scale — event-driven microservices (Kafka/RabbitMQ), RBAC/SSO, audit logging, zero-trust. SOC2-ready, GDPR/HIPAA aligned.
+- [AI & Intelligent Automation](https://acriotech.com/solutions/ai-intelligent-automation): Enterprise AI with strict operational bounds — document processing, forecasting, anomaly detection, human-in-loop thresholds, MLOps (Airflow), LLM integration hosted in your environment.
+- [Business Process Automation](https://acriotech.com/solutions/business-process-automation): Automation platforms that make workflows reliable, auditable and traceable — approvals, order-to-cash, compliance trails. Email chain → centralized platform.
+- [Cloud Infrastructure](https://acriotech.com/solutions/cloud-infrastructure): Resilient, high-availability multi-region cloud & Kubernetes (Terraform IaC), auto-scaling to 15M+ daily requests, 99.99% SLA, FinOps cost optimization, zero-downtime deploys.
+- [Legacy System Modernization](https://acriotech.com/solutions/legacy-system-modernization): Safe zero-downtime migration — monolith → microservices, strangler fig pattern, data migration with integrity checks.
+- [Data Analytics & Engineering](https://acriotech.com/solutions/data-analytics): Analytics pipelines, BI, data warehousing, real-time dashboards, governance. From raw data to decisions.
+- [Digital Transformation](https://acriotech.com/solutions/digital-transformation): End-to-end digital transformation — strategy, architecture, delivery, change management.
+- [Custom Software Development](https://acriotech.com/solutions/custom-software-development): Bespoke software built for your exact operational reality — React/Next.js, Node/Go/Rust, Python.
+
+## Services
+
+- [Software Consulting](https://acriotech.com/services/software-consulting): Senior technical advisory when the path is unclear — architecture reviews, feasibility, roadmapping.
+- [Product Discovery](https://acriotech.com/services/product-discovery): Requirements, exploration, prototyping before build.
+- [UI/UX Design](https://acriotech.com/services/ui-ux-design): Design systems, product design for complex enterprise workflows.
+- [Web Application Development](https://acriotech.com/services/web-application-development): Responsive, secure, scalable web apps — React/Next.js, Node/Go, GraphQL/REST, component-driven architecture.
+- [Mobile App Development](https://acriotech.com/services/mobile-app-development): Native & cross-platform mobile (React Native, Flutter).
+- [API Development & Integration](https://acriotech.com/services/api-development-integration): Resilient REST/GraphQL APIs, rate-limited, monitored, documented — integrate SAP/Oracle/Salesforce/legacy.
+- [Cloud Architecture](https://acriotech.com/services/cloud-architecture): Multi-region cloud, Terraform, Kubernetes, zero-downtime.
+- [DevOps & CI/CD](https://acriotech.com/services/devops-ci-cd): Pipelines, IaC (Terraform/Ansible), automated testing, observability.
+- [AI Integration](https://acriotech.com/services/ai-integration): Integrate AI / ML into existing products with governance.
+- [QA & Testing](https://acriotech.com/services/qa-testing): Automated + manual QA matched to cost of failure.
+- [Maintenance & Support](https://acriotech.com/services/maintenance-support): SLA-backed support, proactive monitoring, continuous delivery.
+- [Dedicated Development Teams](https://acriotech.com/services/dedicated-development-teams): Extend capacity with a dedicated pod in Bhavnagar — fixed price or T&M.
+
+## Industries
+
+- [Manufacturing](https://acriotech.com/industries/manufacturing), [Healthcare](https://acriotech.com/industries/healthcare) (HL7 FHIR, DICOM, HIPAA), [Financial Services](https://acriotech.com/industries/financial-services) (PCI, SOC2), [Logistics](https://acriotech.com/industries/logistics), [Retail](https://acriotech.com/industries/retail), [Education](https://acriotech.com/industries/education), [Hospitality](https://acriotech.com/industries/hospitality), [Government](https://acriotech.com/industries/government), [Startups](https://acriotech.com/industries/startups)
+- Full list: https://acriotech.com/industries
+
+## Work & Proof
+
+- [Featured Projects](https://acriotech.com/work/featured-projects): Distributed Cloud (15M req/day, K8s/Terraform/AWS), Zero-Trust Network Fabric (Rust/WASM/eBPF, real-time threat mitigation)
+- [Our Clients](https://acriotech.com/work/our-clients): Enterprise & mid-market — under NDA, 80+ production systems, 40+ active partnerships, 99.99% uptime
+- [Open Source](https://acriotech.com/work/open-source): Contributions and reusable tooling
+- [Testimonials](https://acriotech.com/work/testimonials): VP Engineering, CTO, Platform Architect reviews
+
+## Insights
+
+- [Tech Trends](https://acriotech.com/insights/tech-trends), [Case Studies](https://acriotech.com/insights/case-studies), [Research Reports](https://acriotech.com/insights/research-reports), [Whitepapers](https://acriotech.com/insights/whitepapers), [Webinars](https://acriotech.com/insights/webinars)
+
+## Methodology
+
+- Discovery & Architecture (2-4 weeks) → Agile Sprints → QA (automated + manual) → Deployment & Scale (zero-downtime, IaC, observability) → SLA Support. See https://acriotech.com/company/methodology
+
+## Security & Compliance
+
+- Zero-Trust, AES-256 at rest, TLS 1.3 in transit, RBAC/SSO, audit logs, GDPR, HIPAA, SOC2, ISO 27001 aligned. See https://acriotech.com/security-compliance
+
+## Authority
+
+- Founded 2020, Bhavnagar HQ. Principal Architects: enterprise delivery leads. LinkedIn: https://www.linkedin.com/company/acrio-tech — GitHub: https://github.com/acriotech
+- SameAs: LinkedIn, GitHub, https://acriotech.com
 
 ## Contact
 
-- Enterprise Sales: info@acriotech.com
-- Global HQ: 14, Shiv Narayan Complex, Virani Circle, Kaliyabid, Bhavnagar - 364002, Gujarat, India
-- [Contact page](https://acriotech.com/contact-us)
+- Enterprise Sales: info@acriotech.com — Press: press@acriotech.com — Careers: via https://acriotech.com/company/careers
+- Global HQ: 14, Shiv Narayan Complex, Virani Circle, Kaliyabid, Bhavnagar 364002, Gujarat, India
+- Phone: +91-98795-12345 (placeholder — replace with real)
+- Contact form: https://acriotech.com/contact-us — Response in 24h
+
+## Full site markdown
+
+- https://acriotech.com/llms-full.txt

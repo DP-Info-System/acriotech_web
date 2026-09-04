@@ -1,0 +1,3054 @@
+# Acriotech Full Site — llms-full.txt
+
+Generated for long-context LLMs. See https://acriotech.com/llms.txt for summary.
+
+
+## src/app/about-us/page.tsx
+
+```tsx
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import Image from "next/image";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
+
+export default function AboutUs() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FFFFFF' }}>
+      <NavBar />
+      
+      {/* Clean, minimalist Hero without glowing orbs or AI-style gradients */}
+      <section style={{ paddingTop: '12rem', paddingBottom: '5rem', background: '#F8FAFC', borderBottom: '1px solid #E2E8F0' }}>
+        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
+          <h1 style={{ fontSize: '3.5rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.03em', marginBottom: '1.5rem' }}>
+            About Acriotech
+          </h1>
+          <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, maxWidth: '700px' }}>
+            Acriotech delivers enterprise-grade software engineering and technical consulting. 
+            We design and implement high-performance systems for organizations demanding precision, security, and scale.
+          </p>
+        </div>
+      </section>
+
+      {/* Traditional Alternating Content Section (Our Story) */}
+      <section style={{ padding: '6rem 0' }}>
+        <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '4rem', alignItems: 'center' }}>
+            
+            {/* Image Side */}
+            <div style={{ position: 'relative', height: '500px', borderRadius: '16px', overflow: 'hidden', backgroundColor: '#E2E8F0' }}>
+              <Image 
+                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                alt="Acriotech office at Shiv Narayan Complex, Virani Circle — engineering pod in Bhavnagar" 
+                fill
+                style={{ objectFit: 'cover' }}
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
+            
+            {/* Text Side */}
+            <div>
+              <h2 style={{ fontSize: '2rem', fontWeight: 700, color: '#0F172A', marginBottom: '1.5rem' }}>Our Story</h2>
+              <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.8, marginBottom: '1.5rem' }}>
+                Acriotech started with a straightforward goal: to provide businesses with reliable, well-built software. In an industry often filled with unnecessary complexity and jargon, we wanted to be a partner that focuses purely on results.
+              </p>
+              <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.8, marginBottom: '2rem' }}>
+                Over the years, we have grown from a small local team into a comprehensive technology firm. Today, we work with clients globally, delivering every
+```
+
+## src/app/abuse-policy/page.tsx
+
+```tsx
+import LegalLayout from "@/components/LegalLayout";
+
+export default function AbusePolicy() {
+  return (
+    <LegalLayout activePath="/abuse-policy">
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+
+        <div>
+          <p style={{ fontSize: '0.85rem', color: '#4B61B8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>Last Updated: 01-Feb-2025</p>
+          <h1 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.02em', lineHeight: 1.2, marginBottom: '1.5rem' }}>Abuse Policy</h1>
+          <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.8 }}>Acriotech provides enterprise-grade technology infrastructure and software services. This Abuse Policy governs what constitutes unacceptable use of Acriotech's network, APIs, cloud infrastructure, software platforms, and any services provided to clients and end-users. We are committed to maintaining a safe, reliable, and law-abiding environment for all our clients, their end-users, and the broader internet community.</p>
+        </div>
+
+        <div style={{ padding: '1.5rem', background: '#FEF2F2', borderRadius: '12px', border: '1px solid #FECACA' }}>
+          <p style={{ fontSize: '1rem', color: '#991B1B', lineHeight: 1.7, fontWeight: 600 }}>Zero Tolerance: Acriotech maintains a zero-tolerance policy for abuse. Violations will result in immediate service suspension, account termination, forfeiture of prepaid fees, and may be referred to law enforcement.</p>
+        </div>
+
+        <hr style={{ border: 'none', borderTop: '1px solid #E2E8F0' }} />
+
+        <div>
+          <h2 style={{ fontSize: '1.6rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>1. Scope of This Policy</h2>
+          <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, marginBottom: '1rem' }}>This policy applies to:</p>
+          <ul style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+            <li>Direct clients of Acriotech who use our professional services or hosted software platforms.</li>
+            <li>End-users of enterprise software systems built and operated by Acriotech on behalf of our clients.</li>
+            <li>Third parties who interact with, or attempt to interact with, Acriotech infrastructure.</li>
+            <li>Acriotech employees, contractors, and partners who access internal systems.</li>
+          </ul>
+          <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, marginTop: '1rem' }}>Regardless of where a user is located, use of Acriotech services constitutes acceptance of this Abuse Policy. Acriotech reserves the right to act on any abuse of our systems originating from any jurisdiction.</p>
+        </div>
+
+        <div>
+          <h2 style={{ fontSize: '1.6rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>2. Prohibited Activities</h
+```
+
+## src/app/anti-spam-policy/page.tsx
+
+```tsx
+import LegalLayout from "@/components/LegalLayout";
+
+export default function AntiSpamPolicy() {
+  return (
+    <LegalLayout activePath="/anti-spam-policy">
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+
+        <div>
+          <p style={{ fontSize: '0.85rem', color: '#4B61B8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>Last Updated: 01-Feb-2025</p>
+          <h1 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.02em', lineHeight: 1.2, marginBottom: '1.5rem' }}>Anti-Spam Policy</h1>
+          <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.8 }}>Acriotech maintains a strict zero-tolerance policy against spam and unsolicited commercial communications. This policy applies to Acriotech's own communications and to all clients, partners, and users who leverage Acriotech's infrastructure, APIs, or cloud-based notification services to send communications to third parties.</p>
+        </div>
+
+        <hr style={{ border: 'none', borderTop: '1px solid #E2E8F0' }} />
+
+        <div>
+          <h2 style={{ fontSize: '1.6rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>1. Our Commitment</h2>
+          <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, marginBottom: '1rem' }}>Spam erodes trust in digital communication and harms individuals, businesses, and the broader internet ecosystem. Acriotech is committed to being a responsible participant in the technology industry, and we take active steps — both technically and contractually — to ensure our infrastructure is never weaponized for spam.</p>
+          <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8 }}>Acriotech's own outbound communications (sales outreach, product announcements, newsletters, event invitations) adhere to the highest permission-based marketing standards. We only contact individuals who have given explicit consent or with whom we have a legitimate business relationship as defined under applicable anti-spam laws.</p>
+        </div>
+
+        <div>
+          <h2 style={{ fontSize: '1.6rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>2. Applicable Laws</h2>
+          <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, marginBottom: '1rem' }}>All communications sent using Acriotech's infrastructure must comply with all applicable anti-spam laws, including but not limited to:</p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            {[
+              { law: 'CAN-SPAM Act (USA)', detail: 'Requires truthful headers and subject lines, a clear opt-out mechanism, and the sender\'s physical postal address. Commercial emails must be identified as advertisements where applicable.' },
+              { law: 'CASL — Canada\'s Anti-Spam Legislation', detail: 'Requires express or implied consent before sending commercial electronic messages (CEMs). Records of 
+```
+
+## src/app/company/careers/page.tsx
+
+```tsx
+"use client";
+
+import { useState } from "react";
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, Globe2, Heart, Laptop, Zap, Users, X, Loader2, CheckCircle2, Clock, Coffee } from "lucide-react";
+import Link from "next/link";
+
+const roles = [
+  {
+    title: "Backend Node.js Developer",
+    dept: "Engineering",
+    location: "Remote (Global)",
+    type: "Full-time & Internship"
+  },
+  {
+    title: "Full Stack Developer",
+    dept: "Engineering",
+    location: "Remote (Global)",
+    type: "Full-time & Internship"
+  },
+  {
+    title: "Frontend Developer",
+    dept: "Engineering",
+    location: "Remote (Global)",
+    type: "Full-time & Internship"
+  },
+  {
+    title: "Flutter Developer",
+    dept: "Mobile Engineering",
+    location: "Remote (Global)",
+    type: "Full-time & Internship"
+  },
+  {
+    title: "Go and Rust Developer",
+    dept: "Engineering",
+    location: "Remote (Global)",
+    type: "Full-time & Internship"
+  }
+];
+
+const benefits = [
+  { icon: Globe2, title: "Work Anywhere", desc: "We are a remote-first organization. Work from wherever you are most productive." },
+  { icon: Zap, title: "Best-in-Class Hardware", desc: "Powerful laptops and large monitors, ordered and configured before your first day — plus budget for any accessories you need." },
+  { icon: Heart, title: "Health & Wellness", desc: "Global health insurance for you and your dependents — including mental health support and a wellness stipend." },
+  { icon: Laptop, title: "Continuous Learning", desc: "We sponsor your professional development through conferences, courses, and certifications." },
+  { icon: Clock, title: "Flexible Hours", desc: "We focus on outcomes, not hours logged. Design your own schedule around your peak productivity windows." },
+  { icon: Coffee, title: "Rest & Recharge", desc: "Unlimited paid time off with a mandatory 4-week minimum. We want you rested and avoiding burnout." }
+];
+
+export default function CareersPage() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedRole, setSelectedRole] = useState("");
+  
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    countryCode: '+1',
+    mobile: '',
+    applyAs: 'Job'
+  });
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleApplyClick = (roleTitle: string) => {
+    setSelectedRole(roleTitle);
+    setModalOpen(true);
+    setSuccess(false);
+    setError("");
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+
+    try {
+      const response = await fetch('/api/apply', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, role: selectedRole }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit application');
+      }
+```
+
+## src/app/company/methodology/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, Code2, GitMerge, Server, Activity, ShieldCheck, Cpu } from "lucide-react";
+import Link from "next/link";
+
+const steps = [
+  {
+    title: "Discovery & Architecture",
+    icon: Cpu,
+    desc: "We don't start coding until the architecture is proven. We map out data flows, define service boundaries, and select the exact stack needed for your scale."
+  },
+  {
+    title: "Iterative Engineering",
+    icon: Code2,
+    desc: "Two-week sprints with tangible deliverables. No black boxes. You get access to our staging environments and issue trackers from day one."
+  },
+  {
+    title: "Continuous Integration",
+    icon: GitMerge,
+    desc: "Every commit is automatically tested, linted, and deployed to preview environments. We catch regressions before they merge into the main branch."
+  },
+  {
+    title: "Security & Auditing",
+    icon: ShieldCheck,
+    desc: "Penetration testing and dependency scanning are baked into our pipeline. We build systems compliant with SOC2, HIPAA, and GDPR by default."
+  },
+  {
+    title: "Production Deployment",
+    icon: Server,
+    desc: "Zero-downtime deployments utilizing blue-green or canary release strategies. We manage the infrastructure so you can focus on the product."
+  },
+  {
+    title: "Telemetry & Maintenance",
+    icon: Activity,
+    desc: "Post-launch, we instrument your application with comprehensive logging and tracing to proactively detect anomalies before users report them."
+  }
+];
+
+export default function MethodologyPage() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FFFFFF' }}>
+      <NavBar />
+
+      {/* Hero Section */}
+      <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '7rem', background: '#0F172A', color: '#FFFFFF' }}>
+        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#1E293B', color: '#38BDF8', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 700, textTransform: 'uppercase', marginBottom: '2rem' }}>
+            Our Methodology
+          </div>
+          <h1 style={{ fontSize: 'var(--font-hero)', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+            How we <span style={{ color: '#38BDF8' }}>build software.</span>
+          </h1>
+          <p style={{ fontSize: '1.25rem', color: '#94A3B8', lineHeight: 1.6, maxWidth: '700px' }}>
+            We treat software engineering as a discipline, not an art. Our methodology is built on predictability, observability, and ruthless pragmatism.
+          </p>
+        </div>
+      </section>
+
+      {/* Process Grid */}
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#FAFAFA' }}>
+        <div className="
+```
+
+## src/app/company/partners/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, Server, Cloud, Database, Lock, Hexagon } from "lucide-react";
+import Link from "next/link";
+
+const partners = [
+  {
+    name: "Amazon Web Services",
+    tier: "Advanced Consulting Partner",
+    desc: "We build globally distributed, highly available architectures on AWS using EKS, Lambda, and DynamoDB. Certified experts in Security and Database migrations.",
+    icon: Cloud,
+    color: "#F59E0B"
+  },
+  {
+    name: "Google Cloud Platform",
+    tier: "Premier Partner",
+    desc: "Leveraging GCP's superior networking and BigQuery data warehousing to build high-throughput analytics engines and machine learning pipelines.",
+    icon: Database,
+    color: "#4285F4"
+  },
+  {
+    name: "Vercel",
+    tier: "Agency Partner",
+    desc: "We exclusively deploy our Next.js monoliths and frontend applications on Vercel's edge network for unparalleled core web vitals and developer velocity.",
+    icon: Hexagon,
+    color: "#0F172A"
+  },
+  {
+    name: "Cloudflare",
+    tier: "Enterprise Partner",
+    desc: "Protecting infrastructure at the edge. We implement Cloudflare Zero Trust, WAF, and DDoS mitigation for all public-facing enterprise deployments.",
+    icon: Lock,
+    color: "#F97316"
+  }
+];
+
+export default function PartnersPage() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FFFFFF' }}>
+      <NavBar />
+
+      {/* Hero Section */}
+      <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '7rem', background: '#FAFAFA', borderBottom: '1px solid #EAEAEA' }}>
+        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#F1F5F9', color: '#475569', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 700, textTransform: 'uppercase', marginBottom: '2rem' }}>
+            <Server size={16} /> Technology Partners
+          </div>
+          <h1 style={{ fontSize: 'var(--font-hero)', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+            We stand on the <br/><span style={{ color: '#64748B' }}>shoulders of giants.</span>
+          </h1>
+          <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, maxWidth: '700px', margin: '0 auto' }}>
+            We don't reinvent the wheel. We integrate best-in-class managed services and cloud infrastructure to deliver secure, scalable systems.
+          </p>
+        </div>
+      </section>
+
+      {/* Partners Grid */}
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF' }}>
+        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(aut
+```
+
+## src/app/contact-us/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { MapPin, ArrowRight, Briefcase, HeartHandshake, MessageSquare, CheckCircle2, Building, Megaphone, TrendingUp, FileText, Code2, Compass } from "lucide-react";
+import { useState } from "react";
+
+export default function ContactUs() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    company: '',
+    message: '',
+    companyWebsite: ''
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Honeypot: silently drop bot submissions
+    if (formData.companyWebsite) {
+      setSubmitStatus('success');
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          company: formData.company,
+          message: formData.message,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ firstName: '', lastName: '', email: '', company: '', message: '', companyWebsite: '' });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
+      <NavBar />
+      
+      {/* Hero */}
+      <section style={{ background: '#FFFFFF', paddingTop: '12rem', paddingBottom: '3rem', borderBottom: '1px solid #E2E8F0' }}>
+        <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+          <h1 style={{ fontSize: '3.5rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.03em', marginBottom: '1.5rem' }}>Contact Acriotech</h1>
+          <p style={{ fontSize: '1.25rem', color: '#475569', maxWidth: '640px', lineHeight: 1.6, marginBottom: '1rem' }}>We&apos;re here to help. Route your inquiry to the right department or reach out to our global engineering team directly.</p>
+          <p style={{ fontSize: '1.05rem', color: '#4B61B8', fontWeight: 600, marginBottom: '2rem' }}>
+            Our enterprise team typically replies within 1 business day — often within 2 hours during IST working hours.
+          </p>
+          <a href="#direct-contact" style={{ display: 'inline-flex', alignItems: 'cente
+```
+
+## src/app/cookie-policy/page.tsx
+
+```tsx
+import LegalLayout from "@/components/LegalLayout";
+
+export default function CookiePolicy() {
+  return (
+    <LegalLayout activePath="/cookie-policy">
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+
+        <div>
+          <p style={{ fontSize: '0.85rem', color: '#4B61B8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>Last Updated: 01-Feb-2025</p>
+          <h1 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.02em', lineHeight: 1.2, marginBottom: '1.5rem' }}>Cookie Policy</h1>
+          <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.8 }}>This Cookie Policy explains how Acriotech Pvt. Ltd. ("Acriotech", "we", "us", or "our") uses cookies and similar tracking technologies on our website (acriotech.com) and within our software products. We believe in full transparency, so this policy is designed to clearly explain what we collect, why, and what choices you have.</p>
+        </div>
+
+        <hr style={{ border: 'none', borderTop: '1px solid #E2E8F0' }} />
+
+        <div>
+          <h2 style={{ fontSize: '1.6rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>1. What Are Cookies?</h2>
+          <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, marginBottom: '1rem' }}>Cookies are small text files that are placed on your device (computer, smartphone, or tablet) when you visit a website. They are widely used by website owners to make their websites work, work more efficiently, and to provide reporting information. Cookies set by the website owner (in this case, Acriotech) are called "first-party cookies." Cookies set by third parties are called "third-party cookies."</p>
+          <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8 }}>In addition to cookies, we may also use <strong>web beacons</strong> (tiny transparent images used to track email open rates and page visits), <strong>local storage</strong> (browser-based storage for application state), and <strong>session tokens</strong> (short-lived identifiers used for secure authentication). This policy covers all such technologies.</p>
+        </div>
+
+        <div>
+          <h2 style={{ fontSize: '1.6rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>2. Types of Cookies We Use</h2>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            {[
+              {
+                type: 'Strictly Necessary Cookies',
+                required: true,
+                color: '#EEF2FF',
+                border: '#C7D2FE',
+                desc: 'These cookies are essential for the website to function and cannot be switched off. They are set in response to your actions such as logging in, filling in forms, or setting privacy preferences. Without them, core functions of our site and application simply do not work.',
+                examples: ['Session authentication tokens', 'CSRF protection tok
+```
+
+## src/app/gdpr-compliance/page.tsx
+
+```tsx
+import LegalLayout from "@/components/LegalLayout";
+
+export default function GDPRCompliance() {
+  return (
+    <LegalLayout activePath="/gdpr-compliance">
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+
+        <div>
+          <p style={{ fontSize: '0.85rem', color: '#4B61B8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>Last Updated: 01-Feb-2025</p>
+          <h1 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.02em', lineHeight: 1.2, marginBottom: '1.5rem' }}>GDPR — What Acriotech is Doing About It</h1>
+          <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.8 }}>Acriotech has always honored its users' rights to data privacy and protection. We have no need to collect and process users' personal information beyond what is required for the functioning of our enterprise products, and this will never change. We have a privacy-conscious culture and view GDPR not as a compliance burden, but as an opportunity to demonstrate our values.</p>
+        </div>
+
+        <hr style={{ border: 'none', borderTop: '1px solid #E2E8F0' }} />
+
+        <div>
+          <h2 style={{ fontSize: '1.6rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>What is GDPR?</h2>
+          <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, marginBottom: '1rem' }}>The General Data Protection Regulation (EU) 2016/679 is a comprehensive EU-wide privacy and data protection law that came into effect on May 25, 2018. It significantly increases the obligations placed on organizations that process the personal data of EU and EEA residents, and dramatically strengthens the rights of those individuals.</p>
+          <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8 }}>GDPR applies to any globally operating company — not just EU-based businesses. Because Acriotech serves enterprise clients across Europe, Asia, and North America, GDPR compliance is our baseline standard for all global operations. We apply these protections to all users, regardless of their location.</p>
+        </div>
+
+        <div>
+          <h2 style={{ fontSize: '1.6rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>What is Personal Data?</h2>
+          <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, marginBottom: '1rem' }}>Personal data is any information that relates to an identified or identifiable natural person. GDPR covers a broad spectrum, including:</p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '1rem' }}>
+            {['Name & Email', 'IP Addresses', 'Phone Numbers', 'Location Data', 'Biometric Data', 'Financial Records', 'Health Information', 'Political Opinions', 'Genetic Data'].map((item) => (
+              <div key={item} style={{ padding: '0.75rem 1rem', background: '#F8FAFC', borderRadius: '8px', border: '1px solid #E2E8F0', 
+```
+
+## src/app/industries/education/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, GraduationCap, Video, Users2, ShieldCheck, Database, Layers } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+export default function EducationIndustry() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
+      <NavBar />
+
+      {/* Hero Section */}
+      <section style={{ paddingTop: '10rem', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '5rem', alignItems: 'center' }}>
+            <div>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#FFF7ED', color: '#C2410C', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+                <GraduationCap size={16} /> EdTech & E-Learning
+              </div>
+              <h1 style={{ fontSize: '4.2rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+                Platforms built for <span style={{ color: '#EA580C' }}>engagement.</span>
+              </h1>
+              <p style={{ fontSize: '1.2rem', color: '#475569', lineHeight: 1.6, marginBottom: '2.5rem', maxWidth: '600px' }}>
+                We build scalable Learning Management Systems (LMS), real-time video classrooms, and student data platforms that can handle massive concurrency spikes while protecting student privacy.
+              </p>
+              <div style={{ display: 'flex', gap: '1rem' }}>
+                <Link href="/contact-us" style={{ background: '#EA580C', color: '#FFFFFF', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s' }}>
+                  Discuss Your EdTech Product <ArrowRight size={18} />
+                </Link>
+              </div>
+            </div>
+
+            {/* Visual: Live Classroom UI */}
+            <div style={{ background: '#0F172A', borderRadius: '16px', padding: '2rem', border: '1px solid #334155', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)' }}>
+               <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#F8FAFC', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                 <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#EF4444', animation: 'pulse 2s infinite' }}></div>
+                 Live Classroom (CS-101)
+               </h4>
+               
+               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '1rem', marginBottom: '1rem' }}>
+                  {/
+```
+
+## src/app/industries/financial-services/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, Landmark, ShieldAlert, Scale, CreditCard, LockKeyhole, Activity } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+export default function FinancialServicesIndustry() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
+      <NavBar />
+
+      {/* Hero Section */}
+      <section style={{ paddingTop: '10rem', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '5rem', alignItems: 'center' }}>
+            <div>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#F0FDF4', color: '#16A34A', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+                <Landmark size={16} /> Fintech & Banking
+              </div>
+              <h1 style={{ fontSize: '4.2rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+                Architecture for systems <span style={{ color: '#16A34A' }}>where math must be perfect.</span>
+              </h1>
+              <p style={{ fontSize: '1.2rem', color: '#475569', lineHeight: 1.6, marginBottom: '2.5rem', maxWidth: '600px' }}>
+                Financial software doesn't just need to be fast. It needs absolute transactional integrity, immutable audit logs, and proactive defense against sophisticated fraud.
+              </p>
+              <div style={{ display: 'flex', gap: '1rem' }}>
+                <Link href="/contact-us" style={{ background: '#16A34A', color: '#FFFFFF', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s' }}>
+                  Discuss Financial Architecture <ArrowRight size={18} />
+                </Link>
+              </div>
+            </div>
+
+            {/* Visual: Transaction Ledger */}
+            <div style={{ background: '#0F172A', borderRadius: '16px', padding: '2rem', border: '1px solid #334155', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)' }}>
+               <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#F8FAFC', marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Event Sourced Ledger</h4>
+               
+               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', fontFamily: 'monospace', fontSize: '0.85rem', color: '#A5B4FC' }}>
+                 <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #334155', paddingBottom: '0.5rem' }}>
+                   <span>Tx_9482 (DEPOSIT)</span> <
+```
+
+## src/app/industries/government/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, Building, ShieldCheck, Scale, FileSignature, Lock, Users, Server } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+export default function GovernmentIndustry() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
+      <NavBar />
+
+      {/* Hero Section */}
+      <section style={{ paddingTop: '10rem', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '5rem', alignItems: 'center' }}>
+            <div>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#EFF6FF', color: '#1D4ED8', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+                <Building size={16} /> Public Sector & GovTech
+              </div>
+              <h1 style={{ fontSize: '4.2rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+                Software built for <span style={{ color: '#2563EB' }}>absolute compliance.</span>
+              </h1>
+              <p style={{ fontSize: '1.2rem', color: '#475569', lineHeight: 1.6, marginBottom: '2.5rem', maxWidth: '600px' }}>
+                We build secure, accessible digital services for local, state, and federal agencies. From FedRAMP-ready cloud architectures to Section 508-compliant citizen portals, we engineer for the public trust.
+              </p>
+              <div style={{ display: 'flex', gap: '1rem' }}>
+                <Link href="/contact-us" style={{ background: '#2563EB', color: '#FFFFFF', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s' }}>
+                  Modernize Agency Tech <ArrowRight size={18} />
+                </Link>
+              </div>
+            </div>
+
+            {/* Visual: Secure Architecture */}
+            <div style={{ background: '#0F172A', borderRadius: '16px', padding: '2rem', border: '1px solid #334155', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)' }}>
+               <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#F8FAFC', marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>GovCloud Enclave</h4>
+               
+               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: '#1E293B', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #10B981' }}>
+                   <div style={{ width: '40px', height: '40px', backgrou
+```
+
+## src/app/industries/healthcare/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, Stethoscope, ShieldCheck, FileText, Database, Lock, ActivitySquare } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+export default function HealthcareIndustry() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
+      <NavBar />
+
+      {/* Hero Section */}
+      <section style={{ paddingTop: '10rem', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '5rem', alignItems: 'center' }}>
+            <div>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#ECFEFF', color: '#0891B2', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+                <Stethoscope size={16} /> Digital Health & Medical
+              </div>
+              <h1 style={{ fontSize: '4.2rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+                Software built for the <span style={{ color: '#0891B2' }}>clinical context.</span>
+              </h1>
+              <p style={{ fontSize: '1.2rem', color: '#475569', lineHeight: 1.6, marginBottom: '2.5rem', maxWidth: '600px' }}>
+                We build compliant, interoperable medical software that respects provider workflows. From EHR integrations to patient telemetry dashboards, we design for outcomes and strict privacy.
+              </p>
+              <div style={{ display: 'flex', gap: '1rem' }}>
+                <Link href="/contact-us" style={{ background: '#0891B2', color: '#FFFFFF', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s' }}>
+                  Discuss Health Tech <ArrowRight size={18} />
+                </Link>
+              </div>
+            </div>
+
+            {/* Visual: Patient Record Secure */}
+            <div style={{ background: '#0F172A', borderRadius: '16px', padding: '2rem', border: '1px solid #334155', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)', position: 'relative' }}>
+               <div style={{ position: 'absolute', top: '-15px', right: '-15px', background: '#10B981', color: '#FFFFFF', padding: '0.5rem 1rem', borderRadius: '50px', fontSize: '0.75rem', fontWeight: 800, display: 'flex', alignItems: 'center', gap: '0.4rem', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}>
+                 <ShieldCheck size={14} /> HIPAA Compliant
+               </div>
+               
+               <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', marginBottom: '1.5rem', borderBottom: '1px s
+```
+
+## src/app/industries/hospitality/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, UtensilsCrossed, CalendarDays, KeySquare, BedDouble, ArrowUpRight, CheckCircle } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+export default function HospitalityIndustry() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
+      <NavBar />
+
+      {/* Hero Section */}
+      <section style={{ paddingTop: '10rem', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '5rem', alignItems: 'center' }}>
+            <div>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#FEF2F2', color: '#B91C1C', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+                <UtensilsCrossed size={16} /> Hospitality & Travel
+              </div>
+              <h1 style={{ fontSize: '4.2rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+                Engineering for the <span style={{ color: '#DC2626' }}>guest experience.</span>
+              </h1>
+              <p style={{ fontSize: '1.2rem', color: '#475569', lineHeight: 1.6, marginBottom: '2.5rem', maxWidth: '600px' }}>
+                We modernize Property Management Systems (PMS), build high-conversion booking engines, and implement dynamic pricing algorithms that maximize yield for hotels, restaurants, and travel platforms.
+              </p>
+              <div style={{ display: 'flex', gap: '1rem' }}>
+                <Link href="/contact-us" style={{ background: '#DC2626', color: '#FFFFFF', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s' }}>
+                  Modernize Your Tech Stack <ArrowRight size={18} />
+                </Link>
+              </div>
+            </div>
+
+            {/* Visual: Booking Dashboard */}
+            <div style={{ background: '#0F172A', borderRadius: '16px', padding: '2rem', border: '1px solid #334155', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)' }}>
+               <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#F8FAFC', marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                 <BedDouble size={18} color="#FCA5A5" /> Live Occupancy
+               </h4>
+               
+               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
+                 <div style={{ background
+```
+
+## src/app/industries/logistics/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, Truck, MapPin, Package, Clock, ShieldCheck, Box } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+export default function LogisticsIndustry() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
+      <NavBar />
+
+      {/* Hero Section */}
+      <section style={{ paddingTop: '10rem', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '5rem', alignItems: 'center' }}>
+            <div>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#F4F4F5', color: '#52525B', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+                <Truck size={16} /> Supply Chain & Logistics
+              </div>
+              <h1 style={{ fontSize: '4.2rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+                Engineering for physical <span style={{ color: '#52525B' }}>movement.</span>
+              </h1>
+              <p style={{ fontSize: '1.2rem', color: '#475569', lineHeight: 1.6, marginBottom: '2.5rem', maxWidth: '600px' }}>
+                We build the digital infrastructure that orchestrates physical assets. From real-time fleet routing to warehouse management systems, we optimize the complex calculus of modern supply chains.
+              </p>
+              <div style={{ display: 'flex', gap: '1rem' }}>
+                <Link href="/contact-us" style={{ background: '#3F3F46', color: '#FFFFFF', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s' }}>
+                  Optimize Your Operations <ArrowRight size={18} />
+                </Link>
+              </div>
+            </div>
+
+            {/* Visual: Live Map UI */}
+            <div style={{ background: '#0F172A', borderRadius: '16px', padding: '2rem', border: '1px solid #334155', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)', position: 'relative', overflow: 'hidden' }}>
+               {/* Map Background Simulation */}
+               <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', opacity: 0.1, backgroundSize: '20px 20px', backgroundImage: 'linear-gradient(to right, #334155 1px, transparent 1px), linear-gradient(to bottom, #334155 1px, transparent 1px)' }}></div>
+               
+               <div style={{ position: 'relative', zIndex: 10 }}>
+                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '
+```
+
+## src/app/industries/manufacturing/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, Factory, Activity, HardDrive, ShieldAlert, Cpu, CheckCircle } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+export default function ManufacturingIndustry() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
+      <NavBar />
+
+      {/* Hero Section */}
+      <section style={{ paddingTop: '10rem', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '5rem', alignItems: 'center' }}>
+            <div>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#F1F5F9', color: '#0F172A', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+                <Factory size={16} /> Heavy Industry & Manufacturing
+              </div>
+              <h1 style={{ fontSize: '4.2rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+                Software built for the <span style={{ color: '#F59E0B' }}>factory floor.</span>
+              </h1>
+              <p style={{ fontSize: '1.2rem', color: '#475569', lineHeight: 1.6, marginBottom: '2.5rem', maxWidth: '600px' }}>
+                We build Industrial IoT (IIoT) platforms, supply chain visibility tools, and predictive maintenance pipelines that connect legacy machinery to modern cloud analytics.
+              </p>
+              <div style={{ display: 'flex', gap: '1rem' }}>
+                <Link href="/contact-us" style={{ background: '#F59E0B', color: '#FFFFFF', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s' }}>
+                  Discuss Manufacturing Software <ArrowRight size={18} />
+                </Link>
+              </div>
+            </div>
+
+            {/* Visual: IIoT Dashboard */}
+            <div style={{ background: '#0F172A', borderRadius: '16px', padding: '2rem', border: '1px solid #334155', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)' }}>
+               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #334155', paddingBottom: '1rem', marginBottom: '1.5rem' }}>
+                  <span style={{ color: '#F8FAFC', fontWeight: 600, fontSize: '0.9rem' }}>Assembly Line 4 Status</span>
+                  <div style={{ color: '#10B981', fontSize: '0.85rem', fontWeight: 700, background: 'rgba(16, 185, 129, 0.1)', padding: '0.2rem 0.5rem', borderRadius: '4px', display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Activity size={14} /> Activ
+```
+
+## src/app/industries/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, Factory, Stethoscope, GraduationCap, Truck, ShoppingBag, Landmark, UtensilsCrossed, Building, Rocket } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+const industryList = [
+  { slug: "manufacturing", name: "Manufacturing", desc: "IIoT integrations, supply chain visibility, and predictive maintenance for heavy industry.", icon: Factory },
+  { slug: "healthcare", name: "Healthcare", desc: "HIPAA-compliant patient portals, telehealth integrations, and clinical data pipelines.", icon: Stethoscope },
+  { slug: "financial-services", name: "Financial Services", desc: "High-throughput transaction systems, PCI-DSS compliance, and fintech infrastructure.", icon: Landmark },
+  { slug: "logistics", name: "Logistics & Supply Chain", desc: "Real-time routing engines, inventory management, and warehouse orchestration.", icon: Truck },
+  { slug: "retail", name: "Retail & E-Commerce", desc: "Omnichannel inventory sync, headless commerce, and high-conversion storefronts.", icon: ShoppingBag },
+  { slug: "education", name: "Education", desc: "Scalable LMS platforms, student portals, and virtual classroom infrastructure.", icon: GraduationCap },
+  { slug: "hospitality", name: "Hospitality", desc: "Property management systems, dynamic pricing engines, and guest experience apps.", icon: UtensilsCrossed },
+  { slug: "government", name: "Government & Public Sector", desc: "FedRAMP-ready architectures, public record digitization, and secure citizen portals.", icon: Building },
+  { slug: "startups", name: "High-Growth Startups", desc: "Rapid MVP development, technical due diligence, and scalable Series A architectures.", icon: Rocket },
+];
+
+export default function IndustriesIndexPage() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FFFFFF' }}>
+      <NavBar />
+
+      {/* Hero Section */}
+      <section className="dark-section" style={{ paddingTop: '10rem', paddingBottom: '7rem', background: '#0F172A', color: '#FFFFFF' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ maxWidth: '800px' }}>
+            <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#A78BFA', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>
+              Domain Expertise
+            </div>
+            <h1 style={{ fontSize: '4.5rem', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+              Engineering decisions change when <span style={{ color: '#A78BFA' }}>the work changes.</span>
+            </h1>
+            <p style={{ fontSize: '1.25rem', color: '#94A3B8', lineHeight: 1.6, marginBottom: '3rem' }}>
+              Acriotech studies the workflows, risk tolerance, data practices, and operational realitie
+```
+
+## src/app/industries/retail/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, ShoppingBag, Layers, RefreshCcw, Smartphone, CreditCard, LayoutTemplate } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+export default function RetailIndustry() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
+      <NavBar />
+
+      {/* Hero Section */}
+      <section style={{ paddingTop: '10rem', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '5rem', alignItems: 'center' }}>
+            <div>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#FDF4FF', color: '#C026D3', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+                <ShoppingBag size={16} /> Retail & E-Commerce
+              </div>
+              <h1 style={{ fontSize: '4.2rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+                Storefronts built for <span style={{ color: '#C026D3' }}>milliseconds.</span>
+              </h1>
+              <p style={{ fontSize: '1.2rem', color: '#475569', lineHeight: 1.6, marginBottom: '2.5rem', maxWidth: '600px' }}>
+                In commerce, latency is abandoned revenue. We decouple front-end experiences from heavy back-end ERPs to create headless architectures that are blisteringly fast, highly converting, and omnichannel by default.
+              </p>
+              <div style={{ display: 'flex', gap: '1rem' }}>
+                <Link href="/contact-us" style={{ background: '#C026D3', color: '#FFFFFF', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s' }}>
+                  Upgrade Your Storefront <ArrowRight size={18} />
+                </Link>
+              </div>
+            </div>
+
+            {/* Visual: Headless Architecture */}
+            <div style={{ background: '#0F172A', borderRadius: '16px', padding: '2rem', border: '1px solid #334155', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)' }}>
+               <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#F8FAFC', marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Headless Commerce Topology</h4>
+               
+               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '2rem' }}>
+                 <div style={{ width: '40px', height: '40px', background: '#334155', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Smartphone size={20} color="#F8FAFC" />
+```
+
+## src/app/industries/startups/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, Rocket, Code2, LineChart, FileSearch, Zap, Database } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+export default function StartupsIndustry() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
+      <NavBar />
+
+      {/* Hero Section */}
+      <section style={{ paddingTop: '10rem', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '5rem', alignItems: 'center' }}>
+            <div>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#FEF2F2', color: '#DC2626', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+                <Rocket size={16} /> High-Growth Startups
+              </div>
+              <h1 style={{ fontSize: '4.2rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+                Engineering for <span style={{ color: '#EF4444' }}>burn rate and scale.</span>
+              </h1>
+              <p style={{ fontSize: '1.2rem', color: '#475569', lineHeight: 1.6, marginBottom: '2.5rem', maxWidth: '600px' }}>
+                Startups die when they build the wrong thing too slowly. We act as the technical co-founder for Seed and Series A companies, accelerating MVP delivery while laying a foundation that won't require a total rewrite at Series B.
+              </p>
+              <div style={{ display: 'flex', gap: '1rem' }}>
+                <Link href="/contact-us" style={{ background: '#EF4444', color: '#FFFFFF', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s' }}>
+                  Accelerate Your MVP <ArrowRight size={18} />
+                </Link>
+              </div>
+            </div>
+
+            {/* Visual: MVP Dashboard */}
+            <div style={{ background: '#0F172A', borderRadius: '16px', padding: '2rem', border: '1px solid #334155', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)' }}>
+               <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#F8FAFC', marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Sprint Velocity</h4>
+               
+               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '1.5rem' }}>
+                 <div style={{ background: '#1E293B', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #10B981' }}>
+                    <div style={{ fontSize: '0.75rem', color: '#94A3B8', fontWeight: 600, textTransform: 'u
+```
+
+## src/app/insights/blog/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, BookOpen, Terminal, Clock, User, ChevronRight } from "lucide-react";
+import Link from "next/link";
+
+const blogPosts = [
+  {
+    title: "Why We Choose PostgreSQL for Everything First",
+    category: "Architecture",
+    date: "Mar 12, 2026",
+    author: "Elena Rodriguez",
+    readTime: "8 min read",
+    desc: "Before you reach for MongoDB or DynamoDB, consider that a properly tuned Postgres instance can handle 95% of 'Big Data' workloads while providing absolute relational certainty."
+  },
+  {
+    title: "The Fallacy of 'Multi-Cloud' for Early Stage Startups",
+    category: "Cloud Ops",
+    date: "Feb 28, 2026",
+    author: "David Chen",
+    readTime: "6 min read",
+    desc: "Abstracting your infrastructure to avoid vendor lock-in usually results in the worst of all worlds: high latency, lowest-common-denominator features, and massive engineering overhead."
+  },
+  {
+    title: "Implementing RAG without Leaking PII",
+    category: "AI & Machine Learning",
+    date: "Feb 15, 2026",
+    author: "Sarah Jenkins",
+    readTime: "12 min read",
+    desc: "A technical deep-dive into building Retrieval-Augmented Generation pipelines that aggressively redact Personally Identifiable Information before vector embedding."
+  },
+  {
+    title: "Micro-Frontends: When the Cure is Worse Than the Disease",
+    category: "Frontend",
+    date: "Jan 30, 2026",
+    author: "Marcus Thorne",
+    readTime: "9 min read",
+    desc: "Micro-frontends solve organizational problems, not technical ones. If your team is under 50 engineers, a clean Next.js monolith will almost always deploy faster and break less."
+  }
+];
+
+export default function BlogIndex() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
+      <NavBar />
+
+      {false && (
+        <>
+      {/* Hero Section */}
+      <section style={{ paddingTop: '10rem', paddingBottom: '6rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
+        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#F1F5F9', color: '#334155', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+            <BookOpen size={16} /> Engineering Blog
+          </div>
+          <h1 style={{ fontSize: '4rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+            Opinions derived from <br/><span style={{ color: '#0EA5E9' }}>production outages.</span>
+          </h1>
+          <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, maxWidth: '700px' }}>
+            We write about software engineering, system design, and the often messy reality of building enterprise products that people act
+```
+
+## src/app/insights/case-studies/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, FileText, TrendingUp, Building2, Zap, Server } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+const cases = [
+  {
+    client: "FinTech Unicorn (NDA)",
+    industry: "Financial Services",
+    title: "Scaling a Core Banking Ledger to 10k TPS",
+    metric1: { label: "Latency Reduction", value: "84%" },
+    metric2: { label: "Cloud Spend ROI", value: "3.2x" },
+    desc: "We rewrote an unstable Ruby on Rails monolith into a highly concurrent Go microservices architecture, utilizing event sourcing and Kafka to handle high-frequency trading volumes.",
+    tags: ["Go", "Apache Kafka", "Kubernetes", "PostgreSQL"]
+  },
+  {
+    client: "Global Logistics Provider",
+    industry: "Supply Chain",
+    title: "Real-time Fleet Routing with NP-Hard Constraints",
+    metric1: { label: "Fuel Savings", value: "12%" },
+    metric2: { label: "Route Calc Time", value: "< 2s" },
+    desc: "Implemented a custom OR-Tools heuristic engine to calculate optimal delivery routes for 4,000 trucks daily, factoring in strict delivery windows and real-time traffic data.",
+    tags: ["Python", "OR-Tools", "React", "WebSockets"]
+  },
+  {
+    client: "National Health Network",
+    industry: "Healthcare",
+    title: "Zero-Trust Patient Data Lake",
+    metric1: { label: "Compliance", value: "HIPAA/SOC2" },
+    metric2: { label: "Data Ingest", value: "2TB/day" },
+    desc: "Architected a secure data lake on AWS GovCloud that aggregates HL7 feeds from 40+ hospitals, using strict RBAC and automated PII redaction pipelines.",
+    tags: ["AWS", "Terraform", "Python", "Snowflake"]
+  }
+];
+
+export default function CaseStudiesPage() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
+      <NavBar />
+
+      <section className="dark-section" style={{ paddingTop: '10rem', paddingBottom: '6rem', background: '#0F172A', color: '#FFFFFF' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#1E293B', color: '#38BDF8', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+            <FileText size={16} /> Customer Success
+          </div>
+          <h1 style={{ fontSize: '4.5rem', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+            Proof of <span style={{ color: '#38BDF8' }}>Execution.</span>
+          </h1>
+          <p style={{ fontSize: '1.25rem', color: '#94A3B8', lineHeight: 1.6, maxWidth: '700px' }}>
+            We don't build toys. Read detailed technical breakdowns of how we architected, deployed, and scaled mission-critical systems for enterprise clients.
+          </p>
+        </div>
+      </secti
+```
+
+## src/app/insights/news-press/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { Newspaper, ArrowUpRight, Trophy, Handshake, Globe } from "lucide-react";
+import Link from "next/link";
+
+const news = [
+  {
+    type: "Company Milestone",
+    title: "Acriotech Achieves AWS Advanced Tier Services Partner Status",
+    date: "April 02, 2026",
+    desc: "Recognizing our proven track record in migrating complex legacy enterprise workloads to AWS, while adhering strictly to the Well-Architected Framework.",
+    icon: Trophy
+  },
+  {
+    type: "Open Source",
+    title: "Acriotech Open-Sources 'Sentinel': A Postgres RBAC Extension",
+    date: "March 15, 2026",
+    desc: "We are releasing our internal Row-Level Security policy generator to the open-source community to help teams secure multi-tenant SaaS applications faster.",
+    icon: Globe,
+    linkText: "View on GitHub"
+  },
+  {
+    type: "Partnership",
+    title: "Announcing Strategic Partnership with Vercel",
+    date: "January 28, 2026",
+    desc: "Acriotech joins the Vercel Agency Partner program to accelerate our delivery of high-performance, edge-rendered React applications for enterprise commerce.",
+    icon: Handshake,
+    linkText: "Read the Announcement"
+  }
+];
+
+export default function NewsPressPage() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
+      <NavBar />
+
+      <section style={{ paddingTop: '10rem', paddingBottom: '6rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
+        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#F1F5F9', color: '#475569', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+            <Newspaper size={16} /> News & Announcements
+          </div>
+          <h1 style={{ fontSize: '4rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+            Company <span style={{ color: '#475569' }}>Updates.</span>
+          </h1>
+          <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, maxWidth: '700px' }}>
+            The latest milestones, open-source releases, and strategic partnerships from the team at Acriotech.
+          </p>
+        </div>
+      </section>
+
+      <section style={{ padding: '6rem 0', background: '#FAFAFA' }}>
+        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+             {news.map((item, i) => (
+               <div key={i} style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '16px', padding: '3rem', transition: 'box-shadow 0.2s', display: 'flex', gap: '2rem' }} className="news-card">
+                 <div 
+```
+
+## src/app/insights/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, BookOpen, Presentation, FileText, Newspaper, Lightbulb, Search, PlayCircle } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+const insightList = [
+  { slug: "case-studies", name: "Case Studies", desc: "Detailed examinations of how we solved complex business problems for our clients, complete with metrics and technical choices.", icon: FileText },
+  { slug: "tech-trends", name: "Tech Trends", desc: "Our perspective on the hype cycle. What's actually ready for production, and what should stay in the lab.", icon: Lightbulb },
+  { slug: "research-reports", name: "Research Reports", desc: "Proprietary data and surveys exploring industry benchmarks, engineering velocity, and security postures.", icon: Search },
+  { slug: "webinars", name: "Webinars & Events", desc: "Live and on-demand sessions with our Principal Engineers discussing system design and operational excellence.", icon: PlayCircle },
+  { slug: "news-press", name: "News & Press", desc: "Company announcements, open-source contributions, and media coverage of Acriotech.", icon: Newspaper },
+];
+
+export default function InsightsIndexPage() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FFFFFF' }}>
+      <NavBar />
+
+      {/* Hero Section */}
+      <section style={{ paddingTop: '10rem', paddingBottom: '7rem', background: '#FAFAFA' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ maxWidth: '800px' }}>
+            <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#0EA5E9', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>
+              Knowledge Base
+            </div>
+            <h1 style={{ fontSize: '4.5rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+              We write down <span style={{ color: '#0EA5E9' }}>how we think.</span>
+            </h1>
+            <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, marginBottom: '3rem' }}>
+              Transparency is our default. We open-source our architectural decisions, publish our failures, and share the exact methodologies we use to build enterprise software.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Resource */}
+      <section style={{ padding: '0 0 6rem 0', background: '#FAFAFA' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <Link href="/insights/whitepapers" style={{ textDecoration: 'none' }}>
+             <div style={{ background: '#0F172A', borderRadius: '24px', padding: '4rem', display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '4rem', alignItems: 'center', transition: 'transform 0.2s, box-shadow 
+```
+
+## src/app/insights/research-reports/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, Search, BarChart3, Download, PieChart, Users2 } from "lucide-react";
+import Link from "next/link";
+
+const reports = [
+  {
+    title: "State of DevOps & CI/CD 2026",
+    desc: "A survey of 500+ VP of Engineering leaders on DORA metrics, MTTR (Mean Time To Recovery), and the adoption curve of Platform Engineering over traditional DevOps.",
+    date: "Q1 2026",
+    metric: "500+ Teams Surveyed",
+    icon: BarChart3
+  },
+  {
+    title: "The True Cost of Cloud Egress Fees",
+    desc: "An analysis of AWS, GCP, and Azure billing data across 50 enterprise clients, detailing how egress bandwidth charges often dwarf compute costs in data-heavy applications.",
+    date: "Q4 2025",
+    metric: "50 Enterprise Bills Analyzed",
+    icon: PieChart
+  },
+  {
+    title: "Remote Developer Productivity Index",
+    desc: "Comparing PR merge velocity, code churn, and incident rates between fully remote, hybrid, and fully on-premise engineering teams.",
+    date: "Q3 2025",
+    metric: "1M+ Commits Analyzed",
+    icon: Users2
+  }
+];
+
+export default function ResearchReportsPage() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
+      <NavBar />
+
+      <section style={{ paddingTop: '10rem', paddingBottom: '6rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
+        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#F0FDF4', color: '#16A34A', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+            <Search size={16} /> Research & Data
+          </div>
+          <h1 style={{ fontSize: '4rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+            Data over <span style={{ color: '#16A34A' }}>dogma.</span>
+          </h1>
+          <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, maxWidth: '700px' }}>
+            We aggregate telemetry, code metrics, and leadership surveys to publish quantitative reports on how the best software teams actually operate.
+          </p>
+        </div>
+      </section>
+
+      <section style={{ padding: '6rem 0', background: '#FAFAFA' }}>
+        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(1, 1fr)', gap: '2rem' }}>
+             {reports.map((report, i) => (
+               <div key={i} style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '16px', padding: '3rem', display: 'flex', gap: '3rem', alignItems: 'center', transition: 'box-shadow 0.2s' }} className="report-card">
+                 <div style={{ width: '80px', height
+```
+
+## src/app/insights/tech-trends/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, Lightbulb, Zap, TrendingDown, RefreshCcw } from "lucide-react";
+import Link from "next/link";
+
+const trends = [
+  {
+    title: "The Great 'Repatriation' from Cloud to Bare Metal",
+    status: "Trending Up",
+    icon: Zap,
+    color: "#10B981",
+    desc: "Following DHH's lead with 37signals, many mid-sized SaaS companies are realizing that AWS premiums for managed services outweigh the DevOps costs of racking their own servers.",
+    takeaway: "If your compute workload is predictable and highly intensive, the cloud is no longer the default answer."
+  },
+  {
+    title: "AI Coding Assistants (Copilot, Cursor, etc.)",
+    status: "Mainstream Adoption",
+    icon: RefreshCcw,
+    color: "#3B82F6",
+    desc: "We have moved past the hype phase. AI assistants are now a baseline requirement for engineering velocity, shifting the bottleneck from writing boilerplate to system architecture and code review.",
+    takeaway: "Junior engineers must now index heavily on debugging and system design, as raw syntax generation is commoditized."
+  },
+  {
+    title: "Blockchain for Enterprise Supply Chain",
+    status: "Trending Down",
+    icon: TrendingDown,
+    color: "#EF4444",
+    desc: "After billions invested in pilot programs, enterprise blockchain (like IBM TradeLens) is largely being shuttered. A centralized PostgreSQL database with strict RBAC and immutable append-only logs solves the problem faster and cheaper.",
+    takeaway: "Avoid distributed ledger technology unless you operate in a truly trustless, multi-party adversarial environment."
+  }
+];
+
+export default function TechTrendsPage() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
+      <NavBar />
+
+      <section style={{ paddingTop: '10rem', paddingBottom: '6rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
+        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#FFFBEB', color: '#D97706', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+            <Lightbulb size={16} /> Tech Trends
+          </div>
+          <h1 style={{ fontSize: '4rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+            Cutting through the <span style={{ color: '#D97706' }}>hype cycle.</span>
+          </h1>
+          <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, maxWidth: '700px' }}>
+            Our unfiltered perspective on what is actually ready for enterprise production, what is an expensive distraction, and where the industry is inevitably heading.
+          </p>
+        </div>
+      </section>
+
+      <section style={{ padding: '6rem 
+```
+
+## src/app/insights/webinars/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, PlayCircle, Calendar, Video, Clock } from "lucide-react";
+import Link from "next/link";
+
+const webinars = [
+  {
+    title: "Mastering Database Sharding in Postgres",
+    status: "Upcoming Live",
+    date: "April 15, 2026",
+    time: "1:00 PM EST",
+    desc: "When vertically scaling your database isn't enough anymore. Join our Principal Data Architect to walk through a live implementation of Citus for horizontally scaling a SaaS application.",
+    speaker: "Michael Chang, Principal Data Architect"
+  },
+  {
+    title: "Zero-Downtime Migrations: A Masterclass",
+    status: "On Demand",
+    date: "Recorded Feb 2026",
+    time: "45 min",
+    desc: "How to move 10 million rows from MySQL to PostgreSQL without dropping a single write operation. A step-by-step guide to logical replication and blue-green deployments.",
+    speaker: "Sarah Jenkins, VP of Engineering"
+  },
+  {
+    title: "The React Server Components Paradigm Shift",
+    status: "On Demand",
+    date: "Recorded Nov 2025",
+    time: "60 min",
+    desc: "Stop shipping massive JS bundles to the client. A deep dive into Next.js App Router, RSCs, and how to mentally shift from client-side state to server-side rendering.",
+    speaker: "Marcus Thorne, Lead Frontend Engineer"
+  }
+];
+
+export default function WebinarsPage() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
+      <NavBar />
+
+      <section className="dark-section" style={{ paddingTop: '10rem', paddingBottom: '6rem', background: '#0F172A', color: '#FFFFFF' }}>
+        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#1E293B', color: '#F43F5E', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+            <PlayCircle size={16} /> Webinars & Masterclasses
+          </div>
+          <h1 style={{ fontSize: '4rem', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+            Watch how we <span style={{ color: '#F43F5E' }}>build it.</span>
+          </h1>
+          <p style={{ fontSize: '1.25rem', color: '#94A3B8', lineHeight: 1.6, maxWidth: '700px' }}>
+            No marketing fluff, no sales pitches. Just our senior engineers sharing their screens, writing code, and explaining complex architectural patterns live.
+          </p>
+        </div>
+      </section>
+
+      <section style={{ padding: '6rem 0', background: '#F8FAFC' }}>
+        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(1, 1fr)', gap: '3rem' }}>
+             {webinars.map((webinar, i) => (
+               <div key={i} sty
+```
+
+## src/app/insights/whitepapers/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, Presentation, Download, FileText, Lock, LayoutTemplate } from "lucide-react";
+import Link from "next/link";
+
+const whitepapers = [
+  {
+    title: "The Pragmatic Guide to Microservices in 2026",
+    theme: "Architecture",
+    icon: LayoutTemplate,
+    desc: "A data-driven analysis of when distributed systems actually make financial sense, and when you should stick to a modular monolith. Includes cost-benefit matrices based on AWS/GCP pricing.",
+    pages: 42,
+    date: "March 2026"
+  },
+  {
+    title: "Zero-Trust Architecture for Cloud Native Apps",
+    theme: "Security",
+    icon: Lock,
+    desc: "How to implement continuous verification across microservices boundaries. A practical guide to mTLS, JWT validation, and RBAC policy enforcement at the API gateway level.",
+    pages: 35,
+    date: "January 2026"
+  },
+  {
+    title: "Serverless Economics: The Hidden Costs",
+    theme: "FinOps",
+    icon: Presentation,
+    desc: "An engineering leader's guide to predicting AWS Lambda and DynamoDB bills at scale. We analyze cold start penalties, API Gateway overhead, and when to migrate back to containers.",
+    pages: 28,
+    date: "November 2025"
+  }
+];
+
+export default function WhitepapersPage() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
+      <NavBar />
+
+      <section style={{ paddingTop: '10rem', paddingBottom: '6rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
+        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#F5F3FF', color: '#7C3AED', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+            <Presentation size={16} /> Whitepapers & Guides
+          </div>
+          <h1 style={{ fontSize: '4rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+            Deep architectural <span style={{ color: '#7C3AED' }}>research.</span>
+          </h1>
+          <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, maxWidth: '700px' }}>
+            Comprehensive, multi-page PDF guides written by our Principal Engineers. We dive past the marketing fluff into the actual code and cost structures of modern systems.
+          </p>
+        </div>
+      </section>
+
+      <section style={{ padding: '6rem 0', background: '#FAFAFA' }}>
+        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(1, 1fr)', gap: '2rem' }}>
+             {whitepapers.map((wp, i) => (
+               <div key={i} style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '16p
+```
+
+## src/app/ipr-complaints/page.tsx
+
+```tsx
+import LegalLayout from "@/components/LegalLayout";
+
+export default function IPRComplaints() {
+  return (
+    <LegalLayout activePath="/ipr-complaints">
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+
+        <div>
+          <p style={{ fontSize: '0.85rem', color: '#4B61B8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>Last Updated: 01-Feb-2025</p>
+          <h1 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.02em', lineHeight: 1.2, marginBottom: '1.5rem' }}>Intellectual Property Rights (IPR) Complaints</h1>
+          <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.8 }}>Acriotech deeply respects the intellectual property rights of all creators, innovators, and rights holders. We have adopted comprehensive policies to prevent infringement on our platform and within the software systems we build and operate. This page outlines how to report potential IP violations and how we handle such reports.</p>
+        </div>
+
+        <hr style={{ border: 'none', borderTop: '1px solid #E2E8F0' }} />
+
+        <div>
+          <h2 style={{ fontSize: '1.6rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>1. Our Approach to Intellectual Property</h2>
+          <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, marginBottom: '1rem' }}>Acriotech's core business is building proprietary software. We understand better than most how vital intellectual property protection is. Our engineering processes include:</p>
+          <ul style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+            <li><strong>Open Source License Audits:</strong> Every project undergoes an automated and manual open-source license review before deployment. We use FOSS license compliance tools to ensure we never inadvertently incorporate GPL or other copyleft code into proprietary deliverables without proper licensing.</li>
+            <li><strong>Software Bill of Materials (SBOM):</strong> We generate and maintain SBOMs for all major project deliverables, documenting every open-source and third-party component used.</li>
+            <li><strong>Developer Training:</strong> All Acriotech engineers receive training on IP fundamentals — including copyright, patents, trade secrets, and open-source licensing — as part of their onboarding.</li>
+            <li><strong>Client IP Ownership:</strong> Our standard contracts ensure clients own all custom-developed Work Product upon full payment, as specified in our Terms of Service.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 style={{ fontSize: '1.6rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>2. Copyright Infringement (DMCA Takedown Procedure)</h2>
+          <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, marginBottom: '1rem' }}>In accordance 
+```
+
+## src/app/page.tsx
+
+```tsx
+"use client";
+
+import Image from "next/image";
+import { motion, useScroll, useTransform, useInView, AnimatePresence } from "framer-motion";
+import { ArrowRight, Code2, Database, Shield, Zap, Layers, Network, Server, Smartphone, Terminal, CircleCheck, Play, ArrowUpRight, Cloud, Activity, Lock, Users, MonitorSmartphone, ChevronRight } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
+import Footer from "@/components/Footer";
+import NavBar from "@/components/NavBar";
+
+// --- Hero Architecture Illustration ---
+
+function EngineeringArchitecture() {
+  return (
+    <div className="hero-architecture-wrapper" style={{ position: 'relative', width: '100%', minHeight: '400px', height: 'clamp(400px, 60vw, 600px)' }}>
+      {/* Circuit Connections (Background) */}
+      <svg style={{ position: 'absolute', top: '10%', left: '0', width: '100%', height: '80%', zIndex: 0 }} viewBox="0 0 600 400" preserveAspectRatio="xMidYMid meet">
+        <motion.path d="M 150 100 L 300 100 L 300 200 L 450 200" fill="none" stroke="#7BAF35" strokeWidth="1.5" strokeDasharray="1000" initial={{ strokeDashoffset: 1000 }} animate={{ strokeDashoffset: 0 }} transition={{ duration: 4, ease: "easeInOut" }} />
+        <motion.path d="M 150 300 L 250 300 L 250 200" fill="none" stroke="#7BAF35" strokeWidth="1.5" strokeDasharray="1000" initial={{ strokeDashoffset: 1000 }} animate={{ strokeDashoffset: 0 }} transition={{ duration: 3, delay: 1, ease: "easeInOut" }} />
+        <motion.path d="M 450 100 L 450 50 L 550 50" fill="none" stroke="#7BAF35" strokeWidth="1.5" strokeDasharray="1000" initial={{ strokeDashoffset: 1000 }} animate={{ strokeDashoffset: 0 }} transition={{ duration: 2, delay: 2, ease: "easeInOut" }} />
+        {/* Animated Data Pulses */}
+        <motion.circle cx="150" cy="100" r="3" fill="#4B61B8" animate={{ cx: [150, 300, 300, 450], cy: [100, 100, 200, 200], opacity: [1, 1, 1, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "linear" }} />
+      </svg>
+
+      {/* Code Editor */}
+      <motion.div 
+        className="glass-panel"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        style={{ position: 'absolute', top: 'var(--hero-code-top)', left: 'var(--hero-code-left)', width: 'var(--hero-code-width)', background: '#0F172A', color: '#fff', padding: '1.2rem', zIndex: 2 }}
+      >
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '0.5rem' }}>
+          <Terminal size={14} color="#7BAF35" /> <span style={{ fontSize: '0.75rem', color: '#8892B0' }}>api/v2/core.ts</span>
+        </div>
+        <pre style={{ fontSize: '0.75rem', lineHeight: 1.8, margin: 0, fontFamily: 'monospace' }}>
+          <span style={{ color: '#C678DD' }}>import</span> {'{'} <span style={{ color: '#E5C07B' }}>Engine</span> {'}'} <span style={{ color: '#C678DD' }}>from</span> <span s
+```
+
+## src/app/privacy-policy/page.tsx
+
+```tsx
+import LegalLayout from "@/components/LegalLayout";
+
+export default function PrivacyPolicy() {
+  return (
+    <LegalLayout activePath="/privacy-policy">
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+
+        <div>
+          <p style={{ fontSize: '0.85rem', color: '#4B61B8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>Last Updated: 01-Feb-2025</p>
+          <h1 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.02em', lineHeight: 1.2, marginBottom: '1.5rem' }}>Privacy Policy</h1>
+          <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.8 }}>This Privacy Policy describes how Acriotech Pvt. Ltd. ("Acriotech", "we", "us", or "our") collects, uses, processes, and shares information about you when you use our websites, software products, and professional services. We are committed to protecting your personal data and being transparent about how we handle it.</p>
+        </div>
+
+        <hr style={{ border: 'none', borderTop: '1px solid #E2E8F0' }} />
+
+        <div>
+          <h2 style={{ fontSize: '1.6rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>1. Who We Are and How to Contact Us</h2>
+          <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, marginBottom: '1rem' }}>Acriotech is the data controller for personal data collected through our marketing website and corporate operations. For data processed as part of our enterprise software services, Acriotech acts as a data processor on behalf of our clients (who are the data controllers).</p>
+          <div style={{ padding: '1.5rem', background: '#F8FAFC', borderRadius: '12px', border: '1px solid #E2E8F0' }}>
+            <strong>Data Controller</strong><br />
+            Acriotech Pvt. Ltd.<br />
+            14, Shiv Narayan Complex, Virani Circle, Kaliyabid,<br />
+            Bhavnagar - 364002, Gujarat, India<br /><br />
+            <strong>Data Protection Officer (DPO):</strong> <a href="mailto:privacy@acriotech.com" style={{ color: '#4B61B8' }}>privacy@acriotech.com</a>
+          </div>
+        </div>
+
+        <div>
+          <h2 style={{ fontSize: '1.6rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>2. Information We Collect</h2>
+          <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, marginBottom: '1.25rem' }}>We collect information in several ways, and we are deliberate about what we collect and why:</p>
+
+          <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.75rem' }}>2.1 Information You Provide Directly</h3>
+          <ul style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '1.25rem' }}>
+            <li><strong>Contact and Account Information:</strong> Name, email address, phone number, job title, and company name when you fill out a contact form,
+```
+
+## src/app/refund-policy/page.tsx
+
+```tsx
+import LegalLayout from "@/components/LegalLayout";
+
+export default function RefundPolicy() {
+  return (
+    <LegalLayout activePath="/refund-policy">
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+
+        <div>
+          <p style={{ fontSize: '0.85rem', color: '#4B61B8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>Last Updated: 01-Feb-2025</p>
+          <h1 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.02em', lineHeight: 1.2, marginBottom: '1.5rem' }}>Refund & Cancellation Policy</h1>
+          <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.8 }}>Acriotech is committed to delivering measurable value on every engagement. We understand that business circumstances change, and this policy is designed to be fair to both parties. This policy applies to all services and products provided by Acriotech Pvt. Ltd., subject to any specific terms agreed in a signed Master Services Agreement (MSA) or Statement of Work (SOW).</p>
+        </div>
+
+        <div style={{ padding: '1.5rem', background: '#FEF3C7', borderRadius: '12px', border: '1px solid #FDE68A' }}>
+          <p style={{ fontSize: '1rem', color: '#92400E', lineHeight: 1.7 }}><strong>Important:</strong> In the event of a conflict between this general Refund Policy and a signed MSA or SOW, the terms of the MSA/SOW shall govern.</p>
+        </div>
+
+        <hr style={{ border: 'none', borderTop: '1px solid #E2E8F0' }} />
+
+        <div>
+          <h2 style={{ fontSize: '1.6rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>1. Custom Software Development & Professional Services</h2>
+          <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, marginBottom: '1rem' }}>Custom software engineering engagements are unique by nature. Our teams invest significant time in discovery, architecture, design, and development. For this reason, the following terms apply:</p>
+
+          <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.75rem' }}>1.1 Pre-Commencement Cancellations</h3>
+          <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, marginBottom: '1rem' }}>If an engagement is cancelled before any work has commenced (before the kickoff meeting and project setup), a full refund of any advance payment will be issued, less any non-refundable third-party costs already incurred on your behalf (e.g., software licenses, cloud setup fees). Processing of refunds takes 7-10 business days.</p>
+
+          <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.75rem' }}>1.2 Post-Commencement Cancellations</h3>
+          <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, marginBottom: '1rem' }}>Once work has commenced and is underway, fees are non-refundable for work already delivered or in progress. Payment is due for:</p>
+          <ul style={{ fontSize: '1.0
+```
+
+## src/app/security-compliance/page.tsx
+
+```tsx
+import LegalLayout from "@/components/LegalLayout";
+
+export default function SecurityCompliance() {
+  return (
+    <LegalLayout activePath="/security-compliance">
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+        
+        <div>
+          <p style={{ fontSize: '0.85rem', color: '#4B61B8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>Last Updated: 01-Feb-2025</p>
+          <h1 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.02em', lineHeight: 1.2, marginBottom: '1.5rem' }}>Security Compliance at Acriotech</h1>
+          <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.8 }}>At Acriotech, security is not a feature — it is the foundation. Every system we build, every line of code we ship, and every piece of infrastructure we operate is designed with a security-first mindset. Our enterprise clients trust us with their most sensitive data, and we take that responsibility with the utmost seriousness.</p>
+        </div>
+
+        <hr style={{ border: 'none', borderTop: '1px solid #E2E8F0' }} />
+
+        <div>
+          <h2 style={{ fontSize: '1.6rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>1. Our Security Philosophy</h2>
+          <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, marginBottom: '1rem' }}>Acriotech operates under the principle of <strong>Defense in Depth</strong> — a layered security strategy that ensures no single point of failure can compromise the integrity or confidentiality of our systems. We combine technical controls, administrative policies, and continuous human oversight to create a resilient security posture.</p>
+          <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8 }}>Our security program is aligned with the <strong>NIST Cybersecurity Framework (CSF 2.0)</strong>, covering five core functions: Identify, Protect, Detect, Respond, and Recover. This is not a checkbox exercise — these functions drive our actual engineering and operational processes day-to-day.</p>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '1.5rem' }}>
+          {[
+            { label: 'SOC 2 Type II', desc: 'Annual third-party audit verifying security, availability, and confidentiality controls.' },
+            { label: 'ISO/IEC 27001:2013', desc: 'Internationally certified Information Security Management System (ISMS).' },
+            { label: 'HIPAA & HITECH Ready', desc: 'PHI-safe infrastructure for healthcare clients with signed BAAs available.' },
+            { label: 'OWASP Top 10 Compliance', desc: 'All web applications are hardened against the OWASP Top 10 vulnerabilities before release.' },
+          ].map((cert) => (
+            <div key={cert.label} style={{ padding: '1.5rem', background: '#F8FAFC', borderRadius: '12px', border: '1px solid #E2E8F0' }}>
+              <div sty
+```
+
+## src/app/services/ai-integration/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, Bot, ShieldAlert, Cpu, Fingerprint, RefreshCcw, Hand } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+export default function AIIntegration() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
+      <NavBar />
+
+      {/* Hero Section */}
+      <section className="dark-section" style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '7rem', background: '#0F172A', color: '#FFFFFF' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
+            <div>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#FFF1F2', color: '#E11D48', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+                <Bot size={16} /> Pragmatic AI
+              </div>
+              <h1 style={{ fontSize: '4.2rem', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+                AI features with a <span style={{ color: '#E11D48' }}>defined job.</span>
+              </h1>
+              <p style={{ fontSize: '1.2rem', color: '#94A3B8', lineHeight: 1.6, marginBottom: '2.5rem', maxWidth: '600px' }}>
+                We don't build useless chat widgets. We integrate AI where it can dramatically improve a real business workflow, with clear boundaries around data privacy, evaluation, and human responsibility.
+              </p>
+              <div style={{ display: 'flex', gap: '1rem' }}>
+                <Link href="/contact-us" style={{ background: '#E11D48', color: '#FFFFFF', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s' }}>
+                  Explore AI Readiness <ArrowRight size={18} />
+                </Link>
+              </div>
+            </div>
+
+            {/* Visual: RAG System */}
+            <div style={{ background: '#1E293B', borderRadius: '16px', padding: '2rem', border: '1px solid #334155', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.5)' }}>
+               <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#F8FAFC', marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>AI Trust Boundary</h4>
+               
+               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: '#0F172A', padding: '1rem', borderRadius: '8px', border: '1px solid #334155' }}>
+                   <div style={{ width: '40px', height: '40px', background: '#FEE2E2',
+```
+
+## src/app/services/api-development-integration/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, Network, Code2, Lock, Activity, BookOpen, Fingerprint } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+export default function APIIntegration() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
+      <NavBar />
+
+      {/* Hero Section */}
+      <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
+            <div>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#FEF3C7', color: '#B45309', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+                <Network size={16} /> Data Portability
+              </div>
+              <h1 style={{ fontSize: '4.2rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+                Interfaces built for <span style={{ color: '#D97706' }}>resilience.</span>
+              </h1>
+              <p style={{ fontSize: '1.2rem', color: '#475569', lineHeight: 1.6, marginBottom: '2.5rem', maxWidth: '600px' }}>
+                Good APIs make ownership, change, and failure explicitly visible. We build integration boundaries that support your current workflows while anticipating future scale.
+              </p>
+              <div style={{ display: 'flex', gap: '1rem' }}>
+                <Link href="/contact-us" style={{ background: '#D97706', color: '#FFFFFF', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s' }}>
+                  Discuss Integration Needs <ArrowRight size={18} />
+                </Link>
+              </div>
+            </div>
+
+            {/* Visual: API Monitor */}
+            <div style={{ background: '#0F172A', borderRadius: '16px', padding: '2rem', border: '1px solid #334155', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)' }}>
+               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #334155', paddingBottom: '1rem', marginBottom: '1.5rem' }}>
+                  <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                     <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#10B981' }}></div>
+                     <span style={{ color: '#F8FAFC', fontWeight: 600, fontSize: '0.9rem' }}>api.acriotech.com</span>
+                  </div>
+                  <div style=
+```
+
+## src/app/services/cloud-architecture/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, Cloud, Server, AlertTriangle, ShieldCheck, DatabaseBackup, Gauge } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+export default function CloudArchitecture() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
+      <NavBar />
+
+      {/* Hero Section */}
+      <section className="dark-section" style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '7rem', background: '#0F172A', color: '#FFFFFF' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ maxWidth: '800px' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(255,255,255,0.1)', color: '#F8FAFC', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+              <Cloud size={16} color="#38BDF8" /> Infrastructure & Ops
+            </div>
+            <h1 style={{ fontSize: 'var(--font-hero)', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+              Cloud foundations shaped around <span style={{ color: '#38BDF8' }}>how you operate.</span>
+            </h1>
+            <p style={{ fontSize: '1.25rem', color: '#94A3B8', lineHeight: 1.6, marginBottom: '3rem' }}>
+              We don't just provision servers. We design highly available, cost-optimized cloud architectures that reduce operational surprise and give your engineering team an honest view of responsibility.
+            </p>
+            <div style={{ display: 'flex', gap: '1rem' }}>
+              <Link href="/contact-us" style={{ background: '#38BDF8', color: '#0F172A', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s' }}>
+                Audit Your Infrastructure <ArrowRight size={18} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* NEW SECTION 1: Multi-Cloud vs Single-Cloud (Methodology) */}
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
+            <div>
+               <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>The Pragmatic Cloud Strategy</h2>
+               <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.7, marginBottom: '2rem' }}>
+                 "Multi-cloud" is often an expensive distraction. We help organiza
+```
+
+## src/app/services/dedicated-development-teams/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, Users, Code, MessagesSquare, GraduationCap, Building2, Briefcase, CheckCircle, ShieldCheck } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+export default function DedicatedTeams() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FFFFFF' }}>
+      <NavBar />
+
+      {/* Hero Section */}
+      <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '7rem', background: '#FAFAFA', borderBottom: '1px solid #EAEAEA' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
+            <div>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#EFF6FF', color: '#1D4ED8', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+                <Users size={16} /> Engineering Capacity
+              </div>
+              <h1 style={{ fontSize: '4.2rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+                An engineering pod that <span style={{ color: '#2563EB' }}>fits your rhythm.</span>
+              </h1>
+              <p style={{ fontSize: '1.2rem', color: '#475569', lineHeight: 1.6, marginBottom: '2.5rem', maxWidth: '600px' }}>
+                Don't outsource to a black box. Our dedicated engineering pods embed directly into your company's Slack, Jira, and deployment cycles, operating as a seamless extension of your internal team.
+              </p>
+              <div style={{ display: 'flex', gap: '1rem' }}>
+                <Link href="/contact-us" style={{ background: '#2563EB', color: '#FFFFFF', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s' }}>
+                  Build Your Pod <ArrowRight size={18} />
+                </Link>
+              </div>
+            </div>
+
+            {/* Visual: Pod Integration */}
+            <div style={{ background: '#FFFFFF', borderRadius: '16px', padding: '3rem', border: '1px solid #E2E8F0', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.05)', position: 'relative' }}>
+               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
+                 <div style={{ textAlign: 'center' }}>
+                   <div style={{ width: '60px', height: '60px', background: '#F1F5F9', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 0.5rem auto' }}>
+                     <Building2 size={24} color="#64748B" />
+                   </div>
+    
+```
+
+## src/app/services/devops-ci-cd/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, GitMerge, FileCode2, PlayCircle, BarChart, Undo2, ShieldCheck, Zap } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+export default function DevOpsCICD() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
+      <NavBar />
+
+      {/* Hero Section */}
+      <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
+            <div>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#ECFDF5', color: '#047857', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+                <GitMerge size={16} /> Continuous Delivery
+              </div>
+              <h1 style={{ fontSize: '4.2rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+                A delivery path that makes <span style={{ color: '#10B981' }}>small changes safe.</span>
+              </h1>
+              <p style={{ fontSize: '1.2rem', color: '#475569', lineHeight: 1.6, marginBottom: '2.5rem', maxWidth: '600px' }}>
+                DevOps isn't a team; it's a practice. We connect code, infrastructure, security, and operational feedback so engineering organizations can release with confidence multiple times a day.
+              </p>
+              <div style={{ display: 'flex', gap: '1rem' }}>
+                <Link href="/contact-us" style={{ background: '#10B981', color: '#FFFFFF', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s' }}>
+                  Assess Your Pipeline <ArrowRight size={18} />
+                </Link>
+              </div>
+            </div>
+
+            {/* Visual: Terminal Pipeline */}
+            <div style={{ background: '#0F172A', borderRadius: '16px', padding: '2rem', border: '1px solid #334155', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)' }}>
+               <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1.5rem' }}>
+                  <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#EF4444' }}></div>
+                  <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#F59E0B' }}></div>
+                  <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#10B981' }}></div>
+               </div>
+               
+               <div style={{ display: 'flex', 
+```
+
+## src/app/services/maintenance-support/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, Wrench, HeartHandshake, Eye, AlertCircle, Clock, ShieldCheck, Activity } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+export default function MaintenanceSupport() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
+      <NavBar />
+
+      {/* Hero Section */}
+      <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
+            <div>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#F3F4F6', color: '#374151', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+                <Wrench size={16} /> SLA & Operations
+              </div>
+              <h1 style={{ fontSize: '4.2rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+                Steady care for software the business <span style={{ color: '#0F172A', textDecoration: 'underline', textDecorationColor: '#D1D5DB' }}>depends on.</span>
+              </h1>
+              <p style={{ fontSize: '1.2rem', color: '#475569', lineHeight: 1.6, marginBottom: '2.5rem', maxWidth: '600px' }}>
+                Maintenance is more than just closing Jira tickets. It is understanding a complex system, managing change safely, and systematically reducing the cost of its next failure.
+              </p>
+              <div style={{ display: 'flex', gap: '1rem' }}>
+                <Link href="/contact-us" style={{ background: '#0F172A', color: '#FFFFFF', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s' }}>
+                  Review SLA Options <ArrowRight size={18} />
+                </Link>
+              </div>
+            </div>
+
+            {/* Visual: SLA Dashboard */}
+            <div style={{ background: '#0F172A', borderRadius: '16px', padding: '2.5rem', border: '1px solid #334155', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)' }}>
+               <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#F8FAFC', marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                 <HeartHandshake size={18} color="#94A3B8" /> Support Metrics
+               </h4>
+               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '1.5rem', marginBottom: '1.5r
+```
+
+## src/app/services/mobile-app-development/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, Smartphone, WifiOff, ShieldCheck, AppWindow, Cpu, Layers } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+export default function MobileAppDevelopment() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FFFFFF' }}>
+      <NavBar />
+
+      {/* Hero Section */}
+      <section className="dark-section" style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '7rem', background: '#0F172A', color: '#FFFFFF' }}>
+        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(255,255,255,0.1)', color: '#F8FAFC', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem', letterSpacing: '0.05em' }}>
+            <Smartphone size={16} color="#A78BFA" /> iOS & Android Engineering
+          </div>
+          <h1 style={{ fontSize: 'var(--font-hero)', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+            Mobile experiences that respect <br/><span style={{ color: '#A78BFA' }}>context and connectivity.</span>
+          </h1>
+          <p style={{ fontSize: '1.25rem', color: '#94A3B8', lineHeight: 1.6, marginBottom: '3rem', maxWidth: '800px', margin: '0 auto 3rem auto' }}>
+            We design and build mobile products around small screens, intermittent networks, strict device permissions, and on-the-go decision-making. 
+          </p>
+          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+            <Link href="/contact-us" style={{ background: '#A78BFA', color: '#0F172A', padding: '1.1rem 2.5rem', borderRadius: '8px', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+              Scope Your App <ArrowRight size={18} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* NEW SECTION 1: Offline-First Architecture (Methodology) */}
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#F8FAFC' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
+            <div>
+               <div style={{ width: '64px', height: '64px', borderRadius: '16px', background: '#EDE9FE', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '2rem' }}>
+                  <WifiOff size={32} color="#8B5CF6" />
+               </div>
+               <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }
+```
+
+## src/app/services/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, Code, Database, Search, Layout, Smartphone, Network, Cloud, GitBranch, Cpu, ShieldCheck, HeartHandshake, Users, CheckCircle } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+const serviceList = [
+  { slug: "software-consulting", name: "Software Consulting", desc: "Senior technical judgment when the architectural path is unclear.", icon: Database },
+  { slug: "product-discovery", name: "Product Discovery", desc: "Connect user need, business intent, and technical feasibility.", icon: Search },
+  { slug: "ui-ux-design", name: "UI & UX Design", desc: "Interfaces that make complex enterprise work easier to perform.", icon: Layout },
+  { slug: "web-application-development", name: "Web App Development", desc: "Responsive web applications connecting UX to dependable domain logic.", icon: Code },
+  { slug: "mobile-app-development", name: "Mobile App Development", desc: "Experiences that respect context, connectivity, and device permissions.", icon: Smartphone },
+  { slug: "api-development-integration", name: "API & Integration", desc: "Interfaces between systems that handle ownership, change, and failure.", icon: Network },
+  { slug: "cloud-architecture", name: "Cloud Architecture", desc: "Foundations shaped around how your team operates and scales.", icon: Cloud },
+  { slug: "devops-ci-cd", name: "DevOps and CI/CD", desc: "A delivery path that connects code, infrastructure, and operational feedback.", icon: GitBranch },
+  { slug: "ai-integration", name: "AI Integration", desc: "AI features with a defined job, strict bounds, and a human fallback.", icon: Cpu },
+  { slug: "qa-testing", name: "QA and Testing", desc: "Quality practice matched to the exact cost and risk of failure.", icon: ShieldCheck },
+  { slug: "maintenance-support", name: "Maintenance & Support", desc: "Steady care for software the business absolutely depends on.", icon: HeartHandshake },
+  { slug: "dedicated-development-teams", name: "Dedicated Teams", desc: "An engineering team that fits seamlessly into your way of working.", icon: Users },
+];
+
+export default function ServicesIndexPage() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FFFFFF' }}>
+      <NavBar />
+
+      {/* Hero Section */}
+      <section className="dark-section" style={{ paddingTop: 'var(--spacing-section)', paddingBottom: 'var(--spacing-section)', background: '#0F172A', color: '#FFFFFF' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ maxWidth: '800px' }}>
+            <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#38BDF8', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>
+              Services & Engineering Capability
+            </div>
+            <h1 style={{ fontSize: 'va
+```
+
+## src/app/services/product-discovery/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, Compass, Target, Map, PenTool, LayoutTemplate, Users2 } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+export default function ProductDiscovery() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
+      <NavBar />
+
+      {/* Hero Section */}
+      <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
+            <div>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#FDF4FF', color: '#86198F', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+                <Compass size={16} /> Research & Prototyping
+              </div>
+              <h1 style={{ fontSize: '4.2rem', fontWeight: 800, color: '#111827', letterSpacing: '-0.04em', lineHeight: 1.05, marginBottom: '2rem' }}>
+                Build the <span style={{ color: '#D946EF' }}>right</span> product before building the product <span style={{ color: '#D946EF' }}>right.</span>
+              </h1>
+              <p style={{ fontSize: '1.2rem', color: '#4B5563', lineHeight: 1.6, marginBottom: '2.5rem', maxWidth: '600px' }}>
+                A smaller, clearer bet before a larger build. We connect user needs, business intent, and technical feasibility before your engineering team commits to a delivery shape.
+              </p>
+              <div style={{ display: 'flex', gap: '1rem' }}>
+                <Link href="/contact-us" style={{ background: '#D946EF', color: '#FFFFFF', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s' }}>
+                  Start a Discovery Sprint <ArrowRight size={18} />
+                </Link>
+              </div>
+            </div>
+
+            {/* Visual: Discovery Board */}
+            <div style={{ background: '#F8FAFC', borderRadius: '16px', padding: '2rem', border: '1px solid #E2E8F0', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.05)', position: 'relative' }}>
+              <div style={{ position: 'absolute', top: '-15px', right: '-15px', width: '40px', height: '40px', background: '#FCD34D', borderRadius: '50%', border: '4px solid #FFFFFF' }}></div>
+              <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#0F172A', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <Target size={18} color="#D946EF" /> Opportunity Canvas
+              </h4>
+              <d
+```
+
+## src/app/services/qa-testing/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, Bug, Target, Shield, TestTube, CheckCircle, SearchCode } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+export default function QATesting() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
+      <NavBar />
+
+      {/* Hero Section */}
+      <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
+        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#FEF2F2', color: '#991B1B', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+            <Bug size={16} /> Quality Assurance
+          </div>
+          <h1 style={{ fontSize: 'var(--font-hero)', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+            Quality matched to the <br/><span style={{ color: '#DC2626' }}>cost of failure.</span>
+          </h1>
+          <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, marginBottom: '3rem', maxWidth: '800px', margin: '0 auto 3rem auto' }}>
+            Not every feature needs 100% test coverage. But core business logic must never break. We implement layered, risk-based testing strategies to give teams fast, relevant evidence before every release.
+          </p>
+          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+            <Link href="/contact-us" style={{ background: '#DC2626', color: '#FFFFFF', padding: '1rem 2.5rem', borderRadius: '8px', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+              Audit Your QA Process <ArrowRight size={18} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* NEW SECTION 1: The Testing Pyramid (Methodology) */}
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#F8FAFC' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
+            <div>
+               <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>The Testing Pyramid</h2>
+               <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.7, marginBottom: '2rem' }}>
+                 A heavy reliance on manual clicking or slow UI tests will cripple your deployment speed. We structure QA around the Testing Pyramid: hundreds of fast unit tests at the base, a
+```
+
+## src/app/services/software-consulting/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, Lightbulb, FileText, CheckCircle2, Navigation, Layers, Code2 } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+export default function SoftwareConsulting() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
+      <NavBar />
+
+      {/* Hero Section */}
+      <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
+        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#F3F4F6', color: '#111827', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 700, marginBottom: '2rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+            <Lightbulb size={16} /> Strategic Advisory
+          </div>
+          <h1 style={{ fontSize: 'var(--font-hero)', fontWeight: 800, color: '#111827', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+            Senior technical judgment when the <span style={{ color: '#000000', textDecoration: 'underline', textDecorationColor: '#D1D5DB' }}>path is unclear.</span>
+          </h1>
+          <p style={{ fontSize: '1.25rem', color: '#4B5563', lineHeight: 1.7, marginBottom: '3rem', maxWidth: '800px' }}>
+            Consulting turns architectural uncertainty, delivery friction, or a difficult technology choice into a decision a team can confidently act on. We bring decades of enterprise engineering experience to your boardroom.
+          </p>
+          <div style={{ display: 'flex', gap: '1rem' }}>
+            <Link href="/contact-us" style={{ background: '#111827', color: '#FFFFFF', padding: '1.1rem 2.5rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'all 0.2s', fontSize: '1.05rem' }}>
+              Book an Advisory Session <ArrowRight size={18} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* NEW SECTION 1: When to Engage Us (Criteria) */}
+      <section className="dark-section" style={{ padding: 'var(--spacing-section) 0', background: '#111827', color: '#FFFFFF' }}>
+         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'var(--spacing-section-sm)', alignItems: 'start' }}>
+               <div>
+                 <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#FFFFFF', marginBottom: '1.5rem' }}>The Catalyst</h2>
+                 <p style={{ fontSize: '1.1rem', color: '#9CA3AF', lineHeight: 1.7 }}>Organizations typically bring our consu
+```
+
+## src/app/services/ui-ux-design/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, PenTool, Accessibility, Split, MousePointerClick, Palette, Sparkles } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+export default function UIUXDesign() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FFFFFF' }}>
+      <NavBar />
+
+      {/* Hero Section */}
+      <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '7rem', background: '#FAFAFA' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#FFF1F2', color: '#BE123C', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+            <Palette size={16} /> Human-Computer Interaction
+          </div>
+          <h1 style={{ fontSize: 'var(--font-hero)', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+            Interfaces that make complex <br/><span style={{ color: '#E11D48' }}>work easier to perform.</span>
+          </h1>
+          <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, marginBottom: '3rem', maxWidth: '800px', margin: '0 auto 3rem auto' }}>
+            We don't just make screens look pretty. We design ergonomic experiences for enterprise products where users need to understand status, make critical decisions, and recover from mistakes without friction.
+          </p>
+          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+            <Link href="/contact-us" style={{ background: '#E11D48', color: '#FFFFFF', padding: '1rem 2.5rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+              Review Our Portfolio <ArrowRight size={18} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* NEW SECTION 1: The Double Diamond Process (Methodology) */}
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
+            <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1rem' }}>The Double Diamond</h2>
+            <p style={{ fontSize: '1.1rem', color: '#64748B', maxWidth: '600px', margin: '0 auto' }}>Our design process oscillates between divergent thinking (exploring many options) and convergent thinking (focusing on the best solution).</p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: '2rem' }}>
+            {[
+  
+```
+
+## src/app/services/web-application-development/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, Code, Server, Zap, Component, Layout, Cpu } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+export default function WebAppDevelopment() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FFFFFF' }}>
+      <NavBar />
+
+      {/* Hero Section */}
+      <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '7rem', background: '#FAFAFA', borderBottom: '1px solid #EAEAEA' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
+            <div>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#EFF6FF', color: '#1D4ED8', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+                <Code size={16} /> Full-Stack Engineering
+              </div>
+              <h1 style={{ fontSize: '4.2rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+                Web products built for <span style={{ color: '#2563EB' }}>the operating context.</span>
+              </h1>
+              <p style={{ fontSize: '1.2rem', color: '#475569', lineHeight: 1.6, marginBottom: '2.5rem', maxWidth: '600px' }}>
+                We build responsive web applications that connect a thoughtful user experience to dependable domain logic, robust integrations, and strict operational ownership.
+              </p>
+              <div style={{ display: 'flex', gap: '1rem' }}>
+                <Link href="/contact-us" style={{ background: '#2563EB', color: '#FFFFFF', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s' }}>
+                  Discuss Your Application <ArrowRight size={18} />
+                </Link>
+              </div>
+            </div>
+
+            {/* Visual: Web Stack */}
+            <div style={{ background: '#FFFFFF', borderRadius: '16px', padding: '3rem', border: '1px solid #E2E8F0', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.05)' }}>
+               <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#0F172A', marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Standard Tech Stack</h4>
+               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: '#F8FAFC', padding: '1rem', borderRadius: '8px', border: '1px solid #E2E8F0' }}>
+                   <div style={{ width: '40px', height: '40px', background: '#DBEAFE', borderRadius: '8px', display: '
+```
+
+## src/app/solutions/ai-intelligent-automation/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, Brain, Workflow, ShieldCheck, Activity, Cpu, Network, Database, Lock } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+export default function AIAutomationSolution() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
+      <NavBar />
+
+      {/* Hero - Clean Enterprise Split */}
+      <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: 'var(--spacing-section)', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem', display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
+          <div>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#F3F4F6', color: '#374151', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+              <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#2563EB' }}></span>
+              Applied Artificial Intelligence
+            </div>
+            <h1 style={{ fontSize: '4rem', fontWeight: 800, color: '#111827', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '2rem' }}>
+              Intelligence <span style={{ color: '#2563EB' }}>architected</span> for strict operational bounds.
+            </h1>
+            <p style={{ fontSize: '1.25rem', color: '#4B5563', lineHeight: 1.6, marginBottom: '2.5rem', maxWidth: '600px' }}>
+              We deploy highly specialized machine learning models that solve singular, high-value problems—from document OCR to predictive supply chain engines. No black boxes. Just accountable automation.
+            </p>
+            <div style={{ display: 'flex', gap: '1rem' }}>
+              <Link href="/contact-us" style={{ background: '#111827', color: '#FFFFFF', padding: '1rem 2rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'all 0.2s' }}>
+                Consult an AI Architect <ArrowRight size={18} />
+              </Link>
+              <a href="#methodology" style={{ background: '#FFFFFF', color: '#111827', padding: '1rem 2rem', borderRadius: '8px', fontWeight: 600, border: '1px solid #E5E7EB', display: 'inline-flex', alignItems: 'center', transition: 'all 0.2s' }}>
+                View our methodology
+              </a>
+            </div>
+          </div>
+          
+          <div style={{ position: 'relative' }}>
+            {/* Abstract Tech Graphic */}
+            <div style={{ background: '#111827', borderRadius: '16px', padding: '2rem', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)', border: '1px solid #374151', overflow: 'hidden' }}>
+              <div style={{ display: '
+```
+
+## src/app/solutions/business-process-automation/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, Settings, Repeat, Layers, Clock, ShieldCheck, Zap } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+export default function BusinessProcessAutomation() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
+      <NavBar />
+
+      {/* Hero Section */}
+      <section className="dark-section" style={{ paddingTop: 'var(--spacing-section)', paddingBottom: 'var(--spacing-section)', background: '#0F172A', color: '#FFFFFF' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ maxWidth: '800px' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(255,255,255,0.1)', color: '#F8FAFC', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+              <Settings size={16} color="#38BDF8" /> Process Engineering
+            </div>
+            <h1 style={{ fontSize: 'var(--font-hero)', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+              Orchestrate work at <span style={{ color: '#38BDF8' }}>scale.</span>
+            </h1>
+            <p style={{ fontSize: '1.25rem', color: '#94A3B8', lineHeight: 1.6, marginBottom: '3rem' }}>
+              We eliminate manual data entry, disconnected spreadsheets, and fragmented communication by designing end-to-end automated workflows that span your entire enterprise ecosystem.
+            </p>
+            <div style={{ display: 'flex', gap: '1rem' }}>
+              <Link href="/contact-us" style={{ background: '#38BDF8', color: '#0F172A', padding: '1rem 2rem', borderRadius: '8px', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'all 0.2s' }}>
+                Audit Your Processes <ArrowRight size={18} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Core Solutions Grid */}
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem' }}>
+             {[
+               { icon: Repeat, title: "RPA Integration", desc: "Deploy headless bots to interact with legacy systems (AS/400, SAP) where APIs don't exist." },
+               { icon: Layers, title: "Workflow Orchestration", desc: "Connect SaaS tools via iPaaS or custom middleware. E.g., Salesforce to Jira to NetSuite." },
+               { icon: Clock, title: "Approval Routing", desc: "Rule-based engines that automatically route exceptions to the correct stakeh
+```
+
+## src/app/solutions/cloud-infrastructure/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, Cloud, Shield, Server, Activity, ArrowUpRight, CheckCircle2, Terminal } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+export default function CloudInfrastructureSolution() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FFFFFF' }}>
+      <NavBar />
+
+      {/* Hero - Centered with large typography and architecture graphic */}
+      <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '4rem', textAlign: 'center', background: '#F8FAFC' }}>
+        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#E0E7FF', color: '#4338CA', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 700, marginBottom: '2rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+            <Cloud size={16} /> Cloud & Infrastructure
+          </div>
+          <h1 style={{ fontSize: 'var(--font-hero)', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+            Foundation for <span style={{ color: '#4338CA' }}>scale.</span>
+          </h1>
+          <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, marginBottom: '3rem', maxWidth: '800px', margin: '0 auto 3rem auto' }}>
+            We design, build, and operate cloud environments that treat infrastructure as versioned code, security as automated policy, and scaling as a default behavior.
+          </p>
+          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+            <Link href="/contact-us" style={{ background: '#4338CA', color: '#FFFFFF', padding: '1.1rem 2.5rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'all 0.2s', fontSize: '1.05rem' }}>
+              Discuss Architecture <ArrowRight size={18} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Architectural Diagram Visual */}
+      <section style={{ paddingBottom: 'var(--spacing-section)', background: '#F8FAFC', borderBottom: '1px solid #E2E8F0' }}>
+         <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+            <div style={{ background: '#0F172A', borderRadius: '24px', padding: '3rem', border: '1px solid #1E293B', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem' }}>
+               
+               <div style={{ background: 'rgba(255,255,255,0.05)', padding: '2rem', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.1)' }}>
+                  <Server size={32} color="#818CF8" style={{ marginBottom: '1
+```
+
+## src/app/solutions/custom-software-development/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, Code2, GitMerge, Layout, ShieldCheck, Search, Users } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+export default function CustomSoftwareDevelopment() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FFFFFF' }}>
+      <NavBar />
+
+      {/* Hero Section */}
+      <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '5rem', background: '#FFFFFF' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#F1F5F9', color: '#475569', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+            <Code2 size={16} /> Engineering & Delivery
+          </div>
+          <h1 style={{ fontSize: 'var(--font-hero)', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+            Software built for your exact <br/><span style={{ color: '#2563EB' }}>operational reality.</span>
+          </h1>
+          <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, marginBottom: '3rem', maxWidth: '800px', margin: '0 auto 3rem auto' }}>
+            Off-the-shelf software forces you to change your business to fit the tool. We engineer bespoke web and mobile applications that fit perfectly into your proprietary workflows.
+          </p>
+          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+            <Link href="/contact-us" style={{ background: '#2563EB', color: '#FFFFFF', padding: '1rem 2rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+              Start a Project <ArrowRight size={18} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* NEW SECTION 1: Delivery Lifecycle (Methodology) */}
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#F8FAFC', borderTop: '1px solid #E2E8F0', borderBottom: '1px solid #E2E8F0' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ marginBottom: '4rem' }}>
+            <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1rem' }}>How We Build</h2>
+            <p style={{ fontSize: '1.1rem', color: '#64748B', maxWidth: '700px' }}>Agile delivery without the chaos. We combine rigorous product discovery with test-driven development to ensure predictability.</p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: '2rem' }}>
+            {[
+              { icon: Search, title: "1. Disc
+```
+
+## src/app/solutions/data-analytics/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, Database, LineChart, BarChart3, PieChart, Layers, Filter, Search } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+export default function DataAnalyticsSolution() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
+      <NavBar />
+
+      {/* Hero - Left Aligned with Analytical UI Graphic */}
+      <section style={{ paddingTop: '9rem', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
+            
+            <div>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#F0FDF4', color: '#166534', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+                <BarChart3 size={16} /> Advanced Data Analytics
+              </div>
+              <h1 style={{ fontSize: '4.2rem', fontWeight: 800, color: '#111827', letterSpacing: '-0.04em', lineHeight: 1.05, marginBottom: '2rem' }}>
+                Turn fragmented data into <span style={{ color: '#16A34A' }}>predictable growth.</span>
+              </h1>
+              <p style={{ fontSize: '1.2rem', color: '#4B5563', lineHeight: 1.6, marginBottom: '2.5rem', maxWidth: '600px' }}>
+                We build modern data stacks—from ELT pipelines to real-time dashboards—that give your executive team total visibility and predictive insight into business operations.
+              </p>
+              <div style={{ display: 'flex', gap: '1rem' }}>
+                <Link href="/contact-us" style={{ background: '#16A34A', color: '#FFFFFF', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s' }}>
+                  Request Data Audit <ArrowRight size={18} />
+                </Link>
+              </div>
+            </div>
+
+            {/* Faux Dashboard UI Graphic */}
+            <div style={{ background: '#FFFFFF', borderRadius: '16px', border: '1px solid #E5E7EB', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.1)', overflow: 'hidden' }}>
+              <div style={{ background: '#F9FAFB', padding: '1rem 1.5rem', borderBottom: '1px solid #E5E7EB', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                 <div style={{ fontWeight: 700, color: '#111827', fontSize: '0.9rem' }}>Revenue Intelligence</div>
+                 <div style={{ display: 'flex', gap: '0.5rem' }}>
+                   <div style={{ background: '#E5E7EB', borderRadius: '4px', padding: '0.2rem 0.5rem', fontSize: '0.7rem', col
+```
+
+## src/app/solutions/digital-transformation/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, Compass, Users2, DatabaseZap, ShieldCheck, MapPin, CheckCircle2 } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+export default function DigitalTransformation() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FFFFFF' }}>
+      <NavBar />
+
+      {/* Hero Section */}
+      <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: 'var(--spacing-section)', background: '#312E81', color: '#FFFFFF' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
+            <div>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(255,255,255,0.1)', color: '#E0E7FF', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+                <Compass size={16} /> Enterprise Modernization
+              </div>
+              <h1 style={{ fontSize: '4rem', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+                Technology is only half the <span style={{ color: '#818CF8' }}>transformation.</span>
+              </h1>
+              <p style={{ fontSize: '1.2rem', color: '#C7D2FE', lineHeight: 1.6, marginBottom: '3rem' }}>
+                True digital transformation connects modern platforms to human behavior. We guide organizations through the technical re-platforming and the operational shifts required to survive in a digital-first economy.
+              </p>
+              <div style={{ display: 'flex', gap: '1rem' }}>
+                <Link href="/contact-us" style={{ background: '#4F46E5', color: '#FFFFFF', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'all 0.2s' }}>
+                  Plan Your Roadmap <ArrowRight size={18} />
+                </Link>
+              </div>
+            </div>
+            
+            <div style={{ background: '#1E1B4B', padding: '3rem', borderRadius: '24px', border: '1px solid #4338CA', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5)' }}>
+               <h4 style={{ color: '#818CF8', fontSize: '1.1rem', fontWeight: 700, marginBottom: '1.5rem' }}>Transformation Priorities</h4>
+               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                 {[
+                   { label: "Legacy Decommissioning", metric: "60% Cost Reduction" },
+                   { label: "Data Democratization", metric: "Self-Service Access" },
+                   { label: "Cloud-Native Shift", metric: "Agile Deployment" }
+```
+
+## src/app/solutions/enterprise-software/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, Building2, Network, ShieldAlert, Cpu, HeartHandshake, CheckCircle } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+export default function EnterpriseSoftware() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
+      <NavBar />
+
+      {/* Hero Section */}
+      <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
+        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#F1F5F9', color: '#0F172A', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+            <Building2 size={16} /> Enterprise Grade
+          </div>
+          <h1 style={{ fontSize: 'var(--font-hero)', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+            Software that bears the <br/><span style={{ color: '#D97706' }}>weight of your business.</span>
+          </h1>
+          <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, marginBottom: '3rem', maxWidth: '800px', margin: '0 auto 3rem auto' }}>
+            When failure is not an option. We build and maintain complex, highly secure enterprise systems designed for massive concurrency, strict compliance, and high availability.
+          </p>
+          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+            <Link href="/contact-us" style={{ background: '#0F172A', color: '#FFFFFF', padding: '1rem 2rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+              Speak with a Principal Architect <ArrowRight size={18} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* NEW SECTION 1: System Integration (Tech Focus) */}
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#F8FAFC' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
+            <div>
+               <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>Complex System Integration</h2>
+               <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.7, marginBottom: '2rem' }}>Enterprise software rarely exists in a vacuum. It must communicate flawlessly with legacy mainframes, modern SaaS APIs, and third-party vendors without dropping a single pa
+```
+
+## src/app/solutions/legacy-system-modernization/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, RefreshCcw, HardDrive, SplitSquareHorizontal, CheckCircle, Clock } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+export default function LegacySystemModernization() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FFFFFF' }}>
+      <NavBar />
+
+      {/* Hero Section */}
+      <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: 'var(--spacing-section)', background: '#FAFAFA', borderBottom: '1px solid #EAEAEA' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
+            <div>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#FEE2E2', color: '#B91C1C', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+                <RefreshCcw size={16} /> Technical Debt Eradication
+              </div>
+              <h1 style={{ fontSize: '4.2rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+                Retire your technical debt. <span style={{ color: '#DC2626' }}>Safely.</span>
+              </h1>
+              <p style={{ fontSize: '1.2rem', color: '#475569', lineHeight: 1.6, marginBottom: '2.5rem' }}>
+                Replacing a core legacy system is like changing the engine of an airplane mid-flight. We use proven architectural patterns to modernize monolithic systems with zero business disruption.
+              </p>
+              <div style={{ display: 'flex', gap: '1rem' }}>
+                <Link href="/contact-us" style={{ background: '#DC2626', color: '#FFFFFF', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s' }}>
+                  Assess Legacy Risk <ArrowRight size={18} />
+                </Link>
+              </div>
+            </div>
+
+            {/* Visual: Monolith to Microservices */}
+            <div style={{ background: '#FFFFFF', borderRadius: '16px', padding: '3rem', border: '1px solid #E2E8F0', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.05)' }}>
+               <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+                 <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+                    <div style={{ background: '#94A3B8', width: '80px', height: '80px', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyItems: 'center' }}><HardDrive size={32} color="#FFFFFF" style={{ margin: '0 auto' }} /></div>
+                    <div>
+                      <div style={{ fontWeight: 700
+```
+
+## src/app/solutions/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, Shield, Zap, Server, Code, Cpu, Cloud, LineChart, Briefcase, CheckCircle } from "lucide-react";
+
+const solutions = [
+  {
+    title: 'Enterprise Software Engineering',
+    slug: 'enterprise-software',
+    desc: 'Distributed systems built for scale — microservices, event-driven architecture, and sharded databases designed for high transaction volumes and zero-downtime deployments.',
+    icon: Server,
+    tag: 'Microservices · Kafka · PostgreSQL',
+    industries: ['Financial Services', 'Healthcare', 'Logistics'],
+    outcomes: 'Architecture baseline and production readiness'
+  },
+  {
+    title: 'AI & Intelligent Automation',
+    slug: 'ai-intelligent-automation',
+    desc: 'Narrow, production-ready AI — OCR document pipelines, predictive forecasting engines, and anomaly detection systems trained on your proprietary data.',
+    icon: Cpu,
+    tag: 'TensorFlow · PyTorch · Airflow',
+    industries: ['Manufacturing', 'Insurance', 'Retail'],
+    outcomes: 'Defined accuracy contract and human review path'
+  },
+  {
+    title: 'Business Process Automation',
+    slug: 'business-process-automation',
+    desc: 'Replace email approval chains with a centralized platform that enforces compliance, tracks every decision, and integrates with your existing stack.',
+    icon: Briefcase,
+    tag: 'React · GraphQL · Lambda',
+    industries: ['Legal', 'Finance', 'Healthcare'],
+    outcomes: 'Traceable approvals and measurable acceptance criteria'
+  },
+  {
+    title: 'Digital Transformation',
+    slug: 'digital-transformation',
+    desc: 'Decouple customer-facing frontends from creaking legacy backends. API-first architecture and incremental migration — no big-bang rewrites.',
+    icon: Cloud,
+    tag: 'GraphQL · Next.js · Kubernetes',
+    industries: ['Retail', 'Manufacturing', 'Government'],
+    outcomes: 'Reversible migration with independent release paths'
+  },
+  {
+    title: 'Cloud & Infrastructure',
+    slug: 'cloud-infrastructure',
+    desc: 'Terraform-defined, Kubernetes-orchestrated infrastructure fully reproducible from source control. Reduce configuration drift and make cost ownership visible.',
+    icon: Shield,
+    tag: 'Terraform · K8s · AWS · Azure',
+    industries: ['SaaS', 'E-Commerce', 'Media'],
+    outcomes: 'Reproducible infrastructure and operational visibility'
+  },
+  {
+    title: 'Legacy System Modernization',
+    slug: 'legacy-system-modernization',
+    desc: 'Extract functionality module by module using the Strangler Fig pattern. Preserve business continuity, eliminate security debt, and modernize without a full rewrite.',
+    icon: Code,
+    tag: 'Go · Kong · PostgreSQL',
+    industries: ['Government', 'Banking', 'Insurance'],
+    outcomes: 'Controlled migration with business continuity preserved'
+  },
+  {
+    title: 'Data & Analytics',
+    slug: 'data-analytics',
+    desc: 'Automated ETL pipelines that consolidate data from eve
+```
+
+## src/app/terms-of-service/page.tsx
+
+```tsx
+import LegalLayout from "@/components/LegalLayout";
+
+export default function TermsOfService() {
+  return (
+    <LegalLayout activePath="/terms-of-service">
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+
+        <div>
+          <p style={{ fontSize: '0.85rem', color: '#4B61B8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>Last Updated: 01-Feb-2025</p>
+          <h1 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.02em', lineHeight: 1.2, marginBottom: '1.5rem' }}>Terms of Service</h1>
+          <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.8 }}>These Terms of Service ("Terms") constitute a legally binding agreement between you (or the organization you represent) and Acriotech Pvt. Ltd. ("Acriotech"). By accessing our websites, using our software platforms, or engaging Acriotech for professional services, you agree to these Terms in full. If you are entering into these Terms on behalf of an organization, you represent that you have the authority to bind that organization.</p>
+        </div>
+
+        <hr style={{ border: 'none', borderTop: '1px solid #E2E8F0' }} />
+
+        <div>
+          <h2 style={{ fontSize: '1.6rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>1. Services Overview</h2>
+          <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, marginBottom: '1rem' }}>Acriotech provides enterprise technology services including, but not limited to:</p>
+          <ul style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+            <li>Custom enterprise software design, development, and deployment</li>
+            <li>Artificial intelligence and intelligent automation solutions</li>
+            <li>Cloud infrastructure architecture, migration, and management</li>
+            <li>Data engineering, analytics, and business intelligence platforms</li>
+            <li>Technical consulting and digital transformation advisory</li>
+            <li>Managed engineering team augmentation and dedicated squads</li>
+          </ul>
+          <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, marginTop: '1rem' }}>The specific scope, deliverables, timelines, and commercial terms for any engagement are governed by a separately executed <strong>Master Services Agreement (MSA)</strong> and accompanying <strong>Statement of Work (SOW)</strong>. In the event of any conflict between these general Terms and a signed MSA, the MSA shall control.</p>
+        </div>
+
+        <div>
+          <h2 style={{ fontSize: '1.6rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>2. Account Registration and Eligibility</h2>
+          <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, marginBottom: '1rem' }}>To use certain features of our services, you may be required to register an 
+```
+
+## src/app/trademark-policy/page.tsx
+
+```tsx
+import LegalLayout from "@/components/LegalLayout";
+
+export default function TrademarkPolicy() {
+  return (
+    <LegalLayout activePath="/trademark-policy">
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+
+        <div>
+          <p style={{ fontSize: '0.85rem', color: '#4B61B8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>Last Updated: 01-Feb-2025</p>
+          <h1 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.02em', lineHeight: 1.2, marginBottom: '1.5rem' }}>Trademark Policy</h1>
+          <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.8 }}>The Acriotech brand — including our name, logo, wordmarks, and other brand assets — represents the trust, quality, and commitment to excellence that we have built with our clients and partners. This policy governs how third parties may use Acriotech's trademarks and brand assets, and what is not permitted.</p>
+        </div>
+
+        <hr style={{ border: 'none', borderTop: '1px solid #E2E8F0' }} />
+
+        <div>
+          <h2 style={{ fontSize: '1.6rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>1. Our Trademarks</h2>
+          <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, marginBottom: '1rem' }}>The following are registered and unregistered trademarks of Acriotech Pvt. Ltd.:</p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '1rem' }}>
+            {['Acriotech™ (wordmark)', '"Acrio Tech Global"', 'The Acriotech Logo (stylized "A")', 'Acriotech color palette', 'Product brand names', 'Domain names (acriotech.com, etc.)'].map((item) => (
+              <div key={item} style={{ padding: '1rem', background: '#F8FAFC', borderRadius: '10px', border: '1px solid #E2E8F0', fontSize: '0.9rem', color: '#475569', fontWeight: 600 }}>
+                {item}
+              </div>
+            ))}
+          </div>
+          <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, marginTop: '1rem' }}>All rights in these marks are reserved by Acriotech. Unauthorized use of these marks constitutes trademark infringement and may result in legal action.</p>
+        </div>
+
+        <div>
+          <h2 style={{ fontSize: '1.6rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>2. Permitted Uses (No Prior Approval Required)</h2>
+          <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, marginBottom: '1rem' }}>The following uses of Acriotech trademarks are generally permitted without prior written permission, provided they strictly comply with our Brand Guidelines (available at acriotech.com/brand):</p>
+          <ul style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+            <li><strong>Factual Reference:</strong> You may use "Acriotech" in running t
+```
+
+## src/app/work/featured-projects/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, FolderOpen, Code2, Layers, Smartphone, Globe } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
+import { motion } from "framer-motion";
+
+const projects = [
+  {
+    "title": "Enterprise AI CRM Platform",
+    "category": "CRM / AI",
+    "client": "Global Sales Organization",
+    "desc": "An AI-powered Customer Relationship Management system that predicts deal closures and automates sales follow-ups using LLMs.",
+    "tech": [
+      "Next.js",
+      "Python",
+      "OpenAI API",
+      "PostgreSQL"
+    ],
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "title": "Visual Workflow Automation Builder",
+    "category": "Automation / No-Code",
+    "client": "SaaS Startup",
+    "desc": "A Make.com-style visual drag-and-drop workflow builder allowing users to connect 500+ APIs for deep business process automation.",
+    "tech": [
+      "React Flow",
+      "Node.js",
+      "Redis",
+      "WebSockets"
+    ],
+    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "title": "Cloud Infrastructure Control Panel",
+    "category": "Cloud Server Panel",
+    "client": "Hosting Provider",
+    "desc": "A highly scalable cloud server management panel for provisioning VPS instances, managing DNS, and monitoring server health metrics.",
+    "tech": [
+      "Vue.js",
+      "Go",
+      "Docker API",
+      "Prometheus"
+    ],
+    "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "title": "Global Manufacturing ERP System",
+    "category": "ERP",
+    "client": "Heavy Machinery Corp",
+    "desc": "A comprehensive Enterprise Resource Planning suite unifying inventory, supply chain logistics, and HR for 10,000+ employees globally.",
+    "tech": [
+      "React",
+      "Spring Boot",
+      "Kafka",
+      "Oracle DB"
+    ],
+    "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "title": "Predictive Machine Learning Engine",
+    "category": "Machine Learning",
+    "client": "Financial Institution",
+    "desc": "A machine learning engine that analyzes market sentiment and historical data to predict financial trends with 94% accuracy.",
+    "tech": [
+      "Python",
+      "TensorFlow",
+      "Apache Spark",
+      "AWS SageMaker"
+    ],
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "title": "Conversational AI Intelligence Agent",
+    "category": "AI Intelligence",
+    "client": "Telecom Enterprise",
+    "desc": "A generative AI support agent that autonomously resolves 70% of tier-1 customer technical issues by analyzing knowledge bases.",
+    "tech": [
+      "LangChain",
+      "Pinecone",
+      "Next.js",
+   
+```
+
+## src/app/work/open-source/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { Terminal, Code2, Star, GitFork, ArrowUpRight } from "lucide-react";
+import Link from "next/link";
+
+const repos = [
+  {
+    name: "acriotech/sentinel-rbac",
+    desc: "A PostgreSQL extension that dynamically generates Row-Level Security (RLS) policies based on a declarative JSON schema. Used in production to secure multi-tenant SaaS applications.",
+    stars: "1.2k",
+    forks: "142",
+    lang: "C"
+  },
+  {
+    name: "acriotech/react-native-offline-crdt",
+    desc: "A headless React Native provider that wraps SQLite and implements Conflict-free Replicated Data Types (CRDTs) for true offline-first mobile applications.",
+    stars: "850",
+    forks: "89",
+    lang: "TypeScript"
+  },
+  {
+    name: "acriotech/terraform-govcloud-baseline",
+    desc: "A Terraform module that spins up a FedRAMP High baseline architecture in AWS GovCloud, complete with FIPS-compliant transit gateways and immutable audit logging.",
+    stars: "420",
+    forks: "115",
+    lang: "HCL"
+  }
+];
+
+export default function OpenSourcePage() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
+      <NavBar />
+
+      <section className="dark-section" style={{ paddingTop: '10rem', paddingBottom: '6rem', background: '#0F172A', color: '#FFFFFF' }}>
+        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#1E293B', color: '#E2E8F0', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+            <Terminal size={16} /> Open Source
+          </div>
+          <h1 style={{ fontSize: '4rem', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+            We don't just consume. <span style={{ color: '#94A3B8' }}>We contribute.</span>
+          </h1>
+          <p style={{ fontSize: '1.25rem', color: '#94A3B8', lineHeight: 1.6, maxWidth: '700px' }}>
+            A significant portion of our internal tooling is released to the community. Here are the active projects maintained by Acriotech engineers.
+          </p>
+        </div>
+      </section>
+
+      <section style={{ padding: '6rem 0', background: '#F8FAFC' }}>
+        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(1, 1fr)', gap: '2rem' }}>
+             {repos.map((repo, i) => (
+               <div key={i} style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '16px', padding: '3rem', transition: 'box-shadow 0.2s' }} className="repo-card">
+                 <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
+               
+```
+
+## src/app/work/our-clients/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { Users, Building, ShieldCheck, Factory, HeartPulse, Landmark, Plane } from "lucide-react";
+
+const industries = [
+  { name: "Financial Services", icon: Landmark, count: 14 },
+  { name: "Healthcare & MedTech", icon: HeartPulse, count: 18 },
+  { name: "Logistics & Supply Chain", icon: Plane, count: 9 },
+  { name: "Industrial & Manufacturing", icon: Factory, count: 12 },
+  { name: "GovTech & Public Sector", icon: ShieldCheck, count: 6 },
+];
+
+export default function OurClientsPage() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
+      <NavBar />
+
+      <section style={{ paddingTop: '10rem', paddingBottom: '6rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
+        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#F1F5F9', color: '#475569', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+            <Users size={16} /> Client Roster
+          </div>
+          <h1 style={{ fontSize: '4rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+            Trusted by the <span style={{ color: '#475569' }}>Fortune 500.</span>
+          </h1>
+          <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, maxWidth: '700px' }}>
+            We sign strict NDAs with most of our enterprise clients. While we cannot always share their names publicly, we can share the industries we transform.
+          </p>
+        </div>
+      </section>
+
+      <section style={{ padding: '6rem 0', background: '#FAFAFA' }}>
+        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
+           <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '3rem', textAlign: 'center' }}>Enterprise Deployments by Sector</h3>
+           
+           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+             {industries.map((ind, i) => (
+               <div key={i} style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', padding: '2rem', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', transition: 'box-shadow 0.2s' }} className="client-card">
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+                     <div style={{ width: '48px', height: '48px', background: '#F8FAFC', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                       <ind.icon size={24} color="#64748B" />
+                     </div>
+                     <span style={{ fontSize: '1.2rem', fontWeight: 700, color: '#0F172A' }}>{ind.na
+```
+
+## src/app/work/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { ArrowRight, Briefcase, Star, Users, FolderOpen, Globe, Terminal } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+const workList = [
+  { slug: "featured-projects", name: "Featured Projects", desc: "A visual portfolio of the user interfaces, dashboards, and mobile applications we've shipped for our enterprise partners.", icon: FolderOpen },
+  { slug: "our-clients", name: "Our Clients", desc: "From Y-Combinator seed startups to Fortune 500 institutions. See who trusts Acriotech with their core infrastructure.", icon: Users },
+  { slug: "open-source", name: "Open Source", desc: "We don't just consume OSS; we contribute back. View our public repositories, NPM packages, and framework contributions.", icon: Terminal },
+];
+
+export default function WorkIndexPage() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FFFFFF' }}>
+      <NavBar />
+
+      {/* Hero Section */}
+      <section style={{ paddingTop: '10rem', paddingBottom: '7rem', background: '#FAFAFA' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ maxWidth: '800px' }}>
+            <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#6366F1', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>
+              Our Work
+            </div>
+            <h1 style={{ fontSize: '4.5rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+              We ship <span style={{ color: '#6366F1' }}>production code.</span>
+            </h1>
+            <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, marginBottom: '3rem' }}>
+              Talk is cheap. We measure our success by the stability, performance, and aesthetic quality of the software we push to production.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Showcase */}
+      <section style={{ padding: '0 0 6rem 0', background: '#FAFAFA' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <Link href="/work/featured-projects" style={{ textDecoration: 'none' }}>
+             <div style={{ background: '#0F172A', borderRadius: '24px', padding: '4rem', display: 'flex', flexDirection: 'column', gap: '3rem', transition: 'transform 0.2s, box-shadow 0.2s', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.25)', position: 'relative', overflow: 'hidden' }} className="featured-card">
+                
+                {/* Simulated UI background */}
+                <div style={{ position: 'absolute', right: '-10%', top: '-20%', width: '60%', height: '140%', background: 'linear-gradient(135deg, #4F46E5 0%, #0F172A 100%)', transform: 'rotate(15deg)', opacity: 0.2 }}></div>
+
+          
+```
+
+## src/app/work/testimonials/page.tsx
+
+```tsx
+"use client";
+
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { Star, MessageSquareQuote } from "lucide-react";
+
+const testimonials = [
+  {
+    quote: "Acriotech doesn't just write code; they challenge our assumptions. They pushed back on our initial microservices design, saved us six months of DevOps overhead, and delivered a monolith that easily handles our current scale.",
+    author: "Sarah Jenkins",
+    role: "CTO, FinTech Series B",
+    company: "Confidential Client"
+  },
+  {
+    quote: "Most agencies nod and build whatever you ask for, even if it's a terrible idea. Acriotech acts like a true technical co-founder. Their command of React Server Components and Edge architecture dropped our latency by 60%.",
+    author: "David Chen",
+    role: "VP of Engineering",
+    company: "Global Logistics Provider"
+  },
+  {
+    quote: "When we needed to achieve FedRAMP readiness on AWS GovCloud, we were drowning in compliance checklists. The Acriotech team came in, automated our infrastructure with Terraform, and got us audit-ready in 12 weeks.",
+    author: "Marcus Thorne",
+    role: "CISO",
+    company: "GovTech Contractor"
+  }
+];
+
+export default function TestimonialsPage() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
+      <NavBar />
+
+      <section style={{ paddingTop: '10rem', paddingBottom: '6rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
+        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#FEF9C3', color: '#854D0E', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
+            <Star size={16} fill="#EAB308" color="#EAB308" /> Client Testimonials
+          </div>
+          <h1 style={{ fontSize: '4rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+            What it's like to <br /><span style={{ color: '#EAB308' }}>build with us.</span>
+          </h1>
+          <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, maxWidth: '700px' }}>
+            Unfiltered feedback from engineering leaders, CTOs, and founders who have trusted Acriotech with their most critical infrastructure.
+          </p>
+        </div>
+      </section>
+
+      <section style={{ padding: '6rem 0', background: '#FAFAFA' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', gap: '2rem' }}>
+             {testimonials.map((test, i) => (
+               <div key={i} style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', padding: '3rem', borderRadius: '16px', display: 'flex', flexDirection: 'column', transiti
+```

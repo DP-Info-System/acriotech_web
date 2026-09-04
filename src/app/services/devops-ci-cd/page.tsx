@@ -1,5 +1,3 @@
-"use client";
-
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { ArrowRight, GitMerge, FileCode2, PlayCircle, BarChart, Undo2, ShieldCheck, Zap } from "lucide-react";

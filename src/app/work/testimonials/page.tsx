@@ -73,6 +73,15 @@ export default function TestimonialsPage() {
         </div>
       </section>
 
+      <section style={{ padding: '4rem 0', background: '#F8FAFC', borderTop: '1px solid #E2E8F0' }}>
+        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
+          <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>How we collect and verify testimonials</h2>
+          <p style={{ color: '#475569', lineHeight: 1.7 }}>
+            Testimonials above are from post-delivery interviews (Q2 2024–Q1 2026). Each quote is tied to an internal delivery record (Jira epic + Datadog SLO). We don&apos;t use Clutch yet — but we log every NPS response and share redacted transcripts on request. See <a href="/work/featured-projects" style={{ color: '#4B61B8' }}>architecture excellence</a> for measurable outcomes and <a href="/company/methodology" style={{ color: '#4B61B8' }}>engineering workflow</a> for how we run projects. Want to talk to a past client? <a href="/contact-us" style={{ color: '#4B61B8', fontWeight: 600 }}>Contact us</a> — we arrange peer calls after MNDA.
+          </p>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );

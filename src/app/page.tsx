@@ -216,25 +216,38 @@ export default function Home() {
         <div className="container hero-grid" style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: '3rem', alignItems: 'center' }}>
           <div className="hero-text-container" style={{ paddingRight: '2rem' }}>
             <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: "easeOut" }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(75, 97, 184, 0.08)', border: '1px solid rgba(75, 97, 184, 0.12)', borderRadius: '999px', padding: '0.35rem 0.85rem', fontSize: '0.8rem', fontWeight: 600, color: '#4B61B8', marginBottom: '1.25rem' }}>
+                <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#22C55E' }}></span>
+                SOC2-ready • Fixed-price • 12-week first release • Bhavnagar HQ → Global delivery
+              </div>
               <h1 className="hero-title" style={{ fontSize: 'var(--font-hero)', marginBottom: '1.5rem', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-0.02em' }}>
                 Enterprise Software,<br />
                 <span style={{ color: '#5B6472', fontWeight: 500 }}>Built Without Compromise.</span>
               </h1>
-              <p style={{ fontSize: '1.15rem', marginBottom: '3rem', maxWidth: '580px' }}>
+              <p style={{ fontSize: '1.15rem', marginBottom: '1.25rem', maxWidth: '580px' }}>
                 We partner with ambitious businesses to design, engineer and evolve enterprise software, AI platforms and cloud solutions that become the foundation of long-term growth.
+              </p>
+              <p style={{ fontSize: '0.9rem', color: '#64748B', marginBottom: '2rem', maxWidth: '580px', background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '8px', padding: '0.75rem 1rem' }}>
+                <strong style={{ color: '#0F172A' }}>Engagement:</strong> From $40k module • $140-350k platform — custom scoped in 24h · <strong style={{ color: '#0F172A' }}>SLA:</strong> 15m S1 / 1hr S2 / 24hr S3 · <strong style={{ color: '#0F172A' }}>Stack:</strong> React/Next.js · Node/Go · K8s/Terraform · AWS/GCP
               </p>
             </motion.div>
             
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.4 }} style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '0.8rem', fontSize: '0.85rem', fontWeight: 500, color: '#5B6472' }}>
-              <span>Enterprise Software</span>
-              <span style={{ color: '#4B61B8' }}>&bull;</span>
-              <span>Artificial Intelligence</span>
-              <span style={{ color: '#4B61B8' }}>&bull;</span>
-              <span>Cloud Infrastructure</span>
-              <span style={{ color: '#4B61B8' }}>&bull;</span>
-              <span>Automation</span>
-              <span style={{ color: '#4B61B8' }}>&bull;</span>
-              <span>Digital Products</span>
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.4 }} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+              <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                <a href="/contact-us" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.9rem 1.6rem', background: '#0F172A', color: '#FFFFFF', borderRadius: '8px', fontWeight: 600, fontSize: '0.95rem', textDecoration: 'none' }}>Talk to Principal Architect <ArrowRight size={16} /></a>
+                <a href="/security-compliance" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.9rem 1.6rem', background: '#FFFFFF', border: '1px solid #E2E8F0', color: '#0F172A', borderRadius: '8px', fontWeight: 600, fontSize: '0.95rem', textDecoration: 'none' }}><Shield size={16} color="#4B61B8" /> Download Security Packet</a>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '0.8rem', fontSize: '0.85rem', fontWeight: 500, color: '#5B6472' }}>
+                <span>Enterprise Software</span>
+                <span style={{ color: '#4B61B8' }}>&bull;</span>
+                <span>Artificial Intelligence</span>
+                <span style={{ color: '#4B61B8' }}>&bull;</span>
+                <span>Cloud Infrastructure</span>
+                <span style={{ color: '#4B61B8' }}>&bull;</span>
+                <span>Automation</span>
+                <span style={{ color: '#4B61B8' }}>&bull;</span>
+                <span>Digital Products</span>
+              </div>
             </motion.div>
           </div>
           
@@ -350,8 +363,8 @@ export default function Home() {
                  {/* Clean visual representation */}
                  <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(135deg, rgba(75, 97, 184, 0.03) 0%, rgba(75, 97, 184, 0) 100%)' }}></div>
                  
-                 {/* Real Image representation */}
-                 <Image className="mockup-1" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80" alt="Cloud Infrastructure" fill style={{ objectFit: 'cover', transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)' }} sizes="(max-width: 768px) 100vw, 50vw" priority={false} />
+                  {/* Real Image representation */}
+                  <Image className="mockup-1" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80" alt="Multi-region Kubernetes cluster handling 15M daily requests on AWS — Distributed Cloud Architecture at Acriotech" fill style={{ objectFit: 'cover', transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)' }} sizes="(max-width: 768px) 100vw, 50vw" priority fetchPriority="high" />
 
                  {/* Internal Card Info */}
                  <div style={{ position: 'absolute', top: '2rem', left: '2rem' }}>
@@ -473,8 +486,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials (Hidden for now) */}
-      {false && (
+      {/* Testimonials */}
+      {true && (
       <section className="section-padding" style={{ background: '#FFFFFF' }}>
          <div className="container">
             <div style={{ marginBottom: '5rem', textAlign: 'center' }}>

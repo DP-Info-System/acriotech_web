@@ -1,5 +1,3 @@
-"use client";
-
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { ArrowRight, Code2, GitMerge, Server, Activity, ShieldCheck, Cpu } from "lucide-react";

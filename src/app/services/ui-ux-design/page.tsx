@@ -1,5 +1,3 @@
-"use client";
-
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { ArrowRight, PenTool, Accessibility, Split, MousePointerClick, Palette, Sparkles } from "lucide-react";

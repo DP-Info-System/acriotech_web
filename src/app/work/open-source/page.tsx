@@ -85,6 +85,15 @@ export default function OpenSourcePage() {
         </div>
       </section>
 
+      <section style={{ padding: '4rem 0', background: '#FFFFFF', borderTop: '1px solid #E2E8F0' }}>
+        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
+          <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>Contribute & verify</h2>
+          <p style={{ color: '#475569', lineHeight: 1.7, marginBottom: '1rem' }}>
+            All repos above are MIT-licensed and used in production (see import of <a href="/solutions/enterprise-software" style={{ color: '#4B61B8' }}>enterprise software</a> and <a href="/services/cloud-architecture" style={{ color: '#4B61B8' }}>cloud architecture</a> where RLS and GovCloud baseline power real clients). Clone, open an issue, or read the architecture notes: each repo includes ADRs (architecture decision records) and benchmark scripts. We also maintain internal ADRs for <a href="/solutions/cloud-infrastructure" style={{ color: '#4B61B8' }}>cloud infrastructure</a> and <a href="/solutions/data-analytics" style={{ color: '#4B61B8' }}>data analytics</a>. Want to contribute? See <a href="/company/careers" style={{ color: '#4B61B8' }}>careers</a> and our <a href="https://github.com/acriotech" style={{ color: '#4B61B8' }}>GitHub</a>.
+          </p>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );

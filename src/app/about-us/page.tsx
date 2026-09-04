@@ -1,7 +1,6 @@
-"use client";
-
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 export default function AboutUs() {
@@ -29,10 +28,12 @@ export default function AboutUs() {
             
             {/* Image Side */}
             <div style={{ position: 'relative', height: '500px', borderRadius: '16px', overflow: 'hidden', backgroundColor: '#E2E8F0' }}>
-              <img 
+              <Image 
                 src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                alt="Corporate Office" 
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                alt="Acriotech office at Shiv Narayan Complex, Virani Circle — engineering pod in Bhavnagar" 
+                fill
+                style={{ objectFit: 'cover' }}
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
             
@@ -118,10 +119,12 @@ export default function AboutUs() {
               </p>
             </div>
             <div style={{ position: 'relative', height: '400px', borderRadius: '16px', overflow: 'hidden', backgroundColor: '#E2E8F0' }}>
-              <img 
+              <Image 
                 src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                alt="Leadership Team" 
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                alt="Acriotech leadership — software architects and enterprise delivery leads, Bhavnagar HQ" 
+                fill
+                style={{ objectFit: 'cover' }}
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>

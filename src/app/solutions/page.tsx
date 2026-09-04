@@ -282,6 +282,15 @@ export default function SolutionsIndexPage() {
         </div>
       </section>
 
+      <section style={{ padding: '4rem 0', background: '#F8FAFC', borderTop: '1px solid #E2E8F0' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <h2 style={{ fontSize: '1.75rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>Why Acriotech for enterprise solutions</h2>
+          <p style={{ color: '#475569', lineHeight: 1.7, marginBottom: '1rem', maxWidth: '800px' }}>
+            We don&apos;t ship demos. We ship production systems with rollback plans, observability, and audit trails — the boring parts that keep the business running. Each solution below is a 1200-word+ blueprint: architecture, data model, integrations (SAP/Oracle/Salesforce/legacy), security posture (Zero-Trust, AES-256, TLS 1.3), and a FinOps view. Pair any solution with our <a href="/services" style={{ color: '#4B61B8' }}>services</a> (consulting → support) and <a href="/industries" style={{ color: '#4B61B8' }}>industry context</a> (healthcare FHIR, finance PCI, logistics). Delivered from Bhavnagar, contracted globally — see <a href="/work/featured-projects" style={{ color: '#4B61B8' }}>featured projects</a> for 15M req/day, 99.99% SLO proof.
+          </p>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );

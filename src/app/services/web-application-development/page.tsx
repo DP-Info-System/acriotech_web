@@ -1,5 +1,3 @@
-"use client";
-
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { ArrowRight, Code, Server, Zap, Component, Layout, Cpu } from "lucide-react";
@@ -149,8 +147,8 @@ export default function WebAppDevelopment() {
             </div>
             <div style={{ background: '#1E293B', padding: '2rem', borderRadius: '12px', border: '1px solid #334155' }}>
                <div style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#10B981', marginBottom: '0.5rem' }}>&lt;100ms</div>
-               <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#F8FAFC', marginBottom: '0.5rem' }}>FID</div>
-               <p style={{ color: '#64748B', fontSize: '0.85rem' }}>First Input Delay. The app responds instantly to user interaction.</p>
+               <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#F8FAFC', marginBottom: '0.5rem' }}>INP</div>
+               <p style={{ color: '#64748B', fontSize: '0.85rem' }}>Interaction to Next Paint. Sub-200ms main-thread responsiveness for enterprise workflows.</p>
             </div>
             <div style={{ background: '#1E293B', padding: '2rem', borderRadius: '12px', border: '1px solid #334155' }}>
                <div style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#10B981', marginBottom: '0.5rem' }}>&lt;0.1</div>

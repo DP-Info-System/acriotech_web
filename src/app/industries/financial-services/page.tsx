@@ -1,5 +1,3 @@
-"use client";
-
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { ArrowRight, Landmark, ShieldAlert, Scale, CreditCard, LockKeyhole, Activity } from "lucide-react";

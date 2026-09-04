@@ -1,15 +1,13 @@
-"use client";
-
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
-import { ArrowRight, BookOpen, Terminal, Clock, User, ChevronRight } from "lucide-react";
+import { ArrowRight, BookOpen, Clock, User } from "lucide-react";
 import Link from "next/link";
 
 const blogPosts = [
   {
     title: "Why We Choose PostgreSQL for Everything First",
     category: "Architecture",
-    date: "Mar 12, 2026",
+    date: "Mar 12, 2025",
     author: "Elena Rodriguez",
     readTime: "8 min read",
     desc: "Before you reach for MongoDB or DynamoDB, consider that a properly tuned Postgres instance can handle 95% of 'Big Data' workloads while providing absolute relational certainty."
@@ -17,7 +15,7 @@ const blogPosts = [
   {
     title: "The Fallacy of 'Multi-Cloud' for Early Stage Startups",
     category: "Cloud Ops",
-    date: "Feb 28, 2026",
+    date: "Feb 28, 2025",
     author: "David Chen",
     readTime: "6 min read",
     desc: "Abstracting your infrastructure to avoid vendor lock-in usually results in the worst of all worlds: high latency, lowest-common-denominator features, and massive engineering overhead."
@@ -25,7 +23,7 @@ const blogPosts = [
   {
     title: "Implementing RAG without Leaking PII",
     category: "AI & Machine Learning",
-    date: "Feb 15, 2026",
+    date: "Feb 15, 2025",
     author: "Sarah Jenkins",
     readTime: "12 min read",
     desc: "A technical deep-dive into building Retrieval-Augmented Generation pipelines that aggressively redact Personally Identifiable Information before vector embedding."
@@ -33,7 +31,7 @@ const blogPosts = [
   {
     title: "Micro-Frontends: When the Cure is Worse Than the Disease",
     category: "Frontend",
-    date: "Jan 30, 2026",
+    date: "Jan 30, 2025",
     author: "Marcus Thorne",
     readTime: "9 min read",
     desc: "Micro-frontends solve organizational problems, not technical ones. If your team is under 50 engineers, a clean Next.js monolith will almost always deploy faster and break less."
@@ -45,7 +43,7 @@ export default function BlogIndex() {
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
       <NavBar />
 
-      {false && (
+      {true && (
         <>
       {/* Hero Section */}
       <section style={{ paddingTop: '10rem', paddingBottom: '6rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>

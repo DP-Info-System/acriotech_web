@@ -1,5 +1,3 @@
-"use client";
-
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { ArrowRight, GraduationCap, Video, Users2, ShieldCheck, Database, Layers } from "lucide-react";

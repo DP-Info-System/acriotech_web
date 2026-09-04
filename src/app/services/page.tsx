@@ -105,6 +105,19 @@ export default function ServicesIndexPage() {
         </div>
       </section>
 
+      {/* SEO Depth + Internal Linking — expands thin hub */}
+      <section style={{ padding: '4rem 0', background: '#F8FAFC', borderTop: '1px solid #E2E8F0' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <h2 style={{ fontSize: '1.75rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>How engagements work</h2>
+          <p style={{ color: '#475569', lineHeight: 1.7, marginBottom: '1.5rem', maxWidth: '800px' }}>
+            Fixed-price for bounded scope (from $40k module • $140-350k platform) or retainer for continuous product development — custom scoped in 24h after a discovery call with a Principal Architect. Every engagement includes discovery & architecture (2-4 weeks), agile sprints, automated + manual QA, zero-downtime deployment via Terraform/Ansible, and SLA-backed support. We sign NDAs by default; US contracting available for enterprise procurement; IP is yours. See <a href="/company/methodology" style={{ color: '#4B61B8', fontWeight: 600 }}>methodology</a>, <a href="/security-compliance" style={{ color: '#4B61B8', fontWeight: 600 }}>security & compliance</a>, and <a href="/solutions" style={{ color: '#4B61B8', fontWeight: 600 }}>solutions</a> (enterprise software, AI, cloud, data) for delivery proof. Questions? <a href="/contact-us" style={{ color: '#4B61B8', fontWeight: 600 }}>Talk to sales</a> — average first response &lt;4 business hours.
+          </p>
+          <p style={{ color: '#64748B', fontSize: '0.9rem', lineHeight: 1.6 }}>
+            Explore: <a href="/services/web-application-development" style={{ color: '#4B61B8' }}>Web App Development</a> · <a href="/services/api-development-integration" style={{ color: '#4B61B8' }}>API Integration</a> · <a href="/services/cloud-architecture" style={{ color: '#4B61B8' }}>Cloud Architecture</a> · <a href="/services/devops-ci-cd" style={{ color: '#4B61B8' }}>DevOps</a> · <a href="/services/ai-integration" style={{ color: '#4B61B8' }}>AI Integration</a> · <a href="/solutions/enterprise-software" style={{ color: '#4B61B8' }}>Enterprise Software solution</a>
+          </p>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );

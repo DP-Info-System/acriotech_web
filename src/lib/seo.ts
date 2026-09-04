@@ -20,7 +20,7 @@ export function pageMetadata(options: {
   return {
     title: fullTitle,
     description: options.description ?? defaultDescription,
-    alternates: { canonical: options.path },
+    alternates: { canonical: url },
     openGraph: {
       title: fullTitle,
       description: options.description ?? defaultDescription,
@@ -31,13 +31,19 @@ export function pageMetadata(options: {
       images: [
         {
           url: `${SITE_URL}${imageUrl}`,
-          width: 1024,
-          height: 1024,
+          width: 1200,
+          height: 630,
           alt:
             options.ogImageAlt ??
             "Acriotech — Enterprise Software Engineering",
         },
       ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: fullTitle,
+      description: options.description ?? defaultDescription,
+      images: [`${SITE_URL}${imageUrl}`],
     },
   };
 }

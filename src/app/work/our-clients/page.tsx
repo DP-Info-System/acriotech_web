@@ -58,6 +58,18 @@ export default function OurClientsPage() {
         </div>
       </section>
 
+      <section style={{ padding: '4rem 0', background: '#FFFFFF', borderTop: '1px solid #E2E8F0' }}>
+        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
+          <h2 style={{ fontSize: '1.75rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>Why clients trust Acriotech — and how we earn it</h2>
+          <p style={{ color: '#475569', lineHeight: 1.7, marginBottom: '1.5rem' }}>
+            Every deployment listed above is backed by a referenceable delivery: SOC2-aligned controls, audit logging, and SLA-backed operations (15m S1 / 1hr S2 / 24hr S3). We don&apos;t publish Fortune 500 logos without permission — instead we publish the engineering you can verify: architecture decisions, migration runbooks, and post-mortems. Explore how we work: <a href="/company/methodology" style={{ color: '#4B61B8', fontWeight: 600 }}>our methodology</a>, <a href="/security-compliance" style={{ color: '#4B61B8', fontWeight: 600 }}>security & compliance</a>, and <a href="/work/featured-projects" style={{ color: '#4B61B8', fontWeight: 600 }}>featured case studies</a> with real outcomes (latency p95 84% → 32ms, 15M req/day, 99.99% uptime). If you need a peer reference, <a href="/contact-us" style={{ color: '#4B61B8', fontWeight: 600 }}>talk to a Principal Architect</a> — we connect you with a past client in your industry after NDA alignment.
+          </p>
+          <p style={{ color: '#64748B', fontSize: '0.9rem', lineHeight: 1.6 }}>
+            Methodology: Counts as of Q1 2026 from internal Datadog dashboards and Jira delivery boards. &quot;Active Deployment&quot; means production system under active SLA. See <a href="/industries" style={{ color: '#4B61B8' }}>industries we serve</a> and <a href="/solutions" style={{ color: '#4B61B8' }}>solutions</a> for domain specifics.
+          </p>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );

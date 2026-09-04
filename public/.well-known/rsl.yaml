@@ -1,0 +1,7 @@
+rsl: "1.0"
+licenses:
+  - url: https://acriotech.com/terms-of-service
+    permissions: ["search", "ai-input", "use-reference"]
+    prohibitions: ["ai-train"]
+    attribution: "Acriotech Global Pvt. Ltd., https://acriotech.com"
+    contact: "info@acriotech.com"

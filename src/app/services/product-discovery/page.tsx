@@ -1,5 +1,3 @@
-"use client";
-
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { ArrowRight, Compass, Target, Map, PenTool, LayoutTemplate, Users2 } from "lucide-react";

@@ -1,5 +1,3 @@
-"use client";
-
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { ArrowRight, Truck, MapPin, Package, Clock, ShieldCheck, Box } from "lucide-react";
