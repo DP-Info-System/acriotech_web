@@ -1,6 +1,5 @@
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
-import Image from "next/image";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 export default function AboutUs() {
@@ -26,15 +25,13 @@ export default function AboutUs() {
         <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '4rem', alignItems: 'center' }}>
             
-            {/* Image Side */}
-            <div style={{ position: 'relative', height: '500px', borderRadius: '16px', overflow: 'hidden', backgroundColor: '#E2E8F0' }}>
-              <Image 
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                alt="Acriotech office at Shiv Narayan Complex, Virani Circle — engineering pod in Bhavnagar" 
-                fill
-                style={{ objectFit: 'cover' }}
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
+            {/* Editorial placeholder — no stock */}
+            <div style={{ height: '420px', borderRadius: '12px', background: '#F8FAFC', border: '1px solid #E2E8F0', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
+              <div style={{ textAlign: 'center' }}>
+                <div style={{ fontSize: '0.7rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: '#64748B', marginBottom: '0.75rem' }}>Bhavnagar HQ — Kaliyabid</div>
+                <div style={{ fontSize: '1rem', fontWeight: 700, color: '#0F172A' }}>14, Shiv Narayan Complex, Virani Circle</div>
+                <div style={{ fontSize: '0.85rem', color: '#64748B', marginTop: '0.5rem' }}>Engineering pod • 2018–2026 • 40+ active partners</div>
+              </div>
             </div>
             
             {/* Text Side */}
@@ -118,14 +115,11 @@ export default function AboutUs() {
                 Our leadership team has decades of combined experience building high-traffic platforms, migrating legacy systems, and securing corporate data. We bring this expertise to every single client engagement.
               </p>
             </div>
-            <div style={{ position: 'relative', height: '400px', borderRadius: '16px', overflow: 'hidden', backgroundColor: '#E2E8F0' }}>
-              <Image 
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                alt="Acriotech leadership — software architects and enterprise delivery leads, Bhavnagar HQ" 
-                fill
-                style={{ objectFit: 'cover' }}
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
+            <div style={{ height: '360px', borderRadius: '12px', background: '#FFFFFF', border: '1px solid #E2E8F0', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
+              <div style={{ textAlign: 'center', maxWidth: '320px' }}>
+                <div style={{ fontSize: '0.7rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: '#64748B', marginBottom: '0.75rem' }}>Leadership — engineers first</div>
+                <div style={{ fontSize: '0.95rem', color: '#0F172A', lineHeight: 1.6 }}>Principals review every architecture. No sales-only discovery. Decisions are recorded as ADRs.</div>
+              </div>
             </div>
           </div>
         </div>

@@ -4,8 +4,6 @@ import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { ArrowRight, FolderOpen, Code2, Layers, Smartphone, Globe } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
-import { motion } from "framer-motion";
 
 const projects = [
   {
@@ -18,8 +16,7 @@ const projects = [
       "Python",
       "OpenAI API",
       "PostgreSQL"
-    ],
-    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
+    ]
   },
   {
     "title": "Visual Workflow Automation Builder",
@@ -31,8 +28,7 @@ const projects = [
       "Node.js",
       "Redis",
       "WebSockets"
-    ],
-    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80"
+    ]
   },
   {
     "title": "Cloud Infrastructure Control Panel",
@@ -44,8 +40,7 @@ const projects = [
       "Go",
       "Docker API",
       "Prometheus"
-    ],
-    "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80"
+    ]
   },
   {
     "title": "Global Manufacturing ERP System",
@@ -57,8 +52,7 @@ const projects = [
       "Spring Boot",
       "Kafka",
       "Oracle DB"
-    ],
-    "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80"
+    ]
   },
   {
     "title": "Predictive Machine Learning Engine",
@@ -70,8 +64,7 @@ const projects = [
       "TensorFlow",
       "Apache Spark",
       "AWS SageMaker"
-    ],
-    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
+    ]
   },
   {
     "title": "Conversational AI Intelligence Agent",
@@ -83,8 +76,7 @@ const projects = [
       "Pinecone",
       "Next.js",
       "FastAPI"
-    ],
-    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80"
+    ]
   },
   {
     "title": "Multi-Tenant SaaS ERP",
@@ -96,8 +88,7 @@ const projects = [
       "NestJS",
       "Prisma",
       "PostgreSQL"
-    ],
-    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+    ]
   },
   {
     "title": "Kubernetes Cluster Dashboard",
@@ -109,8 +100,7 @@ const projects = [
       "Kubernetes API",
       "Go",
       "Grafana"
-    ],
-    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
+    ]
   },
   {
     "title": "MLOps Pipeline Orchestrator",
@@ -122,8 +112,7 @@ const projects = [
       "Kubeflow",
       "Docker",
       "React"
-    ],
-    "image": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80"
+    ]
   },
   {
     "title": "Omnichannel CRM Architecture",
@@ -135,8 +124,7 @@ const projects = [
       "Node.js",
       "Elasticsearch",
       "MongoDB"
-    ],
-    "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80"
+    ]
   },
   {
     "title": "Document AI Extraction Platform",
@@ -148,8 +136,7 @@ const projects = [
       "Hugging Face",
       "AWS Textract",
       "Next.js"
-    ],
-    "image": "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=800&q=80"
+    ]
   },
   {
     "title": "Autonomous Marketing Automation",
@@ -161,8 +148,7 @@ const projects = [
       "Python",
       "Meta API",
       "Google Ads API"
-    ],
-    "image": "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&w=800&q=80"
+    ]
   },
   {
     "title": "Cloud Database Provisioning UI",
@@ -174,8 +160,7 @@ const projects = [
       "Terraform",
       "Go",
       "CockroachDB"
-    ],
-    "image": "https://images.unsplash.com/photo-1555099962-4199c345e5dd?auto=format&fit=crop&w=800&q=80"
+    ]
   },
   {
     "title": "Supply Chain AI Optimizer",
@@ -187,8 +172,7 @@ const projects = [
       "PyTorch",
       "Apache Airflow",
       "React"
-    ],
-    "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
+    ]
   },
   {
     "title": "Computer Vision Defect Detection",
@@ -200,8 +184,7 @@ const projects = [
       "OpenCV",
       "TensorFlow Lite",
       "CUDA"
-    ],
-    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
+    ]
   },
   {
     "title": "API Integration Hub",
@@ -213,8 +196,7 @@ const projects = [
       "Node.js",
       "RabbitMQ",
       "PostgreSQL"
-    ],
-    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80"
+    ]
   },
   {
     "title": "Sales Pipeline Intelligence",
@@ -226,8 +208,7 @@ const projects = [
       "Whisper AI",
       "Node.js",
       "Salesforce API"
-    ],
-    "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80"
+    ]
   },
   {
     "title": "Enterprise Serverless Console",
@@ -239,8 +220,7 @@ const projects = [
       "Monaco Editor",
       "Go",
       "WebAssembly"
-    ],
-    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80"
+    ]
   },
   {
     "title": "AI Code Review Assistant",
@@ -252,8 +232,7 @@ const projects = [
       "OpenAI API",
       "GitLab CI",
       "Next.js"
-    ],
-    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80"
+    ]
   },
   {
     "title": "Global HR & Payroll ERP",
@@ -265,8 +244,7 @@ const projects = [
       "Java",
       "Spring Boot",
       "MySQL"
-    ],
-    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+    ]
   },
   {
     "title": "Dynamic Resource Allocation AI",
@@ -278,8 +256,7 @@ const projects = [
       "Ray RLlib",
       "PostGIS",
       "React"
-    ],
-    "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80"
+    ]
   },
   {
     "title": "No-Code Web Scraper Builder",
@@ -291,8 +268,7 @@ const projects = [
       "Puppeteer",
       "Node.js",
       "MongoDB"
-    ],
-    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
+    ]
   },
   {
     "title": "Virtual Private Cloud (VPC) Manager",
@@ -304,8 +280,7 @@ const projects = [
       "Go",
       "AWS EC2 API",
       "Azure RM"
-    ],
-    "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80"
+    ]
   },
   {
     "title": "Customer Data Platform (CDP)",
@@ -317,8 +292,7 @@ const projects = [
       "Apache Kafka",
       "Snowflake",
       "Node.js"
-    ],
-    "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80"
+    ]
   }
 ];
 
@@ -345,9 +319,9 @@ export default function FeaturedProjectsPage() {
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '3rem' }}>
              {projects.map((proj, i) => (
-               <div key={i} style={{ background: '#FFFFFF', borderRadius: '24px', border: '1px solid #E2E8F0', overflow: 'hidden', display: 'flex', flexDirection: 'column', transition: 'transform 0.2s, box-shadow 0.2s', cursor: 'pointer' }} className="project-card">
-                 <div style={{ height: '300px', background: '#1E293B', position: 'relative', overflow: 'hidden' }}>
-                    <Image src={proj.image} alt={proj.title} fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" unoptimized />
+               <div key={i} style={{ background: '#FFFFFF', borderRadius: '12px', border: '1px solid #E2E8F0', overflow: 'hidden', display: 'flex', flexDirection: 'column', transition: 'border-color 0.2s' }} className="project-card">
+                 <div style={{ height: 'auto', background: '#F8FAFC', borderBottom: '1px solid #E2E8F0', position: 'relative', overflow: 'hidden' }}>
+                     <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", background: "#F8FAFC", color: "#64748B", fontSize: "0.8rem", fontWeight: 600 }}>Replace with real product screenshot</div>
                     <div style={{ position: 'absolute', top: '1.5rem', left: '1.5rem', background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(10px)', color: '#FFFFFF', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.8rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', zIndex: 10 }}>
                       {proj.category}
                     </div>
@@ -368,8 +342,7 @@ export default function FeaturedProjectsPage() {
            </div>
            <style jsx>{`
             .project-card:hover {
-              transform: translateY(-5px);
-              box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+              border-color: #CBD5E1;
             }
           `}</style>
         </div>

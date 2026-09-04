@@ -4,13 +4,11 @@
   --background: #F7F9FC;
   --text-main: #0F172A;
   --text-secondary: #5B6472;
-  --glass-bg: rgba(255, 255, 255, 0.08);
-  --glass-border: rgba(255, 255, 255, 0.16);
-  --glass-dark-bg: rgba(255, 255, 255, 0.05);
-  --glass-dark-border: rgba(255, 255, 255, 0.1);
+  --card-bg: #FFFFFF;
+  --card-border: #E2E8F0;
   
-  --shadow-soft: 0 4px 20px -2px rgba(15, 23, 42, 0.04), 0 2px 8px -2px rgba(15, 23, 42, 0.02);
-  --shadow-hover: 0 12px 30px -4px rgba(15, 23, 42, 0.06), 0 4px 12px -2px rgba(15, 23, 42, 0.03);
+  --shadow-soft: 0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-hover: 0 4px 12px rgba(15, 23, 42, 0.08), 0 2px 4px rgba(15, 23, 42, 0.06);
 
   /* Fluid Typography Variables */
   --font-hero: clamp(2.125rem, 4vw + 1.5rem, 4.5rem);
@@ -25,30 +23,6 @@
   --spacing-section-sm: clamp(2rem, 4vw + 0.5rem, 4rem);
   --spacing-element: clamp(1.5rem, 3vw, 2.5rem);
   --spacing-gap: clamp(1rem, 2vw, 2rem);
-
-  /* Hero Illustration Variables */
-  --hero-code-top: 5%;
-  --hero-code-left: 5%;
-  --hero-code-width: 280px;
-  
-  --hero-db-top: 40%;
-  --hero-db-left: 40%;
-  --hero-db-right: auto;
-  --hero-db-width: 300px;
-  
-  --hero-ai-top: 15%;
-  --hero-ai-left: auto;
-  --hero-ai-right: 5%;
-  
-  --hero-trust-top: auto;
-  --hero-trust-bottom: 20%;
-  --hero-trust-left: 15%;
-  --hero-trust-right: auto;
-  
-  --hero-deploy-bottom: 5%;
-  --hero-deploy-left: auto;
-  --hero-deploy-right: 20%;
-  --hero-deploy-transform: none;
 }
 
 * {
@@ -101,7 +75,7 @@ a {
   }
 }
 
-/* Background Engine */
+/* Background - solid, no grid */
 .bg-engine {
   position: fixed;
   top: 0;
@@ -110,19 +84,11 @@ a {
   height: 100vh;
   z-index: -2;
   background-color: var(--background);
-  /* Reduced grid opacity by 30% -> highly subtle */
-  background-image: 
-    linear-gradient(rgba(15, 23, 42, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(15, 23, 42, 0.02) 1px, transparent 1px);
-  background-size: 60px 60px;
   pointer-events: none;
 }
 
 .solutions-hero-grid {
-  background-image:
-    linear-gradient(rgba(148, 163, 184, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(148, 163, 184, 0.055) 1px, transparent 1px) !important;
-  background-size: 64px 64px !important;
+  background: #F8FAFC !important;
 }
 
 .solution-detail-hero h1 {
@@ -162,96 +128,26 @@ a {
   }
 }
 
-.bg-glows {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  pointer-events: none;
-  background: 
-    radial-gradient(circle at 15% 15%, rgba(75, 97, 184, 0.04) 0%, transparent 50%),
-    radial-gradient(circle at 85% 85%, rgba(123, 175, 53, 0.02) 0%, transparent 50%);
+/* Dark Section - solid */
+.dark-section {
+  background-color: #0F172A;
+  color: #FFFFFF;
 }
 
-@keyframes floatParticles {
-  0% { transform: translateY(0) translateX(0); opacity: 0; }
-  50% { opacity: 0.5; }
-  100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
-}
-
-.bg-particles::before, .bg-particles::after {
-  content: '';
-  position: fixed;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: rgba(75, 97, 184, 0.2);
-  top: 100vh;
-  left: 20vw;
-  animation: floatParticles 20s infinite linear;
-  z-index: -1;
-  pointer-events: none;
-}
-
-.bg-particles::after {
-  left: 70vw;
-  width: 6px;
-  height: 6px;
-  background: rgba(123, 175, 53, 0.15);
-  animation-duration: 25s;
-  animation-delay: 5s;
-}
-
-/* Glassmorphism Classes (Premium Refined) */
-.glass-panel {
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border-radius: 12px; /* Slightly sharper corners, more engineered */
+/* Card - solid, editorial */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
   box-shadow: var(--shadow-soft);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
   position: relative;
   overflow: hidden;
 }
 
-/* Diagonal cut / "A" inspired corner detail for panels */
-.glass-panel::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 40px;
-  height: 40px;
-  background: linear-gradient(135deg, transparent 50%, rgba(255,255,255,0.4) 50%);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.glass-panel:hover {
+.card:hover {
   box-shadow: var(--shadow-hover);
-  transform: translateY(-2px);
-  border-color: rgba(255, 255, 255, 0.4);
-}
-
-.glass-panel:hover::before {
-  opacity: 1;
-}
-
-/* Dark Mode Sections (Footer, CTA) */
-.dark-section {
-  background-color: #0A0F1D; /* Deep Navy */
-  color: #FFFFFF;
-}
-
-.glass-panel-dark {
-  background: var(--glass-dark-bg);
-  border: 1px solid var(--glass-dark-border);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border-radius: 12px;
+  border-color: #CBD5E1;
 }
 
 /* Typography Overrides */
@@ -334,44 +230,27 @@ p {
   padding: 8rem 0;
 }
 
-/* Animations */
-@keyframes drawCircuit {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-.circuit-path {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: drawCircuit 4s ease-out forwards;
-}
-
-/* Asymmetric Bento Grid */
-.bento-grid {
+/* Capabilities Grid - editorial, not bento */
+.capabilities-grid {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
 
-.bento-card {
+.capabilities-card {
   border-radius: 12px;
-  padding: 2.5rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
 }
 
-/* Geometric A-Inspired Background Pattern */
-.geometric-bg-pattern {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, transparent 48%, rgba(75, 97, 184, 0.02) 48%, rgba(75, 97, 184, 0.02) 52%, transparent 52%);
-  background-size: 40px 40px;
-  opacity: 0.5;
-  pointer-events: none;
+@media (max-width: 900px) {
+  .capabilities-grid {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 /* Shared content architecture pages */
@@ -512,34 +391,6 @@ p {
    GLOBAL MOBILE RESPONSIVENESS OVERRIDES
    ========================================================================== */
 @media (max-width: 860px) {
-  :root {
-    --hero-code-top: 0%;
-    --hero-code-left: 5%;
-    --hero-code-width: clamp(260px, 85vw, 280px);
-    
-    --hero-db-top: 28%;
-    --hero-db-left: auto;
-    --hero-db-right: 5%;
-    --hero-db-width: clamp(260px, 85vw, 280px);
-    
-    --hero-ai-top: 55%;
-    --hero-ai-left: 5%;
-    --hero-ai-right: auto;
-    
-    --hero-trust-top: 72%;
-    --hero-trust-bottom: auto;
-    --hero-trust-left: auto;
-    --hero-trust-right: 5%;
-    
-    --hero-deploy-bottom: 2%;
-    --hero-deploy-left: 50%;
-    --hero-deploy-right: auto;
-    --hero-deploy-transform: translateX(-50%);
-  }
-
-  .hero-architecture-wrapper {
-    height: 700px !important;
-  }
 
   /* Container adjustments */
   .container {
@@ -572,11 +423,11 @@ p {
 }
 
 @media (max-width: 900px) {
-  .bento-grid {
+  .capabilities-grid {
     display: flex;
     flex-direction: column;
   }
-  .bento-card {
+  .capabilities-card {
     min-height: auto !important;
   }
   
