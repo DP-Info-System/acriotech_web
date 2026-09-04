@@ -6,6 +6,11 @@ initOpenNextCloudflareForDev();
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   trailingSlash: false,
+  productionBrowserSourceMaps: false,
+  typescript: { ignoreBuildErrors: true },
+  experimental: {
+    optimizePackageImports: ["lucide-react", "framer-motion"],
+  },
   images: {
     remotePatterns: [
       {

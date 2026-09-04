@@ -3,9 +3,6 @@
   "name": "acriotech-web",
   "main": ".open-next/worker.js",
   "compatibility_date": "2026-09-03",
-  "build": {
-    "command": "npx opennextjs-cloudflare build"
-  },
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "assets": {
     "directory": ".open-next/assets",
@@ -18,12 +15,6 @@
     {
       "binding": "WORKER_SELF_REFERENCE",
       "service": "acriotech-web"
-    }
-  ],
-  "r2_buckets": [
-    {
-      "binding": "NEXT_INC_CACHE_R2_BUCKET",
-      "bucket_name": "acriotech-opennext-cache"
     }
   ],
   "images": {
