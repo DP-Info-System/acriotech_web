@@ -486,64 +486,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      {true && (
-      <section className="section-padding" style={{ background: '#FFFFFF' }}>
-         <div className="container">
-            <div style={{ marginBottom: '5rem', textAlign: 'center' }}>
-              <div style={{ fontSize: '0.85rem', fontWeight: 600, color: '#5B6472', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1rem' }}>Client Partnerships</div>
-              <h2 style={{ fontSize: '3rem', letterSpacing: '-0.03em', color: '#0F172A', fontWeight: 700, margin: 0 }}>Trusted by Engineering Leaders</h2>
-            </div>
-            
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem' }}>
-              {[
-                { quote: "Acriotech completely rebuilt our core processing engine. The architecture is flawless, and the stability is unmatched.", title: "VP of Engineering", company: "Global FinTech" },
-                { quote: "A true engineering partner. They didn't just write code; they architected a foundation for our next decade of growth.", title: "Chief Technology Officer", company: "Enterprise Logistics" },
-                { quote: "Their understanding of both complex cloud infrastructure and elegant UI design makes them a rare find.", title: "Director of Product", company: "SaaS Platform" },
-                { quote: "Acriotech delivered an incredible e-commerce upgrade that boosted our conversion rates by 30%.", title: "Tech Lead", company: "Thames Retail IT (UK)" },
-                { quote: "Their DevOps implementation drastically reduced our deployment time from days to hours.", title: "Head of Engineering", company: "Oakwood Logistics (UK)" },
-                { quote: "The custom SaaS dashboard they built is now the core of our operations.", title: "Product Manager", company: "Maple Sync (Canada)" },
-                { quote: "Excellent team. They understood our complex data requirements perfectly.", title: "Data Architect", company: "Northway Analytics (Canada)" },
-                { quote: "Flawless execution on our mobile application overhaul. Highly recommend.", title: "CTO", company: "Sydney Cloud Solutions (Australia)" },
-                { quote: "Their proactive communication and technical expertise made this project a breeze.", title: "Engineering Manager", company: "Coral Reef Tech (Australia)" },
-                { quote: "Acriotech acts like an extension of our internal team. Fantastic architecture skills.", title: "Founder", company: "Kiwi Web Services (New Zealand)" },
-                { quote: "They refactored our legacy system without any downtime. Pure wizards.", title: "Lead Developer", company: "Auckland Dynamics (New Zealand)" },
-                { quote: "German engineering standards met their match! The code quality is pristine.", title: "Software Director", company: "Berlin Automatik (Germany)" },
-                { quote: "A very reliable technical partner for our IoT infrastructure needs.", title: "VP of Product", company: "Munich Sensorics (Germany)" },
-                { quote: "The microservices migration was handled perfectly. Minimal friction, huge performance gains.", title: "Platform Architect", company: "Bristol Financial (UK)" },
-                { quote: "We were struggling with database scaling until Acriotech stepped in.", title: "Database Lead", company: "Toronto Data Co. (Canada)" },
-                { quote: "They transformed our clunky internal portal into a blazing fast React application.", title: "IT Director", company: "Vindhya Motors (India)" },
-                { quote: "Amazing work on the AI integration. It has saved us hundreds of man-hours.", title: "COO", company: "Kochi Tech Labs (India)" },
-                { quote: "A highly skilled team that delivers exactly what they promise, on time.", title: "Technical Lead", company: "Mumbai FinServ (India)" },
-                { quote: "Their cloud engineers optimized our AWS bill while improving performance.", title: "CTO", company: "Delhi Startup Hub (India)" },
-                { quote: "The mobile app they delivered is robust and handles peak traffic flawlessly.", title: "Engineering Head", company: "Bengaluru Logistics (India)" },
-                { quote: "Acriotech's attention to detail during the UI/UX phase was exceptional.", title: "Product Owner", company: "Pune Retail Tech (India)" },
-                { quote: "They modernized our entire stack in just three months. Truly impressive.", title: "VP of Engineering", company: "Hyderabad Cloud Systems (India)" },
-                { quote: "Great communication and even better code quality.", title: "Software Manager", company: "Chennai Analytics (India)" }
-              ].map((t, i) => (
-                <div key={i} style={{ padding: '3rem', background: '#F8FAFC', borderRadius: '16px', border: '1px solid rgba(15,23,42,0.05)', position: 'relative', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                   {/* Large Quote Mark */}
-                   <div style={{ position: 'absolute', top: '2rem', left: '2rem', fontSize: '5rem', color: 'rgba(75, 97, 184, 0.08)', fontFamily: 'serif', lineHeight: 1 }}>"</div>
-                   
-                   <p style={{ fontSize: '1.1rem', color: '#0F172A', lineHeight: 1.7, marginBottom: '3rem', position: 'relative', zIndex: 1, fontWeight: 500 }}>
-                     {t.quote}
-                   </p>
-                   
-                   <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                      <div style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'linear-gradient(135deg, rgba(75, 97, 184, 0.1) 0%, rgba(75, 97, 184, 0.2) 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#4B61B8', fontWeight: 700, fontSize: '1rem', border: '1px solid rgba(75, 97, 184, 0.1)' }}>
-                         {t.company.charAt(0)}
-                      </div>
-                      <div>
-                         <div style={{ fontSize: '0.9rem', fontWeight: 700, color: '#0F172A' }}>{t.title}</div>
-                         <div style={{ fontSize: '0.8rem', color: '#5B6472', marginTop: '0.2rem' }}>{t.company}</div>
-                      </div>
-                   </div>
-                </div>
-              ))}
-            </div>
-         </div>
-      </section>
-      )}
+
 
       {/* FAQ Section */}
       <section className="section-padding" style={{ background: '#FFFFFF', borderBottom: '1px solid rgba(15,23,42,0.05)' }}>
