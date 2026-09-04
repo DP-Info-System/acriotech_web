@@ -3,6 +3,9 @@
   "name": "acriotech-web",
   "main": ".open-next/worker.js",
   "compatibility_date": "2026-09-03",
+  "build": {
+    "command": "npx opennextjs-cloudflare build"
+  },
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "assets": {
     "directory": ".open-next/assets",
