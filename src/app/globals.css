@@ -154,8 +154,8 @@ p {
   z-index: -1;
   pointer-events: none;
   background: 
-    radial-gradient(circle at 15% 15%, rgba(37, 99, 235, 0.04) 0%, transparent 50%),
-    radial-gradient(circle at 85% 85%, rgba(6, 182, 212, 0.02) 0%, transparent 50%);
+    radial-gradient(circle at 15% 15%, rgba(37, 99, 235, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 85% 85%, rgba(59, 130, 246, 0.03) 0%, transparent 50%);
 }
 
 .glass-panel {
