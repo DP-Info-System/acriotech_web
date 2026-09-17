@@ -151,12 +151,12 @@ export default function Footer() {
               {/* SOLUTIONS */}
               <div>
                 <h4 style={{
-                  fontSize: '0.8rem', color: '#94A3B8', fontWeight: 700,
+                  fontSize: '0.85rem', color: '#94A3B8', fontWeight: 700,
                   marginBottom: '1.25rem', textTransform: 'uppercase', letterSpacing: '0.08em',
                 }}>
                   Solutions
                 </h4>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.85rem', fontSize: '0.9rem', fontWeight: 500 }}>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.85rem', fontSize: '0.95rem', fontWeight: 500 }}>
                   {[
                     { label: 'Enterprise Software', href: '/solutions/enterprise-software' },
                     { label: 'AI Automation', href: '/solutions/ai-intelligent-automation' },
@@ -179,12 +179,12 @@ export default function Footer() {
               {/* SERVICES */}
               <div>
                 <h4 style={{
-                  fontSize: '0.8rem', color: '#94A3B8', fontWeight: 700,
+                  fontSize: '0.85rem', color: '#94A3B8', fontWeight: 700,
                   marginBottom: '1.25rem', textTransform: 'uppercase', letterSpacing: '0.08em',
                 }}>
                   Services
                 </h4>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.85rem', fontSize: '0.9rem', fontWeight: 500 }}>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.85rem', fontSize: '0.95rem', fontWeight: 500 }}>
                   {[
                     { label: 'Consulting', href: '/services/software-consulting' },
                     { label: 'Software Engineering', href: '/services/web-application-development' },
@@ -208,12 +208,12 @@ export default function Footer() {
               {/* RESOURCES */}
               <div>
                 <h4 style={{
-                  fontSize: '0.8rem', color: '#94A3B8', fontWeight: 700,
+                  fontSize: '0.85rem', color: '#94A3B8', fontWeight: 700,
                   marginBottom: '1.25rem', textTransform: 'uppercase', letterSpacing: '0.08em',
                 }}>
                   Resources
                 </h4>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.85rem', fontSize: '0.9rem', fontWeight: 500 }}>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.85rem', fontSize: '0.95rem', fontWeight: 500 }}>
                   {[
                     { label: 'Case Studies', href: '/work' },
                     { label: 'Security & Compliance', href: '/security-compliance' },
@@ -235,12 +235,12 @@ export default function Footer() {
               {/* COMPANY */}
               <div>
                 <h4 style={{
-                  fontSize: '0.8rem', color: '#94A3B8', fontWeight: 700,
+                  fontSize: '0.85rem', color: '#94A3B8', fontWeight: 700,
                   marginBottom: '1.25rem', textTransform: 'uppercase', letterSpacing: '0.08em',
                 }}>
                   Company
                 </h4>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.85rem', fontSize: '0.9rem', fontWeight: 500 }}>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.85rem', fontSize: '0.95rem', fontWeight: 500 }}>
                   {[
                     { label: 'About Acriotech', href: '/about-us' },
                     { label: 'Our Methodology', href: '/company/methodology' },
@@ -358,7 +358,7 @@ export default function Footer() {
 
         {/* Bottom Legal Bar */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '2rem', gap: '1.25rem' }}>
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0.5rem 1rem', fontSize: '0.825rem', color: '#94A3B8', fontWeight: 500 }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0.5rem 1rem', fontSize: '0.875rem', color: '#94A3B8', fontWeight: 500 }}>
             {[
               'Contact Us', 'Security Compliance', 'IPR Complaints', 'Anti-spam Policy',
               'Terms of Service', 'Privacy Policy', 'Refund Policy', 'Trademark Policy',
@@ -376,7 +376,7 @@ export default function Footer() {
             ))}
           </div>
 
-          <div style={{ fontSize: '0.825rem', color: '#94A3B8', fontWeight: 500, textAlign: 'center' }}>
+          <div style={{ fontSize: '0.875rem', color: '#94A3B8', fontWeight: 500, textAlign: 'center' }}>
             &copy; 2026 Acriotech Pvt. Ltd. All rights reserved.
           </div>
         </div>

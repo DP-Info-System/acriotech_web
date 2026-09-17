@@ -133,7 +133,7 @@ export default function WorkIndexPage() {
               {/* Panel 1 — Deployment Timeline */}
               <div style={{
                 position: 'absolute', top: '0px', left: '5px',
-                width: '195px', padding: '14px',
+                width: '230px', padding: '16px',
                 background: 'rgba(255,255,255,0.85)',
                 borderRadius: '14px',
                 border: '1px solid rgba(226,232,240,0.6)',
@@ -141,14 +141,14 @@ export default function WorkIndexPage() {
                 WebkitBackdropFilter: 'blur(12px)',
                 boxShadow: '0 4px 20px rgba(0,0,0,0.04)',
               }}>
-                <div style={{ fontSize: '0.6rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>Deploy Timeline</div>
+                <div style={{ fontSize: '0.7rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>Deploy Timeline</div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                   {[
                     { env: 'Production', status: '✓', time: '2m ago' },
                     { env: 'Staging', status: '✓', time: '15m ago' },
                     { env: 'Review', status: '⚡', time: '1h ago' },
                   ].map((d, i) => (
-                    <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.6rem' }}>
+                    <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.68rem' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                         <span style={{ color: d.status === '✓' ? '#22C55E' : '#F59E0B' }}>{d.status}</span>
                         <span style={{ color: 'var(--text-secondary)' }}>{d.env}</span>
@@ -161,8 +161,8 @@ export default function WorkIndexPage() {
 
               {/* Panel 2 — Git Commits */}
               <div style={{
-                position: 'absolute', top: '70px', right: '5px',
-                width: '185px', padding: '14px',
+                position: 'absolute', top: '50px', right: '5px',
+                width: '215px', padding: '16px',
                 background: 'rgba(255,255,255,0.85)',
                 borderRadius: '14px',
                 border: '1px solid rgba(226,232,240,0.6)',
@@ -170,7 +170,7 @@ export default function WorkIndexPage() {
                 WebkitBackdropFilter: 'blur(12px)',
                 boxShadow: '0 4px 20px rgba(0,0,0,0.04)',
               }}>
-                <div style={{ fontSize: '0.6rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>Recent Commits</div>
+                <div style={{ fontSize: '0.7rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>Recent Commits</div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
                   {[
                     { msg: 'fix: checkout overflow', author: 'AR', branch: 'main' },
@@ -178,10 +178,10 @@ export default function WorkIndexPage() {
                     { msg: 'chore: deps upgrade', author: 'AR', branch: 'main' },
                   ].map((c, i) => (
                     <div key={i} style={{ display: 'flex', gap: '6px', alignItems: 'center', padding: '4px 6px', borderRadius: '6px', background: i === 0 ? 'rgba(37,99,235,0.04)' : 'transparent' }}>
-                      <div style={{ width: '14px', height: '14px', borderRadius: '4px', background: i === 0 ? '#2563EB' : 'rgba(37,99,235,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.45rem', fontWeight: 700, color: i === 0 ? '#FFFFFF' : '#2563EB', flexShrink: 0 }}>{c.author}</div>
+                      <div style={{ width: '16px', height: '16px', borderRadius: '4px', background: i === 0 ? '#2563EB' : 'rgba(37,99,235,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.55rem', fontWeight: 700, color: i === 0 ? '#FFFFFF' : '#2563EB', flexShrink: 0 }}>{c.author}</div>
                       <div style={{ flex: 1, minWidth: 0 }}>
-                        <div style={{ fontSize: '0.6rem', color: 'var(--text-primary)', fontWeight: 500, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{c.msg}</div>
-                        <div style={{ fontSize: '0.5rem', color: 'var(--text-tertiary)' }}>{c.branch}</div>
+                        <div style={{ fontSize: '0.68rem', color: 'var(--text-primary)', fontWeight: 500, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{c.msg}</div>
+                        <div style={{ fontSize: '0.58rem', color: 'var(--text-tertiary)' }}>{c.branch}</div>
                       </div>
                     </div>
                   ))}
@@ -190,8 +190,8 @@ export default function WorkIndexPage() {
 
               {/* Panel 3 — Performance Graph */}
               <div style={{
-                position: 'absolute', top: '200px', left: '15px',
-                width: '160px', padding: '14px',
+                position: 'absolute', top: '175px', left: '15px',
+                width: '185px', padding: '16px',
                 background: 'rgba(255,255,255,0.85)',
                 borderRadius: '14px',
                 border: '1px solid rgba(226,232,240,0.6)',
@@ -199,13 +199,13 @@ export default function WorkIndexPage() {
                 WebkitBackdropFilter: 'blur(12px)',
                 boxShadow: '0 4px 20px rgba(0,0,0,0.04)',
               }}>
-                <div style={{ fontSize: '0.6rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>Performance</div>
-                <div style={{ display: 'flex', gap: '4px', alignItems: 'flex-end', height: '32px' }}>
+                <div style={{ fontSize: '0.7rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>Performance</div>
+                <div style={{ display: 'flex', gap: '4px', alignItems: 'flex-end', height: '40px' }}>
                   {[25, 45, 30, 55, 40, 60, 75].map((h, i) => (
                     <div key={i} style={{ flex: 1, height: `${h}%`, borderRadius: '3px', background: i >= 5 ? 'linear-gradient(180deg, #22C55E, #16A34A)' : '#E2E8F0' }} />
                   ))}
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '6px', fontSize: '0.5rem', color: 'var(--text-tertiary)' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '6px', fontSize: '0.6rem', color: 'var(--text-tertiary)' }}>
                   <span>Mon</span>
                   <span style={{ color: '#22C55E', fontWeight: 600 }}>+24%</span>
                 </div>
@@ -213,8 +213,8 @@ export default function WorkIndexPage() {
 
               {/* Panel 4 — API Status */}
               <div style={{
-                position: 'absolute', top: '210px', right: '30px',
-                width: '140px', padding: '14px',
+                position: 'absolute', top: '180px', right: '30px',
+                width: '170px', padding: '16px',
                 background: 'rgba(255,255,255,0.85)',
                 borderRadius: '14px',
                 border: '1px solid rgba(226,232,240,0.6)',
@@ -222,14 +222,14 @@ export default function WorkIndexPage() {
                 WebkitBackdropFilter: 'blur(12px)',
                 boxShadow: '0 4px 20px rgba(0,0,0,0.04)',
               }}>
-                <div style={{ fontSize: '0.6rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>API Status</div>
+                <div style={{ fontSize: '0.7rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>API Status</div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
                   {[
                     { name: 'GraphQL', status: '99.9%' },
                     { name: 'REST', status: '99.7%' },
                     { name: 'WebSocket', status: '99.5%' },
                   ].map((a, i) => (
-                    <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.6rem' }}>
+                    <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.68rem' }}>
                       <span style={{ color: 'var(--text-secondary)' }}>{a.name}</span>
                       <span style={{ color: '#22C55E', fontWeight: 600, fontFamily: 'monospace' }}>{a.status}</span>
                     </div>
@@ -241,13 +241,13 @@ export default function WorkIndexPage() {
               <div style={{
                 position: 'absolute', bottom: '15px', left: '50%',
                 transform: 'translateX(-50%)',
-                width: '220px', padding: '14px',
+                width: '245px', padding: '16px',
                 background: 'rgba(15,23,42,0.08)',
                 borderRadius: '14px',
                 border: '1px solid rgba(226,232,240,0.4)',
                 boxShadow: '0 4px 20px rgba(0,0,0,0.04)',
               }}>
-                <div style={{ fontSize: '0.6rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>Architecture</div>
+                <div style={{ fontSize: '0.7rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>Architecture</div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '3px' }}>
                   {[
                     { label: 'CDN', color: '#3B82F6' },
@@ -256,14 +256,14 @@ export default function WorkIndexPage() {
                     { label: 'DB', color: '#F59E0B' },
                   ].map((a, i) => (
                     <div key={i} style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '3px' }}>
-                      <div style={{ width: '24px', height: '24px', borderRadius: '6px', background: `${a.color}12`, border: `1px solid ${a.color}20`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.45rem', fontWeight: 700, color: a.color }}>{a.label}</div>
-                      {i < 3 && <div style={{ width: '8px', height: '1px', background: '#E2E8F0' }} />}
+                      <div style={{ width: '27px', height: '27px', borderRadius: '6px', background: `${a.color}12`, border: `1px solid ${a.color}20`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.56rem', fontWeight: 700, color: a.color }}>{a.label}</div>
+                      {i < 3 && <div style={{ width: '10px', height: '1px', background: '#E2E8F0' }} />}
                     </div>
                   ))}
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'center', marginTop: '6px', gap: '4px' }}>
                   {['CDN', 'API Gateway', 'Microservices', 'Postgres'].map((l, i) => (
-                    <span key={i} style={{ fontSize: '0.5rem', color: 'var(--text-tertiary)', background: '#FFFFFF', padding: '1px 4px', borderRadius: '3px' }}>{l}</span>
+                    <span key={i} style={{ fontSize: '0.6rem', color: 'var(--text-tertiary)', background: '#FFFFFF', padding: '1px 4px', borderRadius: '3px' }}>{l}</span>
                   ))}
                 </div>
               </div>
@@ -276,6 +276,7 @@ export default function WorkIndexPage() {
         </div>
         <style>{`
           @media (max-width: 900px) { .work-hero-illustration { display: none; } }
+          @media (min-width: 901px) { .work-hero-illustration { max-width: 520px; margin: 0 auto; } }
           @media (max-width: 640px) {
             .work-hero-illustration { display: none; }
             .metrics-grid { grid-template-columns: repeat(2, 1fr); }

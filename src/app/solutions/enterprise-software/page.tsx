@@ -70,8 +70,8 @@ function EnterpriseHeroVisual() {
           <circle cx={node.x - 40} cy={node.y + 2} r="3" fill={node.color} opacity="0.6">
             <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite" />
           </circle>
-          <text x={node.x - 30} y={node.y + 6} fill={NAVY} fontSize="8" fontWeight="700" letterSpacing="0.05em">{node.label}</text>
-          <text x={node.x - 30} y={node.y + 18} fill={BLUE_GRAY_LIGHT} fontSize="7">{node.sub}</text>
+          <text x={node.x + 10} y={node.y + 6} textAnchor="middle" fill={NAVY} fontSize="8" fontWeight="700" letterSpacing="0.05em">{node.label}</text>
+          <text x={node.x + 10} y={node.y + 18} textAnchor="middle" fill={BLUE_GRAY_LIGHT} fontSize="7">{node.sub}</text>
         </motion.g>
       ))}
 
@@ -151,10 +151,10 @@ function EnterpriseHeroVisual() {
 
       {/* Status indicator */}
       <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.5 }}>
-        <circle cx="560" cy="370" r="5" fill="#22C55E">
+        <circle cx="555" cy="388" r="5" fill="#22C55E">
           <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite" />
         </circle>
-        <text x="542" y="373" textAnchor="end" fill={BLUE_GRAY_LIGHT} fontSize="7" fontWeight="600">SYSTEM HEALTH</text>
+        <text x="540" y="391" textAnchor="end" fill={BLUE_GRAY_LIGHT} fontSize="7" fontWeight="600">SYSTEM HEALTH</text>
       </motion.g>
     </svg>
   );
@@ -182,8 +182,8 @@ function IntegrationDiagram() {
             <rect x={sys.x - 50} y={sys.y} width="100" height="48" rx="8" fill={NAVY_800} stroke={NAVY_700} strokeWidth="0.8" />
             <circle cx={sys.x - 30} cy={sys.y + 24} r="10" fill={NAVY} stroke={BLUE_TEXT} strokeWidth="0.8" />
             <text x={sys.x - 30} y={sys.y + 27} textAnchor="middle" fill={ACCENT} fontSize="8" fontWeight="700">{sys.icon}</text>
-            <text x={sys.x - 10} y={sys.y + 20} fill="#F8FAFC" fontSize="8" fontWeight="700">{sys.label}</text>
-            <text x={sys.x - 10} y={sys.y + 32} fill={BLUE_GRAY_MUTED} fontSize="6.5">{sys.sub}</text>
+            <text x={sys.x + 16} y={sys.y + 20} textAnchor="middle" fill="#F8FAFC" fontSize="8" fontWeight="700">{sys.label}</text>
+            <text x={sys.x + 16} y={sys.y + 32} textAnchor="middle" fill={BLUE_GRAY_MUTED} fontSize="6.5">{sys.sub}</text>
           </motion.g>
         ))}
 
@@ -199,8 +199,8 @@ function IntegrationDiagram() {
             <circle cx={svc.x - 30} cy={svc.y + 28} r="3" fill={svc.color} opacity="0.5">
               <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" begin={`${i * 0.5}s`} />
             </circle>
-            <text x={svc.x - 18} y={svc.y + 21} fill="#F8FAFC" fontSize="8" fontWeight="700">{svc.label}</text>
-            <text x={svc.x - 18} y={svc.y + 33} fill={BLUE_GRAY_MUTED} fontSize="6.5">{svc.sub}</text>
+            <text x={svc.x + 12} y={svc.y + 21} textAnchor="middle" fill="#F8FAFC" fontSize="8" fontWeight="700">{svc.label}</text>
+            <text x={svc.x + 12} y={svc.y + 33} textAnchor="middle" fill={BLUE_GRAY_MUTED} fontSize="6.5">{svc.sub}</text>
           </motion.g>
         ))}
 

@@ -148,25 +148,25 @@ export default function IndustriesIndexPage() {
                 <path d="M80 40 L200 40 L200 140" stroke="rgba(124,58,237,0.15)" strokeWidth="1" strokeDasharray="3 3" />
                 <path d="M360 200 L360 340 L240 340" stroke="rgba(124,58,237,0.1)" strokeWidth="1" strokeDasharray="3 3" />
                 <path d="M50 300 L50 400 L170 400" stroke="rgba(6,182,212,0.08)" strokeWidth="1" strokeDasharray="3 3" />
-                <circle cx="200" cy="140" r="3" fill="rgba(124,58,237,0.3)" />
-                <circle cx="240" cy="340" r="3" fill="rgba(124,58,237,0.3)" />
+                <circle cx="200" cy="140" r="4" fill="rgba(124,58,237,0.3)" />
+                <circle cx="240" cy="340" r="4" fill="rgba(124,58,237,0.3)" />
               </svg>
 
               {/* Panel 1 — Industry KPIs */}
               <div style={{
                 position: 'absolute', top: '5px', left: '0',
-                width: '190px', padding: '14px',
+                width: '225px', padding: '16px',
                 background: 'rgba(15,23,42,0.7)',
                 borderRadius: '14px',
                 border: '1px solid rgba(255,255,255,0.04)',
                 backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)',
               }}>
-                <div style={{ fontSize: '0.6rem', fontWeight: 700, color: 'rgba(255,255,255,0.35)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>Industry KPIs</div>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px' }}>
+                <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'rgba(255,255,255,0.35)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>Industry KPIs</div>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
                   {[['$2.4B', 'Processed'], ['99.97%', 'Uptime'], ['12ms', 'Latency'], ['100%', 'Compliant']].map((k, i) => (
                     <div key={i} style={{ padding: '6px', background: 'rgba(255,255,255,0.02)', borderRadius: '6px', textAlign: 'center' }}>
                       <div style={{ fontSize: '0.8rem', fontWeight: 800, color: '#A78BFA' }}>{k[0]}</div>
-                      <div style={{ fontSize: '0.5rem', color: 'rgba(255,255,255,0.25)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>{k[1]}</div>
+                      <div style={{ fontSize: '0.6rem', color: 'rgba(255,255,255,0.25)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>{k[1]}</div>
                     </div>
                   ))}
                 </div>
@@ -174,21 +174,21 @@ export default function IndustriesIndexPage() {
 
               {/* Panel 2 — Compliance Status */}
               <div style={{
-                position: 'absolute', top: '100px', right: '5px',
-                width: '170px', padding: '14px',
+                position: 'absolute', top: '95px', right: '5px',
+                width: '205px', padding: '16px',
                 background: 'rgba(15,23,42,0.7)',
                 borderRadius: '14px',
                 border: '1px solid rgba(255,255,255,0.04)',
                 backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)',
               }}>
-                <div style={{ fontSize: '0.6rem', fontWeight: 700, color: 'rgba(255,255,255,0.35)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>Compliance</div>
+                <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'rgba(255,255,255,0.35)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>Compliance</div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
                   {[{ name: 'SOC 2', status: '✓' }, { name: 'HIPAA', status: '✓' }, { name: 'PCI-DSS', status: '✓' }, { name: 'FedRAMP', status: 'In Progress' }].map((c, i) => (
-                    <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.6rem' }}>
+                    <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.7rem' }}>
                       <span style={{ color: 'rgba(255,255,255,0.5)' }}>{c.name}</span>
                       <span style={{
                         color: c.status === '✓' ? '#22C55E' : '#F59E0B',
-                        fontWeight: 600, fontSize: '0.55rem',
+                        fontWeight: 600, fontSize: '0.66rem',
                         background: c.status === '✓' ? 'rgba(34,197,94,0.08)' : 'rgba(245,158,11,0.08)',
                         padding: '1px 6px', borderRadius: '4px',
                       }}>{c.status}</span>
@@ -199,33 +199,33 @@ export default function IndustriesIndexPage() {
 
               {/* Panel 3 — Security Score */}
               <div style={{
-                position: 'absolute', top: '200px', left: '10px',
-                width: '150px', padding: '14px',
+                position: 'absolute', top: '185px', left: '10px',
+                width: '185px', padding: '16px',
                 background: 'rgba(15,23,42,0.7)',
                 borderRadius: '14px',
                 border: '1px solid rgba(255,255,255,0.04)',
                 backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)',
               }}>
-                <div style={{ fontSize: '0.6rem', fontWeight: 700, color: 'rgba(255,255,255,0.35)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>Security Score</div>
+                <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'rgba(255,255,255,0.35)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>Security Score</div>
                 <div style={{ textAlign: 'center' }}>
                   <div style={{ fontSize: '1.6rem', fontWeight: 800, color: '#22C55E', letterSpacing: '-0.03em' }}>A+</div>
-                  <div style={{ fontSize: '0.55rem', color: 'rgba(255,255,255,0.25)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Zero Critical Findings</div>
+                  <div style={{ fontSize: '0.66rem', color: 'rgba(255,255,255,0.25)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Zero Critical Findings</div>
                 </div>
               </div>
 
               {/* Panel 4 — Cloud Architecture */}
               <div style={{
-                position: 'absolute', top: '200px', right: '30px',
-                width: '155px', padding: '14px',
+                position: 'absolute', top: '185px', right: '30px',
+                width: '190px', padding: '16px',
                 background: 'rgba(15,23,42,0.7)',
                 borderRadius: '14px',
                 border: '1px solid rgba(255,255,255,0.04)',
                 backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)',
               }}>
-                <div style={{ fontSize: '0.6rem', fontWeight: 700, color: 'rgba(255,255,255,0.35)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>Architecture</div>
+                <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'rgba(255,255,255,0.35)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>Architecture</div>
                 <div style={{ display: 'flex', gap: '4px' }}>
                   {[1, 2, 3, 4].map(i => (
-                    <div key={i} style={{ flex: 1, height: '32px', borderRadius: '6px', background: i <= 2 ? 'rgba(124,58,237,0.2)' : 'rgba(255,255,255,0.03)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.45rem', fontWeight: 700, color: i <= 2 ? '#A78BFA' : 'rgba(255,255,255,0.15)' }}>
+                    <div key={i} style={{ flex: 1, height: '36px', borderRadius: '6px', background: i <= 2 ? 'rgba(124,58,237,0.2)' : 'rgba(255,255,255,0.03)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.6rem', fontWeight: 700, color: i <= 2 ? '#A78BFA' : 'rgba(255,255,255,0.15)' }}>
                       {i === 1 ? 'CDN' : i === 2 ? 'API' : i === 3 ? 'DB' : 'K8s'}
                     </div>
                   ))}
@@ -234,16 +234,16 @@ export default function IndustriesIndexPage() {
 
               {/* Panel 5 — Workflow Diagram */}
               <div style={{
-                position: 'absolute', bottom: '15px', left: '50%',
+                position: 'absolute', bottom: '12px', left: '50%',
                 transform: 'translateX(-50%)',
-                width: '230px', padding: '14px',
+                width: '265px', padding: '16px',
                 background: 'rgba(15,23,42,0.5)',
                 borderRadius: '14px',
                 border: '1px solid rgba(255,255,255,0.03)',
                 backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)',
               }}>
-                <div style={{ fontSize: '0.6rem', fontWeight: 700, color: 'rgba(255,255,255,0.35)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>Workflow</div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '2px' }}>
+                <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'rgba(255,255,255,0.35)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>Workflow</div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                   {[
                     { label: 'Ingest', color: '#7C3AED' },
                     { label: 'Process', color: '#06B6D4' },
@@ -252,8 +252,8 @@ export default function IndustriesIndexPage() {
                     { label: 'Audit', color: '#8B5CF6' },
                   ].map((w, i) => (
                     <div key={i} style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '3px' }}>
-                      <div style={{ width: '28px', height: '28px', borderRadius: '8px', background: `${w.color}10`, border: `1px solid ${w.color}20`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.45rem', fontWeight: 700, color: w.color }}>{i + 1}</div>
-                      <div style={{ fontSize: '0.5rem', color: 'rgba(255,255,255,0.3)', textAlign: 'center' }}>{w.label}</div>
+                      <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: `${w.color}10`, border: `1px solid ${w.color}20`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.6rem', fontWeight: 700, color: w.color }}>{i + 1}</div>
+                      <div style={{ fontSize: '0.66rem', color: 'rgba(255,255,255,0.3)', textAlign: 'center' }}>{w.label}</div>
                     </div>
                   ))}
                 </div>

@@ -137,52 +137,52 @@ export default function AboutUs() {
               {/* Card 1 — Team Overview */}
               <div style={{
                 position: 'absolute', top: '5px', left: '5px',
-                width: '175px', padding: '14px',
+                width: '220px', padding: '17px',
                 background: 'rgba(255,255,255,0.85)',
                 borderRadius: '14px', border: '1px solid rgba(226,232,240,0.6)',
                 backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)',
                 boxShadow: '0 4px 20px rgba(0,0,0,0.04)',
               }}>
-                <div style={{ fontSize: '0.6rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>Team</div>
+                <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>Team</div>
                 <div style={{ display: 'flex', gap: '4px', marginBottom: '6px' }}>
                   {['#2563EB', '#06B6D4', '#22C55E', '#F59E0B', '#EC4899'].map(c => (
-                    <div key={c} style={{ width: '20px', height: '20px', borderRadius: '50%', background: c, border: '2px solid #FFFFFF' }} />
+                    <div key={c} style={{ width: '25px', height: '25px', borderRadius: '50%', background: c, border: '2px solid #FFFFFF' }} />
                   ))}
                 </div>
-                <div style={{ fontSize: '0.65rem', color: 'var(--text-secondary)', fontWeight: 600 }}>45+ Engineers</div>
+                <div style={{ fontSize: '0.81rem', color: 'var(--text-secondary)', fontWeight: 600 }}>45+ Engineers</div>
               </div>
 
               {/* Card 2 — Global Reach */}
               <div style={{
                 position: 'absolute', top: '70px', right: '5px',
-                width: '165px', padding: '14px',
+                width: '206px', padding: '17px',
                 background: 'rgba(255,255,255,0.85)',
                 borderRadius: '14px', border: '1px solid rgba(226,232,240,0.6)',
                 backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)',
                 boxShadow: '0 4px 20px rgba(0,0,0,0.04)',
               }}>
-                <div style={{ fontSize: '0.6rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>Global Reach</div>
+                <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>Global Reach</div>
                 <div style={{ display: 'flex', gap: '3px' }}>
                   {[70, 45, 85, 55, 35].map((w, i) => (
-                    <div key={i} style={{ flex: 1, height: '24px', borderRadius: '4px', background: i === 2 ? 'linear-gradient(180deg, #2563EB, #1D4ED8)' : '#E2E8F0' }} />
+                    <div key={i} style={{ flex: 1, height: '30px', borderRadius: '4px', background: i === 2 ? 'linear-gradient(180deg, #2563EB, #1D4ED8)' : '#E2E8F0' }} />
                   ))}
                 </div>
-                <div style={{ fontSize: '0.6rem', color: 'var(--text-tertiary)', marginTop: '4px' }}>5 continents</div>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)', marginTop: '4px' }}>5 continents</div>
               </div>
 
               {/* Card 3 — Project Timeline */}
               <div style={{
-                position: 'absolute', top: '190px', left: '10px',
-                width: '170px', padding: '14px',
+                position: 'absolute', top: '178px', left: '10px',
+                width: '212px', padding: '17px',
                 background: 'rgba(255,255,255,0.85)',
                 borderRadius: '14px', border: '1px solid rgba(226,232,240,0.6)',
                 backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)',
                 boxShadow: '0 4px 20px rgba(0,0,0,0.04)',
               }}>
-                <div style={{ fontSize: '0.6rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>Projects</div>
+                <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>Projects</div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
                   {[{ status: 'Active', count: '12' }, { status: 'Completed', count: '108' }, { status: 'Maintenance', count: '24' }].map((p, i) => (
-                    <div key={i} style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.6rem' }}>
+                    <div key={i} style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem' }}>
                       <span style={{ color: 'var(--text-secondary)' }}>{p.status}</span>
                       <span style={{ fontWeight: 700, color: 'var(--text-primary)' }}>{p.count}</span>
                     </div>
@@ -192,32 +192,32 @@ export default function AboutUs() {
 
               {/* Card 4 — Architecture Stack */}
               <div style={{
-                position: 'absolute', top: '200px', right: '25px',
-                width: '150px', padding: '14px',
+                position: 'absolute', top: '188px', right: '25px',
+                width: '188px', padding: '17px',
                 background: 'rgba(255,255,255,0.85)',
                 borderRadius: '14px', border: '1px solid rgba(226,232,240,0.6)',
                 backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)',
                 boxShadow: '0 4px 20px rgba(0,0,0,0.04)',
               }}>
-                <div style={{ fontSize: '0.6rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>Stack</div>
+                <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>Stack</div>
                 <div style={{ display: 'flex', gap: '3px' }}>
                   {['Next', 'API', 'DB', 'K8s'].map((l, i) => (
-                    <div key={i} style={{ flex: 1, padding: '4px 0', borderRadius: '4px', background: i <= 1 ? 'rgba(37,99,235,0.08)' : '#F8FAFC', fontSize: '0.45rem', fontWeight: 700, color: i <= 1 ? '#2563EB' : '#94A3B8', textAlign: 'center', border: i <= 1 ? '1px solid rgba(37,99,235,0.12)' : '1px solid #E2E8F0' }}>{l}</div>
+                    <div key={i} style={{ flex: 1, padding: '4px 0', borderRadius: '4px', background: i <= 1 ? 'rgba(37,99,235,0.08)' : '#F8FAFC', fontSize: '0.6rem', fontWeight: 700, color: i <= 1 ? '#2563EB' : '#94A3B8', textAlign: 'center', border: i <= 1 ? '1px solid rgba(37,99,235,0.12)' : '1px solid #E2E8F0' }}>{l}</div>
                   ))}
                 </div>
               </div>
 
               {/* Card 5 — Company Pulse */}
               <div style={{
-                position: 'absolute', bottom: '15px', left: '50%',
+                position: 'absolute', bottom: '10px', left: '50%',
                 transform: 'translateX(-50%)',
-                width: '220px', padding: '14px',
+                width: '275px', padding: '17px',
                 background: 'rgba(255,255,255,0.8)',
                 borderRadius: '14px', border: '1px solid rgba(226,232,240,0.4)',
                 backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)',
                 boxShadow: '0 4px 20px rgba(0,0,0,0.04)',
               }}>
-                <div style={{ fontSize: '0.6rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>Company Pulse</div>
+                <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>Company Pulse</div>
                 <div style={{ display: 'flex', gap: '4px', alignItems: 'flex-end', height: '28px' }}>
                   {[30, 50, 35, 60, 45, 70, 55, 75, 60, 80].map((h, i) => (
                     <div key={i} style={{ flex: 1, height: `${h}%`, borderRadius: '2px', background: i >= 7 ? 'linear-gradient(180deg, #22C55E, #16A34A)' : '#E2E8F0' }} />
@@ -228,6 +228,7 @@ export default function AboutUs() {
           </div>
         </div>
         <style>{`
+          @media (min-width: 901px) { .about-hero-ill { max-width: 520px; margin: 0 auto; } }
           @media (max-width: 900px) { .about-hero-ill { display: none; } }
         `}</style>
       </section>

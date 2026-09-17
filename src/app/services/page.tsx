@@ -165,7 +165,7 @@ export default function ServicesIndexPage() {
               {/* Panel 1 — API Response Card */}
               <div style={{
                 position: 'absolute', top: '10px', left: '10px',
-                width: '200px', padding: '16px',
+                width: '235px', padding: '18px',
                 background: 'rgba(15,23,42,0.7)',
                 borderRadius: '14px',
                 border: '1px solid rgba(255,255,255,0.04)',
@@ -173,10 +173,10 @@ export default function ServicesIndexPage() {
                 WebkitBackdropFilter: 'blur(12px)',
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}>
-                  <div style={{ fontSize: '0.6rem', fontWeight: 600, color: 'rgba(255,255,255,0.3)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>API Response</div>
-                  <div style={{ padding: '2px 6px', borderRadius: '4px', background: 'rgba(34,197,94,0.12)', fontSize: '0.55rem', fontWeight: 700, color: '#22C55E' }}>200 OK</div>
+                  <div style={{ fontSize: '0.72rem', fontWeight: 600, color: 'rgba(255,255,255,0.3)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>API Response</div>
+                  <div style={{ padding: '2px 6px', borderRadius: '4px', background: 'rgba(34,197,94,0.12)', fontSize: '0.66rem', fontWeight: 700, color: '#22C55E' }}>200 OK</div>
                 </div>
-                <div style={{ fontFamily: 'monospace', fontSize: '0.6rem', color: 'rgba(255,255,255,0.35)', lineHeight: 1.6 }}>
+                <div style={{ fontFamily: 'monospace', fontSize: '0.7rem', color: 'rgba(255,255,255,0.35)', lineHeight: 1.6 }}>
                   <div><span style={{ color: '#60A5FA' }}>&#123;</span></div>
                   <div>&nbsp;&nbsp;<span style={{ color: '#22C55E' }}>"status"</span>: <span style={{ color: '#FBBF24' }}>"healthy"</span>,</div>
                   <div>&nbsp;&nbsp;<span style={{ color: '#22C55E' }}>"latency"</span>: <span style={{ color: '#FBBF24' }}>"24ms"</span>,</div>
@@ -187,16 +187,16 @@ export default function ServicesIndexPage() {
 
               {/* Panel 2 — Analytics Card */}
               <div style={{
-                position: 'absolute', top: '30px', right: '0',
-                width: '180px', padding: '16px',
+                position: 'absolute', top: '18px', right: '0',
+                width: '215px', padding: '18px',
                 background: 'rgba(15,23,42,0.7)',
                 borderRadius: '14px',
                 border: '1px solid rgba(255,255,255,0.04)',
                 backdropFilter: 'blur(12px)',
                 WebkitBackdropFilter: 'blur(12px)',
               }}>
-                <div style={{ fontSize: '0.6rem', fontWeight: 600, color: 'rgba(255,255,255,0.3)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>System Health</div>
-                <div style={{ display: 'flex', gap: '6px', alignItems: 'flex-end', height: '40px' }}>
+                <div style={{ fontSize: '0.72rem', fontWeight: 600, color: 'rgba(255,255,255,0.3)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>System Health</div>
+                <div style={{ display: 'flex', gap: '8px', alignItems: 'flex-end', height: '48px' }}>
                   {[35, 55, 40, 70, 45, 60, 80].map((h, i) => (
                     <div key={i} style={{ flex: 1, height: `${h}%`, borderRadius: '3px', background: i === 3 || i === 6 ? 'rgba(37,99,235,0.5)' : 'rgba(255,255,255,0.06)' }} />
                   ))}
@@ -205,8 +205,8 @@ export default function ServicesIndexPage() {
 
               {/* Panel 3 — Architecture Card */}
               <div style={{
-                position: 'absolute', top: '175px', right: '40px',
-                width: '160px', padding: '16px',
+                position: 'absolute', top: '160px', right: '40px',
+                width: '190px', padding: '18px',
                 background: 'rgba(15,23,42,0.7)',
                 borderRadius: '14px',
                 border: '1px solid rgba(255,255,255,0.04)',
@@ -216,8 +216,8 @@ export default function ServicesIndexPage() {
                 <div style={{ fontSize: '0.6rem', fontWeight: 600, color: 'rgba(255,255,255,0.3)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>Architecture</div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                   {[{ label: 'API Gateway', active: true }, { label: 'Microservices', active: true }, { label: 'Data Layer', active: false }].map((l, i) => (
-                    <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '4px 6px', borderRadius: '4px', background: l.active ? 'rgba(37,99,235,0.1)' : 'transparent', fontSize: '0.6rem', color: l.active ? 'rgba(255,255,255,0.6)' : 'rgba(255,255,255,0.2)' }}>
-                      <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: l.active ? '#2563EB' : 'rgba(255,255,255,0.15)' }} />
+                    <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '7px', padding: '4px 6px', borderRadius: '4px', background: l.active ? 'rgba(37,99,235,0.1)' : 'transparent', fontSize: '0.68rem', color: l.active ? 'rgba(255,255,255,0.6)' : 'rgba(255,255,255,0.2)' }}>
+                      <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: l.active ? '#2563EB' : 'rgba(255,255,255,0.15)' }} />
                       {l.label}
                     </div>
                   ))}
@@ -226,17 +226,17 @@ export default function ServicesIndexPage() {
 
               {/* Panel 4 — Terminal */}
               <div style={{
-                position: 'absolute', bottom: '30px', left: '20px',
-                width: '195px', padding: '14px',
+                position: 'absolute',                 bottom: '30px', left: '20px',
+                width: '230px', padding: '16px',
                 background: 'rgba(0,0,0,0.45)',
                 borderRadius: '12px',
                 border: '1px solid rgba(255,255,255,0.03)',
-                fontFamily: 'monospace', fontSize: '0.6rem',
+                fontFamily: 'monospace', fontSize: '0.7rem',
                 color: 'rgba(255,255,255,0.35)',
               }}>
                 <div style={{ display: 'flex', gap: '5px', marginBottom: '8px' }}>
                   {['#FF5F57', '#FEBC2E', '#28C840'].map(c => (
-                    <div key={c} style={{ width: '6px', height: '6px', borderRadius: '50%', background: c }} />
+                    <div key={c} style={{ width: '7px', height: '7px', borderRadius: '50%', background: c }} />
                   ))}
                 </div>
                 <div><span style={{ color: '#22C55E' }}>$</span> npm run build</div>
@@ -246,12 +246,12 @@ export default function ServicesIndexPage() {
 
               {/* Panel 5 — Code Snippet */}
               <div style={{
-                position: 'absolute', bottom: '80px', right: '5px',
-                width: '170px', padding: '14px',
+                position: 'absolute',                 bottom: '72px', right: '5px',
+                width: '200px', padding: '16px',
                 background: 'rgba(0,0,0,0.45)',
                 borderRadius: '12px',
                 border: '1px solid rgba(255,255,255,0.03)',
-                fontFamily: 'monospace', fontSize: '0.6rem',
+                fontFamily: 'monospace', fontSize: '0.7rem',
                 color: 'rgba(255,255,255,0.3)',
                 lineHeight: 1.7,
               }}>
@@ -270,6 +270,7 @@ export default function ServicesIndexPage() {
         </div>
         <style>{`
           @media (max-width: 900px) { .hero-illustration { display: none; } }
+          @media (min-width: 901px) { .hero-illustration { max-width: 520px; margin: 0 auto; } }
         `}</style>
       </section>
 

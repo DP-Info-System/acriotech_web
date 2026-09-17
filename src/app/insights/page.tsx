@@ -103,8 +103,8 @@ export default function InsightsIndexPage() {
               {/* Notebook / publication composition */}
               {/* Document 1 — Main paper */}
               <div style={{
-                position: 'absolute', top: '10px', left: '15px',
-                width: '200px', padding: '18px',
+                position: 'absolute', top: '5px', left: '15px',
+                width: '235px', padding: '20px',
                 background: '#FFFFFF',
                 borderRadius: '14px',
                 border: '1px solid #E2E8F0',
@@ -127,19 +127,19 @@ export default function InsightsIndexPage() {
 
               {/* Document 2 — Code snippet paper */}
               <div style={{
-                position: 'absolute', top: '100px', right: '5px',
-                width: '180px', padding: '14px',
+                position: 'absolute', top: '90px', right: '5px',
+                width: '215px', padding: '16px',
                 background: '#0F172A',
                 borderRadius: '12px',
                 border: '1px solid rgba(255,255,255,0.04)',
                 transform: 'rotate(3deg)',
-                fontFamily: 'monospace', fontSize: '0.55rem',
+                fontFamily: 'monospace', fontSize: '0.66rem',
                 color: 'rgba(255,255,255,0.3)',
                 lineHeight: 1.8,
               }}>
                 <div style={{ display: 'flex', gap: '4px', marginBottom: '8px' }}>
                   {['#FF5F57', '#FEBC2E', '#28C840'].map(c => (
-                    <div key={c} style={{ width: '5px', height: '5px', borderRadius: '50%', background: c }} />
+                    <div key={c} style={{ width: '6px', height: '6px', borderRadius: '50%', background: c }} />
                   ))}
                 </div>
                 <div><span style={{ color: '#22C55E' }}>// microservices.ts</span></div>
@@ -151,36 +151,36 @@ export default function InsightsIndexPage() {
 
               {/* Document 3 — Architecture flow paper */}
               <div style={{
-                position: 'absolute', bottom: '50px', left: '30px',
-                width: '155px', padding: '14px',
+                position: 'absolute', bottom: '35px', left: '30px',
+                width: '190px', padding: '16px',
                 background: '#FFFFFF',
                 borderRadius: '12px',
                 border: '1px solid #E2E8F0',
                 boxShadow: '0 4px 16px rgba(0,0,0,0.03)',
                 transform: 'rotate(-1deg)',
               }}>
-                <div style={{ fontSize: '0.55rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>Architecture</div>
+                <div style={{ fontSize: '0.66rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>Architecture</div>
                 <div style={{ display: 'flex', gap: '3px' }}>
                   {['UI', 'API', 'DB'].map((l, i) => (
-                    <div key={i} style={{ flex: 1, padding: '4px', borderRadius: '4px', background: i === 1 ? 'rgba(6,182,212,0.08)' : '#F8FAFC', fontSize: '0.5rem', fontWeight: 600, color: i === 1 ? '#06B6D4' : '#94A3B8', textAlign: 'center', border: i === 1 ? '1px solid rgba(6,182,212,0.15)' : '1px solid #E2E8F0' }}>{l}</div>
+                    <div key={i} style={{ flex: 1, padding: '6px', borderRadius: '4px', background: i === 1 ? 'rgba(6,182,212,0.08)' : '#F8FAFC', fontSize: '0.6rem', fontWeight: 600, color: i === 1 ? '#06B6D4' : '#94A3B8', textAlign: 'center', border: i === 1 ? '1px solid rgba(6,182,212,0.15)' : '1px solid #E2E8F0' }}>{l}</div>
                   ))}
                 </div>
               </div>
 
               {/* Document 4 — Notebook paper overlay */}
               <div style={{
-                position: 'absolute', bottom: '20px', right: '15px',
-                width: '145px', padding: '12px',
+                position: 'absolute', bottom: '15px', right: '15px',
+                width: '180px', padding: '14px',
                 background: '#FFFFFF',
                 borderRadius: '12px',
                 border: '1px solid #E2E8F0',
                 boxShadow: '0 4px 16px rgba(0,0,0,0.03)',
                 transform: 'rotate(2deg)',
               }}>
-                <div style={{ fontSize: '0.5rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '6px' }}>Reading Time</div>
+                <div style={{ fontSize: '0.6rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '6px' }}>Reading Time</div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <Clock size={12} color="#06B6D4" />
-                  <span style={{ fontSize: '0.65rem', color: 'var(--text-secondary)', fontWeight: 600 }}>12 min read</span>
+                  <Clock size={14} color="#06B6D4" />
+                  <span style={{ fontSize: '0.72rem', color: 'var(--text-secondary)', fontWeight: 600 }}>12 min read</span>
                 </div>
               </div>
 
@@ -191,6 +191,7 @@ export default function InsightsIndexPage() {
           </div>
         </div>
         <style>{`
+          @media (min-width: 901px) { .insights-hero-ill { max-width: 520px; margin: 0 auto; } }
           @media (max-width: 900px) { .insights-hero-ill { display: none; } }
         `}</style>
       </section>

@@ -72,7 +72,7 @@ const navData = {
   }
 };
 
-export default function NavBar() {
+export default function NavBar({ theme = "light" }: { theme?: "light" | "dark" } = {}) {
   const [hoveredNav, setHoveredNav] = useState<string | null>(null);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -87,6 +87,42 @@ export default function NavBar() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const dark = theme === "dark";
+
+  const barBg = dark
+    ? (scrolled ? 'rgba(15,23,42,0.88)' : 'rgba(15,23,42,0.62)')
+    : (scrolled ? 'rgba(255,255,255,0.88)' : 'rgba(255,255,255,0.65)');
+  const barBorder = dark ? '1px solid rgba(148,163,184,0.18)' : '1px solid rgba(226,232,240,0.5)';
+  const barShadow = dark ? '0 12px 48px -12px rgba(0,0,0,0.55)' : '0 12px 48px -12px rgba(15,23,42,0.12)';
+  const linkColor = dark ? '#CBD5E1' : '#475569';
+  const linkActiveColor = dark ? '#FFFFFF' : '#0F172A';
+  const linkActiveBg = dark ? 'rgba(255,255,255,0.1)' : 'rgba(37,99,235,0.06)';
+  const ctaBg = dark ? '#FFFFFF' : '#0F172A';
+  const ctaColor = dark ? '#0F172A' : '#FFFFFF';
+  const logoFilter = dark ? 'brightness(0) invert(1)' : 'none';
+  const mobileBtnBg = dark ? 'rgba(255,255,255,0.08)' : 'rgba(15,23,42,0.05)';
+  const mobileBtnColor = dark ? '#F8FAFC' : '#0F172A';
+
+  const overlayBg = dark ? 'rgba(15,23,42,0.97)' : 'rgba(255,255,255,0.96)';
+  const overlayItemColor = dark ? '#F8FAFC' : '#0F172A';
+  const overlayBorder = dark ? 'rgba(148,163,184,0.12)' : '#F1F5F9';
+  const overlaySubColor = dark ? '#94A3B8' : '#64748B';
+  const overlayFeaturedColor = dark ? '#FFFFFF' : '#0F172A';
+  const overlayToggleBg = dark ? 'rgba(255,255,255,0.08)' : '#F1F5F9';
+  const overlayToggleColor = dark ? '#94A3B8' : '#64748B';
+  const overlayCtaBg = dark ? '#FFFFFF' : '#0F172A';
+  const overlayCtaColor = dark ? '#0F172A' : '#FFFFFF';
+
+  const megaBg = dark ? 'rgba(15,23,42,0.98)' : 'rgba(255,255,255,0.96)';
+  const megaBorder = dark ? '1px solid rgba(148,163,184,0.16)' : '1px solid rgba(226,232,240,0.8)';
+  const megaShadow = dark ? '0 30px 80px -15px rgba(0,0,0,0.6), 0 0 0 1px rgba(148,163,184,0.05)' : '0 30px 80px -15px rgba(15,23,42,0.15), 0 0 0 1px rgba(15,23,42,0.03)';
+  const megaPurposeColor = dark ? '#60A5FA' : '#2563EB';
+  const megaItemColor = dark ? '#CBD5E1' : '#475569';
+  const megaItemHoverColor = dark ? '#FFFFFF' : '#0F172A';
+  const megaItemHoverBg = dark ? 'rgba(148,163,184,0.1)' : 'rgba(37,99,235,0.04)';
+  const megaDotColor = dark ? '#60A5FA' : '#2563EB';
+  const megaDivider = dark ? 'rgba(255,255,255,0.1)' : '#F1F5F9';
 
   const navItems = ["Solutions", "Services", "Work", "Industries", "Insights", "About", "Contact"];
 
@@ -116,12 +152,10 @@ export default function NavBar() {
         style={{
           width: scrolled ? 'min(92%, 1320px)' : '100%',
           borderRadius: scrolled ? '20px' : '0px',
-          boxShadow: scrolled ? '0 12px 48px -12px rgba(15,23,42,0.12)' : '0 0 0 rgba(0,0,0,0)',
+          boxShadow: scrolled ? barShadow : '0 0 0 rgba(0,0,0,0)',
           padding: scrolled ? '0.65rem 1.5rem' : '0.75rem 2rem',
-          background: scrolled
-            ? 'rgba(255,255,255,0.88)'
-            : 'rgba(255,255,255,0.65)',
-          border: '1px solid rgba(226,232,240,0.5)',
+          background: barBg,
+          border: barBorder,
           backdropFilter: scrolled ? 'blur(28px)' : 'blur(16px)',
           WebkitBackdropFilter: scrolled ? 'blur(28px)' : 'blur(16px)',
           display: 'flex', justifyContent: 'space-between', alignItems: 'center',
@@ -131,10 +165,10 @@ export default function NavBar() {
       >
         <a href="/" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
           <div style={{ position: 'relative', width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <img src="/custom-logo.svg" alt="Acriotech Logo Mark" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+            <img src="/custom-logo.svg" alt="Acriotech Logo Mark" style={{ width: '100%', height: '100%', objectFit: 'contain', filter: logoFilter }} />
           </div>
           <div style={{ display: 'flex', alignItems: 'center', marginTop: '2px' }}>
-            <img src="/acriotech-name-logo.png" alt="Acriotech" style={{ height: '17px', objectFit: 'contain' }} />
+            <img src="/acriotech-name-logo.png" alt="Acriotech" style={{ height: '17px', objectFit: 'contain', filter: logoFilter }} />
           </div>
         </a>
 
@@ -158,9 +192,9 @@ export default function NavBar() {
                   style={{
                     display: 'block', padding: '0.45rem 0.85rem',
                     fontSize: '0.875rem', fontWeight: 500,
-                    color: isActive ? '#0F172A' : '#475569',
+                    color: isActive ? linkActiveColor : linkColor,
                     borderRadius: '10px', textDecoration: 'none',
-                    background: isActive ? 'rgba(37,99,235,0.06)' : 'transparent',
+                    background: isActive ? linkActiveBg : 'transparent',
                     transition: 'all 0.2s ease',
                   }}
                 >
@@ -176,7 +210,7 @@ export default function NavBar() {
             style={{
               display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
               padding: '0.45rem 1.1rem', marginLeft: '0.5rem',
-              background: '#0F172A', color: '#FFFFFF',
+              background: ctaBg, color: ctaColor,
               borderRadius: '10px', fontWeight: 600, fontSize: '0.85rem',
               textDecoration: 'none',
             }}
@@ -191,8 +225,8 @@ export default function NavBar() {
           className="mobile-menu-btn"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           style={{
-            background: 'rgba(15,23,42,0.05)', border: 'none', cursor: 'pointer',
-            color: '#0F172A', padding: '0.5rem', borderRadius: '10px',
+            background: mobileBtnBg, border: 'none', cursor: 'pointer',
+            color: mobileBtnColor, padding: '0.5rem', borderRadius: '10px',
             display: 'none', alignItems: 'center', justifyContent: 'center',
           }}
         >
@@ -205,7 +239,7 @@ export default function NavBar() {
         <div
           style={{
             position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
-            background: 'rgba(255,255,255,0.96)',
+            background: overlayBg,
             backdropFilter: 'blur(28px)',
             WebkitBackdropFilter: 'blur(28px)',
             zIndex: 90,
@@ -231,7 +265,7 @@ export default function NavBar() {
                 return (
                   <div key={item} style={{
                     display: 'flex', flexDirection: 'column',
-                    borderBottom: '1px solid #F1F5F9', paddingBottom: '0.75rem',
+                    borderBottom: `1px solid ${overlayBorder}`, paddingBottom: '0.75rem',
                   }}>
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                       <a
@@ -247,7 +281,7 @@ export default function NavBar() {
                           }
                         }}
                         style={{
-                          fontSize: '1.5rem', fontWeight: 700, color: '#0F172A',
+                          fontSize: '1.5rem', fontWeight: 700, color: overlayItemColor,
                           textDecoration: 'none', letterSpacing: '-0.02em', padding: '0.5rem 0',
                         }}
                       >
@@ -260,8 +294,8 @@ export default function NavBar() {
                             prev.includes(item) ? prev.filter(m => m !== item) : [...prev, item]
                           )}
                           style={{
-                            background: '#F1F5F9', border: 'none', padding: '0.4rem',
-                            borderRadius: '50%', cursor: 'pointer', color: '#64748B',
+                            background: overlayToggleBg, border: 'none', padding: '0.4rem',
+                            borderRadius: '50%', cursor: 'pointer', color: overlayToggleColor,
                             display: 'flex', alignItems: 'center', justifyContent: 'center',
                             transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)',
                             transition: 'transform 0.2s ease',
@@ -281,7 +315,7 @@ export default function NavBar() {
                               href={generateUrl(item, sublink)}
                               onClick={() => setIsMobileMenuOpen(false)}
                               style={{
-                                fontSize: '1rem', fontWeight: 500, color: '#64748B',
+                                fontSize: '1rem', fontWeight: 500, color: overlaySubColor,
                                 textDecoration: 'none', padding: '0.4rem 0',
                               }}
                             >
@@ -294,7 +328,7 @@ export default function NavBar() {
                               onClick={() => setIsMobileMenuOpen(false)}
                               style={{
                                 display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-                                fontSize: '1rem', fontWeight: 600, color: '#0F172A',
+                                fontSize: '1rem', fontWeight: 600, color: overlayFeaturedColor,
                                 textDecoration: 'none', marginTop: '0.25rem', padding: '0.4rem 0',
                               }}
                             >
@@ -309,13 +343,13 @@ export default function NavBar() {
               })}
             </div>
 
-            <div style={{ marginTop: '1.5rem', paddingTop: '1.5rem', borderTop: '1px solid #F1F5F9', maxWidth: '480px', margin: '1.5rem auto 0', width: '100%' }}>
+            <div style={{ marginTop: '1.5rem', paddingTop: '1.5rem', borderTop: `1px solid ${overlayBorder}`, maxWidth: '480px', margin: '1.5rem auto 0', width: '100%' }}>
               <a
                 href="/contact-us"
                 onClick={() => setIsMobileMenuOpen(false)}
                 style={{
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  background: '#0F172A', color: '#FFFFFF', padding: '0.875rem',
+                  background: overlayCtaBg, color: overlayCtaColor, padding: '0.875rem',
                   borderRadius: '14px', fontSize: '1rem', fontWeight: 600,
                   textDecoration: 'none', minHeight: '48px',
                   transition: 'background 0.2s',
@@ -341,22 +375,22 @@ export default function NavBar() {
               onMouseEnter={() => handleMouseEnter(activeMenu)}
               style={{
                 width: 'min(1320px, 100%)',
-                background: 'rgba(255,255,255,0.96)',
+                background: megaBg,
                 backdropFilter: 'blur(30px)',
                 WebkitBackdropFilter: 'blur(30px)',
                 borderRadius: '24px',
-                border: '1px solid rgba(226,232,240,0.8)',
-                boxShadow: '0 30px 80px -15px rgba(15,23,42,0.15), 0 0 0 1px rgba(15,23,42,0.03)',
+                border: megaBorder,
+                boxShadow: megaShadow,
                 overflow: 'hidden', position: 'relative',
               }}
             >
               <div style={{ display: 'flex', minHeight: '320px' }}>
                 <div style={{
                   flex: 1, padding: '2.5rem 3rem',
-                  borderRight: navData[activeMenu as keyof typeof navData].featured ? '1px solid #F1F5F9' : 'none',
+                  borderRight: navData[activeMenu as keyof typeof navData].featured ? `1px solid ${megaDivider}` : 'none',
                 }}>
                   <div style={{
-                    fontSize: '0.7rem', fontWeight: 700, color: '#2563EB',
+                    fontSize: '0.7rem', fontWeight: 700, color: megaPurposeColor,
                     textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '2rem',
                   }}>
                     {navData[activeMenu as keyof typeof navData].purpose}
@@ -373,17 +407,17 @@ export default function NavBar() {
                         href={generateUrl(activeMenu, link)}
                         style={{
                           display: 'flex', alignItems: 'center', gap: '0.75rem',
-                          fontSize: '0.925rem', fontWeight: 500, color: '#475569',
+                          fontSize: '0.925rem', fontWeight: 500, color: megaItemColor,
                           cursor: 'pointer', padding: '0.6rem 0.75rem',
                           borderRadius: '10px', margin: '0 -0.75rem',
                           textDecoration: 'none', transition: 'all 0.15s ease',
                         }}
-                        onMouseEnter={(e) => { e.currentTarget.style.color = '#0F172A'; e.currentTarget.style.background = 'rgba(37,99,235,0.04)'; }}
-                        onMouseLeave={(e) => { e.currentTarget.style.color = '#475569'; e.currentTarget.style.background = 'transparent'; }}
+                        onMouseEnter={(e) => { e.currentTarget.style.color = megaItemHoverColor; e.currentTarget.style.background = megaItemHoverBg; }}
+                        onMouseLeave={(e) => { e.currentTarget.style.color = megaItemColor; e.currentTarget.style.background = 'transparent'; }}
                       >
                         <span style={{
                           width: '5px', height: '5px', borderRadius: '50%',
-                          background: '#2563EB', opacity: 0.3, flexShrink: 0,
+                          background: megaDotColor, opacity: 0.3, flexShrink: 0,
                         }} />
                         {link}
                       </a>
@@ -429,7 +463,7 @@ export default function NavBar() {
                       href={featuredLinks[activeMenu]}
                       style={{
                         display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-                        fontSize: '0.925rem', fontWeight: 600, color: '#2563EB',
+                        fontSize: '0.925rem', fontWeight: 600, color: megaPurposeColor,
                         textDecoration: 'none',
                       }}
                     >

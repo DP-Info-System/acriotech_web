@@ -103,7 +103,7 @@ const industries = [
 export default function SolutionsIndexPage() {
   return (
     <div className="solution-shell" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FFFFFF' }}>
-      <NavBar />
+      <NavBar theme="dark" />
 
       {/* Hero */}
       <section className="dark-section solutions-hero-grid" style={{ paddingTop: 'var(--spacing-section)', paddingBottom: 'var(--spacing-section)', background: 'var(--dark)', color: '#FFFFFF', position: 'relative' }}>

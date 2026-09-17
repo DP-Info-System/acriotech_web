@@ -152,75 +152,75 @@ export default function ContactUs() {
               {/* Card 1 — Live Support */}
               <div style={{
                 position: 'absolute', top: '5px', left: '5px',
-                width: '190px', padding: '14px',
+                width: '205px', padding: '16px',
                 background: 'rgba(255,255,255,0.85)',
                 borderRadius: '14px', border: '1px solid rgba(226,232,240,0.6)',
                 backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)',
                 boxShadow: '0 4px 20px rgba(0,0,0,0.04)',
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '8px' }}>
-                  <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#22C55E', boxShadow: '0 0 8px rgba(34,197,94,0.4)' }} />
-                  <span style={{ fontSize: '0.6rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Live Support</span>
+                  <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#22C55E', boxShadow: '0 0 8px rgba(34,197,94,0.4)' }} />
+                  <span style={{ fontSize: '0.7rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Live Support</span>
                 </div>
-                <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '2px' }}>Online — Ready to help</div>
-                <div style={{ fontSize: '0.6rem', color: 'var(--text-tertiary)', fontWeight: 500 }}>Avg. pickup: &lt; 2 min</div>
+                <div style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '2px' }}>Online — Ready to help</div>
+                <div style={{ fontSize: '0.7rem', color: 'var(--text-tertiary)', fontWeight: 500 }}>Avg. pickup: &lt; 2 min</div>
               </div>
 
               {/* Card 2 — Response Time */}
               <div style={{
-                position: 'absolute', top: '70px', right: '5px',
-                width: '175px', padding: '14px',
+                position: 'absolute', top: '60px', right: '5px',
+                width: '195px', padding: '16px',
                 background: 'rgba(255,255,255,0.85)',
                 borderRadius: '14px', border: '1px solid rgba(226,232,240,0.6)',
                 backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)',
                 boxShadow: '0 4px 20px rgba(0,0,0,0.04)',
               }}>
-                <div style={{ fontSize: '0.6rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '6px' }}>Response Time</div>
+                <div style={{ fontSize: '0.7rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '6px' }}>Response Time</div>
                 <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.2rem' }}>
-                  <span style={{ fontSize: '1.5rem', fontWeight: 800, color: '#2563EB', letterSpacing: '-0.03em' }}>&lt;2</span>
-                  <span style={{ fontSize: '0.7rem', fontWeight: 600, color: 'var(--text-tertiary)' }}>hours</span>
+                  <span style={{ fontSize: '1.7rem', fontWeight: 800, color: '#2563EB', letterSpacing: '-0.03em' }}>&lt;2</span>
+                  <span style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-tertiary)' }}>hours</span>
                 </div>
                 <div style={{ display: 'flex', gap: '2px', marginTop: '4px' }}>
                   {[100, 88, 95, 70, 100, 80, 92].map((h, i) => (
-                    <div key={i} style={{ flex: 1, height: '16px', borderRadius: '2px', background: h >= 90 ? 'linear-gradient(180deg, #22C55E, #16A34A)' : '#E2E8F0' }} />
+                    <div key={i} style={{ flex: 1, height: '20px', borderRadius: '2px', background: h >= 90 ? 'linear-gradient(180deg, #22C55E, #16A34A)' : '#E2E8F0' }} />
                   ))}
                 </div>
               </div>
 
               {/* Card 3 — Team Availability */}
               <div style={{
-                position: 'absolute', top: '170px', left: '10px',
-                width: '160px', padding: '14px',
+                position: 'absolute', top: '155px', left: '10px',
+                width: '185px', padding: '16px',
                 background: 'rgba(255,255,255,0.85)',
                 borderRadius: '14px', border: '1px solid rgba(226,232,240,0.6)',
                 backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)',
                 boxShadow: '0 4px 20px rgba(0,0,0,0.04)',
               }}>
-                <div style={{ fontSize: '0.6rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>Team Available</div>
+                <div style={{ fontSize: '0.7rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>Team Available</div>
                 <div style={{ display: 'flex', gap: '4px', marginBottom: '6px' }}>
                   {[1, 1, 1, 1, 0].map((a, i) => (
-                    <div key={i} style={{ width: '24px', height: '24px', borderRadius: '50%', background: a ? 'linear-gradient(135deg, #2563EB, #1D4ED8)' : '#E2E8F0', border: '2px solid #FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      {a ? <Users size={10} color="#FFFFFF" /> : null}
+                    <div key={i} style={{ width: '28px', height: '28px', borderRadius: '50%', background: a ? 'linear-gradient(135deg, #2563EB, #1D4ED8)' : '#E2E8F0', border: '2px solid #FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      {a ? <Users size={12} color="#FFFFFF" /> : null}
                     </div>
                   ))}
                 </div>
-                <div style={{ fontSize: '0.65rem', color: 'var(--text-secondary)', fontWeight: 600 }}>12 engineers online</div>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', fontWeight: 600 }}>12 engineers online</div>
               </div>
 
               {/* Card 4 — Global Offices */}
               <div style={{
-                position: 'absolute', top: '180px', right: '20px',
-                width: '160px', padding: '14px',
+                position: 'absolute', top: '165px', right: '20px',
+                width: '180px', padding: '16px',
                 background: 'rgba(255,255,255,0.85)',
                 borderRadius: '14px', border: '1px solid rgba(226,232,240,0.6)',
                 backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)',
                 boxShadow: '0 4px 20px rgba(0,0,0,0.04)',
               }}>
-                <div style={{ fontSize: '0.6rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>Global Offices</div>
+                <div style={{ fontSize: '0.7rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>Global Offices</div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                   {[{ flag: 'IN', city: 'Bhavnagar, India' }, { flag: 'US', city: 'San Francisco, CA' }, { flag: 'UK', city: 'London, UK' }].map((o, i) => (
-                    <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.6rem', color: 'var(--text-secondary)', fontWeight: 500 }}>
-                      <Globe size={10} color="var(--primary)" />
+                    <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.7rem', color: 'var(--text-secondary)', fontWeight: 500 }}>
+                      <Globe size={12} color="var(--primary)" />
                       {o.city}
                     </div>
                   ))}
@@ -231,7 +231,7 @@ export default function ContactUs() {
               <div style={{
                 position: 'absolute', bottom: '10px', left: '50%',
                 transform: 'translateX(-50%)',
-                width: '240px', padding: '12px 14px',
+                width: '280px', padding: '14px 16px',
                 background: 'rgba(255,255,255,0.8)',
                 borderRadius: '14px', border: '1px solid rgba(226,232,240,0.4)',
                 backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)',
@@ -240,11 +240,11 @@ export default function ContactUs() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', justifyContent: 'center' }}>
                   {['Inquiry', 'Review', 'Assign', 'Resolve'].map((step, i) => (
                     <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-                      <div style={{ width: '18px', height: '18px', borderRadius: '50%', background: i < 3 ? '#2563EB' : '#22C55E', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <CheckCircle2 size={10} color="#FFFFFF" />
+                      <div style={{ width: '22px', height: '22px', borderRadius: '50%', background: i < 3 ? '#2563EB' : '#22C55E', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <CheckCircle2 size={12} color="#FFFFFF" />
                       </div>
-                      <span style={{ fontSize: '0.5rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>{step}</span>
-                      {i < 3 && <span style={{ color: '#CBD5E1', fontSize: '0.55rem' }}>→</span>}
+                      <span style={{ fontSize: '0.62rem', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>{step}</span>
+                      {i < 3 && <span style={{ color: '#CBD5E1', fontSize: '0.65rem' }}>→</span>}
                     </div>
                   ))}
                 </div>

@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 export default function DigitalTransformation() {
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FFFFFF' }}>
-      <NavBar />
+      <NavBar theme="dark" />
 
       {/* Hero Section */}
       <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: 'var(--spacing-section)', background: '#312E81', color: '#FFFFFF' }}>
