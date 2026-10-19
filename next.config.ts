@@ -58,7 +58,7 @@ const nextConfig: NextConfig = {
           },
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://analytics.ahrefs.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://images.unsplash.com data: https://acriotech.com; connect-src 'self' https://www.google-analytics.com https://analytics.ahrefs.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'",
+            value: `default-src 'self'; script-src 'self' 'unsafe-inline'${process.env.NODE_ENV === 'development' ? " 'unsafe-eval'" : ''} https://www.googletagmanager.com https://analytics.ahrefs.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://images.unsplash.com data: https://acriotech.com; connect-src 'self' https://www.google-analytics.com https://analytics.ahrefs.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'`,
           },
           {
             key: 'Link',

@@ -10,12 +10,12 @@ import NavBar from "@/components/NavBar";
 function ProofBlock() {
   return (
     <div style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '12px', padding: '1.5rem', maxWidth: '420px' }}>
-      <div style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#64748B', marginBottom: '1rem' }}>Delivery record — last 12 months</div>
+      <div style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#64748B', marginBottom: '1rem' }}>DELIVERY TRACK RECORD</div>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
         {[
-          { k: "80+ systems live", v: "Bhavnagar → global, 2018–2026" },
-          { k: "15M req/day", v: "p95 32ms, 99.99% SLO" },
-          { k: "Zero-downtime", v: "K8s + Terraform, 0 failed deploys in 6 mo" },
+          { k: "2018 – Present", v: "8+ years of enterprise software engineering" },
+          { k: "40+ Active Partners", v: "Long-term client partnerships globally" },
+          { k: "End-to-End Delivery", v: "Web, Cloud, AI & Mobile Architecture" },
         ].map((r, i) => (
           <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.75rem 0', borderBottom: i < 2 ? '1px solid #F1F5F9' : 'none' }}>
             <span style={{ fontWeight: 700, color: '#0F172A', fontSize: '0.95rem' }}>{r.k}</span>
@@ -23,7 +23,6 @@ function ProofBlock() {
           </div>
         ))}
       </div>
-      <div style={{ marginTop: '1rem', fontSize: '0.8rem', color: '#94A3B8' }}>Source: internal Datadog + Jira — methodology on request.</div>
     </div>
   );
 }
@@ -34,7 +33,7 @@ const faqs = [
   { q: "What is your typical project timeline?", a: "Depending on the complexity, our initial discovery and architecture phase takes 2-4 weeks. Full deployment of MVP or v1.0 usually ranges from 3-6 months with iterative agile delivery.", href: "/company/methodology", label: "Our engineering methodology" },
   { q: "Do you provide ongoing support after deployment?", a: "Yes, we offer enterprise SLA support, proactive infrastructure monitoring, and continuous integration of new features as part of our long-term partnership models.", href: "/services/maintenance-support", label: "Maintenance & support services" },
   { q: "How do you handle data security and compliance?", a: "We embed security at the architectural level (Zero-Trust principles) and ensure compliance with GDPR, HIPAA, SOC2, and other regional data protection regulations from day one.", href: "/security-compliance", label: "Security & compliance at Acriotech" },
-  { q: "Can you scale an existing, legacy architecture?", a: "Absolutely. A significant portion of our work involves auditing legacy systems, decoupling monoliths into microservices, and migrating to scalable cloud infrastructures with zero downtime.", href: "/solutions/legacy-system-modernization", label: "Legacy system modernization" },
+  { q: "Can you scale an existing, legacy architecture?", a: "A significant portion of our work involves auditing legacy systems, decoupling monoliths into microservices, and migrating to scalable cloud infrastructures with zero downtime.", href: "/solutions/legacy-system-modernization", label: "Legacy system modernization" },
   { q: "What technologies do you specialize in?", a: "We specialize in modern tech stacks including React, Next.js, Node.js, Python, Rust, and Go. Our infrastructure expertise covers AWS, GCP, Azure, and Kubernetes for seamless orchestration.", href: "/solutions/custom-software-development", label: "Custom software development" },
   { q: "Do you offer custom API development?", a: "Yes. We design and deploy high-performance RESTful and GraphQL APIs, ensuring secure authentication, rate limiting, and robust documentation for seamless integration.", href: "/services/api-development-integration", label: "API development & integration" },
   { q: "How does your pricing model work?", a: "We offer both fixed-price project engagements for well-defined scopes and flexible retainer models for ongoing product development and architectural consulting.", href: "/services/dedicated-development-teams", label: "Dedicated development teams" },
@@ -139,30 +138,30 @@ export default function Home() {
           <div className="hero-text-container" style={{ paddingRight: '2rem' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#F1F5F9', border: '1px solid #E2E8F0', borderRadius: '999px', padding: '0.35rem 0.85rem', fontSize: '0.8rem', fontWeight: 600, color: '#334155', marginBottom: '1.25rem' }}>
               <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#16A34A' }}></span>
-              Bhavnagar HQ → Global delivery · SOC2-ready · Fixed-price
+              Enterprise Software Engineering & Cloud Solutions
             </div>
             <h1 className="hero-title" style={{ fontSize: 'var(--font-hero)', marginBottom: '1.25rem', fontWeight: 800, lineHeight: 1.05, letterSpacing: '-0.03em', color: '#0F172A' }}>
               Enterprise software<br />
               <span style={{ color: '#475569', fontWeight: 600 }}>that outlasts the roadmap.</span>
             </h1>
             <p style={{ fontSize: '1.05rem', marginBottom: '1.25rem', maxWidth: '560px', color: '#475569', lineHeight: 1.6 }}>
-              We design and run production systems for mid-market and enterprise teams — from Bhavnagar to the US/EU. Architecture first, then code.
+              We design, engineer, and scale mission-critical web platforms, cloud infrastructure, and AI solutions for growing businesses and global enterprises.
             </p>
             <p style={{ fontSize: '0.85rem', color: '#64748B', marginBottom: '1.75rem', maxWidth: '560px', borderLeft: '3px solid #E2E8F0', paddingLeft: '0.85rem' }}>
-              <strong style={{ color: '#0F172A' }}>Engagement:</strong> From $40k module · $140–350k platform, scoped in 24h · <strong style={{ color: '#0F172A' }}>SLA:</strong> 15m S1 / 1hr S2 / 24hr S3
+              <strong style={{ color: '#0F172A' }}>Engagement Models:</strong> Dedicated Engineering Teams · Fixed-Scope Delivery · Cloud & Architecture Consulting
             </p>
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
-              <a href="/contact-us" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.85rem 1.4rem', background: '#0F172A', color: '#FFFFFF', borderRadius: '8px', fontWeight: 600, fontSize: '0.95rem', textDecoration: 'none' }}>Talk to a principal <ArrowRight size={16} /></a>
-              <a href="/work/featured-projects" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.85rem 1.4rem', background: '#FFFFFF', border: '1px solid #E2E8F0', color: '#0F172A', borderRadius: '8px', fontWeight: 600, fontSize: '0.95rem', textDecoration: 'none' }}>See live systems →</a>
+              <a href="/contact-us" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.85rem 1.4rem', background: '#0F172A', color: '#FFFFFF', borderRadius: '8px', fontWeight: 600, fontSize: '0.95rem', textDecoration: 'none' }}>Start a Conversation <ArrowRight size={16} /></a>
+              <a href="/work/featured-projects" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.85rem 1.4rem', background: '#FFFFFF', border: '1px solid #E2E8F0', color: '#0F172A', borderRadius: '8px', fontWeight: 600, fontSize: '0.95rem', textDecoration: 'none' }}>Explore Our Work →</a>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem', fontSize: '0.8rem', fontWeight: 500, color: '#64748B' }}>
               <span>Enterprise software</span>
               <span style={{ color: '#CBD5E1' }}>·</span>
-              <span>AI with bounds</span>
+              <span>AI & Automation</span>
               <span style={{ color: '#CBD5E1' }}>·</span>
-              <span>Cloud & K8s</span>
+              <span>Cloud Infrastructure</span>
               <span style={{ color: '#CBD5E1' }}>·</span>
-              <span>Automation</span>
+              <span>Data Engineering</span>
             </div>
           </div>
           
@@ -181,7 +180,7 @@ export default function Home() {
           <div className="metrics-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '0' }}>
               {[
                 { num: "80+", label: "Production Systems", desc: "Mission-critical applications built, deployed, and actively managed." },
-                { num: "15M+", label: "Daily API Requests", desc: "High-throughput microservices engineered for secure, scalable operations." },
+                { num: "8+", label: "Years of Excellence", desc: "Delivering scalable enterprise software and cloud platforms since 2018." },
                 { num: "99.99%", label: "Uptime Guarantee", desc: "Fault-tolerant cloud environments designed for business continuity." },
                 { num: "40+", label: "Active Partnerships", desc: "Long-term engineering engagements with mid-market and enterprise leaders." }
               ].map((stat, i, arr) => (
@@ -201,34 +200,34 @@ export default function Home() {
           <div style={{ marginBottom: '2.5rem', maxWidth: '720px' }}>
             <div style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#64748B', marginBottom: '0.75rem' }}>What we do</div>
             <h2 style={{ fontSize: 'var(--font-h2)', lineHeight: 1.05, letterSpacing: '-0.03em', marginBottom: '0.75rem' }}>Capabilities that survive handover.</h2>
-            <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.6 }}>Five disciplines, one accountable path — from discovery to SLA. No bento, no glass, just what we ship.</p>
+            <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.6 }}>Five core engineering disciplines with end-to-end accountability — from initial system discovery to production support.</p>
           </div>
 
           <div className="capabilities-grid">
             <div className="card capabilities-card" style={{ gridColumn: 'span 2' }}>
               <h3 style={{ fontSize: '1.25rem', marginBottom: '0.6rem', color: '#0F172A' }}>Enterprise software</h3>
-              <p style={{ fontSize: '0.95rem', color: '#475569', lineHeight: 1.6, marginBottom: '1rem' }}>Systems where downtime isn’t an option. RBAC/SSO, audit logs, and compliance are in the data model — not bolt-ons.</p>
+              <p style={{ fontSize: '0.95rem', color: '#475569', lineHeight: 1.6, marginBottom: '1rem' }}>Mission-critical platforms engineered with role-based access control, SSO, audit logging, and compliance built into the core data model.</p>
               <a href="/solutions/enterprise-software" style={{ fontSize: '0.9rem', fontWeight: 600, color: '#4B61B8', textDecoration: 'none' }}>Enterprise software →</a>
             </div>
             
             <div className="card capabilities-card">
-              <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>AI with bounds</h3>
-              <p style={{ fontSize: '0.9rem', color: '#475569', lineHeight: 1.6 }}>Document processing, forecasting, anomaly detection — trained on your data, human-in-loop, hosted where you decide.</p>
+              <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>AI & Automation</h3>
+              <p style={{ fontSize: '0.9rem', color: '#475569', lineHeight: 1.6 }}>Custom machine learning pipelines, intelligent document processing, and automated enterprise workflows deployed within your cloud environment.</p>
             </div>
 
             <div className="card capabilities-card">
               <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>Cloud & reliability</h3>
-              <p style={{ fontSize: '0.9rem', color: '#475569', lineHeight: 1.6 }}>K8s & Terraform, multi-region, zero-downtime deploys, and SLOs you can page on.</p>
+              <p style={{ fontSize: '0.9rem', color: '#475569', lineHeight: 1.6 }}>K8s & Terraform, multi-region, zero-downtime deploys, and 24/7 production monitoring.</p>
             </div>
 
             <div className="card capabilities-card">
               <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>Digital products</h3>
-              <p style={{ fontSize: '0.9rem', color: '#475569', lineHeight: 1.6 }}>Web and mobile apps that respect latency, offline, and accessibility — not just the happy path.</p>
+              <p style={{ fontSize: '0.9rem', color: '#475569', lineHeight: 1.6 }}>High-performance web and mobile applications engineered for low latency, offline resilience, and enterprise accessibility.</p>
             </div>
 
             <div className="card capabilities-card">
               <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>API & automation</h3>
-              <p style={{ fontSize: '0.9rem', color: '#475569', lineHeight: 1.6 }}>Connectors to SAP/Oracle/Salesforce that handle change, failure, and idempotency.</p>
+              <p style={{ fontSize: '0.9rem', color: '#475569', lineHeight: 1.6 }}>Resilient integrations with SAP, Oracle, Salesforce, and custom ERPs designed with automated retry logic and idempotency.</p>
             </div>
           </div>
         </div>
@@ -253,8 +252,8 @@ export default function Home() {
               <div style={{ background: '#0F172A', borderRadius: '12px', height: '320px', marginBottom: '1.5rem', border: '1px solid #1E293B', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
                 <div style={{ textAlign: 'center' }}>
                   <div style={{ fontSize: '0.7rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#94A3B8', marginBottom: '0.75rem' }}>Case study — Cloud</div>
-                  <div style={{ fontFamily: 'monospace', fontSize: '0.95rem', color: '#F8FAFC', lineHeight: 1.6 }}>15M req/day · p95 32ms<br/>0 failed deploys in 6 mo</div>
-                  <div style={{ marginTop: '1rem', fontSize: '0.8rem', color: '#64748B' }}>Terraform · K8s · AWS · SLO 99.99%</div>
+                  <div style={{ fontFamily: 'monospace', fontSize: '0.95rem', color: '#F8FAFC', lineHeight: 1.6 }}>Multi-Region AWS · Kubernetes · Auto-Scaling</div>
+                  <div style={{ marginTop: '1rem', fontSize: '0.8rem', color: '#64748B' }}>Terraform · K8s · AWS · High Availability</div>
                 </div>
               </div>
 
@@ -268,19 +267,18 @@ export default function Home() {
                 </div>
                 <h3 style={{ fontSize: '1.8rem', color: '#0F172A', fontWeight: 600, marginBottom: '1rem', letterSpacing: '-0.02em' }}>Distributed Cloud Architecture</h3>
                 <p style={{ fontSize: '1.05rem', color: '#5B6472', lineHeight: 1.6, margin: 0 }}>
-                  Engineered a highly available, multi-region cloud infrastructure scaling automatically to handle over 15 million daily requests.
+                  Engineered a highly available, multi-region cloud infrastructure scaling automatically to handle mission-critical enterprise workloads.
                 </p>
               </div>
             </div>
 
-            {/* Case Study 2 — editorial, no stock */}
+            {/* Case Study 2 — editorial, matching dark visual card */}
             <div style={{ display: "flex", flexDirection: "column" }}>
-              <div style={{ background: '#FFFFFF', borderRadius: '12px', height: '320px', marginBottom: '1.5rem', border: '1px solid #E2E8F0', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}
-              >
+              <div style={{ background: '#0F172A', borderRadius: '12px', height: '320px', marginBottom: '1.5rem', border: '1px solid #1E293B', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
                 <div style={{ textAlign: 'center' }}>
-                  <div style={{ fontSize: '0.7rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#64748B', marginBottom: '0.75rem' }}>Case study — Security</div>
-                  <div style={{ fontFamily: 'monospace', fontSize: '0.95rem', color: '#0F172A', lineHeight: 1.6 }}>eBPF · Rust · WASM<br/>p99 &lt;15ms · 0 bypass in audit</div>
-                  <div style={{ marginTop: '1rem', fontSize: '0.8rem', color: '#94A3B8' }}>Kernel-level · audit-logged · 2.4B events/day</div>
+                  <div style={{ fontSize: '0.7rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#94A3B8', marginBottom: '0.75rem' }}>Case study — Security</div>
+                  <div style={{ fontFamily: 'monospace', fontSize: '0.95rem', color: '#F8FAFC', lineHeight: 1.6 }}>Zero-Trust IAM · End-to-End Encryption · SOC2 Ready</div>
+                  <div style={{ marginTop: '1rem', fontSize: '0.8rem', color: '#64748B' }}>Role-Based Access · Automated Compliance Auditing</div>
                 </div>
               </div>
 
@@ -294,7 +292,7 @@ export default function Home() {
                 </div>
                 <h3 style={{ fontSize: '1.8rem', color: '#0F172A', fontWeight: 600, marginBottom: '1rem', letterSpacing: '-0.02em' }}>Zero-Trust Network Fabric</h3>
                 <p style={{ fontSize: '1.05rem', color: '#5B6472', lineHeight: 1.6, margin: 0 }}>
-                  Kernel-level, audit-logged. The value is the threat model — not the stock photo.
+                  Engineered with strict role-based access control, encrypted service-to-service communication, and automated compliance auditing.
                 </p>
               </div>
             </div>
@@ -339,7 +337,7 @@ export default function Home() {
                 }}
               >
                 <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#4B61B8', marginBottom: '1.5rem', fontFamily: 'monospace', background: 'rgba(75, 97, 184, 0.05)', padding: '0.4rem 0.8rem', borderRadius: '6px', alignSelf: 'flex-start' }}>
-                  // STEP {step.id}
+                  STEP {step.id}
                 </div>
                 <h3 style={{ fontSize: '1.4rem', fontWeight: 600, color: '#0F172A', marginBottom: '1rem', letterSpacing: '-0.01em' }}>{step.title}</h3>
                 <p style={{ fontSize: '0.95rem', color: '#5B6472', lineHeight: 1.6, margin: 0 }}>
@@ -350,8 +348,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-
 
       {/* FAQ Section */}
       <section className="section-padding" style={{ background: '#FFFFFF', borderBottom: '1px solid rgba(15,23,42,0.05)' }}>
@@ -369,8 +365,8 @@ export default function Home() {
         
         {/* Advanced Aurora Background */}
         <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', overflow: 'hidden', pointerEvents: 'none', zIndex: 0 }}>
-          <div style={{ position: 'absolute', top: '-20%', left: '20%', width: '60vw', height: '60vw', background: 'radial-gradient(circle, rgba(75, 97, 184, 0.15) 0%, transparent 70%)', filter: 'blur(80px)', transform: 'translateY(10%)' }}></div>
-          <div style={{ position: 'absolute', bottom: '-20%', right: '10%', width: '50vw', height: '50vw', background: 'radial-gradient(circle, rgba(123, 175, 53, 0.1) 0%, transparent 70%)', filter: 'blur(80px)' }}></div>
+          <div style={{ position: 'absolute', top: '-20%', left: '20%', width: '60vw', height: '60vw', background: 'radial-gradient(circle, rgba(75, 97, 184, 0.18) 0%, transparent 70%)', filter: 'blur(80px)', transform: 'translateY(10%)' }}></div>
+          <div style={{ position: 'absolute', bottom: '-20%', right: '10%', width: '50vw', height: '50vw', background: 'radial-gradient(circle, rgba(75, 97, 184, 0.12) 0%, transparent 70%)', filter: 'blur(80px)' }}></div>
         </div>
         
         <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -378,21 +374,21 @@ export default function Home() {
             
             <h2 className="cta-title" style={{ fontSize: 'var(--font-hero)', marginBottom: '3rem', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-0.03em', color: '#FFFFFF' }}>
               Let's Build Software<br/>
-              <span style={{ background: 'linear-gradient(135deg, #FFFFFF 0%, #94A3B8 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              <span style={{ color: '#60A5FA' }}>
                 That Stands The Test of Time.
               </span>
             </h2>
             
             <div className="cta-buttons-flex" style={{ display: 'flex', gap: '1rem', justifyContent: 'center', alignItems: 'center' }}>
-               <button style={{ padding: '1rem 2.5rem', fontSize: '1.05rem', fontWeight: 600, color: '#0F172A', background: '#FFFFFF', border: 'none', borderRadius: '8px', cursor: 'pointer', boxShadow: '0 4px 14px 0 rgba(0,0,0,0.15)', transition: 'all 0.2s ease' }}
+               <a href="/work/featured-projects" style={{ padding: '1rem 2.5rem', fontSize: '1.05rem', fontWeight: 600, color: '#0F172A', background: '#FFFFFF', border: 'none', borderRadius: '8px', cursor: 'pointer', boxShadow: '0 4px 14px 0 rgba(0,0,0,0.15)', transition: 'all 0.2s ease', textDecoration: 'none' }}
                >
                  Explore Our Work
-               </button>
+               </a>
                
-               <button style={{ padding: '1rem 2.5rem', fontSize: '1.05rem', fontWeight: 600, color: '#FFFFFF', background: 'transparent', border: '1px solid rgba(255,255,255,0.3)', borderRadius: '8px', cursor: 'pointer', transition: 'all 0.2s ease' }}
+               <a href="/contact-us" style={{ padding: '1rem 2.5rem', fontSize: '1.05rem', fontWeight: 600, color: '#FFFFFF', background: 'transparent', border: '1px solid rgba(255,255,255,0.3)', borderRadius: '8px', cursor: 'pointer', transition: 'all 0.2s ease', textDecoration: 'none' }}
                >
                  Contact Us
-               </button>
+               </a>
             </div>
             
           </motion.div>

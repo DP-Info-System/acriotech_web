@@ -8,8 +8,8 @@ import { motion } from "framer-motion";
 
 const workList = [
   { slug: "featured-projects", name: "Featured Projects", desc: "A visual portfolio of the user interfaces, dashboards, and mobile applications we've shipped for our enterprise partners.", icon: FolderOpen },
-  { slug: "our-clients", name: "Our Clients", desc: "From Y-Combinator seed startups to Fortune 500 institutions. See who trusts Acriotech with their core infrastructure.", icon: Users },
-  { slug: "open-source", name: "Open Source", desc: "We don't just consume OSS; we contribute back. View our public repositories, NPM packages, and framework contributions.", icon: Terminal },
+  { slug: "our-clients", name: "Our Clients", desc: "Trusted by growing startups and established enterprises across FinTech, Retail, Healthcare, and Logistics to build mission-critical software.", icon: Users },
+  { slug: "open-source", name: "Open Source", desc: "Built on modern, battle-tested open-source technologies, automated CI/CD pipelines, and modular architectures designed for long-term maintainability.", icon: Terminal },
 ];
 
 export default function WorkIndexPage() {
@@ -18,36 +18,36 @@ export default function WorkIndexPage() {
       <NavBar />
 
       {/* Hero Section */}
-      <section style={{ paddingTop: '10rem', paddingBottom: '7rem', background: '#FAFAFA' }}>
+      <section style={{ paddingTop: '10rem', paddingBottom: '7rem', background: '#F8FAFC', borderBottom: '1px solid #E2E8F0' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ maxWidth: '800px' }}>
-            <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#6366F1', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>
+            <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#4B61B8', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>
               Our Work
             </div>
             <h1 style={{ fontSize: '4.5rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
-              We ship <span style={{ color: '#6366F1' }}>production code.</span>
+              We ship <span style={{ color: '#4B61B8' }}>production code.</span>
             </h1>
             <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, marginBottom: '3rem' }}>
-              Talk is cheap. We measure our success by the stability, performance, and aesthetic quality of the software we push to production.
+              We measure our success by the stability, performance, and aesthetic quality of the software we push to production.
             </p>
           </div>
         </div>
       </section>
 
       {/* Featured Showcase */}
-      <section style={{ padding: '0 0 6rem 0', background: '#FAFAFA' }}>
+      <section style={{ padding: '0 0 6rem 0', background: '#F8FAFC' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <Link href="/work/featured-projects" style={{ textDecoration: 'none' }}>
              <div style={{ background: '#0F172A', borderRadius: '24px', padding: '4rem', display: 'flex', flexDirection: 'column', gap: '3rem', transition: 'transform 0.2s, box-shadow 0.2s', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.25)', position: 'relative', overflow: 'hidden' }} className="featured-card">
                 
                 {/* Simulated UI background */}
-                <div style={{ position: 'absolute', right: '-10%', top: '-20%', width: '60%', height: '140%', background: 'linear-gradient(135deg, #4F46E5 0%, #0F172A 100%)', transform: 'rotate(15deg)', opacity: 0.2 }}></div>
+                <div style={{ position: 'absolute', right: '-10%', top: '-20%', width: '60%', height: '140%', background: 'linear-gradient(135deg, #4B61B8 0%, #0F172A 100%)', transform: 'rotate(15deg)', opacity: 0.2 }}></div>
 
                 <div style={{ position: 'relative', zIndex: 10, maxWidth: '600px' }}>
-                   <div style={{ display: 'inline-block', background: '#818CF8', color: '#0F172A', padding: '0.3rem 0.8rem', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 800, marginBottom: '1.5rem', textTransform: 'uppercase' }}>Featured Deployment</div>
+                   <div style={{ display: 'inline-block', background: '#4B61B8', color: '#FFFFFF', padding: '0.3rem 0.8rem', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 700, marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Featured Deployment</div>
                    <h2 style={{ fontSize: '2.8rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '1rem', lineHeight: 1.1 }}>Global E-Commerce Platform Rewrite</h2>
-                   <p style={{ color: '#94A3B8', fontSize: '1.1rem', lineHeight: 1.6, marginBottom: '2rem' }}>Re-architecting a legacy monolithic storefront into a headless Next.js & Shopify Plus architecture, reducing global Time-To-Interactive (TTI) by 64%.</p>
-                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#818CF8', fontWeight: 600 }}>
+                   <p style={{ color: '#94A3B8', fontSize: '1.1rem', lineHeight: 1.6, marginBottom: '2rem' }}>Re-architecting a legacy monolithic storefront into a headless Next.js & Shopify Plus architecture, delivering faster page loads, seamless checkout workflows, and high-availability cloud scaling.</p>
+                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#60A5FA', fontWeight: 600 }}>
                      View Portfolio <ArrowRight size={18} />
                    </div>
                 </div>
@@ -74,11 +74,11 @@ export default function WorkIndexPage() {
                 className="work-card"
               >
                  <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: '#EEF2FF', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem' }}>
-                   <wk.icon size={24} color="#6366F1" />
+                   <wk.icon size={24} color="#4B61B8" />
                  </div>
                  <h3 style={{ fontSize: '1.35rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.75rem' }}>{wk.name}</h3>
                  <p style={{ color: '#475569', lineHeight: 1.6, flex: 1, marginBottom: '1.5rem' }}>{wk.desc}</p>
-                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#6366F1', fontWeight: 600, fontSize: '0.95rem', marginTop: 'auto' }}>
+                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#4B61B8', fontWeight: 600, fontSize: '0.95rem', marginTop: 'auto' }}>
                    View details <ArrowRight size={16} />
                  </div>
               </Link>

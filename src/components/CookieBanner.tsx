@@ -28,9 +28,15 @@ export default function CookieBanner() {
       // If it exists, update gtag immediately
       const parsedConsent = JSON.parse(consent);
       updateGtagConsent(parsedConsent);
+      if (typeof window !== "undefined") {
+        window.dispatchEvent(new CustomEvent("cookieBannerVisibility", { detail: { isVisible: false } }));
+      }
     } else {
       // If not, show the banner
       setShowBanner(true);
+      if (typeof window !== "undefined") {
+        window.dispatchEvent(new CustomEvent("cookieBannerVisibility", { detail: { isVisible: true } }));
+      }
     }
   }, []);
 
@@ -56,6 +62,9 @@ export default function CookieBanner() {
     updateGtagConsent(newPrefs);
     localStorage.setItem("cookieConsent", JSON.stringify(newPrefs));
     setShowBanner(false);
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(new CustomEvent("cookieBannerVisibility", { detail: { isVisible: false } }));
+    }
   };
 
   const handleDeclineAll = () => {
@@ -69,6 +78,9 @@ export default function CookieBanner() {
     updateGtagConsent(newPrefs);
     localStorage.setItem("cookieConsent", JSON.stringify(newPrefs));
     setShowBanner(false);
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(new CustomEvent("cookieBannerVisibility", { detail: { isVisible: false } }));
+    }
   };
 
   const handleSavePreferences = () => {
@@ -76,6 +88,9 @@ export default function CookieBanner() {
     localStorage.setItem("cookieConsent", JSON.stringify(preferences));
     setShowPreferences(false);
     setShowBanner(false);
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(new CustomEvent("cookieBannerVisibility", { detail: { isVisible: false } }));
+    }
   };
 
   if (!showBanner) return null;

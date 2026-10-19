@@ -1,8 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Mail, ChevronRight, Shield, Lock, Cloud, Code, MapPin } from "lucide-react";
+import { ArrowRight, Mail, ChevronRight, Shield, Lock, MapPin } from "lucide-react";
 import React, { useState } from "react";
 
 export default function Footer() {
@@ -228,14 +227,12 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Middle Band: Trust Badges */}
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '3rem 0', borderTop: '1px solid rgba(15,23,42,0.05)', borderBottom: '1px solid rgba(15,23,42,0.05)', flexWrap: 'wrap', gap: '1.5rem' }}>
+        {/* Middle Band: Compliance Badges */}
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '2.5rem 0', borderTop: '1px solid rgba(15,23,42,0.05)', borderBottom: '1px solid rgba(15,23,42,0.05)', flexWrap: 'wrap', gap: '1.5rem' }}>
            {[
              { icon: <Shield size={28} color="#4B61B8" strokeWidth={1.5} />, line1: 'ISO', line2: 'Ready', href: '/security-compliance' },
              { icon: <Lock size={28} color="#22C55E" strokeWidth={1.5} />, line1: 'GDPR', line2: 'Compliant', href: '/gdpr-compliance' },
-             { icon: <Cloud size={28} color="#4B61B8" strokeWidth={1.5} />, line1: 'Secure', line2: 'Development', href: '/security-compliance' },
-             { icon: <Code size={28} color="#22C55E" strokeWidth={1.5} />, line1: 'Cloud', line2: 'Native', href: '/solutions/cloud-infrastructure' },
-              { icon: <MapPin size={28} color="#4B61B8" strokeWidth={1.5} />, line1: 'Engineered in', line2: 'India', href: '/about-us' }
+             { icon: <MapPin size={28} color="#4B61B8" strokeWidth={1.5} />, line1: 'Engineered in', line2: 'India', href: '/about-us' }
            ].map((badge, idx, arr) => (
              <React.Fragment key={badge.line1}>
                 <a href={badge.href} style={{ display: 'flex', alignItems: 'center', gap: '1rem', textDecoration: 'none' }}>

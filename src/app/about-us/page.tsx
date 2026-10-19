@@ -9,11 +9,11 @@ export default function AboutUs() {
       
       {/* Clean, minimalist Hero without glowing orbs or AI-style gradients */}
       <section style={{ paddingTop: '12rem', paddingBottom: '5rem', background: '#F8FAFC', borderBottom: '1px solid #E2E8F0' }}>
-        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
-          <h1 style={{ fontSize: '3.5rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.03em', marginBottom: '1.5rem' }}>
+        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
+          <h1 style={{ fontSize: '3.5rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.03em', marginBottom: '1.5rem', textAlign: 'center' }}>
             About Acriotech
           </h1>
-          <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, maxWidth: '700px' }}>
+          <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, maxWidth: '700px', margin: '0 auto', textAlign: 'center' }}>
             Acriotech delivers enterprise-grade software engineering and technical consulting. 
             We design and implement high-performance systems for organizations demanding precision, security, and scale.
           </p>
@@ -30,7 +30,7 @@ export default function AboutUs() {
               <div style={{ textAlign: 'center' }}>
                 <div style={{ fontSize: '0.7rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: '#64748B', marginBottom: '0.75rem' }}>Bhavnagar HQ — Kaliyabid</div>
                 <div style={{ fontSize: '1rem', fontWeight: 700, color: '#0F172A' }}>14, Shiv Narayan Complex, Virani Circle</div>
-                <div style={{ fontSize: '0.85rem', color: '#64748B', marginTop: '0.5rem' }}>Engineering pod • 2018–2026 • 40+ active partners</div>
+                <div style={{ fontSize: '0.85rem', color: '#64748B', marginTop: '0.5rem' }}>Global Delivery Center • Established 2018</div>
               </div>
             </div>
             
@@ -38,12 +38,12 @@ export default function AboutUs() {
             <div>
               <h2 style={{ fontSize: '2rem', fontWeight: 700, color: '#0F172A', marginBottom: '1.5rem' }}>Our Story</h2>
               <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.8, marginBottom: '1.5rem' }}>
-                Acriotech started with a straightforward goal: to provide businesses with reliable, well-built software. In an industry often filled with unnecessary complexity and jargon, we wanted to be a partner that focuses purely on results.
+                Acriotech started with a straightforward goal: to provide businesses with reliable, well-built software. We partner closely with business and technical leaders to translate complex operational requirements into dependable, scalable software systems.
               </p>
               <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.8, marginBottom: '2rem' }}>
                 Over the years, we have grown from a small local team into a comprehensive technology firm. Today, we work with clients globally, delivering everything from simple web applications to complex enterprise integrations.
               </p>
-              <a href="/contact-us" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: '#3B82F6', fontWeight: 600, fontSize: '1.05rem', textDecoration: 'none' }}>
+              <a href="/contact-us" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: '#4B61B8', fontWeight: 600, fontSize: '1.05rem', textDecoration: 'none' }}>
                 Contact our team <ArrowRight size={18} />
               </a>
             </div>
@@ -118,7 +118,7 @@ export default function AboutUs() {
             <div style={{ height: '360px', borderRadius: '12px', background: '#FFFFFF', border: '1px solid #E2E8F0', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
               <div style={{ textAlign: 'center', maxWidth: '320px' }}>
                 <div style={{ fontSize: '0.7rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: '#64748B', marginBottom: '0.75rem' }}>Leadership — engineers first</div>
-                <div style={{ fontSize: '0.95rem', color: '#0F172A', lineHeight: 1.6 }}>Principals review every architecture. No sales-only discovery. Decisions are recorded as ADRs.</div>
+                <div style={{ fontSize: '0.95rem', color: '#0F172A', lineHeight: 1.6 }}>Every project is guided directly by senior software architects — ensuring technical feasibility, scalable system design, and transparent delivery from day one.</div>
               </div>
             </div>
           </div>
@@ -152,7 +152,7 @@ export default function AboutUs() {
           <p style={{ fontSize: '1.1rem', color: '#94A3B8', lineHeight: 1.8, marginBottom: '2.5rem', maxWidth: '700px', margin: '0 auto 2.5rem auto' }}>
             We are always looking for talented developers, cloud architects, and QA specialists who take pride in writing clean, reliable code. If you want to work on complex enterprise challenges, we want to hear from you.
           </p>
-          <a href="/contact-us" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: '1rem 2.5rem', background: '#3B82F6', color: '#FFFFFF', borderRadius: '8px', fontWeight: 600, fontSize: '1.05rem', textDecoration: 'none' }}>
+          <a href="/company/careers" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: '1rem 2.5rem', background: '#4B61B8', color: '#FFFFFF', borderRadius: '8px', fontWeight: 600, fontSize: '1.05rem', textDecoration: 'none' }}>
             View Open Positions
           </a>
         </div>

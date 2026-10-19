@@ -2,9 +2,15 @@ import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
   try {
-    const { firstName, lastName, companyName, mobile, email, message } = await request.json();
+    let { firstName, lastName, fullName, companyName, mobile, email, message } = await request.json();
 
-    if (!firstName || !lastName || !email || !mobile || !message) {
+    if (fullName && (!firstName || !lastName)) {
+      const parts = fullName.trim().split(/\s+/);
+      firstName = parts[0] || '';
+      lastName = parts.slice(1).join(' ') || parts[0] || '';
+    }
+
+    if ((!fullName && (!firstName || !lastName)) || !email || !mobile || !message) {
       return NextResponse.json(
         { error: 'Required fields are missing' },
         { status: 400 }

@@ -31,6 +31,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--background);
   color: var(--text-main);
@@ -558,3 +562,16 @@ p {
     gap: 2rem !important;
   }
 }
+
+/* Mega-Menu Solid Opaque Panel — enforce zero bleed-through */
+.mega-menu-dropdown,
+.mega-menu-panel,
+.mega-menu-content,
+.mega-menu-links {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  opacity: 1 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+

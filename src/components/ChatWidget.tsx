@@ -21,10 +21,28 @@ export default function ChatWidget() {
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
+  // Cookie Banner Visibility State for collision avoidance
+  const [isCookieBannerVisible, setIsCookieBannerVisible] = useState(false);
+
+  useEffect(() => {
+    const consent = typeof window !== 'undefined' ? localStorage.getItem("cookieConsent") : null;
+    if (!consent) {
+      setIsCookieBannerVisible(true);
+    }
+
+    const handleBannerVisibility = (e: any) => {
+      setIsCookieBannerVisible(Boolean(e.detail?.isVisible));
+    };
+
+    window.addEventListener('cookieBannerVisibility', handleBannerVisibility);
+    return () => {
+      window.removeEventListener('cookieBannerVisibility', handleBannerVisibility);
+    };
+  }, []);
+
   // Form State
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    fullName: '',
     companyName: '',
     email: '',
     mobile: '',
@@ -73,15 +91,27 @@ export default function ChatWidget() {
     setFormStatus('loading');
     
     try {
+      const nameParts = formData.fullName.trim().split(/\s+/);
+      const firstName = nameParts[0] || '';
+      const lastName = nameParts.slice(1).join(' ') || nameParts[0] || '';
+
       const res = await fetch('/api/support', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          firstName,
+          lastName,
+          companyName: formData.companyName,
+          email: formData.email,
+          mobile: formData.mobile,
+          message: formData.message
+        })
       });
       
       if (res.ok) {
         setFormStatus('success');
-        setFormData({ firstName: '', lastName: '', companyName: '', email: '', mobile: '', message: '' });
+        setFormData({ fullName: '', companyName: '', email: '', mobile: '', message: '' });
       } else {
         setFormStatus('error');
       }
@@ -95,9 +125,11 @@ export default function ChatWidget() {
       {/* Floating Button */}
       <button
         onClick={() => setIsOpen(true)}
+        aria-label="Open Acriotech Support chat"
+        className={isCookieBannerVisible ? "bottom-24" : "bottom-6"}
         style={{
           position: 'fixed',
-          bottom: '24px',
+          bottom: isCookieBannerVisible ? '96px' : '24px',
           right: '24px',
           width: '60px',
           height: '60px',
@@ -110,7 +142,8 @@ export default function ChatWidget() {
           alignItems: 'center',
           justifyContent: 'center',
           cursor: 'pointer',
-          zIndex: 9999
+          zIndex: 9999,
+          transition: 'bottom 0.3s ease'
         }}
       >
         <MessageSquare size={28} />
@@ -231,70 +264,61 @@ export default function ChatWidget() {
               )}
 
               {activeTab === 'contact' && (
-                <div style={{ padding: '20px' }}>
+                <div style={{ padding: '16px 20px', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                   {formStatus === 'success' ? (
-                    <div style={{ textAlign: 'center', padding: '40px 20px' }}>
-                      <div style={{ width: '64px', height: '64px', borderRadius: '32px', background: '#D1FAE5', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px' }}>
-                        <Send size={32} color="#059669" />
+                    <div style={{ textAlign: 'center', padding: '30px 16px' }}>
+                      <div style={{ width: '56px', height: '56px', borderRadius: '28px', background: '#D1FAE5', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 12px' }}>
+                        <Send size={28} color="#059669" />
                       </div>
-                      <h4 style={{ fontSize: '1.25rem', color: '#0F172A', marginBottom: '8px' }}>Message Sent!</h4>
-                      <p style={{ color: '#64748B', fontSize: '0.95rem' }}>Our sales team will be in touch with you shortly.</p>
-                      <button onClick={() => setFormStatus('idle')} style={{ marginTop: '24px', background: '#F1F5F9', color: '#0F172A', border: 'none', padding: '10px 24px', borderRadius: '8px', fontWeight: 600, cursor: 'pointer' }}>Send another</button>
+                      <h4 style={{ fontSize: '1.15rem', color: '#0F172A', marginBottom: '6px' }}>Message Sent!</h4>
+                      <p style={{ color: '#64748B', fontSize: '0.9rem' }}>Our sales team will be in touch with you shortly.</p>
+                      <button onClick={() => setFormStatus('idle')} style={{ marginTop: '16px', background: '#F1F5F9', color: '#0F172A', border: 'none', padding: '8px 20px', borderRadius: '8px', fontWeight: 600, cursor: 'pointer' }}>Send another</button>
                     </div>
                   ) : (
-                    <form onSubmit={handleFormSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                      <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-                        <div style={{ flex: '1 1 120px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                          <label style={{ fontSize: '0.8rem', fontWeight: 600, color: '#475569' }}>First Name *</label>
-                          <div style={{ position: 'relative' }}>
-                            <User size={16} color="#94A3B8" style={{ position: 'absolute', left: '12px', top: '12px' }} />
-                            <input required type="text" value={formData.firstName} onChange={e => setFormData({...formData, firstName: e.target.value})} style={{ width: '100%', padding: '10px 12px 10px 36px', borderRadius: '8px', border: '1px solid #E2E8F0', outline: 'none', fontSize: '0.9rem' }} />
-                          </div>
-                        </div>
-                        <div style={{ flex: '1 1 120px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                          <label style={{ fontSize: '0.8rem', fontWeight: 600, color: '#475569' }}>Last Name *</label>
-                          <div style={{ position: 'relative' }}>
-                            <User size={16} color="#94A3B8" style={{ position: 'absolute', left: '12px', top: '12px' }} />
-                            <input required type="text" value={formData.lastName} onChange={e => setFormData({...formData, lastName: e.target.value})} style={{ width: '100%', padding: '10px 12px 10px 36px', borderRadius: '8px', border: '1px solid #E2E8F0', outline: 'none', fontSize: '0.9rem' }} />
-                          </div>
-                        </div>
-                      </div>
-
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                        <label style={{ fontSize: '0.8rem', fontWeight: 600, color: '#475569' }}>Company Name</label>
+                    <form onSubmit={handleFormSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                        <label style={{ fontSize: '0.75rem', fontWeight: 600, color: '#475569' }}>Full Name *</label>
                         <div style={{ position: 'relative' }}>
-                          <Building size={16} color="#94A3B8" style={{ position: 'absolute', left: '12px', top: '12px' }} />
-                          <input type="text" value={formData.companyName} onChange={e => setFormData({...formData, companyName: e.target.value})} style={{ width: '100%', padding: '10px 12px 10px 36px', borderRadius: '8px', border: '1px solid #E2E8F0', outline: 'none', fontSize: '0.9rem' }} />
+                          <User size={15} color="#94A3B8" style={{ position: 'absolute', left: '10px', top: '10px' }} />
+                          <input required type="text" placeholder="John Doe" value={formData.fullName} onChange={e => setFormData({...formData, fullName: e.target.value})} style={{ width: '100%', padding: '7px 10px 7px 32px', borderRadius: '7px', border: '1px solid #E2E8F0', outline: 'none', fontSize: '0.875rem' }} />
                         </div>
                       </div>
 
-                      <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-                        <div style={{ flex: '1 1 120px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                          <label style={{ fontSize: '0.8rem', fontWeight: 600, color: '#475569' }}>Email *</label>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                        <label style={{ fontSize: '0.75rem', fontWeight: 600, color: '#475569' }}>Company Name</label>
+                        <div style={{ position: 'relative' }}>
+                          <Building size={15} color="#94A3B8" style={{ position: 'absolute', left: '10px', top: '10px' }} />
+                          <input type="text" placeholder="Acme Inc." value={formData.companyName} onChange={e => setFormData({...formData, companyName: e.target.value})} style={{ width: '100%', padding: '7px 10px 7px 32px', borderRadius: '7px', border: '1px solid #E2E8F0', outline: 'none', fontSize: '0.875rem' }} />
+                        </div>
+                      </div>
+
+                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                          <label style={{ fontSize: '0.75rem', fontWeight: 600, color: '#475569' }}>Email *</label>
                           <div style={{ position: 'relative' }}>
-                            <Mail size={16} color="#94A3B8" style={{ position: 'absolute', left: '12px', top: '12px' }} />
-                            <input required type="email" value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} style={{ width: '100%', padding: '10px 12px 10px 36px', borderRadius: '8px', border: '1px solid #E2E8F0', outline: 'none', fontSize: '0.9rem' }} />
+                            <Mail size={15} color="#94A3B8" style={{ position: 'absolute', left: '10px', top: '10px' }} />
+                            <input required type="email" placeholder="john@company.com" value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} style={{ width: '100%', padding: '7px 10px 7px 32px', borderRadius: '7px', border: '1px solid #E2E8F0', outline: 'none', fontSize: '0.875rem' }} />
                           </div>
                         </div>
-                        <div style={{ flex: '1 1 120px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                          <label style={{ fontSize: '0.8rem', fontWeight: 600, color: '#475569' }}>Mobile *</label>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                          <label style={{ fontSize: '0.75rem', fontWeight: 600, color: '#475569' }}>Mobile *</label>
                           <div style={{ position: 'relative' }}>
-                            <Phone size={16} color="#94A3B8" style={{ position: 'absolute', left: '12px', top: '12px' }} />
-                            <input required type="tel" value={formData.mobile} onChange={e => setFormData({...formData, mobile: e.target.value})} style={{ width: '100%', padding: '10px 12px 10px 36px', borderRadius: '8px', border: '1px solid #E2E8F0', outline: 'none', fontSize: '0.9rem' }} />
+                            <Phone size={15} color="#94A3B8" style={{ position: 'absolute', left: '10px', top: '10px' }} />
+                            <input required type="tel" placeholder="+1 (555) 000-0000" value={formData.mobile} onChange={e => setFormData({...formData, mobile: e.target.value})} style={{ width: '100%', padding: '7px 10px 7px 32px', borderRadius: '7px', border: '1px solid #E2E8F0', outline: 'none', fontSize: '0.875rem' }} />
                           </div>
                         </div>
                       </div>
 
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                        <label style={{ fontSize: '0.8rem', fontWeight: 600, color: '#475569' }}>Message *</label>
-                        <textarea required value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})} rows={4} style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #E2E8F0', outline: 'none', fontSize: '0.9rem', resize: 'vertical' }} />
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                        <label style={{ fontSize: '0.75rem', fontWeight: 600, color: '#475569' }}>Message *</label>
+                        <textarea required placeholder="How can we help?" value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})} rows={3} style={{ width: '100%', padding: '8px 10px', borderRadius: '7px', border: '1px solid #E2E8F0', outline: 'none', fontSize: '0.875rem', resize: 'none' }} />
                       </div>
 
                       {formStatus === 'error' && (
-                        <p style={{ color: '#EF4444', fontSize: '0.85rem', margin: 0 }}>Something went wrong. Please try again.</p>
+                        <p style={{ color: '#EF4444', fontSize: '0.8rem', margin: 0 }}>Something went wrong. Please try again.</p>
                       )}
 
-                      <button type="submit" disabled={formStatus === 'loading'} style={{ background: '#0F172A', color: '#FFFFFF', padding: '12px', borderRadius: '8px', border: 'none', fontWeight: 600, fontSize: '0.95rem', cursor: formStatus === 'loading' ? 'not-allowed' : 'pointer', marginTop: '8px', opacity: formStatus === 'loading' ? 0.7 : 1 }}>
+                      <button type="submit" disabled={formStatus === 'loading'} style={{ background: '#0F172A', color: '#FFFFFF', padding: '10px', borderRadius: '7px', border: 'none', fontWeight: 600, fontSize: '0.9rem', cursor: formStatus === 'loading' ? 'not-allowed' : 'pointer', marginTop: '4px', opacity: formStatus === 'loading' ? 0.7 : 1 }}>
                         {formStatus === 'loading' ? 'Sending...' : 'Send Message'}
                       </button>
                     </form>

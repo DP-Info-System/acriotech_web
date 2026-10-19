@@ -21,7 +21,7 @@ const solutions = [
     icon: Cpu,
     tag: 'TensorFlow · PyTorch · Airflow',
     industries: ['Manufacturing', 'Insurance', 'Retail'],
-    outcomes: 'Defined accuracy contract and human review path'
+    outcomes: 'Custom ML models, intelligent document processing, and workflow automation'
   },
   {
     title: 'Business Process Automation',
@@ -82,9 +82,9 @@ const solutions = [
 const differentiators = [
   { title: 'Senior delivery ownership', desc: 'Experienced engineers stay close to architecture, implementation, and production readiness throughout the engagement.' },
   { title: 'Architecture-first delivery', desc: 'We design the system before we write a line of code. Architecture reviews are included in every engagement.' },
-  { title: 'You own everything', desc: 'Full IP transfer. All code, documentation, and infrastructure definitions go into your repositories on day one.' },
+  { title: 'Full IP & Code Ownership', desc: 'Complete source code, documentation, and infrastructure definitions are delivered directly in your repositories.' },
   { title: 'No vendor lock-in', desc: 'We build on open standards and cloud-agnostic patterns. Switching providers should never require a rewrite.' },
-  { title: 'Embedded, not outsourced', desc: 'Your engineers, your Slack, your standups. We operate as an extension of your team — not a black-box vendor.' },
+  { title: 'Embedded, not outsourced', desc: 'Seamless collaboration within your existing communication channels, repositories, and agile sprint workflows.' },
   { title: 'Built for audit', desc: 'Every system ships with complete documentation, runbooks, and compliance-ready audit trails from day one.' }
 ];
 
@@ -106,36 +106,36 @@ export default function SolutionsIndexPage() {
       <NavBar />
 
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="dark-section solutions-hero-grid" style={{ paddingTop: '9rem', paddingBottom: '5rem', background: '#0F172A', color: '#FFFFFF' }}>
+      <section className="solutions-hero-grid" style={{ paddingTop: '9rem', paddingBottom: '5rem', background: '#F8FAFC', color: '#0F172A' }}>
         <div className="solutions-hero-inner" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 3rem', display: 'grid', gridTemplateColumns: 'minmax(0, 1.25fr) minmax(320px, 0.75fr)', gap: 'var(--spacing-section-sm)', alignItems: 'end' }}>
           <div style={{ maxWidth: '760px' }}>
-            <div style={{ fontSize: '0.7rem', fontWeight: 700, color: '#7BAF35', textTransform: 'uppercase', letterSpacing: '0.14em', marginBottom: '1.5rem' }}>Engineering partner / Built for production</div>
-            <h1 style={{ fontSize: 'clamp(2.8rem, 5vw, 4.5rem)', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.04em', marginBottom: '1.5rem', lineHeight: 1.02, maxWidth: '720px' }}>
-              Software that carries the <span style={{ color: '#7BAF35' }}>weight of the business.</span>
+            <div style={{ fontSize: '0.7rem', fontWeight: 700, color: '#4B61B8', textTransform: 'uppercase', letterSpacing: '0.14em', marginBottom: '1.5rem' }}>Engineering partner / Built for production</div>
+            <h1 className="text-slate-900" style={{ fontSize: 'clamp(2.8rem, 5vw, 4.5rem)', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', marginBottom: '1.5rem', lineHeight: 1.02, maxWidth: '720px' }}>
+              Software that carries the <span style={{ color: '#4B61B8' }}>weight of the business.</span>
             </h1>
-            <p style={{ fontSize: '1.08rem', color: '#A8B4C7', lineHeight: 1.75, maxWidth: '650px', marginBottom: '2.5rem' }}>
+            <p className="text-slate-600" style={{ fontSize: '1.08rem', color: '#475569', lineHeight: 1.75, maxWidth: '650px', marginBottom: '2.5rem' }}>
               We build the platforms, cloud infrastructure, and data systems that keep complex operations moving — with measurable delivery outcomes and an accountable engineering team.
             </p>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <a href="#solutions" style={{ padding: '0.9rem 1.75rem', background: '#4B61B8', color: '#FFFFFF', borderRadius: '4px', fontWeight: 600, fontSize: '0.95rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
                 Explore the operating model <ArrowRight size={16} />
               </a>
-              <a href="/contact-us" style={{ padding: '0.9rem 1.75rem', background: 'transparent', color: '#FFFFFF', borderRadius: '4px', fontWeight: 600, fontSize: '0.95rem', textDecoration: 'none', border: '1px solid rgba(255,255,255,0.22)' }}>
+              <a href="/contact-us" style={{ padding: '0.9rem 1.75rem', background: '#FFFFFF', color: '#0F172A', borderRadius: '4px', fontWeight: 600, fontSize: '0.95rem', textDecoration: 'none', border: '1px solid #CBD5E1' }}>
                 Talk to an engineer
               </a>
             </div>
           </div>
-          <aside style={{ borderTop: '1px solid rgba(255,255,255,0.2)', borderBottom: '1px solid rgba(255,255,255,0.2)', padding: '1.25rem 0 0.5rem' }}>
+          <aside style={{ borderTop: '1px solid #E2E8F0', borderBottom: '1px solid #E2E8F0', padding: '1.25rem 0 0.5rem' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: '1rem', marginBottom: '1.25rem' }}>
-              <div style={{ fontSize: '0.7rem', fontWeight: 700, color: '#FFFFFF', textTransform: 'uppercase', letterSpacing: '0.14em' }}>Operating record</div>
-              <div style={{ fontSize: '0.7rem', color: '#64748B', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Selected proof points</div>
+              <div className="text-slate-900" style={{ fontSize: '0.7rem', fontWeight: 700, color: '#0F172A', textTransform: 'uppercase', letterSpacing: '0.14em' }}>Operating record</div>
+              <div className="text-slate-700" style={{ fontSize: '0.7rem', color: '#334155', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 600 }}>Selected proof points</div>
             </div>
             {stats.map((stat, i) => (
-              <div key={i} style={{ display: 'grid', gridTemplateColumns: 'minmax(88px, 0.45fr) 1fr', gap: '1rem', padding: '1rem 0', borderTop: '1px solid rgba(255,255,255,0.09)' }}>
-                <div style={{ fontSize: '1.65rem', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.04em', lineHeight: 1 }}>{stat.value}</div>
+              <div key={i} style={{ display: 'grid', gridTemplateColumns: 'minmax(88px, 0.45fr) 1fr', gap: '1rem', padding: '1rem 0', borderTop: '1px solid #E2E8F0' }}>
+                <div className="text-slate-900" style={{ fontSize: '1.65rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1 }}>{stat.value}</div>
                 <div>
-                  <div style={{ fontSize: '0.8rem', fontWeight: 600, color: '#CBD5E1', marginBottom: '0.2rem' }}>{stat.label}</div>
-                  <div style={{ fontSize: '0.72rem', color: '#7E8BA0' }}>{stat.sub}</div>
+                  <div className="text-slate-900" style={{ fontSize: '0.8rem', fontWeight: 600, color: '#0F172A', marginBottom: '0.2rem' }}>{stat.label}</div>
+                  <div className="text-slate-700" style={{ fontSize: '0.72rem', color: '#334155' }}>{stat.sub}</div>
                 </div>
               </div>
             ))}
@@ -193,7 +193,7 @@ export default function SolutionsIndexPage() {
             <div>
               <div style={{ fontSize: '0.72rem', fontWeight: 700, color: '#4B61B8', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '0.75rem' }}>DIFFERENTIATORS</div>
               <h2 style={{ fontSize: '1.9rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.025em', lineHeight: 1.25, marginBottom: '1.25rem' }}>
-                What separates an engineering firm from a dev shop
+                Why Enterprise Leaders Choose Acriotech
               </h2>
               <p style={{ fontSize: '0.95rem', color: '#64748B', lineHeight: 1.75, margin: 0 }}>
                 We earn trust through clear architecture, senior delivery ownership, and systems that can be operated after handover.
@@ -227,7 +227,7 @@ export default function SolutionsIndexPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: '1px', background: 'rgba(255,255,255,0.06)' }}>
             {industries.map((ind, i) => (
               <div key={i} style={{ padding: '1.5rem 1.75rem', background: '#0F172A' }}>
-                <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#7BAF35', marginBottom: '0.75rem' }} />
+                <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#4B61B8', marginBottom: '0.75rem' }} />
                 <span style={{ fontSize: '0.875rem', color: '#CBD5E1', fontWeight: 500 }}>{ind}</span>
               </div>
             ))}
@@ -245,14 +245,40 @@ export default function SolutionsIndexPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem' }}>
             {[
               { label: 'Project Delivery', title: 'Fixed-scope, fixed-timeline', desc: 'Defined deliverables, milestones, and acceptance criteria. Best for greenfield builds, platform rewrites, and integration projects with clear boundaries.', badge: 'Most Common' },
-              { label: 'Engineering Pod', title: 'Embedded team, ongoing delivery', desc: 'A dedicated cross-functional team — 2–8 engineers — integrated into your organization. Full standup, sprint cycle, and code review ownership. Best for product companies scaling fast.', badge: 'Recommended' },
+              { label: 'Engineering Pod', title: 'Embedded team, ongoing delivery', desc: 'A dedicated cross-functional team—2 to 8 engineers—integrated directly into your agile sprint cycles, repositories, and release workflows.', badge: 'Recommended' },
               { label: 'Architecture Advisory', title: 'Technical strategy and oversight', desc: 'Senior architects who design, review, and guide. Best when you have internal developers but need guidance on system design, scaling decisions, and technology choices.', badge: null }
             ].map((model, i) => (
-              <div key={i} style={{ padding: '2rem', borderRadius: '10px', border: '1px solid #E2E8F0', position: 'relative' }}>
+              <div 
+                key={i} 
+                style={{ 
+                  padding: '2rem', 
+                  borderRadius: '12px', 
+                  border: model.badge === 'Recommended' ? '2px solid #4B61B8' : '1px solid #E2E8F0', 
+                  position: 'relative',
+                  background: model.badge === 'Recommended' ? '#FAFBFF' : '#FFFFFF',
+                  boxShadow: model.badge === 'Recommended' ? '0 10px 25px -5px rgba(75, 97, 184, 0.1)' : 'none'
+                }}
+              >
                 {model.badge && (
-                  <div style={{ position: 'absolute', top: '-1px', left: '50%', transform: 'translateX(-50%)', background: '#4B61B8', color: '#FFFFFF', fontSize: '0.68rem', fontWeight: 700, padding: '0.3rem 0.9rem', borderRadius: '0 0 6px 6px', textTransform: 'uppercase', letterSpacing: '0.05em', whiteSpace: 'nowrap' }}>{model.badge}</div>
+                  <div style={{ 
+                    position: 'absolute', 
+                    top: '-1px', 
+                    left: '50%', 
+                    transform: 'translateX(-50%)', 
+                    background: model.badge === 'Recommended' ? '#4B61B8' : '#0F172A', 
+                    color: '#FFFFFF', 
+                    fontSize: '0.68rem', 
+                    fontWeight: 700, 
+                    padding: '0.35rem 1rem', 
+                    borderRadius: '0 0 6px 6px', 
+                    textTransform: 'uppercase', 
+                    letterSpacing: '0.06em', 
+                    whiteSpace: 'nowrap' 
+                  }}>
+                    {model.badge}
+                  </div>
                 )}
-                <div style={{ fontSize: '0.68rem', fontWeight: 700, color: '#7BAF35', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem', marginTop: model.badge ? '0.75rem' : '0' }}>{model.label}</div>
+                <div style={{ fontSize: '0.72rem', fontWeight: 700, color: '#4B61B8', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem', marginTop: model.badge ? '0.75rem' : '0' }}>{model.label}</div>
                 <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.75rem' }}>{model.title}</h3>
                 <p style={{ fontSize: '0.875rem', color: '#64748B', lineHeight: 1.7, margin: 0 }}>{model.desc}</p>
               </div>
@@ -264,12 +290,12 @@ export default function SolutionsIndexPage() {
       {/* ── CTA ──────────────────────────────────────────────────────── */}
       <section className="dark-section" style={{ padding: 'var(--spacing-section) 0', background: '#0F172A', position: 'relative', overflow: 'hidden' }}>
         <div style={{ maxWidth: '700px', margin: '0 auto', padding: '0 3rem', textAlign: 'center', position: 'relative', zIndex: 1 }}>
-          <div style={{ fontSize: '0.72rem', fontWeight: 700, color: '#7BAF35', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '1rem' }}>GET STARTED</div>
+          <div style={{ fontSize: '0.72rem', fontWeight: 700, color: '#4B61B8', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '1rem' }}>GET STARTED</div>
           <h2 style={{ fontSize: 'var(--font-h3)', fontWeight: 800, color: '#FFFFFF', marginBottom: '1rem', letterSpacing: '-0.025em', lineHeight: 1.25 }}>
             Not sure which capability fits your situation?
           </h2>
           <p style={{ fontSize: '1rem', color: '#94A3B8', lineHeight: 1.75, marginBottom: '2rem' }}>
-            We&apos;ll ask the right questions, identify gaps, and recommend a plan. 60-minute scoping call — no sales pitch, just an honest technical assessment.
+            Connect with our engineering team to review your technical requirements, evaluate architecture options, and define a clear delivery roadmap.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="/contact-us" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.9rem 2rem', background: '#4B61B8', color: '#FFFFFF', borderRadius: '6px', fontWeight: 600, fontSize: '0.95rem', textDecoration: 'none' }}>
@@ -285,8 +311,8 @@ export default function SolutionsIndexPage() {
       <section style={{ padding: '4rem 0', background: '#F8FAFC', borderTop: '1px solid #E2E8F0' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <h2 style={{ fontSize: '1.75rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>Why Acriotech for enterprise solutions</h2>
-          <p style={{ color: '#475569', lineHeight: 1.7, marginBottom: '1rem', maxWidth: '800px' }}>
-            We don&apos;t ship demos. We ship production systems with rollback plans, observability, and audit trails — the boring parts that keep the business running. Each solution below is a 1200-word+ blueprint: architecture, data model, integrations (SAP/Oracle/Salesforce/legacy), security posture (Zero-Trust, AES-256, TLS 1.3), and a FinOps view. Pair any solution with our <a href="/services" style={{ color: '#4B61B8' }}>services</a> (consulting → support) and <a href="/industries" style={{ color: '#4B61B8' }}>industry context</a> (healthcare FHIR, finance PCI, logistics). Delivered from Bhavnagar, contracted globally — see <a href="/work/featured-projects" style={{ color: '#4B61B8' }}>featured projects</a> for 15M req/day, 99.99% SLO proof.
+          <p style={{ color: '#475569', lineHeight: 1.7, maxWidth: '800px', fontSize: '1.05rem' }}>
+            Acriotech partners with mid-market and enterprise organizations to design, engineer, and maintain resilient digital platforms. Our solutions combine deep domain engineering with modern cloud architecture to deliver measurable business impact.
           </p>
         </div>
       </section>

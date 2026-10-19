@@ -82,7 +82,7 @@ export default function ContactUs() {
       </section>
 
       {/* Direct Inquiries: form above the fold */}
-      <section id="direct-contact" style={{ padding: '5rem 0', background: '#FAFAFA' }}>
+      <section id="direct-contact" className="scroll-mt-28" style={{ padding: '5rem 0', background: '#FAFAFA', scrollMarginTop: '100px' }}>
         <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
           <h2 style={{ fontSize: '2rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.75rem' }}>Direct Inquiries</h2>
           <p style={{ fontSize: '1.1rem', color: '#475569', marginBottom: '3.5rem' }}>Fill out the form below or reach a department directly. Our global headquarters is in Bhavnagar, India.</p>
@@ -92,13 +92,13 @@ export default function ContactUs() {
             {/* Contact Information */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem', flex: '1 1 300px' }}>
               <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
-                <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: '#EFF6FF', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                  <Building size={24} color="#3B82F6" />
+                <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: '#EEF2FF', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <Building size={24} color="#4B61B8" />
                 </div>
                 <div>
                   <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.25rem' }}>Enterprise Sales</h3>
                   <p style={{ color: '#475569', marginBottom: '0.5rem' }}>Contact our business development team.</p>
-                  <a href="mailto:info@acriotech.com" style={{ color: '#3B82F6', fontWeight: 600, textDecoration: 'none' }}>info@acriotech.com</a>
+                  <a href="mailto:info@acriotech.com" style={{ color: '#4B61B8', fontWeight: 600, textDecoration: 'none' }}>info@acriotech.com</a>
                 </div>
               </div>
 
@@ -151,7 +151,7 @@ export default function ContactUs() {
                       value={formData.firstName}
                       onChange={handleChange}
                       style={{ padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #CBD5E1', fontSize: '1rem', outline: 'none', transition: 'border-color 0.2s', minWidth: '0' }}
-                      onFocus={(e) => e.target.style.borderColor = '#3B82F6'}
+                      onFocus={(e) => e.target.style.borderColor = '#4B61B8'}
                       onBlur={(e) => e.target.style.borderColor = '#CBD5E1'}
                     />
                   </div>
@@ -166,7 +166,7 @@ export default function ContactUs() {
                       value={formData.lastName}
                       onChange={handleChange}
                       style={{ padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #CBD5E1', fontSize: '1rem', outline: 'none', transition: 'border-color 0.2s', minWidth: '0' }}
-                      onFocus={(e) => e.target.style.borderColor = '#3B82F6'}
+                      onFocus={(e) => e.target.style.borderColor = '#4B61B8'}
                       onBlur={(e) => e.target.style.borderColor = '#CBD5E1'}
                     />
                   </div>
@@ -183,7 +183,7 @@ export default function ContactUs() {
                     value={formData.email}
                     onChange={handleChange}
                     style={{ padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #CBD5E1', fontSize: '1rem', outline: 'none', transition: 'border-color 0.2s' }}
-                    onFocus={(e) => e.target.style.borderColor = '#3B82F6'}
+                    onFocus={(e) => e.target.style.borderColor = '#4B61B8'}
                     onBlur={(e) => e.target.style.borderColor = '#CBD5E1'}
                   />
                 </div>
@@ -198,7 +198,7 @@ export default function ContactUs() {
                     value={formData.company}
                     onChange={handleChange}
                     style={{ padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #CBD5E1', fontSize: '1rem', outline: 'none', transition: 'border-color 0.2s' }}
-                    onFocus={(e) => e.target.style.borderColor = '#3B82F6'}
+                    onFocus={(e) => e.target.style.borderColor = '#4B61B8'}
                     onBlur={(e) => e.target.style.borderColor = '#CBD5E1'}
                   />
                 </div>
@@ -213,7 +213,7 @@ export default function ContactUs() {
                     onChange={handleChange}
                     rows={4}
                     style={{ padding: '1rem', borderRadius: '8px', border: '1px solid #CBD5E1', fontSize: '1rem', outline: 'none', transition: 'border-color 0.2s', resize: 'vertical' }}
-                    onFocus={(e) => e.target.style.borderColor = '#3B82F6'}
+                    onFocus={(e) => e.target.style.borderColor = '#4B61B8'}
                     onBlur={(e) => e.target.style.borderColor = '#CBD5E1'}
                   ></textarea>
                 </div>

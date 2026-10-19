@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { ArrowRight, Layers, Menu, X, ChevronDown, ChevronUp } from "lucide-react";
 import { useState, useRef } from "react";
+import { usePathname } from "next/navigation";
 
 // --- Data ---
 const generateUrl = (menu: string, text: string) => {
@@ -73,12 +74,55 @@ const navData = {
   }
 };
 
+const getMenuDimensions = (menuKey: string) => {
+  switch (menuKey) {
+    case 'Services':
+      return { 
+        width: 'min(980px, 94vw)', 
+        columns: 'repeat(3, 1fr)', 
+        featuredWidth: '320px' 
+      };
+    case 'Solutions':
+    case 'Industries':
+      return { 
+        width: 'min(820px, 92vw)', 
+        columns: 'repeat(2, 1fr)', 
+        featuredWidth: '300px' 
+      };
+    case 'Insights':
+      return { 
+        width: 'min(700px, 90vw)', 
+        columns: 'repeat(2, 1fr)', 
+        featuredWidth: '290px' 
+      };
+    case 'Work':
+      return { 
+        width: 'min(580px, 90vw)', 
+        columns: 'repeat(1, 1fr)', 
+        featuredWidth: '280px' 
+      };
+    default:
+      return { 
+        width: 'min(760px, 90vw)', 
+        columns: 'repeat(2, 1fr)', 
+        featuredWidth: '300px' 
+      };
+  }
+};
+
 export default function NavBar() {
+  const pathname = usePathname();
   const [hoveredNav, setHoveredNav] = useState<string | null>(null);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [expandedMobileMenus, setExpandedMobileMenus] = useState<string[]>([]);
   const menuTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const closeMegaMenu = () => {
+    if (menuTimeoutRef.current) clearTimeout(menuTimeoutRef.current);
+    setActiveMenu(null);
+    setHoveredNav(null);
+  };
   
   const { scrollY } = useScroll();
   
@@ -161,6 +205,12 @@ export default function NavBar() {
             if (item === 'About') linkHref = '/about-us';
             if (item === 'Contact') linkHref = '/contact-us';
 
+            const isActive = Boolean(
+              pathname &&
+              !linkHref.startsWith('/#') &&
+              (pathname === linkHref || (linkHref !== '/' && pathname.startsWith(linkHref)))
+            );
+
             return (
               <div key={item} style={{ position: 'relative' }} onMouseEnter={() => handleMouseEnter(item)}>
                 {hoveredNav === item && (
@@ -171,8 +221,34 @@ export default function NavBar() {
                     transition={{ type: "spring", bounce: 0, duration: 0.4 }}
                   />
                 )}
-                <a href={linkHref} style={{ display: 'block', padding: '0', fontSize: '0.95rem', fontWeight: 600, color: hoveredNav === item ? '#0F172A' : '#5B6472', transition: 'color 0.2s ease', textDecoration: 'none' }}>
+                <a 
+                  href={linkHref} 
+                  onClick={closeMegaMenu}
+                  style={{ 
+                    display: 'block', 
+                    padding: '0', 
+                    fontSize: '0.95rem', 
+                    fontWeight: isActive ? 700 : 600, 
+                    color: isActive ? '#4B61B8' : (hoveredNav === item ? '#0F172A' : '#5B6472'), 
+                    transition: 'color 0.2s ease', 
+                    textDecoration: 'none',
+                    position: 'relative'
+                  }}
+                >
                   {item}
+                  {isActive && (
+                    <span 
+                      style={{ 
+                        position: 'absolute', 
+                        bottom: '-6px', 
+                        left: 0, 
+                        right: 0, 
+                        height: '2px', 
+                        background: '#4B61B8', 
+                        borderRadius: '2px' 
+                      }} 
+                    />
+                  )}
                 </a>
               </div>
             );
@@ -327,46 +403,51 @@ export default function NavBar() {
       </AnimatePresence>
 
       {/* Mega Menu Dropdown */}
-      <div className="desktop-nav" style={{ width: '100%', padding: '0 4rem', display: 'flex', justifyContent: 'center', position: 'absolute', top: '100%', left: 0, paddingTop: '12px', pointerEvents: activeMenu ? 'auto' : 'none' }}>
+      <div className="desktop-nav" style={{ width: '100%', padding: '0 2rem', display: 'flex', justifyContent: 'center', position: 'absolute', top: '100%', left: 0, paddingTop: '12px', pointerEvents: activeMenu ? 'auto' : 'none' }}>
         <AnimatePresence mode="wait">
           {activeMenu && navData[activeMenu as keyof typeof navData] && (
             <motion.div
               key={activeMenu}
-              initial={{ opacity: 0, y: 10, scale: 0.98 }}
+              initial={{ opacity: 1, y: 8, scale: 0.99 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 10, scale: 0.98, transition: { duration: 0.15 } }}
-              transition={{ duration: 0.25, ease: "easeOut" }}
+              exit={{ opacity: 0, y: 8, scale: 0.99, transition: { duration: 0.1 } }}
+              transition={{ duration: 0.15, ease: "easeOut" }}
               onMouseEnter={() => handleMouseEnter(activeMenu)}
+              className="mega-menu-dropdown mega-menu-panel shadow-2xl border border-slate-200"
               style={{
-                width: navData[activeMenu as keyof typeof navData].featured ? '100%' : (activeMenu === 'Services' ? '900px' : '550px'),
-                background: 'rgba(255, 255, 255, 0.95)',
-                backdropFilter: 'blur(30px)',
-                WebkitBackdropFilter: 'blur(30px)',
+                width: getMenuDimensions(activeMenu).width,
+                backgroundColor: '#ffffff',
+                background: '#ffffff',
                 borderRadius: '24px',
-                border: '1px solid rgba(255, 255, 255, 0.5)',
-                boxShadow: '0 30px 60px -15px rgba(15, 23, 42, 0.1), 0 0 0 1px rgba(15,23,42,0.02)',
+                boxShadow: '0 25px 50px -12px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(15,23,42,0.06)',
                 overflow: 'hidden',
-                position: 'relative'
+                position: 'relative',
+                backdropFilter: 'none',
+                WebkitBackdropFilter: 'none'
               }}
             >
-              <div style={{ display: 'flex', minHeight: '340px' }}>
+              <div className="mega-menu-content" style={{ display: 'flex', backgroundColor: '#ffffff', background: '#ffffff' }}>
                 {/* Links Section */}
-                <div style={{ flex: 1, padding: '3.5rem 4rem', borderRight: navData[activeMenu as keyof typeof navData].featured ? '1px solid rgba(15, 23, 42, 0.05)' : 'none' }}>
-                  <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#4B61B8', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '2.5rem' }}>
+                <div className="mega-menu-links" style={{ flex: 1, padding: '2rem 2.5rem', backgroundColor: '#ffffff', background: '#ffffff', borderRight: navData[activeMenu as keyof typeof navData].featured ? '1px solid rgba(15, 23, 42, 0.05)' : 'none' }}>
+                  <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#4B61B8', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '1.25rem' }}>
                     {navData[activeMenu as keyof typeof navData].purpose}
                   </div>
                   
                   <div style={{ 
                     display: 'grid', 
-                    gridTemplateColumns: activeMenu === 'Services' ? 'repeat(3, 1fr)' : 'repeat(2, 1fr)', 
-                    gap: '1.5rem 3rem' 
+                    gridTemplateColumns: getMenuDimensions(activeMenu).columns, 
+                    gap: '0.65rem 1.5rem' 
                   }}>
                     {navData[activeMenu as keyof typeof navData].items.map((link, idx) => (
-                      <a key={idx} href={generateUrl(activeMenu, link)} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1rem', fontWeight: 600, color: '#0F172A', transition: 'all 0.2s ease', cursor: 'pointer', padding: '0.75rem 1rem', borderRadius: '12px', margin: '-0.75rem -1rem', textDecoration: 'none' }} 
+                      <a 
+                        key={idx} 
+                        href={generateUrl(activeMenu, link)} 
+                        onClick={closeMegaMenu}
+                        style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', fontSize: '0.95rem', fontWeight: 600, color: '#0F172A', transition: 'all 0.2s ease', cursor: 'pointer', padding: '0.5rem 0.75rem', borderRadius: '10px', textDecoration: 'none' }} 
                         onMouseEnter={(e) => { 
                           e.currentTarget.style.color = '#4B61B8'; 
                           e.currentTarget.style.background = 'rgba(75, 97, 184, 0.05)';
-                          e.currentTarget.style.transform = 'translateX(5px)';
+                          e.currentTarget.style.transform = 'translateX(4px)';
                         }}
                         onMouseLeave={(e) => { 
                           e.currentTarget.style.color = '#0F172A'; 
@@ -374,7 +455,7 @@ export default function NavBar() {
                           e.currentTarget.style.transform = 'translateX(0px)';
                         }}
                       >
-                        <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#7BAF35', opacity: 0.5 }}></span>
+                        <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#4B61B8', opacity: 0.6, flexShrink: 0 }}></span>
                         {link}
                       </a>
                     ))}
@@ -383,24 +464,27 @@ export default function NavBar() {
 
                 {/* Featured Section (Optional) */}
                 {navData[activeMenu as keyof typeof navData].featured && (
-                  <div style={{ width: '420px', padding: '3.5rem 4rem', background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)', display: 'flex', flexDirection: 'column', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}>
+                  <div style={{ width: getMenuDimensions(activeMenu).featuredWidth, flexShrink: 0, padding: '2rem 2.25rem', background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)', display: 'flex', flexDirection: 'column', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}>
                     {/* decorative circuit element */}
-                    <div style={{ position: 'absolute', top: -50, right: -50, width: 200, height: 200, borderRadius: '50%', background: 'radial-gradient(circle, rgba(123, 175, 53, 0.15) 0%, rgba(123, 175, 53, 0) 70%)' }}></div>
+                    <div style={{ position: 'absolute', top: -40, right: -40, width: 160, height: 160, borderRadius: '50%', background: 'radial-gradient(circle, rgba(75, 97, 184, 0.2) 0%, rgba(75, 97, 184, 0) 70%)' }}></div>
                     
-                    <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(255, 255, 255, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '2rem', border: '1px solid rgba(255, 255, 255, 0.05)' }}>
-                      <Layers size={24} color="#7BAF35" />
+                    <div style={{ width: '42px', height: '42px', borderRadius: '10px', background: 'rgba(255, 255, 255, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.25rem', border: '1px solid rgba(255, 255, 255, 0.05)' }}>
+                      <Layers size={20} color="#60A5FA" />
                     </div>
-                    <h4 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '1rem', color: '#FFFFFF', letterSpacing: '-0.02em', lineHeight: 1.2 }}>
+                    <h4 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '0.75rem', color: '#FFFFFF', letterSpacing: '-0.02em', lineHeight: 1.25 }}>
                       {navData[activeMenu as keyof typeof navData].featured?.title}
                     </h4>
-                    <p style={{ fontSize: '0.95rem', color: '#94A3B8', marginBottom: '2.5rem', lineHeight: 1.6 }}>
+                    <p style={{ fontSize: '0.875rem', color: '#94A3B8', marginBottom: '1.5rem', lineHeight: 1.5 }}>
                       {navData[activeMenu as keyof typeof navData].featured?.desc}
                     </p>
-                    <a href={featuredLinks[activeMenu]} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.95rem', fontWeight: 600, color: '#7BAF35', transition: 'gap 0.2s ease', textDecoration: 'none' }}
-                       onMouseEnter={(e) => e.currentTarget.style.gap = '1rem'}
-                       onMouseLeave={(e) => e.currentTarget.style.gap = '0.5rem'}
+                    <a 
+                      href={featuredLinks[activeMenu]} 
+                      onClick={closeMegaMenu}
+                      style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', fontWeight: 600, color: '#60A5FA', transition: 'gap 0.2s ease', textDecoration: 'none' }}
+                      onMouseEnter={(e) => e.currentTarget.style.gap = '0.75rem'}
+                      onMouseLeave={(e) => e.currentTarget.style.gap = '0.5rem'}
                     >
-                      {navData[activeMenu as keyof typeof navData].featured?.linkText} <ArrowRight size={16} />
+                      {navData[activeMenu as keyof typeof navData].featured?.linkText} <ArrowRight size={15} />
                     </a>
                   </div>
                 )}

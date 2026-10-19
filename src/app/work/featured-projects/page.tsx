@@ -46,7 +46,7 @@ const projects = [
     "title": "Global Manufacturing ERP System",
     "category": "ERP",
     "client": "Heavy Machinery Corp",
-    "desc": "A comprehensive Enterprise Resource Planning suite unifying inventory, supply chain logistics, and HR for 10,000+ employees globally.",
+    "desc": "A comprehensive Enterprise Resource Planning suite unifying inventory, supply chain logistics, and HR across multi-plant manufacturing operations.",
     "tech": [
       "React",
       "Spring Boot",
@@ -58,7 +58,7 @@ const projects = [
     "title": "Predictive Machine Learning Engine",
     "category": "Machine Learning",
     "client": "Financial Institution",
-    "desc": "A machine learning engine that analyzes market sentiment and historical data to predict financial trends with 94% accuracy.",
+    "desc": "A machine learning engine that analyzes market sentiment and historical data to predict financial trends using real-time market and historical data pipelines.",
     "tech": [
       "Python",
       "TensorFlow",
@@ -70,7 +70,7 @@ const projects = [
     "title": "Conversational AI Intelligence Agent",
     "category": "AI Intelligence",
     "client": "Telecom Enterprise",
-    "desc": "A generative AI support agent that autonomously resolves 70% of tier-1 customer technical issues by analyzing knowledge bases.",
+    "desc": "A generative AI support agent that automates tier-1 technical support triage and resolution by analyzing knowledge bases.",
     "tech": [
       "LangChain",
       "Pinecone",
@@ -166,7 +166,7 @@ const projects = [
     "title": "Supply Chain AI Optimizer",
     "category": "ERP / AI",
     "client": "Automotive Manufacturer",
-    "desc": "An AI module integrated into legacy ERPs that predicts part shortages 3 weeks in advance based on global logistics data.",
+    "desc": "An AI module integrated into legacy ERPs that forecasts inventory demand and prevents supply chain bottlenecks based on global logistics data.",
     "tech": [
       "Python",
       "PyTorch",
@@ -238,7 +238,7 @@ const projects = [
     "title": "Global HR & Payroll ERP",
     "category": "ERP",
     "client": "Multinational Conglomerate",
-    "desc": "A specialized ERP module managing complex payroll compliance, tax routing, and benefits administration across 40 different countries.",
+    "desc": "A specialized ERP module managing complex payroll compliance, tax routing, and benefits administration for distributed multi-region teams.",
     "tech": [
       "Angular",
       "Java",
@@ -250,7 +250,7 @@ const projects = [
     "title": "Dynamic Resource Allocation AI",
     "category": "Machine Learning",
     "client": "Logistics Fleet Operator",
-    "desc": "A reinforcement learning model that dynamically routes a fleet of 5,000 delivery vehicles to minimize fuel consumption and delays.",
+    "desc": "A reinforcement learning model that dynamically routes commercial logistics and delivery fleets to minimize fuel consumption and delays.",
     "tech": [
       "Python",
       "Ray RLlib",
