@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "build:opennext": "opennextjs-cloudflare build",
-    "prebuild": "rm -rf .next",
+    "prebuild": "node -e \"const fs=require('fs');if(fs.existsSync('.next'))fs.rmSync('.next',{recursive:true,force:true})\"",
     "start": "next start",
     "lint": "eslint",
     "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",

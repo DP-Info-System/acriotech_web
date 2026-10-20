@@ -6,22 +6,36 @@ import { useState, useRef, useEffect } from "react";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 
-// Editorial proof block — replaces AI circuit illustration
+// Premium animated proof block
 function ProofBlock() {
+  const stats = [
+    { num: "80+", label: "Systems Live", icon: "◈" },
+    { num: "8yr", label: "In Business", icon: "◉" },
+    { num: "40+", label: "Partners", icon: "◎" },
+    { num: "99.9%", label: "Uptime SLA", icon: "◆" },
+  ];
   return (
-    <div style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '12px', padding: '1.5rem', maxWidth: '420px' }}>
-      <div style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#64748B', marginBottom: '1rem' }}>DELIVERY TRACK RECORD</div>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-        {[
-          { k: "2018 – Present", v: "8+ years of enterprise software engineering" },
-          { k: "40+ Active Partners", v: "Long-term client partnerships globally" },
-          { k: "End-to-End Delivery", v: "Web, Cloud, AI & Mobile Architecture" },
-        ].map((r, i) => (
-          <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.75rem 0', borderBottom: i < 2 ? '1px solid #F1F5F9' : 'none' }}>
-            <span style={{ fontWeight: 700, color: '#0F172A', fontSize: '0.95rem' }}>{r.k}</span>
-            <span style={{ color: '#64748B', fontSize: '0.85rem' }}>{r.v}</span>
-          </div>
-        ))}
+    <div style={{ position: 'relative', width: '100%', maxWidth: '420px' }}>
+      {/* Glow behind card */}
+      <div style={{ position: 'absolute', inset: '-1px', borderRadius: '20px', background: 'linear-gradient(135deg, rgba(75,97,184,0.25) 0%, rgba(15,23,42,0.08) 100%)', filter: 'blur(12px)', zIndex: 0 }} />
+      <div style={{ position: 'relative', zIndex: 1, background: '#0F172A', borderRadius: '20px', padding: '2rem', border: '1px solid rgba(255,255,255,0.08)' }}>
+        <div style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: '1.5rem' }}>Trusted Track Record</div>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
+          {stats.map((s, i) => (
+            <div key={i} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '12px', padding: '1.25rem', transition: 'all 0.3s ease' }}
+              onMouseEnter={e => (e.currentTarget.style.background = 'rgba(75,97,184,0.15)')}
+              onMouseLeave={e => (e.currentTarget.style.background = 'rgba(255,255,255,0.04)')}
+            >
+              <div style={{ fontSize: '1.1rem', color: '#4B61B8', marginBottom: '0.4rem' }}>{s.icon}</div>
+              <div style={{ fontSize: '1.8rem', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.03em', lineHeight: 1 }}>{s.num}</div>
+              <div style={{ fontSize: '0.75rem', color: '#94A3B8', marginTop: '0.35rem', fontWeight: 500 }}>{s.label}</div>
+            </div>
+          ))}
+        </div>
+        <div style={{ marginTop: '1.5rem', paddingTop: '1.25rem', borderTop: '1px solid rgba(255,255,255,0.06)', display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+          <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#22C55E', boxShadow: '0 0 8px rgba(34,197,94,0.6)' }} />
+          <span style={{ fontSize: '0.8rem', color: '#94A3B8', fontWeight: 500 }}>Enterprise-grade delivery since 2018</span>
+        </div>
       </div>
     </div>
   );
@@ -247,55 +261,66 @@ export default function Home() {
           </div>
 
           <div className="case-study-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '3rem' }}>
-            {/* Case Study 1 */}
-            <div style={{ display: "flex", flexDirection: "column" }}>
-              <div style={{ background: '#0F172A', borderRadius: '12px', height: '320px', marginBottom: '1.5rem', border: '1px solid #1E293B', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
-                <div style={{ textAlign: 'center' }}>
-                  <div style={{ fontSize: '0.7rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#94A3B8', marginBottom: '0.75rem' }}>Case study — Cloud</div>
-                  <div style={{ fontFamily: 'monospace', fontSize: '0.95rem', color: '#F8FAFC', lineHeight: 1.6 }}>Multi-Region AWS · Kubernetes · Auto-Scaling</div>
-                  <div style={{ marginTop: '1rem', fontSize: '0.8rem', color: '#64748B' }}>Terraform · K8s · AWS · High Availability</div>
+            {[{
+              tag: 'Cloud Infrastructure',
+              icon: '☁',
+              accent: '#3B82F6',
+              accentBg: 'rgba(59,130,246,0.12)',
+              tags: ['Kubernetes', 'Terraform', 'AWS'],
+              metric: '99.99% uptime',
+              metricLabel: 'over 18 months',
+              title: 'Distributed Cloud Architecture',
+              desc: 'Engineered a highly available, multi-region cloud infrastructure scaling automatically to handle mission-critical enterprise workloads.',
+              detail: 'Multi-region AWS · Auto-Scaling · High Availability'
+            }, {
+              tag: 'Security Engineering',
+              icon: '🔐',
+              accent: '#8B5CF6',
+              accentBg: 'rgba(139,92,246,0.12)',
+              tags: ['Rust', 'WebAssembly', 'eBPF'],
+              metric: '0 breaches',
+              metricLabel: 'since deployment',
+              title: 'Zero-Trust Network Fabric',
+              desc: 'Engineered with strict role-based access control, encrypted service-to-service communication, and automated compliance auditing.',
+              detail: 'Zero-Trust IAM · SOC2 Ready · Role-Based Access'
+            }].map((cs, i) => (
+              <div key={i} style={{ display: 'flex', flexDirection: 'column' }}>
+                {/* Visual card — rich dark with accent */}
+                <div style={{ background: '#0F172A', borderRadius: '16px', height: '320px', marginBottom: '1.5rem', border: '1px solid rgba(255,255,255,0.07)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '2rem', position: 'relative', overflow: 'hidden', transition: 'transform 0.3s ease' }}
+                  onMouseEnter={e => (e.currentTarget.style.transform = 'translateY(-4px)')}
+                  onMouseLeave={e => (e.currentTarget.style.transform = 'translateY(0)')}
+                >
+                  {/* Accent glow */}
+                  <div style={{ position: 'absolute', top: '-40px', right: '-40px', width: '200px', height: '200px', background: `radial-gradient(circle, ${cs.accent}22 0%, transparent 70%)`, pointerEvents: 'none' }} />
+                  {/* Top row */}
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                    <div style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#64748B' }}>Case Study</div>
+                    <div style={{ background: cs.accentBg, border: `1px solid ${cs.accent}33`, borderRadius: '999px', padding: '0.3rem 0.75rem', fontSize: '0.7rem', fontWeight: 600, color: cs.accent }}>{cs.tag}</div>
+                  </div>
+                  {/* Center icon + detail */}
+                  <div style={{ textAlign: 'center' }}>
+                    <div style={{ fontSize: '3rem', marginBottom: '0.75rem', filter: 'drop-shadow(0 0 20px rgba(255,255,255,0.1))' }}>{cs.icon}</div>
+                    <div style={{ fontSize: '0.85rem', color: '#94A3B8', lineHeight: 1.7, fontFamily: 'monospace' }}>{cs.detail}</div>
+                  </div>
+                  {/* Bottom metric */}
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', background: 'rgba(255,255,255,0.04)', borderRadius: '10px', padding: '0.75rem 1rem' }}>
+                    <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#22C55E', boxShadow: '0 0 6px rgba(34,197,94,0.7)', flexShrink: 0 }} />
+                    <span style={{ fontSize: '0.95rem', fontWeight: 700, color: '#FFFFFF' }}>{cs.metric}</span>
+                    <span style={{ fontSize: '0.8rem', color: '#64748B' }}>{cs.metricLabel}</span>
+                  </div>
+                </div>
+                {/* Text below */}
+                <div>
+                  <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1.2rem' }}>
+                    {cs.tags.map((t, j) => (
+                      <span key={j} style={{ background: '#F1F5F9', color: '#475569', fontSize: '0.78rem', fontWeight: 600, padding: '0.3rem 0.7rem', borderRadius: '6px' }}>{t}</span>
+                    ))}
+                  </div>
+                  <h3 style={{ fontSize: '1.8rem', color: '#0F172A', fontWeight: 600, marginBottom: '1rem', letterSpacing: '-0.02em' }}>{cs.title}</h3>
+                  <p style={{ fontSize: '1.05rem', color: '#5B6472', lineHeight: 1.6, margin: 0 }}>{cs.desc}</p>
                 </div>
               </div>
-
-              <div>
-                <div style={{ display: 'flex', gap: '1rem', color: '#5B6472', fontSize: '0.85rem', fontWeight: 500, marginBottom: '1.2rem' }}>
-                  <span>Kubernetes</span>
-                  <span>•</span>
-                  <span>Terraform</span>
-                  <span>•</span>
-                  <span>AWS</span>
-                </div>
-                <h3 style={{ fontSize: '1.8rem', color: '#0F172A', fontWeight: 600, marginBottom: '1rem', letterSpacing: '-0.02em' }}>Distributed Cloud Architecture</h3>
-                <p style={{ fontSize: '1.05rem', color: '#5B6472', lineHeight: 1.6, margin: 0 }}>
-                  Engineered a highly available, multi-region cloud infrastructure scaling automatically to handle mission-critical enterprise workloads.
-                </p>
-              </div>
-            </div>
-
-            {/* Case Study 2 — editorial, matching dark visual card */}
-            <div style={{ display: "flex", flexDirection: "column" }}>
-              <div style={{ background: '#0F172A', borderRadius: '12px', height: '320px', marginBottom: '1.5rem', border: '1px solid #1E293B', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
-                <div style={{ textAlign: 'center' }}>
-                  <div style={{ fontSize: '0.7rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#94A3B8', marginBottom: '0.75rem' }}>Case study — Security</div>
-                  <div style={{ fontFamily: 'monospace', fontSize: '0.95rem', color: '#F8FAFC', lineHeight: 1.6 }}>Zero-Trust IAM · End-to-End Encryption · SOC2 Ready</div>
-                  <div style={{ marginTop: '1rem', fontSize: '0.8rem', color: '#64748B' }}>Role-Based Access · Automated Compliance Auditing</div>
-                </div>
-              </div>
-
-              <div>
-                <div style={{ display: 'flex', gap: '1rem', color: '#5B6472', fontSize: '0.85rem', fontWeight: 500, marginBottom: '1.2rem' }}>
-                  <span>Rust</span>
-                  <span>•</span>
-                  <span>WebAssembly</span>
-                  <span>•</span>
-                  <span>eBPF</span>
-                </div>
-                <h3 style={{ fontSize: '1.8rem', color: '#0F172A', fontWeight: 600, marginBottom: '1rem', letterSpacing: '-0.02em' }}>Zero-Trust Network Fabric</h3>
-                <p style={{ fontSize: '1.05rem', color: '#5B6472', lineHeight: 1.6, margin: 0 }}>
-                  Engineered with strict role-based access control, encrypted service-to-service communication, and automated compliance auditing.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -313,36 +338,51 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="workflow-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+          <div className="workflow-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
             {[
-              { id: "01", title: 'Discovery & Audit', desc: 'Deep technical analysis of existing systems, identifying bottlenecks and architectural requirements.' },
-              { id: "02", title: 'System Architecture', desc: 'Designing resilient, scalable foundations mapping out data models, microservices, and infrastructure.' },
-              { id: "03", title: 'UI/UX Engineering', desc: 'Crafting intuitive interfaces backed by robust design systems and precise component architecture.' },
-              { id: "04", title: 'Development Sprints', desc: 'Agile execution with rigorous peer reviews, automated testing, and continuous integration.' },
-              { id: "05", title: 'Deployment & QA', desc: 'Zero-downtime deployments with comprehensive load testing, security audits, and compliance checks.' },
-              { id: "06", title: 'Scale & Support', desc: 'Proactive monitoring, performance optimization, and dedicated enterprise SLA support.' }
+              { id: '01', title: 'Discovery & Audit', desc: 'Deep technical analysis of existing systems, identifying bottlenecks and architectural requirements.', icon: '◎' },
+              { id: '02', title: 'System Architecture', desc: 'Designing resilient, scalable foundations mapping out data models, microservices, and infrastructure.', icon: '◈' },
+              { id: '03', title: 'UI/UX Engineering', desc: 'Crafting intuitive interfaces backed by robust design systems and precise component architecture.', icon: '◇' },
+              { id: '04', title: 'Development Sprints', desc: 'Agile execution with rigorous peer reviews, automated testing, and continuous integration.', icon: '◆' },
+              { id: '05', title: 'Deployment & QA', desc: 'Zero-downtime deployments with comprehensive load testing, security audits, and compliance checks.', icon: '◉' },
+              { id: '06', title: 'Scale & Support', desc: 'Proactive monitoring, performance optimization, and dedicated enterprise SLA support.', icon: '⬡' }
             ].map((step, index) => (
-              <div 
+              <div
                 key={step.id}
-                style={{ 
-                  background: '#FFFFFF', 
-                  borderRadius: '16px', 
-                  padding: '2.5rem', 
-                  border: '1px solid rgba(15,23,42,0.05)',
-                  boxShadow: '0 10px 30px -10px rgba(15,23,42,0.02)',
+                style={{
+                  background: '#FFFFFF',
+                  borderRadius: '16px',
+                  padding: '2rem',
+                  border: '1px solid rgba(15,23,42,0.06)',
+                  boxShadow: '0 4px 24px rgba(15,23,42,0.04)',
                   display: 'flex',
                   flexDirection: 'column',
+                  gap: '1rem',
                   position: 'relative',
+                  overflow: 'hidden',
+                  transition: 'all 0.25s ease',
                   cursor: 'default'
                 }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.transform = 'translateY(-3px)';
+                  e.currentTarget.style.boxShadow = '0 12px 40px rgba(75,97,184,0.1)';
+                  e.currentTarget.style.borderColor = 'rgba(75,97,184,0.2)';
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 4px 24px rgba(15,23,42,0.04)';
+                  e.currentTarget.style.borderColor = 'rgba(15,23,42,0.06)';
+                }}
               >
-                <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#4B61B8', marginBottom: '1.5rem', fontFamily: 'monospace', background: 'rgba(75, 97, 184, 0.05)', padding: '0.4rem 0.8rem', borderRadius: '6px', alignSelf: 'flex-start' }}>
-                  STEP {step.id}
+                {/* Large faded step number in background */}
+                <div style={{ position: 'absolute', top: '-10px', right: '1rem', fontSize: '5rem', fontWeight: 900, color: 'rgba(75,97,184,0.04)', lineHeight: 1, userSelect: 'none', pointerEvents: 'none' }}>{step.id}</div>
+                {/* Icon + number row */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                  <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: 'rgba(75,97,184,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.1rem', color: '#4B61B8', flexShrink: 0 }}>{step.icon}</div>
+                  <div style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.12em', color: '#4B61B8', textTransform: 'uppercase' }}>Phase {step.id}</div>
                 </div>
-                <h3 style={{ fontSize: '1.4rem', fontWeight: 600, color: '#0F172A', marginBottom: '1rem', letterSpacing: '-0.01em' }}>{step.title}</h3>
-                <p style={{ fontSize: '0.95rem', color: '#5B6472', lineHeight: 1.6, margin: 0 }}>
-                  {step.desc}
-                </p>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0F172A', margin: 0, letterSpacing: '-0.01em' }}>{step.title}</h3>
+                <p style={{ fontSize: '0.9rem', color: '#64748B', lineHeight: 1.65, margin: 0 }}>{step.desc}</p>
               </div>
             ))}
           </div>
