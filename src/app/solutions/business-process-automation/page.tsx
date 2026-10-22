@@ -13,8 +13,8 @@ export default function BusinessProcessAutomation() {
       <section className="dark-section" style={{ paddingTop: 'var(--spacing-section)', paddingBottom: 'var(--spacing-section)', background: '#0F172A', color: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ maxWidth: '800px' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(255,255,255,0.1)', color: '#F8FAFC', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
-              <Settings size={16} color="#38BDF8" /> Process Engineering
+            <div style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.15em', color: '#60A5FA', marginBottom: '1.25rem' }}>
+              PROCESS ENGINEERING
             </div>
             <h1 style={{ fontSize: 'var(--font-hero)', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
               Orchestrate work at <span style={{ color: '#38BDF8' }}>scale.</span>

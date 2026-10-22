@@ -10,28 +10,28 @@ export default function DigitalTransformation() {
       <NavBar />
 
       {/* Hero Section */}
-      <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: 'var(--spacing-section)', background: '#312E81', color: '#FFFFFF' }}>
+      <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: 'var(--spacing-section)', background: '#0F172A', color: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
             <div>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(255,255,255,0.1)', color: '#E0E7FF', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
-                <Compass size={16} /> Enterprise Modernization
+              <div style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.15em', color: '#4B61B8', marginBottom: '1.25rem' }}>
+                ENTERPRISE MODERNIZATION
               </div>
               <h1 style={{ fontSize: '4rem', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
-                Technology is only half the <span style={{ color: '#818CF8' }}>transformation.</span>
+                Technology is only half the <span style={{ color: '#60A5FA' }}>transformation.</span>
               </h1>
-              <p style={{ fontSize: '1.2rem', color: '#C7D2FE', lineHeight: 1.6, marginBottom: '3rem' }}>
+              <p style={{ fontSize: '1.2rem', color: '#94A3B8', lineHeight: 1.6, marginBottom: '3rem' }}>
                 True digital transformation connects modern platforms to human behavior. We guide organizations through the technical re-platforming and the operational shifts required to survive in a digital-first economy.
               </p>
               <div style={{ display: 'flex', gap: '1rem' }}>
-                <Link href="/contact-us" style={{ background: '#4F46E5', color: '#FFFFFF', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'all 0.2s' }}>
+                <Link href="/contact-us" style={{ background: '#2563EB', color: '#FFFFFF', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'all 0.2s' }}>
                   Plan Your Roadmap <ArrowRight size={18} />
                 </Link>
               </div>
             </div>
             
-            <div style={{ background: '#1E1B4B', padding: '3rem', borderRadius: '24px', border: '1px solid #4338CA', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5)' }}>
-               <h4 style={{ color: '#818CF8', fontSize: '1.1rem', fontWeight: 700, marginBottom: '1.5rem' }}>Transformation Priorities</h4>
+            <div style={{ background: '#1E293B', padding: '3rem', borderRadius: '24px', border: '1px solid #334155', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5)' }}>
+               <h4 style={{ color: '#60A5FA', fontSize: '1.1rem', fontWeight: 700, marginBottom: '1.5rem' }}>Transformation Priorities</h4>
                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                  {[
                    { label: "Legacy Decommissioning", metric: "60% Cost Reduction" },
@@ -40,7 +40,7 @@ export default function DigitalTransformation() {
                  ].map((item, i) => (
                     <li key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '1rem', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                       <span style={{ color: '#F8FAFC', fontWeight: 600 }}>{item.label}</span>
-                      <span style={{ background: 'rgba(79, 70, 229, 0.3)', color: '#A5B4FC', padding: '0.3rem 0.8rem', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 700 }}>{item.metric}</span>
+                      <span style={{ background: 'rgba(37, 99, 235, 0.2)', color: '#93C5FD', padding: '0.3rem 0.8rem', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 700 }}>{item.metric}</span>
                     </li>
                  ))}
                </ul>
@@ -69,9 +69,9 @@ export default function DigitalTransformation() {
                  { phase: "Optimize", title: "Continuous Innovation", text: "With a modern cloud foundation, we shift focus to predictive analytics and AI-driven workflow optimization." }
                ].map((step, i) => (
                   <div key={i} style={{ display: 'flex', gap: '2rem' }}>
-                    <div style={{ width: '50px', height: '50px', borderRadius: '50%', background: '#4F46E5', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '4px solid #F8FAFC', fontWeight: 700 }}>{i + 1}</div>
+                    <div style={{ width: '50px', height: '50px', borderRadius: '50%', background: '#2563EB', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '4px solid #F8FAFC', fontWeight: 700 }}>{i + 1}</div>
                     <div style={{ background: '#FFFFFF', padding: '2rem', borderRadius: '16px', border: '1px solid #E2E8F0', flex: 1, boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)' }}>
-                      <div style={{ fontSize: '0.85rem', color: '#4F46E5', fontWeight: 700, textTransform: 'uppercase', marginBottom: '0.5rem' }}>{step.phase}</div>
+                      <div style={{ fontSize: '0.85rem', color: '#2563EB', fontWeight: 700, textTransform: 'uppercase', marginBottom: '0.5rem' }}>{step.phase}</div>
                       <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#0F172A', marginBottom: '1rem' }}>{step.title}</h3>
                       <p style={{ color: '#475569', lineHeight: 1.6 }}>{step.text}</p>
                     </div>
@@ -87,8 +87,8 @@ export default function DigitalTransformation() {
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
             <div>
-              <div style={{ width: '64px', height: '64px', borderRadius: '16px', background: '#EEF2FF', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '2rem' }}>
-                <Users2 size={32} color="#4F46E5" />
+              <div style={{ width: '64px', height: '64px', borderRadius: '16px', background: '#EFF6FF', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '2rem' }}>
+                <Users2 size={32} color="#2563EB" />
               </div>
               <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>The Human Element</h2>
               <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.7, marginBottom: '2rem' }}>
@@ -102,7 +102,7 @@ export default function DigitalTransformation() {
                   "Post-launch adoption telemetry monitoring"
                 ].map((item, i) => (
                   <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.05rem', color: '#0F172A', fontWeight: 500 }}>
-                    <CheckCircle2 size={20} color="#4F46E5" /> {item}
+                    <CheckCircle2 size={20} color="#2563EB" /> {item}
                   </li>
                 ))}
               </ul>
@@ -114,18 +114,18 @@ export default function DigitalTransformation() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <span style={{ fontWeight: 600, color: '#334155' }}>Daily Active Usage</span>
-                  <span style={{ fontWeight: 800, color: '#4F46E5', fontSize: '1.2rem' }}>92%</span>
+                  <span style={{ fontWeight: 800, color: '#2563EB', fontSize: '1.2rem' }}>92%</span>
                 </div>
                 <div style={{ width: '100%', height: '8px', background: '#E2E8F0', borderRadius: '4px' }}>
-                  <div style={{ width: '92%', height: '100%', background: '#4F46E5', borderRadius: '4px' }}></div>
+                  <div style={{ width: '92%', height: '100%', background: '#2563EB', borderRadius: '4px' }}></div>
                 </div>
                 
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '1rem' }}>
                   <span style={{ fontWeight: 600, color: '#334155' }}>Legacy System Sunsetting</span>
-                  <span style={{ fontWeight: 800, color: '#10B981', fontSize: '1.2rem' }}>100%</span>
+                  <span style={{ fontWeight: 800, color: '#2563EB', fontSize: '1.2rem' }}>100%</span>
                 </div>
                 <div style={{ width: '100%', height: '8px', background: '#E2E8F0', borderRadius: '4px' }}>
-                  <div style={{ width: '100%', height: '100%', background: '#10B981', borderRadius: '4px' }}></div>
+                  <div style={{ width: '100%', height: '100%', background: '#2563EB', borderRadius: '4px' }}></div>
                 </div>
               </div>
             </div>
@@ -141,17 +141,17 @@ export default function DigitalTransformation() {
            
            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem' }}>
              <div style={{ background: '#1E293B', padding: '3rem 2rem', borderRadius: '16px', border: '1px solid #334155' }}>
-               <DatabaseZap size={32} color="#818CF8" style={{ margin: '0 auto 1.5rem auto' }} />
+               <DatabaseZap size={32} color="#60A5FA" style={{ margin: '0 auto 1.5rem auto' }} />
                <h4 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '1rem' }}>Data Modernization</h4>
                <p style={{ color: '#94A3B8', fontSize: '0.95rem', lineHeight: 1.6 }}>Moving from on-premise relational silos to cloud-based data warehouses (Snowflake, BigQuery) for real-time analytics.</p>
              </div>
              <div style={{ background: '#1E293B', padding: '3rem 2rem', borderRadius: '16px', border: '1px solid #334155' }}>
-               <MapPin size={32} color="#34D399" style={{ margin: '0 auto 1.5rem auto' }} />
+               <MapPin size={32} color="#60A5FA" style={{ margin: '0 auto 1.5rem auto' }} />
                <h4 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '1rem' }}>Infrastructure Shift</h4>
-               <p style={{ color: '#94A3B8', fontSize: '0.95rem', lineHeight: 1.6 }}>Migrating from physical servers to orchestrated containers (Kubernetes) for infinite scalability and high availability.</p>
+               <p style={{ color: '#94A3B8', fontSize: '0.95rem', lineHeight: 1.6 }}>Migrating from physical servers to orchestrated containers (Kubernetes) for high availability.</p>
              </div>
              <div style={{ background: '#1E293B', padding: '3rem 2rem', borderRadius: '16px', border: '1px solid #334155' }}>
-               <ShieldCheck size={32} color="#FBBF24" style={{ margin: '0 auto 1.5rem auto' }} />
+               <ShieldCheck size={32} color="#60A5FA" style={{ margin: '0 auto 1.5rem auto' }} />
                <h4 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '1rem' }}>Security & Identity</h4>
                <p style={{ color: '#94A3B8', fontSize: '0.95rem', lineHeight: 1.6 }}>Implementing Zero-Trust networking and centralized SSO (Okta, Azure AD) across all modernized applications.</p>
              </div>

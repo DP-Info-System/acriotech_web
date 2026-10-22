@@ -14,17 +14,17 @@ export default function MaintenanceSupport() {
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
             <div>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#F3F4F6', color: '#374151', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
-                <Wrench size={16} /> SLA & Operations
+              <div style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.15em', color: '#4B61B8', marginBottom: '1.25rem' }}>
+                SLA & OPERATIONS
               </div>
               <h1 style={{ fontSize: '4.2rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
-                Steady care for software the business <span style={{ color: '#0F172A', textDecoration: 'underline', textDecorationColor: '#D1D5DB' }}>depends on.</span>
+                Steady care for software the business <span style={{ color: '#2563EB' }}>depends on.</span>
               </h1>
               <p style={{ fontSize: '1.2rem', color: '#475569', lineHeight: 1.6, marginBottom: '2.5rem', maxWidth: '600px' }}>
                 Maintenance is more than just closing Jira tickets. It is understanding a complex system, managing change safely, and systematically reducing the cost of its next failure.
               </p>
               <div style={{ display: 'flex', gap: '1rem' }}>
-                <Link href="/contact-us" style={{ background: '#0F172A', color: '#FFFFFF', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s' }}>
+                <Link href="/contact-us" style={{ background: '#2563EB', color: '#FFFFFF', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s' }}>
                   Review SLA Options <ArrowRight size={18} />
                 </Link>
               </div>
@@ -38,11 +38,11 @@ export default function MaintenanceSupport() {
                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '1.5rem', marginBottom: '1.5rem' }}>
                  <div style={{ background: '#1E293B', padding: '1.5rem', borderRadius: '8px', border: '1px solid #334155' }}>
                    <div style={{ fontSize: '0.75rem', color: '#94A3B8', fontWeight: 600, textTransform: 'uppercase', marginBottom: '0.2rem' }}>P1 Response Time</div>
-                   <div style={{ fontSize: 'var(--font-h3)', fontWeight: 800, color: '#10B981' }}>&lt;15m</div>
+                   <div style={{ fontSize: 'var(--font-h3)', fontWeight: 800, color: '#60A5FA' }}>&lt;15m</div>
                  </div>
                  <div style={{ background: '#1E293B', padding: '1.5rem', borderRadius: '8px', border: '1px solid #334155' }}>
                    <div style={{ fontSize: '0.75rem', color: '#94A3B8', fontWeight: 600, textTransform: 'uppercase', marginBottom: '0.2rem' }}>Uptime Target</div>
-                   <div style={{ fontSize: 'var(--font-h3)', fontWeight: 800, color: '#10B981' }}>99.9%</div>
+                   <div style={{ fontSize: 'var(--font-h3)', fontWeight: 800, color: '#60A5FA' }}>99.9%</div>
                  </div>
                </div>
                <div style={{ background: '#1E293B', padding: '1.5rem', borderRadius: '8px', border: '1px solid #334155', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -50,7 +50,7 @@ export default function MaintenanceSupport() {
                     <div style={{ fontSize: '0.75rem', color: '#94A3B8', fontWeight: 600, textTransform: 'uppercase', marginBottom: '0.2rem' }}>Security Patches Applied</div>
                     <div style={{ fontSize: '1.2rem', fontWeight: 800, color: '#F8FAFC' }}>Zero-Day + 24h</div>
                   </div>
-                  <ShieldCheck size={28} color="#10B981" />
+                  <ShieldCheck size={28} color="#60A5FA" />
                </div>
             </div>
           </div>
@@ -65,17 +65,17 @@ export default function MaintenanceSupport() {
              {/* Visual */}
              <div style={{ background: '#FFFFFF', padding: '3rem', borderRadius: '24px', border: '1px solid #E2E8F0', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.05)' }}>
                <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                 <Eye color="#4F46E5" /> Distributed Tracing
+                 <Eye color="#2563EB" /> Distributed Tracing
                </h3>
                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                 <div style={{ height: '30px', background: '#EEF2FF', borderRadius: '4px', width: '100%', position: 'relative' }}>
-                    <div style={{ position: 'absolute', left: 0, top: 0, height: '100%', width: '30%', background: '#4F46E5', borderRadius: '4px 0 0 4px', color: '#FFFFFF', fontSize: '0.7rem', display: 'flex', alignItems: 'center', paddingLeft: '0.5rem', fontWeight: 700 }}>API Gateway</div>
+                 <div style={{ height: '30px', background: '#F1F5F9', borderRadius: '4px', width: '100%', position: 'relative' }}>
+                    <div style={{ position: 'absolute', left: 0, top: 0, height: '100%', width: '30%', background: '#2563EB', borderRadius: '4px 0 0 4px', color: '#FFFFFF', fontSize: '0.7rem', display: 'flex', alignItems: 'center', paddingLeft: '0.5rem', fontWeight: 700 }}>API Gateway (12ms)</div>
                  </div>
-                 <div style={{ height: '30px', background: '#EEF2FF', borderRadius: '4px', width: '100%', position: 'relative' }}>
-                    <div style={{ position: 'absolute', left: '30%', top: 0, height: '100%', width: '40%', background: '#6366F1', borderRadius: '4px 0 0 4px', color: '#FFFFFF', fontSize: '0.7rem', display: 'flex', alignItems: 'center', paddingLeft: '0.5rem', fontWeight: 700 }}>Auth Service</div>
+                 <div style={{ height: '30px', background: '#F1F5F9', borderRadius: '4px', width: '100%', position: 'relative' }}>
+                    <div style={{ position: 'absolute', left: '30%', top: 0, height: '100%', width: '40%', background: '#3B82F6', borderRadius: '4px 0 0 4px', color: '#FFFFFF', fontSize: '0.7rem', display: 'flex', alignItems: 'center', paddingLeft: '0.5rem', fontWeight: 700 }}>Auth Service (18ms)</div>
                  </div>
-                 <div style={{ height: '30px', background: '#FEE2E2', borderRadius: '4px', width: '100%', position: 'relative' }}>
-                    <div style={{ position: 'absolute', left: '70%', top: 0, height: '100%', width: '15%', background: '#EF4444', borderRadius: '4px 0 0 4px', color: '#FFFFFF', fontSize: '0.7rem', display: 'flex', alignItems: 'center', paddingLeft: '0.5rem', fontWeight: 700 }}>DB Query (Failed)</div>
+                 <div style={{ height: '30px', background: '#F1F5F9', borderRadius: '4px', width: '100%', position: 'relative' }}>
+                    <div style={{ position: 'absolute', left: '70%', top: 0, height: '100%', width: '25%', background: '#64748B', borderRadius: '4px 0 0 4px', color: '#FFFFFF', fontSize: '0.7rem', display: 'flex', alignItems: 'center', paddingLeft: '0.5rem', fontWeight: 700 }}>DB Query (14ms)</div>
                  </div>
                </div>
                <p style={{ fontSize: '0.85rem', color: '#64748B', marginTop: '1.5rem', textAlign: 'center' }}>Trace ID: a1b2c3d4e5f6</p>

@@ -32,11 +32,11 @@ export default function TestimonialsPage() {
 
       <section style={{ paddingTop: '10rem', paddingBottom: '6rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#FEF9C3', color: '#854D0E', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
-            <Star size={16} fill="#EAB308" color="#EAB308" /> Client Testimonials
+          <div style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.15em', color: '#4B61B8', marginBottom: '1.25rem' }}>
+            Client Testimonials & Partner Verification
           </div>
           <h1 style={{ fontSize: '4rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
-            What it's like to <br /><span style={{ color: '#EAB308' }}>build with us.</span>
+            What it's like to <br /><span style={{ color: '#4B61B8' }}>build with us.</span>
           </h1>
           <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, maxWidth: '700px' }}>
             Unfiltered feedback from engineering leaders, CTOs, and founders who have trusted Acriotech with their most critical infrastructure.

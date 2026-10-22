@@ -12,17 +12,17 @@ export default function UIUXDesign() {
       {/* Hero Section */}
       <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '7rem', background: '#FAFAFA' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#FFF1F2', color: '#BE123C', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
-            <Palette size={16} /> Human-Computer Interaction
+          <div style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.15em', color: '#4B61B8', marginBottom: '1.25rem' }}>
+            HUMAN-COMPUTER INTERACTION
           </div>
           <h1 style={{ fontSize: 'var(--font-hero)', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
-            Interfaces that make complex <br/><span style={{ color: '#E11D48' }}>work easier to perform.</span>
+            Interfaces that make complex <br/><span style={{ color: '#2563EB' }}>work easier to perform.</span>
           </h1>
           <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, marginBottom: '3rem', maxWidth: '800px', margin: '0 auto 3rem auto' }}>
             We don't just make screens look pretty. We design ergonomic experiences for enterprise products where users need to understand status, make critical decisions, and recover from mistakes without friction.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
-            <Link href="/contact-us" style={{ background: '#E11D48', color: '#FFFFFF', padding: '1rem 2.5rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+            <Link href="/contact-us" style={{ background: '#2563EB', color: '#FFFFFF', padding: '1rem 2.5rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
               Review Our Portfolio <ArrowRight size={18} />
             </Link>
           </div>
@@ -45,10 +45,10 @@ export default function UIUXDesign() {
               { icon: PenTool, title: "4. Deliver", type: "Convergent", text: "Finalizing high-fidelity UI, interaction micro-animations, and developer handoff documentation." }
             ].map((step, i) => (
                <div key={i} style={{ background: '#F8FAFC', padding: '2.5rem 2rem', borderRadius: '16px', border: '1px solid #E2E8F0', position: 'relative' }}>
-                 <div style={{ position: 'absolute', top: 0, right: '2rem', background: step.type === 'Divergent' ? '#DBEAFE' : '#DCFCE7', color: step.type === 'Divergent' ? '#1D4ED8' : '#15803D', padding: '0.2rem 0.6rem', borderRadius: '0 0 8px 8px', fontSize: '0.75rem', fontWeight: 700 }}>
+                 <div style={{ position: 'absolute', top: 0, right: '2rem', background: '#EFF6FF', color: '#2563EB', padding: '0.2rem 0.6rem', borderRadius: '0 0 8px 8px', fontSize: '0.75rem', fontWeight: 700 }}>
                    {step.type}
                  </div>
-                 <step.icon size={32} color="#E11D48" style={{ marginBottom: '1.5rem' }} />
+                 <step.icon size={32} color="#2563EB" style={{ marginBottom: '1.5rem' }} />
                  <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>{step.title}</h3>
                  <p style={{ color: '#475569', lineHeight: 1.6, fontSize: '0.95rem' }}>{step.text}</p>
                </div>
@@ -66,15 +66,15 @@ export default function UIUXDesign() {
              <div style={{ background: '#1E293B', padding: '3rem', borderRadius: '24px', border: '1px solid #334155' }}>
                 <div style={{ fontSize: '0.8rem', color: '#94A3B8', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1.5rem' }}>Design Tokens</div>
                 <div style={{ display: 'flex', gap: '1rem', marginBottom: '2rem' }}>
-                   <div style={{ width: '40px', height: '40px', background: '#E11D48', borderRadius: '50%' }}></div>
+                   <div style={{ width: '40px', height: '40px', background: '#2563EB', borderRadius: '50%' }}></div>
                    <div style={{ width: '40px', height: '40px', background: '#3B82F6', borderRadius: '50%' }}></div>
-                   <div style={{ width: '40px', height: '40px', background: '#10B981', borderRadius: '50%' }}></div>
-                   <div style={{ width: '40px', height: '40px', background: '#F59E0B', borderRadius: '50%' }}></div>
+                   <div style={{ width: '40px', height: '40px', background: '#60A5FA', borderRadius: '50%' }}></div>
+                   <div style={{ width: '40px', height: '40px', background: '#94A3B8', borderRadius: '50%' }}></div>
                 </div>
                 <div style={{ fontSize: '0.8rem', color: '#94A3B8', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1.5rem' }}>Components</div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                   <div style={{ padding: '0.8rem 1.5rem', background: '#E11D48', color: '#FFF', borderRadius: '6px', textAlign: 'center', fontWeight: 600 }}>Primary Button</div>
-                   <div style={{ padding: '0.8rem 1.5rem', background: 'transparent', color: '#E2E8F0', border: '1px solid #475569', borderRadius: '6px', textAlign: 'center', fontWeight: 600 }}>Secondary Button</div>
+                   <div style={{ padding: '0.8rem 1.5rem', background: '#2563EB', color: '#FFF', borderRadius: '6px', textAlign: 'center', fontWeight: 600 }}>Primary Action</div>
+                   <div style={{ padding: '0.8rem 1.5rem', background: 'transparent', color: '#E2E8F0', border: '1px solid #475569', borderRadius: '6px', textAlign: 'center', fontWeight: 600 }}>Secondary Action</div>
                 </div>
              </div>
 
@@ -101,7 +101,7 @@ export default function UIUXDesign() {
       {/* NEW SECTION 3: Accessibility Standards (Outcomes) */}
       <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
-          <PenTool size={32} color="#8B5CF6" style={{ margin: '0 auto 1rem auto' }} />
+          <PenTool size={32} color="#2563EB" style={{ margin: '0 auto 1rem auto' }} />
           <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>Inclusive by Default</h2>
           <p style={{ fontSize: '1.1rem', color: '#64748B', maxWidth: '700px', margin: '0 auto 4rem auto' }}>Accessibility isn't an afterthought checklist. It is a fundamental requirement of enterprise software.</p>
           

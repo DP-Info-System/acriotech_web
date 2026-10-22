@@ -1,8 +1,7 @@
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
-import { ArrowRight, Building, ShieldCheck, Scale, FileSignature, Lock, Users, Server } from "lucide-react";
+import { ArrowRight, ShieldCheck, Scale, FileSignature, Lock, Users, Server } from "lucide-react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 export default function GovernmentIndustry() {
   return (
@@ -14,8 +13,8 @@ export default function GovernmentIndustry() {
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '5rem', alignItems: 'center' }}>
             <div>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#EFF6FF', color: '#1D4ED8', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
-                <Building size={16} /> Public Sector & GovTech
+              <div style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.15em', color: '#4B61B8', marginBottom: '1.25rem' }}>
+                Public Sector & GovTech
               </div>
               <h1 style={{ fontSize: '4.2rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
                 Software built for <span style={{ color: '#2563EB' }}>absolute compliance.</span>
@@ -24,39 +23,53 @@ export default function GovernmentIndustry() {
                 We build secure, accessible digital services for local, state, and federal agencies. From FedRAMP-ready cloud architectures to Section 508-compliant citizen portals, we engineer for the public trust.
               </p>
               <div style={{ display: 'flex', gap: '1rem' }}>
-                <Link href="/contact-us" style={{ background: '#2563EB', color: '#FFFFFF', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s' }}>
+                <Link href="/contact-us" style={{ background: '#0F172A', color: '#FFFFFF', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s' }}>
                   Modernize Agency Tech <ArrowRight size={18} />
                 </Link>
               </div>
             </div>
 
             {/* Visual: Secure Architecture */}
-            <div style={{ background: '#0F172A', borderRadius: '16px', padding: '2rem', border: '1px solid #334155', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)' }}>
-               <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#F8FAFC', marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>GovCloud Enclave</h4>
-               
-               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: '#1E293B', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #10B981' }}>
-                   <div style={{ width: '40px', height: '40px', background: '#064E3B', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Lock size={20} color="#10B981" /></div>
-                   <div>
-                     <div style={{ fontWeight: 700, color: '#F8FAFC' }}>FIPS 140-2 Encryption</div>
-                     <div style={{ fontSize: '0.85rem', color: '#94A3B8' }}>Active at Rest and in Transit</div>
-                   </div>
-                 </div>
-                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: '#1E293B', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #3B82F6' }}>
-                   <div style={{ width: '40px', height: '40px', background: '#1E3A8A', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Users size={20} color="#3B82F6" /></div>
-                   <div>
-                     <div style={{ fontWeight: 700, color: '#F8FAFC' }}>RBAC & IAM Limits</div>
-                     <div style={{ fontSize: '0.85rem', color: '#94A3B8' }}>Strict Principle of Least Privilege</div>
-                   </div>
-                 </div>
-                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: '#1E293B', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #F59E0B' }}>
-                   <div style={{ width: '40px', height: '40px', background: '#78350F', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Server size={20} color="#F59E0B" /></div>
-                   <div>
-                     <div style={{ fontWeight: 700, color: '#F8FAFC' }}>Air-Gapped Backups</div>
-                     <div style={{ fontSize: '0.85rem', color: '#94A3B8' }}>Immutable off-site replication</div>
-                   </div>
-                 </div>
-               </div>
+            <div style={{ background: '#0F172A', borderRadius: '16px', padding: '2rem', border: '1px solid #1E293B', color: '#FFFFFF' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #1E293B', paddingBottom: '1rem', marginBottom: '1.5rem' }}>
+                <div>
+                  <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#64748B', fontWeight: 700 }}>Security Baseline</div>
+                  <div style={{ color: '#F8FAFC', fontWeight: 700, fontSize: '0.95rem' }}>GovCloud Security Enclave</div>
+                </div>
+                <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#60A5FA', background: 'rgba(96, 165, 250, 0.1)', padding: '0.25rem 0.6rem', borderRadius: '4px' }}>
+                  FedRAMP Ready
+                </div>
+              </div>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: '#1E293B', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #2563EB' }}>
+                  <div style={{ width: '40px', height: '40px', background: 'rgba(37, 99, 235, 0.2)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <Lock size={20} color="#60A5FA" />
+                  </div>
+                  <div>
+                    <div style={{ fontWeight: 700, color: '#F8FAFC' }}>FIPS 140-2 Cryptography</div>
+                    <div style={{ fontSize: '0.85rem', color: '#94A3B8' }}>Active at Rest and in Transit</div>
+                  </div>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: '#1E293B', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #3B82F6' }}>
+                  <div style={{ width: '40px', height: '40px', background: 'rgba(59, 130, 246, 0.2)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <Users size={20} color="#60A5FA" />
+                  </div>
+                  <div>
+                    <div style={{ fontWeight: 700, color: '#F8FAFC' }}>RBAC & ABAC Access Limits</div>
+                    <div style={{ fontSize: '0.85rem', color: '#94A3B8' }}>Strict Principle of Least Privilege</div>
+                  </div>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: '#1E293B', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #64748B' }}>
+                  <div style={{ width: '40px', height: '40px', background: 'rgba(100, 116, 139, 0.2)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <Server size={20} color="#94A3B8" />
+                  </div>
+                  <div>
+                    <div style={{ fontWeight: 700, color: '#F8FAFC' }}>Air-Gapped Immutable Backups</div>
+                    <div style={{ fontSize: '0.85rem', color: '#94A3B8' }}>WORM storage with automated verification</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -73,17 +86,17 @@ export default function GovernmentIndustry() {
                  <ShieldCheck color="#2563EB" /> Compliance Boundaries
                </h3>
                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                 <div style={{ background: '#EFF6FF', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #2563EB' }}>
-                   <div style={{ fontWeight: 700, color: '#1E3A8A' }}>NIST 800-53 Controls</div>
-                   <div style={{ fontSize: '0.85rem', color: '#1D4ED8' }}>Implementing strict access, auditing, and incident response frameworks.</div>
+                 <div style={{ background: '#F8FAFC', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #2563EB', border: '1px solid #E2E8F0' }}>
+                   <div style={{ fontWeight: 700, color: '#0F172A' }}>NIST 800-53 Controls</div>
+                   <div style={{ fontSize: '0.85rem', color: '#475569' }}>Implementing strict access, auditing, and incident response frameworks.</div>
                  </div>
-                 <div style={{ background: '#EFF6FF', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #2563EB' }}>
-                   <div style={{ fontWeight: 700, color: '#1E3A8A' }}>AWS/Azure GovCloud</div>
-                   <div style={{ fontSize: '0.85rem', color: '#1D4ED8' }}>Deploying exclusively to isolated regions operated solely by US citizens.</div>
+                 <div style={{ background: '#F8FAFC', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #2563EB', border: '1px solid #E2E8F0' }}>
+                   <div style={{ fontWeight: 700, color: '#0F172A' }}>AWS/Azure GovCloud</div>
+                   <div style={{ fontSize: '0.85rem', color: '#475569' }}>Deploying exclusively to isolated regions operated solely by verified personnel.</div>
                  </div>
-                 <div style={{ background: '#EFF6FF', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #2563EB' }}>
-                   <div style={{ fontWeight: 700, color: '#1E3A8A' }}>Continuous Monitoring</div>
-                   <div style={{ fontSize: '0.85rem', color: '#1D4ED8' }}>Automated vulnerability scanning and penetration testing workflows.</div>
+                 <div style={{ background: '#F8FAFC', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #2563EB', border: '1px solid #E2E8F0' }}>
+                   <div style={{ fontWeight: 700, color: '#0F172A' }}>Continuous Monitoring</div>
+                   <div style={{ fontSize: '0.85rem', color: '#475569' }}>Automated vulnerability scanning and penetration testing workflows.</div>
                  </div>
                </div>
              </div>
@@ -125,12 +138,12 @@ export default function GovernmentIndustry() {
              <div style={{ padding: '2rem', border: '1px solid #334155', borderRadius: '12px', background: '#1E293B', textAlign: 'center' }}>
                 <FileSignature size={32} color="#60A5FA" style={{ margin: '0 auto 1rem auto' }} />
                 <h4 style={{ fontWeight: 700, fontSize: '1.1rem', marginBottom: '0.5rem' }}>Plain Language</h4>
-                <p style={{ color: '#94A3B8', fontSize: '0.9rem', lineHeight: 1.5 }}>Designing UI/UX that simplifies complex bureaucratic processes into clear, 8th-grade reading level workflows.</p>
+                <p style={{ color: '#94A3B8', fontSize: '0.9rem', lineHeight: 1.5 }}>Designing UI/UX that simplifies complex bureaucratic processes into clear, accessible workflows.</p>
              </div>
              <div style={{ padding: '2rem', border: '1px solid #334155', borderRadius: '12px', background: '#1E293B', textAlign: 'center' }}>
                 <Users size={32} color="#60A5FA" style={{ margin: '0 auto 1rem auto' }} />
                 <h4 style={{ fontWeight: 700, fontSize: '1.1rem', marginBottom: '0.5rem' }}>Low-Bandwidth Design</h4>
-                <p style={{ color: '#94A3B8', fontSize: '0.9rem', lineHeight: 1.5 }}>Optimizing asset delivery to ensure rural populations on 3G networks can access critical services.</p>
+                <p style={{ color: '#94A3B8', fontSize: '0.9rem', lineHeight: 1.5 }}>Optimizing asset delivery to ensure rural populations on limited bandwidth can access critical services.</p>
              </div>
           </div>
         </div>
@@ -151,10 +164,10 @@ export default function GovernmentIndustry() {
                    {[
                      "Digitization of legacy paper workflows",
                      "Secure integration with Identity Providers (Login.gov)",
-                     "Scalability to handle catastrophic traffic spikes (e.g., UI Claims)",
+                     "Scalability to handle high-concurrency traffic spikes",
                      "Open-source transparency where appropriate"
                    ].map((item, i) => (
-                     <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: '#FFFFFF', padding: '1rem', borderRadius: '8px', boxShadow: '0 1px 2px rgba(0,0,0,0.05)' }}>
+                     <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: '#FFFFFF', padding: '1rem', borderRadius: '8px', border: '1px solid #E2E8F0', boxShadow: '0 1px 2px rgba(0,0,0,0.05)' }}>
                        <ShieldCheck size={20} color="#2563EB" />
                        <span style={{ fontWeight: 600, color: '#374151', fontSize: '0.95rem' }}>{item}</span>
                      </div>

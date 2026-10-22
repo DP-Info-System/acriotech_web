@@ -14,55 +14,42 @@ export default function LogisticsIndustry() {
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '5rem', alignItems: 'center' }}>
             <div>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#F4F4F5', color: '#52525B', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
-                <Truck size={16} /> Supply Chain & Logistics
+              <div style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.15em', color: '#4B61B8', marginBottom: '1.25rem' }}>
+                SUPPLY CHAIN & LOGISTICS
               </div>
               <h1 style={{ fontSize: '4.2rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
-                Engineering for physical <span style={{ color: '#52525B' }}>movement.</span>
+                Engineering for physical <span style={{ color: '#2563EB' }}>movement.</span>
               </h1>
               <p style={{ fontSize: '1.2rem', color: '#475569', lineHeight: 1.6, marginBottom: '2.5rem', maxWidth: '600px' }}>
                 We build the digital infrastructure that orchestrates physical assets. From real-time fleet routing to warehouse management systems, we optimize the complex calculus of modern supply chains.
               </p>
               <div style={{ display: 'flex', gap: '1rem' }}>
-                <Link href="/contact-us" style={{ background: '#3F3F46', color: '#FFFFFF', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s' }}>
+                <Link href="/contact-us" style={{ background: '#2563EB', color: '#FFFFFF', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s' }}>
                   Optimize Your Operations <ArrowRight size={18} />
                 </Link>
               </div>
             </div>
 
-            {/* Visual: Live Map UI */}
-            <div style={{ background: '#0F172A', borderRadius: '16px', padding: '2rem', border: '1px solid #334155', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)', position: 'relative', overflow: 'hidden' }}>
-               {/* Map Background Simulation */}
-               <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', opacity: 0.1, backgroundSize: '20px 20px', backgroundImage: 'linear-gradient(to right, #334155 1px, transparent 1px), linear-gradient(to bottom, #334155 1px, transparent 1px)' }}></div>
-               
-               <div style={{ position: 'relative', zIndex: 10 }}>
-                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #334155', paddingBottom: '1rem', marginBottom: '1.5rem' }}>
-                    <span style={{ color: '#F8FAFC', fontWeight: 600, fontSize: '0.9rem' }}>Fleet Tracking: Region US-East</span>
-                 </div>
-                 
-                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                   <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: '#1E293B', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #10B981' }}>
-                     <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#10B981', boxShadow: '0 0 8px #10B981' }}></div>
-                     <div style={{ flex: 1 }}>
-                       <div style={{ color: '#F8FAFC', fontWeight: 700, fontSize: '0.9rem' }}>Truck 402 (In Transit)</div>
-                       <div style={{ color: '#94A3B8', fontSize: '0.8rem' }}>ETA: 14:30 EST • 45 miles to destination</div>
+            {/* Architectural Specification Card */}
+            <div style={{ background: '#0F172A', borderRadius: '16px', padding: '2.5rem', border: '1px solid #334155', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)' }}>
+               <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#60A5FA', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.25rem' }}>
+                 Logistics Architecture Benchmarks
+               </div>
+               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                 {[
+                   { label: "Telemetry Ingestion", value: "Sub-100ms", detail: "High-throughput MQTT & Kafka GPS sensor streaming" },
+                   { label: "Dynamic Re-Routing", value: "Real-Time", detail: "Graph-based routing engines with traffic topology sync" },
+                   { label: "Inventory Consistency", value: "Strict ACID", detail: "Multi-facility warehouse inventory synchronization" },
+                   { label: "Offline Mobile Handhelds", value: "Zero Loss", detail: "Local SQLite storage with automatic reconnect sync" }
+                 ].map((item, i) => (
+                   <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '0.75rem', borderBottom: i < 3 ? '1px solid #1E293B' : 'none' }}>
+                     <div>
+                       <div style={{ color: '#F8FAFC', fontWeight: 600, fontSize: '0.9rem' }}>{item.label}</div>
+                       <div style={{ color: '#94A3B8', fontSize: '0.75rem' }}>{item.detail}</div>
                      </div>
+                     <span style={{ color: '#60A5FA', fontWeight: 700, fontSize: '0.9rem' }}>{item.value}</span>
                    </div>
-                   <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: '#1E293B', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #F59E0B' }}>
-                     <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#F59E0B', boxShadow: '0 0 8px #F59E0B' }}></div>
-                     <div style={{ flex: 1 }}>
-                       <div style={{ color: '#F8FAFC', fontWeight: 700, fontSize: '0.9rem' }}>Truck 118 (Delayed)</div>
-                       <div style={{ color: '#94A3B8', fontSize: '0.8rem' }}>Traffic alert on I-95 • Re-routing calculated</div>
-                     </div>
-                   </div>
-                   <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: '#1E293B', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #3B82F6' }}>
-                     <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#3B82F6' }}></div>
-                     <div style={{ flex: 1 }}>
-                       <div style={{ color: '#F8FAFC', fontWeight: 700, fontSize: '0.9rem' }}>Truck 892 (Loading)</div>
-                       <div style={{ color: '#94A3B8', fontSize: '0.8rem' }}>Dock 4 • Pallet count: 24/40</div>
-                     </div>
-                   </div>
-                 </div>
+                 ))}
                </div>
             </div>
           </div>

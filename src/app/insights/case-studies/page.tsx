@@ -1,8 +1,6 @@
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
-import { ArrowRight, FileText, TrendingUp, Building2, Zap, Server } from "lucide-react";
-import Link from "next/link";
-import { motion } from "framer-motion";
+import { TrendingUp, Zap } from "lucide-react";
 
 const cases = [
   {
@@ -41,14 +39,14 @@ export default function CaseStudiesPage() {
 
       <section className="dark-section" style={{ paddingTop: '10rem', paddingBottom: '6rem', background: '#0F172A', color: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#1E293B', color: '#38BDF8', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
-            <FileText size={16} /> Customer Success
+          <div style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.15em', color: '#60A5FA', marginBottom: '1.25rem' }}>
+            Customer Success & Deployments
           </div>
           <h1 style={{ fontSize: '4.5rem', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
-            Proof of <span style={{ color: '#38BDF8' }}>Execution.</span>
+            Proof of <span style={{ color: '#60A5FA' }}>Execution.</span>
           </h1>
           <p style={{ fontSize: '1.25rem', color: '#94A3B8', lineHeight: 1.6, maxWidth: '700px' }}>
-            We don't build toys. Read detailed technical breakdowns of how we architected, deployed, and scaled mission-critical systems for enterprise clients.
+            We don&apos;t build toys. Read detailed technical breakdowns of how we architected, deployed, and scaled mission-critical systems for enterprise clients.
           </p>
         </div>
       </section>
@@ -62,7 +60,7 @@ export default function CaseStudiesPage() {
                       <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
                         <span style={{ fontSize: '0.9rem', fontWeight: 700, color: '#64748B', textTransform: 'uppercase' }}>{cs.industry}</span>
                         <div style={{ width: '4px', height: '4px', background: '#CBD5E1', borderRadius: '50%' }}></div>
-                        <span style={{ fontSize: '0.9rem', color: '#0EA5E9', fontWeight: 600 }}>{cs.client}</span>
+                        <span style={{ fontSize: '0.9rem', color: '#2563EB', fontWeight: 600 }}>{cs.client}</span>
                       </div>
                       <h2 style={{ fontSize: '2.2rem', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem', lineHeight: 1.2 }}>{cs.title}</h2>
                       <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.6, marginBottom: '2rem' }}>{cs.desc}</p>
@@ -72,12 +70,13 @@ export default function CaseStudiesPage() {
                           <span key={tag} style={{ background: '#F1F5F9', color: '#334155', padding: '0.4rem 0.8rem', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 600 }}>{tag}</span>
                         ))}
                       </div>
-
                    </div>
                    
                    <div style={{ background: '#F8FAFC', padding: '3rem', borderRadius: '16px', border: '1px solid #E2E8F0', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-                        <div style={{ width: '56px', height: '56px', background: '#E0F2FE', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><TrendingUp size={28} color="#0EA5E9" /></div>
+                        <div style={{ width: '56px', height: '56px', background: '#EFF6FF', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                          <TrendingUp size={28} color="#2563EB" />
+                        </div>
                         <div>
                           <div style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', lineHeight: 1 }}>{cs.metric1.value}</div>
                           <div style={{ fontSize: '0.9rem', color: '#64748B', fontWeight: 600, textTransform: 'uppercase', marginTop: '0.3rem' }}>{cs.metric1.label}</div>
@@ -85,7 +84,9 @@ export default function CaseStudiesPage() {
                       </div>
                       <div style={{ height: '1px', background: '#E2E8F0' }}></div>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-                        <div style={{ width: '56px', height: '56px', background: '#ECFDF5', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Zap size={28} color="#10B981" /></div>
+                        <div style={{ width: '56px', height: '56px', background: '#EFF6FF', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                          <Zap size={28} color="#2563EB" />
+                        </div>
                         <div>
                           <div style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', lineHeight: 1 }}>{cs.metric2.value}</div>
                           <div style={{ fontSize: '0.9rem', color: '#64748B', fontWeight: 600, textTransform: 'uppercase', marginTop: '0.3rem' }}>{cs.metric2.label}</div>

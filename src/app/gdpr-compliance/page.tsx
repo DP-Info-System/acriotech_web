@@ -15,7 +15,7 @@ export default function GDPRCompliance() {
 
         <div>
           <h2 style={{ fontSize: '1.6rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>What is GDPR?</h2>
-          <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, marginBottom: '1rem' }}>The General Data Protection Regulation (EU) 2016/679 is a comprehensive EU-wide privacy and data protection law that came into effect on May 25, 2018. It significantly increases the obligations placed on organizations that process the personal data of EU and EEA residents, and dramatically strengthens the rights of those individuals.</p>
+          <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, marginBottom: '1rem' }}>The General Data Protection Regulation (EU) 2016/679 is a comprehensive EU-wide privacy and data protection regulation that significantly increases the obligations placed on organizations that process the personal data of EU and EEA residents, and dramatically strengthens the rights of those individuals.</p>
           <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8 }}>GDPR applies to any globally operating company — not just EU-based businesses. Because Acriotech serves enterprise clients across Europe, Asia, and North America, GDPR compliance is our baseline standard for all global operations. We apply these protections to all users, regardless of their location.</p>
         </div>
 

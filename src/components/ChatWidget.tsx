@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -197,7 +197,7 @@ export default function ChatWidget() {
                 onClick={() => setActiveTab('chat')}
                 style={{ flex: 1, padding: '12px', background: 'transparent', border: 'none', borderBottom: activeTab === 'chat' ? '2px solid #3B82F6' : '2px solid transparent', color: activeTab === 'chat' ? '#0F172A' : '#64748B', fontWeight: 600, cursor: 'pointer', fontSize: '0.9rem' }}
               >
-                Ask AI
+                Quick Inquiry
               </button>
               <button 
                 onClick={() => setActiveTab('contact')}

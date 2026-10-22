@@ -36,11 +36,11 @@ export default function OpenSourcePage() {
 
       <section className="dark-section" style={{ paddingTop: '10rem', paddingBottom: '6rem', background: '#0F172A', color: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#1E293B', color: '#E2E8F0', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
-            <Terminal size={16} /> Open Source
+          <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#60A5FA', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '1.25rem' }}>
+            Open Source &middot; Engineering Standards
           </div>
           <h1 style={{ fontSize: '4rem', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
-            We don't just consume. <span style={{ color: '#94A3B8' }}>We contribute.</span>
+            We don't just consume. <span style={{ color: '#60A5FA' }}>We contribute.</span>
           </h1>
           <p style={{ fontSize: '1.25rem', color: '#94A3B8', lineHeight: 1.6, maxWidth: '700px' }}>
             A significant portion of our internal tooling is released to the community. Here are the active projects maintained by Acriotech engineers.

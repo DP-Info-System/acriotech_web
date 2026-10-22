@@ -1,8 +1,7 @@
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
-import { ArrowRight, Factory, Activity, HardDrive, ShieldAlert, Cpu, CheckCircle } from "lucide-react";
+import { ArrowRight, Activity, HardDrive, ShieldAlert, Cpu, CheckCircle } from "lucide-react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 export default function ManufacturingIndustry() {
   return (
@@ -14,43 +13,61 @@ export default function ManufacturingIndustry() {
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '5rem', alignItems: 'center' }}>
             <div>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#F1F5F9', color: '#0F172A', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
-                <Factory size={16} /> Heavy Industry & Manufacturing
+              <div style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.15em', color: '#4B61B8', marginBottom: '1.25rem' }}>
+                Heavy Industry & Manufacturing
               </div>
               <h1 style={{ fontSize: '4.2rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
-                Software built for the <span style={{ color: '#F59E0B' }}>factory floor.</span>
+                Software built for the <span style={{ color: '#2563EB' }}>factory floor.</span>
               </h1>
               <p style={{ fontSize: '1.2rem', color: '#475569', lineHeight: 1.6, marginBottom: '2.5rem', maxWidth: '600px' }}>
                 We build Industrial IoT (IIoT) platforms, supply chain visibility tools, and predictive maintenance pipelines that connect legacy machinery to modern cloud analytics.
               </p>
               <div style={{ display: 'flex', gap: '1rem' }}>
-                <Link href="/contact-us" style={{ background: '#F59E0B', color: '#FFFFFF', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s' }}>
+                <Link href="/contact-us" style={{ background: '#0F172A', color: '#FFFFFF', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s' }}>
                   Discuss Manufacturing Software <ArrowRight size={18} />
                 </Link>
               </div>
             </div>
 
-            {/* Visual: IIoT Dashboard */}
-            <div style={{ background: '#0F172A', borderRadius: '16px', padding: '2rem', border: '1px solid #334155', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)' }}>
-               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #334155', paddingBottom: '1rem', marginBottom: '1.5rem' }}>
-                  <span style={{ color: '#F8FAFC', fontWeight: 600, fontSize: '0.9rem' }}>Assembly Line 4 Status</span>
-                  <div style={{ color: '#10B981', fontSize: '0.85rem', fontWeight: 700, background: 'rgba(16, 185, 129, 0.1)', padding: '0.2rem 0.5rem', borderRadius: '4px', display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Activity size={14} /> Active</div>
-               </div>
-               
-               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
-                 <div style={{ background: '#1E293B', padding: '1rem', borderRadius: '8px', border: '1px solid #334155' }}>
-                    <div style={{ fontSize: '0.75rem', color: '#94A3B8', fontWeight: 600, textTransform: 'uppercase', marginBottom: '0.2rem' }}>Temp (Avg)</div>
-                    <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#F8FAFC' }}>82.4°C</div>
-                 </div>
-                 <div style={{ background: '#1E293B', padding: '1rem', borderRadius: '8px', border: '1px solid #334155' }}>
-                    <div style={{ fontSize: '0.75rem', color: '#94A3B8', fontWeight: 600, textTransform: 'uppercase', marginBottom: '0.2rem' }}>Vibration</div>
-                    <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#F59E0B' }}>0.8 mm/s</div>
-                 </div>
-               </div>
-               
-               <div style={{ background: 'rgba(245, 158, 11, 0.1)', border: '1px solid rgba(245, 158, 11, 0.2)', padding: '1rem', borderRadius: '8px', color: '#FCD34D', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 600 }}>
-                 <ShieldAlert size={16} /> Maintenance required in ~48 hours.
-               </div>
+            {/* Visual: Architectural Deliverables Spec */}
+            <div style={{ background: '#0F172A', borderRadius: '16px', padding: '2rem', border: '1px solid #1E293B', color: '#FFFFFF' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #1E293B', paddingBottom: '1rem', marginBottom: '1.5rem' }}>
+                <div>
+                  <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#64748B', fontWeight: 700 }}>Telemetry Ingestion Spec</div>
+                  <div style={{ color: '#F8FAFC', fontWeight: 700, fontSize: '0.95rem' }}>Industrial Edge Gateway v4.2</div>
+                </div>
+                <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#60A5FA', background: 'rgba(96, 165, 250, 0.1)', padding: '0.25rem 0.6rem', borderRadius: '4px' }}>
+                  OPC-UA / MQTT
+                </div>
+              </div>
+              
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
+                <div style={{ background: '#1E293B', padding: '1rem', borderRadius: '8px', border: '1px solid #334155' }}>
+                  <div style={{ fontSize: '0.75rem', color: '#94A3B8', fontWeight: 600, textTransform: 'uppercase', marginBottom: '0.2rem' }}>Sampling Rate</div>
+                  <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#F8FAFC' }}>10 kHz</div>
+                  <div style={{ fontSize: '0.75rem', color: '#64748B', marginTop: '0.25rem' }}>Local edge ring buffer</div>
+                </div>
+                <div style={{ background: '#1E293B', padding: '1rem', borderRadius: '8px', border: '1px solid #334155' }}>
+                  <div style={{ fontSize: '0.75rem', color: '#94A3B8', fontWeight: 600, textTransform: 'uppercase', marginBottom: '0.2rem' }}>Ingestion Latency</div>
+                  <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#60A5FA' }}>&lt; 14ms</div>
+                  <div style={{ fontSize: '0.75rem', color: '#64748B', marginTop: '0.25rem' }}>Deterministic transport</div>
+                </div>
+              </div>
+
+              <div style={{ borderTop: '1px solid #1E293B', paddingTop: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem' }}>
+                  <span style={{ color: '#94A3B8' }}>Protocol Translation</span>
+                  <span style={{ color: '#F8FAFC', fontFamily: 'monospace' }}>Modbus TCP → MQTT Sparkplug B</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem' }}>
+                  <span style={{ color: '#94A3B8' }}>Buffer Continuity</span>
+                  <span style={{ color: '#F8FAFC', fontFamily: 'monospace' }}>72-Hour Offline Store-and-Forward</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem' }}>
+                  <span style={{ color: '#94A3B8' }}>Anomaly Detection SLA</span>
+                  <span style={{ color: '#F8FAFC', fontFamily: 'monospace' }}>P99 &lt; 50ms Edge Inference</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -64,7 +81,7 @@ export default function ManufacturingIndustry() {
              {/* Visual */}
              <div style={{ background: '#FFFFFF', padding: '3rem', borderRadius: '24px', border: '1px solid #E2E8F0', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.05)' }}>
                <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                 <HardDrive color="#F59E0B" /> Network Architecture
+                 <HardDrive color="#2563EB" /> Network Architecture
                </h3>
                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                  <div style={{ background: '#F1F5F9', padding: '1.5rem', borderRadius: '8px', borderLeft: '4px solid #94A3B8', position: 'relative' }}>
@@ -74,7 +91,7 @@ export default function ManufacturingIndustry() {
                  <div style={{ display: 'flex', justifyContent: 'center' }}>
                    <ArrowRight size={24} color="#CBD5E1" style={{ transform: 'rotate(90deg)' }} />
                  </div>
-                 <div style={{ background: '#FEF3C7', padding: '1.5rem', borderRadius: '8px', borderLeft: '4px solid #F59E0B', position: 'relative' }}>
+                 <div style={{ background: '#F8FAFC', padding: '1.5rem', borderRadius: '8px', borderLeft: '4px solid #2563EB', border: '1px solid #E2E8F0', position: 'relative' }}>
                    <div style={{ fontWeight: 700, color: '#0F172A' }}>Edge Gateway</div>
                    <div style={{ fontSize: '0.85rem', color: '#64748B' }}>Data buffering, protocol translation (MQTT)</div>
                  </div>
@@ -118,17 +135,17 @@ export default function ManufacturingIndustry() {
           
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '1.5rem' }}>
              <div style={{ padding: '2rem', border: '1px solid #334155', borderRadius: '12px', background: '#1E293B', textAlign: 'center' }}>
-                <Activity size={32} color="#34D399" style={{ margin: '0 auto 1rem auto' }} />
+                <Activity size={32} color="#60A5FA" style={{ margin: '0 auto 1rem auto' }} />
                 <h4 style={{ fontWeight: 700, fontSize: '1.1rem', marginBottom: '0.5rem' }}>Telemetry Ingestion</h4>
                 <p style={{ color: '#94A3B8', fontSize: '0.9rem', lineHeight: 1.5 }}>Streaming real-time vibration, temperature, and acoustic data into time-series databases.</p>
              </div>
              <div style={{ padding: '2rem', border: '1px solid #334155', borderRadius: '12px', background: '#1E293B', textAlign: 'center' }}>
-                <Cpu size={32} color="#34D399" style={{ margin: '0 auto 1rem auto' }} />
+                <Cpu size={32} color="#60A5FA" style={{ margin: '0 auto 1rem auto' }} />
                 <h4 style={{ fontWeight: 700, fontSize: '1.1rem', marginBottom: '0.5rem' }}>Anomaly Detection</h4>
                 <p style={{ color: '#94A3B8', fontSize: '0.9rem', lineHeight: 1.5 }}>Training machine learning models on historical failure data to identify hidden wear patterns.</p>
              </div>
              <div style={{ padding: '2rem', border: '1px solid #334155', borderRadius: '12px', background: '#1E293B', textAlign: 'center' }}>
-                <ShieldAlert size={32} color="#34D399" style={{ margin: '0 auto 1rem auto' }} />
+                <ShieldAlert size={32} color="#60A5FA" style={{ margin: '0 auto 1rem auto' }} />
                 <h4 style={{ fontWeight: 700, fontSize: '1.1rem', marginBottom: '0.5rem' }}>Automated Dispatch</h4>
                 <p style={{ color: '#94A3B8', fontSize: '0.9rem', lineHeight: 1.5 }}>Automatically generating work orders in your ERP when the failure threshold is approached.</p>
              </div>
@@ -146,7 +163,7 @@ export default function ManufacturingIndustry() {
                   We engineer manufacturing software specifically to drive Overall Equipment Effectiveness (OEE). By eliminating unplanned downtime and optimizing yield, these systems pay for themselves within months.
                 </p>
               </div>
-              <div style={{ background: '#FFFBEB', padding: '2.5rem', borderRadius: '16px', border: '1px solid #FEF3C7' }}>
+              <div style={{ background: '#F8FAFC', padding: '2.5rem', borderRadius: '16px', border: '1px solid #E2E8F0' }}>
                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                    {[
                      "Availability: Decreased unplanned mechanical failures",
@@ -154,8 +171,8 @@ export default function ManufacturingIndustry() {
                      "Quality: Automated computer vision for defect sorting",
                      "Safety: Automated shut-off protocols for hazardous anomalies"
                    ].map((item, i) => (
-                     <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: '#FFFFFF', padding: '1rem', borderRadius: '8px', boxShadow: '0 1px 2px rgba(0,0,0,0.05)' }}>
-                       <CheckCircle size={20} color="#F59E0B" />
+                     <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: '#FFFFFF', padding: '1rem', borderRadius: '8px', border: '1px solid #E2E8F0', boxShadow: '0 1px 2px rgba(0,0,0,0.05)' }}>
+                       <CheckCircle size={20} color="#2563EB" />
                        <span style={{ fontWeight: 600, color: '#374151', fontSize: '1rem' }}>{item}</span>
                      </div>
                    ))}

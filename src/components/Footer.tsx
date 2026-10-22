@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Mail, ChevronRight, Shield, Lock, MapPin } from "lucide-react";
+import { ArrowRight, Mail, ChevronRight, Lock, MapPin, Award } from "lucide-react";
 import React, { useState } from "react";
 
 export default function Footer() {
@@ -61,13 +61,13 @@ export default function Footer() {
             </div>
             
             <p style={{ fontSize: '0.9rem', color: '#64748B', margin: 0, marginBottom: '1.5rem', fontWeight: 500 }}>
-              Engineering Software. Building Future.
+              Software that earns its keep.
             </p>
 
             <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, lineHeight: 1.1, margin: 0, marginBottom: '1.2rem', color: '#0F172A', letterSpacing: '-0.03em' }}>
-              Building<br />
-              Software<br />
-              <span style={{ color: '#4B61B8' }}>That Lasts.</span>
+              Still thinking<br />
+              it over?<br />
+              <span style={{ color: '#4B61B8' }}>Just ask.</span>
             </h2>
 
             <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.6, margin: 0, marginBottom: '1.8rem', maxWidth: '380px' }}>
@@ -75,7 +75,7 @@ export default function Footer() {
             </p>
 
             <a href="/contact-us" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontSize: '1.1rem', fontWeight: 700, color: '#4B61B8', borderBottom: '2px solid #4B61B8', paddingBottom: '0.2rem', textDecoration: 'none', marginBottom: '2rem', transition: 'opacity 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.opacity = '0.8'} onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}>
-               Let's Talk <ArrowRight size={18} />
+               Send us a note <ArrowRight size={18} />
             </a>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
@@ -183,8 +183,8 @@ export default function Footer() {
             {/* Newsletter Box */}
             <div className="newsletter-box" style={{ marginTop: '3rem', padding: '2.5rem 2.5rem', background: '#FFFFFF', borderRadius: '16px', border: '1px solid rgba(15,23,42,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', boxShadow: '0 10px 30px rgba(0,0,0,0.02)', flexWrap: 'wrap', gap: '1.5rem' }}>
                <div>
-                  <h4 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#0F172A', margin: 0, marginBottom: '0.4rem' }}>Subscribe to Insights</h4>
-                  <p style={{ fontSize: '0.95rem', color: '#64748B', margin: 0 }}>Latest engineering trends and company updates.</p>
+                  <h4 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#0F172A', margin: 0, marginBottom: '0.4rem' }}>Worth reading.</h4>
+                  <p style={{ fontSize: '0.95rem', color: '#64748B', margin: 0 }}>Architecture notes, release highlights, and the occasional opinion — sent when we have something to say.</p>
                </div>
                <div className="newsletter-form-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
                  <div className="newsletter-form" style={{ display: 'flex', gap: '0.5rem' }}>
@@ -230,9 +230,9 @@ export default function Footer() {
         {/* Middle Band: Compliance Badges */}
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '2.5rem 0', borderTop: '1px solid rgba(15,23,42,0.05)', borderBottom: '1px solid rgba(15,23,42,0.05)', flexWrap: 'wrap', gap: '1.5rem' }}>
            {[
-             { icon: <Shield size={28} color="#4B61B8" strokeWidth={1.5} />, line1: 'ISO', line2: 'Ready', href: '/security-compliance' },
              { icon: <Lock size={28} color="#22C55E" strokeWidth={1.5} />, line1: 'GDPR', line2: 'Compliant', href: '/gdpr-compliance' },
-             { icon: <MapPin size={28} color="#4B61B8" strokeWidth={1.5} />, line1: 'Engineered in', line2: 'India', href: '/about-us' }
+             { icon: <MapPin size={28} color="#4B61B8" strokeWidth={1.5} />, line1: 'Engineered in', line2: 'Bhavnagar, India', href: '/about-us' },
+             { icon: <Award size={28} color="#60A5FA" strokeWidth={1.5} />, line1: '12+ Years', line2: 'In Business \u00b7 Est. 2012', href: '/about-us' }
            ].map((badge, idx, arr) => (
              <React.Fragment key={badge.line1}>
                 <a href={badge.href} style={{ display: 'flex', alignItems: 'center', gap: '1rem', textDecoration: 'none' }}>
@@ -268,7 +268,7 @@ export default function Footer() {
           
           {/* Copyright */}
           <div style={{ fontSize: '0.85rem', color: '#64748B', fontWeight: 500, textAlign: 'center' }}>
-            © 2026 Acriotech Pvt. Ltd. All rights reserved.
+            &copy; 2026 Acriotech Pvt. Ltd. All rights reserved.
           </div>
           
         </div>
@@ -277,3 +277,4 @@ export default function Footer() {
     </footer>
   );
 }
+

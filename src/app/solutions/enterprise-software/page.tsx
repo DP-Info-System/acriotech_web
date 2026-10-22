@@ -12,11 +12,11 @@ export default function EnterpriseSoftware() {
       {/* Hero Section */}
       <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#F1F5F9', color: '#0F172A', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
-            <Building2 size={16} /> Enterprise Grade
+          <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#4B61B8', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '1.25rem' }}>
+            Enterprise Grade &middot; Distributed Systems
           </div>
           <h1 style={{ fontSize: 'var(--font-hero)', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
-            Software that bears the <br/><span style={{ color: '#D97706' }}>weight of your business.</span>
+            Software that bears the <br/><span style={{ color: '#4B61B8' }}>weight of your business.</span>
           </h1>
           <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, marginBottom: '3rem', maxWidth: '800px', margin: '0 auto 3rem auto' }}>
             When failure is not an option. We build and maintain complex, highly secure enterprise systems designed for massive concurrency, strict compliance, and high availability.
@@ -38,8 +38,8 @@ export default function EnterpriseSoftware() {
                <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.7, marginBottom: '2rem' }}>Enterprise software rarely exists in a vacuum. It must communicate flawlessly with legacy mainframes, modern SaaS APIs, and third-party vendors without dropping a single packet.</p>
                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                  <div style={{ display: 'flex', gap: '1rem' }}>
-                   <div style={{ width: '40px', height: '40px', background: '#FEF3C7', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                     <Network size={20} color="#D97706" />
+                   <div style={{ width: '40px', height: '40px', background: '#EEF2FF', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                     <Network size={20} color="#4B61B8" />
                    </div>
                    <div>
                      <h4 style={{ fontWeight: 700, fontSize: '1.05rem', color: '#0F172A', marginBottom: '0.2rem' }}>Event-Driven Architecture</h4>
@@ -47,8 +47,8 @@ export default function EnterpriseSoftware() {
                    </div>
                  </div>
                  <div style={{ display: 'flex', gap: '1rem' }}>
-                   <div style={{ width: '40px', height: '40px', background: '#FEF3C7', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                     <Cpu size={20} color="#D97706" />
+                   <div style={{ width: '40px', height: '40px', background: '#EEF2FF', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                     <Cpu size={20} color="#4B61B8" />
                    </div>
                    <div>
                      <h4 style={{ fontWeight: 700, fontSize: '1.05rem', color: '#0F172A', marginBottom: '0.2rem' }}>Legacy API Wrappers</h4>
@@ -58,24 +58,33 @@ export default function EnterpriseSoftware() {
                </div>
             </div>
             
-            <div style={{ background: '#FFFFFF', borderRadius: '16px', padding: '3rem', border: '1px solid #E2E8F0', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.05)' }}>
-               {/* Visual Integration Hub */}
-               <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-                 <div style={{ display: 'inline-block', background: '#0F172A', color: '#FFFFFF', padding: '1rem 2rem', borderRadius: '8px', fontWeight: 700, fontSize: '1.2rem', boxShadow: '0 10px 15px -3px rgba(15, 23, 42, 0.4)' }}>
-                   Enterprise Message Bus
-                 </div>
-               </div>
-               
-               <div style={{ display: 'flex', justifyContent: 'space-between', position: 'relative' }}>
-                 {/* Connection Lines */}
-                 <div style={{ position: 'absolute', top: '-2rem', left: '15%', width: '2px', height: '2rem', background: '#CBD5E1' }}></div>
-                 <div style={{ position: 'absolute', top: '-2rem', left: '50%', width: '2px', height: '2rem', background: '#CBD5E1' }}></div>
-                 <div style={{ position: 'absolute', top: '-2rem', right: '15%', width: '2px', height: '2rem', background: '#CBD5E1' }}></div>
-                 
-                 <div style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', padding: '1rem', borderRadius: '8px', textAlign: 'center', width: '30%', fontSize: '0.9rem', fontWeight: 600 }}>Salesforce</div>
-                 <div style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', padding: '1rem', borderRadius: '8px', textAlign: 'center', width: '30%', fontSize: '0.9rem', fontWeight: 600 }}>SAP ERP</div>
-                 <div style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', padding: '1rem', borderRadius: '8px', textAlign: 'center', width: '30%', fontSize: '0.9rem', fontWeight: 600 }}>Custom Web App</div>
-               </div>
+            <div style={{ background: '#0F172A', borderRadius: '16px', padding: '2.5rem', border: '1px solid #1E293B', color: '#FFFFFF' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '1rem', marginBottom: '1.75rem' }}>
+                <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#60A5FA', textTransform: 'uppercase', letterSpacing: '0.12em' }}>
+                  SYSTEM TOPOLOGY BENCHMARK
+                </span>
+                <span style={{ fontSize: '0.72rem', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                  ZERO-DATA-LOSS
+                </span>
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255,255,255,0.06)', paddingBottom: '0.85rem' }}>
+                  <span style={{ fontSize: '0.9rem', color: '#CBD5E1' }}>Message Ingestion Throughput</span>
+                  <span style={{ fontSize: '1.1rem', fontWeight: 700, color: '#FFFFFF', fontFamily: 'monospace' }}>120,000+ msg/sec</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255,255,255,0.06)', paddingBottom: '0.85rem' }}>
+                  <span style={{ fontSize: '0.9rem', color: '#CBD5E1' }}>Partition Failover SLA</span>
+                  <span style={{ fontSize: '1.1rem', fontWeight: 700, color: '#60A5FA', fontFamily: 'monospace' }}>&lt; 3.0s Auto-Heal</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255,255,255,0.06)', paddingBottom: '0.85rem' }}>
+                  <span style={{ fontSize: '0.9rem', color: '#CBD5E1' }}>Legacy Mainframe Connectors</span>
+                  <span style={{ fontSize: '1.1rem', fontWeight: 700, color: '#FFFFFF', fontFamily: 'monospace' }}>SOAP / gRPC / DB-CDC</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <span style={{ fontSize: '0.9rem', color: '#CBD5E1' }}>Audit Trail Immutability</span>
+                  <span style={{ fontSize: '1.1rem', fontWeight: 700, color: '#60A5FA', fontFamily: 'monospace' }}>Cryptographic Hash Chain</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -109,28 +118,25 @@ export default function EnterpriseSoftware() {
       {/* NEW SECTION 3: Support SLA (Methodology) */}
       <section className="dark-section" style={{ padding: 'var(--spacing-section) 0', background: '#0F172A', color: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-section-sm)' }}>
-             <div style={{ flex: 1 }}>
+          <div>
+             <div>
                <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#FFFFFF', marginBottom: '1.5rem' }}>Unwavering Support SLAs</h2>
                <p style={{ fontSize: '1.1rem', color: '#94A3B8', lineHeight: 1.7, marginBottom: '2rem' }}>Enterprise software requires enterprise backing. Our dedicated support teams provide guaranteed response times for critical severity incidents.</p>
                
                <div style={{ background: '#1E293B', borderRadius: '12px', border: '1px solid #334155', padding: '2rem' }}>
                  <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #334155', paddingBottom: '1rem', marginBottom: '1rem' }}>
                     <div style={{ color: '#F8FAFC', fontWeight: 700 }}>Severity 1 (Critical System Down)</div>
-                    <div style={{ color: '#D97706', fontWeight: 800 }}>15 Minute Response</div>
+                    <div style={{ color: '#60A5FA', fontWeight: 800, fontFamily: 'monospace' }}>15 Minute Response</div>
                  </div>
                  <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #334155', paddingBottom: '1rem', marginBottom: '1rem' }}>
                     <div style={{ color: '#F8FAFC', fontWeight: 700 }}>Severity 2 (Core Function Impaired)</div>
-                    <div style={{ color: '#38BDF8', fontWeight: 800 }}>1 Hour Response</div>
+                    <div style={{ color: '#60A5FA', fontWeight: 800, fontFamily: 'monospace' }}>1 Hour Response</div>
                  </div>
                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <div style={{ color: '#F8FAFC', fontWeight: 700 }}>Severity 3 (Minor Bug / Question)</div>
-                    <div style={{ color: '#34D399', fontWeight: 800 }}>24 Hour Response</div>
+                    <div style={{ color: '#CBD5E1', fontWeight: 800, fontFamily: 'monospace' }}>24 Hour Response</div>
                  </div>
                </div>
-             </div>
-             <div style={{ flexShrink: 0 }}>
-                <HeartHandshake size={120} color="#334155" />
              </div>
           </div>
         </div>

@@ -95,8 +95,8 @@ export default function RootLayout({
               "telephone": "+91-98795-12345",
               "email": "info@acriotech.com",
               "priceRange": "$$",
-              "foundingDate": "2020-01-01",
-              "slogan": "Engineering Software. Building Future.",
+              "foundingDate": "2012-01-01",
+              "slogan": "Software that earns its keep.",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "14, Shiv Narayan Complex, Virani Circle, Kaliyabid",

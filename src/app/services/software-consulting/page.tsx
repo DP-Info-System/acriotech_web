@@ -12,17 +12,17 @@ export default function SoftwareConsulting() {
       {/* Hero Section */}
       <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#F3F4F6', color: '#111827', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 700, marginBottom: '2rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-            <Lightbulb size={16} /> Strategic Advisory
+          <div style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.15em', color: '#4B61B8', marginBottom: '1.25rem' }}>
+            STRATEGIC ADVISORY
           </div>
           <h1 style={{ fontSize: 'var(--font-hero)', fontWeight: 800, color: '#111827', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
-            Senior technical judgment when the <span style={{ color: '#000000', textDecoration: 'underline', textDecorationColor: '#D1D5DB' }}>path is unclear.</span>
+            Senior technical judgment when the <span style={{ color: '#2563EB' }}>path is unclear.</span>
           </h1>
           <p style={{ fontSize: '1.25rem', color: '#4B5563', lineHeight: 1.7, marginBottom: '3rem', maxWidth: '800px' }}>
             Consulting turns architectural uncertainty, delivery friction, or a difficult technology choice into a decision a team can confidently act on. We bring decades of enterprise engineering experience to your boardroom.
           </p>
           <div style={{ display: 'flex', gap: '1rem' }}>
-            <Link href="/contact-us" style={{ background: '#111827', color: '#FFFFFF', padding: '1.1rem 2.5rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'all 0.2s', fontSize: '1.05rem' }}>
+            <Link href="/contact-us" style={{ background: '#2563EB', color: '#FFFFFF', padding: '1.1rem 2.5rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'all 0.2s', fontSize: '1.05rem' }}>
               Book an Advisory Session <ArrowRight size={18} />
             </Link>
           </div>

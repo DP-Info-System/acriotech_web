@@ -3,8 +3,7 @@
 import { useState } from "react";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
-import { ArrowRight, Globe2, Heart, Laptop, Zap, Users, X, Loader2, CheckCircle2, Clock, Coffee } from "lucide-react";
-import Link from "next/link";
+import { Globe2, Heart, Laptop, Zap, X, Loader2, CheckCircle2, Clock, Coffee } from "lucide-react";
 
 const roles = [
   {
@@ -104,14 +103,14 @@ export default function CareersPage() {
       {/* Hero Section */}
       <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#FEF2F2', color: '#EF4444', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 700, textTransform: 'uppercase', marginBottom: '2rem' }}>
-            <Users size={16} /> Join the team
+          <div style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.15em', color: '#4B61B8', marginBottom: '1.25rem' }}>
+            Join the team
           </div>
           <h1 style={{ fontSize: 'var(--font-hero)', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
-            Build systems that <br/><span style={{ color: '#EF4444' }}>matter.</span>
+            Build systems that <br/><span style={{ color: '#2563EB' }}>matter.</span>
           </h1>
           <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, maxWidth: '700px', margin: '0 auto' }}>
-            We're looking for pragmatic engineers, designers, and thinkers who prefer solving complex problems over playing office politics. We offer roles for both full-time professionals and driven interns.
+            We&apos;re looking for pragmatic engineers, designers, and thinkers who prefer solving complex problems over playing office politics. We offer roles for both full-time professionals and driven interns.
           </p>
         </div>
       </section>
@@ -123,7 +122,7 @@ export default function CareersPage() {
             {benefits.map((benefit, i) => (
               <div key={i} style={{ textAlign: 'center' }}>
                 <div style={{ width: '64px', height: '64px', background: '#1E293B', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem' }}>
-                  <benefit.icon size={32} color="#EF4444" />
+                  <benefit.icon size={30} color="#60A5FA" />
                 </div>
                 <h3 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '0.75rem' }}>{benefit.title}</h3>
                 <p style={{ color: '#94A3B8', fontSize: '0.95rem', lineHeight: 1.6 }}>{benefit.desc}</p>
@@ -138,7 +137,7 @@ export default function CareersPage() {
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ marginBottom: '4rem' }}>
             <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1rem' }}>Open Positions</h2>
-            <p style={{ fontSize: '1.1rem', color: '#475569' }}>Don't see a role that fits? Send your resume to <a href="mailto:careers@acriotech.com" style={{ color: '#EF4444', textDecoration: 'none', fontWeight: 600 }}>careers@acriotech.com</a></p>
+            <p style={{ fontSize: '1.1rem', color: '#475569' }}>Don&apos;t see a role that fits? Send your resume to <a href="mailto:careers@acriotech.com" style={{ color: '#2563EB', textDecoration: 'none', fontWeight: 600 }}>careers@acriotech.com</a></p>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -151,12 +150,12 @@ export default function CareersPage() {
                       <span>•</span>
                       <span>{role.location}</span>
                       <span>•</span>
-                      <span style={{ color: role.type === 'Internship' ? '#EF4444' : 'inherit' }}>{role.type}</span>
+                      <span>{role.type}</span>
                     </div>
                   </div>
                   <button 
                     onClick={() => handleApplyClick(role.title)}
-                    style={{ background: '#F8FAFC', color: '#0F172A', border: '1px solid #E2E8F0', padding: '0.75rem 1.5rem', borderRadius: '8px', fontWeight: 600, cursor: 'pointer', transition: 'background 0.2s', whiteSpace: 'nowrap', flex: '0 0 auto' }}
+                    style={{ background: '#0F172A', color: '#FFFFFF', border: 'none', padding: '0.75rem 1.5rem', borderRadius: '8px', fontWeight: 600, cursor: 'pointer', transition: 'background 0.2s', whiteSpace: 'nowrap', flex: '0 0 auto' }}
                   >
                     Apply Now
                   </button>
@@ -166,7 +165,7 @@ export default function CareersPage() {
           <style jsx>{`
             .job-card:hover {
               box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
-              border-color: #FECACA !important;
+              border-color: #93C5FA !important;
             }
           `}</style>
         </div>
@@ -192,10 +191,10 @@ export default function CareersPage() {
             <div style={{ padding: '2rem' }}>
               {success ? (
                 <div style={{ textAlign: 'center', padding: '2rem 0' }}>
-                  <CheckCircle2 size={48} color="#10B981" style={{ margin: '0 auto 1rem' }} />
+                  <CheckCircle2 size={48} color="#2563EB" style={{ margin: '0 auto 1rem' }} />
                   <h4 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.5rem' }}>Application Received</h4>
                   <p style={{ color: '#475569', fontSize: '1rem', lineHeight: 1.5 }}>Our HR team will connect with you shortly.</p>
-                  <button onClick={() => setModalOpen(false)} style={{ marginTop: '2rem', background: '#F1F5F9', color: '#0F172A', border: 'none', padding: '0.75rem 2rem', borderRadius: '8px', fontWeight: 600, cursor: 'pointer' }}>Close</button>
+                  <button onClick={() => setModalOpen(false)} style={{ marginTop: '2rem', background: '#0F172A', color: '#FFFFFF', border: 'none', padding: '0.75rem 2rem', borderRadius: '8px', fontWeight: 600, cursor: 'pointer' }}>Close</button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
@@ -238,9 +237,9 @@ export default function CareersPage() {
                     </select>
                   </div>
 
-                  {error && <div style={{ color: '#EF4444', fontSize: '0.9rem' }}>{error}</div>}
+                  {error && <div style={{ color: '#2563EB', fontSize: '0.9rem' }}>{error}</div>}
 
-                  <button type="submit" disabled={loading} style={{ background: '#EF4444', color: '#FFFFFF', border: 'none', padding: '0.9rem', borderRadius: '8px', fontWeight: 700, fontSize: '1rem', cursor: loading ? 'not-allowed' : 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem', marginTop: '0.5rem', opacity: loading ? 0.7 : 1 }}>
+                  <button type="submit" disabled={loading} style={{ background: '#0F172A', color: '#FFFFFF', border: 'none', padding: '0.9rem', borderRadius: '8px', fontWeight: 700, fontSize: '1rem', cursor: loading ? 'not-allowed' : 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem', marginTop: '0.5rem', opacity: loading ? 0.7 : 1 }}>
                     {loading ? <Loader2 className="animate-spin" size={20} /> : 'Submit Application'}
                   </button>
                   <style jsx>{`

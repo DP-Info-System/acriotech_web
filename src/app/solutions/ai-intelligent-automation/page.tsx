@@ -15,8 +15,7 @@ export default function AIAutomationSolution() {
       <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: 'var(--spacing-section)', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem', display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
           <div>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#F3F4F6', color: '#374151', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
-              <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#2563EB' }}></span>
+            <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#4B61B8', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '1.25rem' }}>
               Applied Artificial Intelligence
             </div>
             <h1 style={{ fontSize: '4rem', fontWeight: 800, color: '#111827', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '2rem' }}>
@@ -35,29 +34,33 @@ export default function AIAutomationSolution() {
             </div>
           </div>
           
-          <div style={{ position: 'relative' }}>
-            {/* Abstract Tech Graphic */}
-            <div style={{ background: '#111827', borderRadius: '16px', padding: '2rem', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)', border: '1px solid #374151', overflow: 'hidden' }}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid #374151', paddingBottom: '1rem', marginBottom: '1.5rem' }}>
-                <div style={{ display: 'flex', gap: '0.5rem' }}>
-                  <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#EF4444' }}></div>
-                  <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#F59E0B' }}></div>
-                  <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#10B981' }}></div>
-                </div>
-                <div style={{ fontSize: '0.75rem', color: '#9CA3AF', fontFamily: 'monospace' }}>pipeline_monitor.sh</div>
+          <div>
+            {/* Dark Architectural Specification Card */}
+            <div style={{ background: '#0F172A', borderRadius: '16px', padding: '2.5rem', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)', border: '1px solid #1E293B', color: '#FFFFFF' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '1rem', marginBottom: '1.75rem' }}>
+                <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#60A5FA', textTransform: 'uppercase', letterSpacing: '0.12em' }}>
+                  ARCHITECTURAL BENCHMARKS
+                </span>
+                <span style={{ fontSize: '0.72rem', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                  IN-VPC DEPLOYMENT
+                </span>
               </div>
-              <div style={{ fontFamily: 'monospace', fontSize: '0.85rem', color: '#D1D5DB', lineHeight: 1.8 }}>
-                <div style={{ color: '#10B981' }}>&gt; Initializing neural OCR engine... OK</div>
-                <div>&gt; Loading weights: v2.4.1_prod...</div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', margin: '1rem 0' }}>
-                  <div style={{ height: '4px', background: '#374151', flex: 1, borderRadius: '2px', overflow: 'hidden' }}>
-                     <motion.div initial={{ width: 0 }} animate={{ width: '100%' }} transition={{ duration: 2, repeat: Infinity }} style={{ height: '100%', background: '#3B82F6' }}></motion.div>
-                  </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255,255,255,0.06)', paddingBottom: '0.85rem' }}>
+                  <span style={{ fontSize: '0.9rem', color: '#CBD5E1' }}>Inference Latency P95</span>
+                  <span style={{ fontSize: '1.1rem', fontWeight: 700, color: '#FFFFFF', fontFamily: 'monospace' }}>&lt; 42ms</span>
                 </div>
-                <div style={{ color: '#F59E0B' }}>&gt; Analyzing 1,245 documents</div>
-                <div style={{ color: '#9CA3AF' }}>&gt; Confidence threshold set to 96%</div>
-                <div style={{ marginTop: '1rem', borderTop: '1px dashed #4B5563', paddingTop: '1rem' }}>
-                  <span style={{ color: '#10B981' }}>[SUCCESS]</span> Pipeline active. Latency: 42ms.
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255,255,255,0.06)', paddingBottom: '0.85rem' }}>
+                  <span style={{ fontSize: '0.9rem', color: '#CBD5E1' }}>Automated Verification Confidence</span>
+                  <span style={{ fontSize: '1.1rem', fontWeight: 700, color: '#60A5FA', fontFamily: 'monospace' }}>99.4% Precision</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255,255,255,0.06)', paddingBottom: '0.85rem' }}>
+                  <span style={{ fontSize: '0.9rem', color: '#CBD5E1' }}>Human-in-the-Loop Fallback</span>
+                  <span style={{ fontSize: '1.1rem', fontWeight: 700, color: '#FFFFFF', fontFamily: 'monospace' }}>Deterministic Audit</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <span style={{ fontSize: '0.9rem', color: '#CBD5E1' }}>Data Isolation Standard</span>
+                  <span style={{ fontSize: '1.1rem', fontWeight: 700, color: '#60A5FA', fontFamily: 'monospace' }}>Zero External Egress</span>
                 </div>
               </div>
             </div>
@@ -84,7 +87,7 @@ export default function AIAutomationSolution() {
               <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', listStyle: 'none', padding: 0, margin: 0 }}>
                 {["Handwritten and printed extraction", "Multi-language entity recognition", "Confidence scoring per field"].map((item, i) => (
                    <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#374151', fontSize: '0.95rem' }}>
-                     <ShieldCheck size={18} color="#10B981" /> {item}
+                     <ShieldCheck size={18} color="#4B61B8" /> {item}
                    </li>
                 ))}
               </ul>
@@ -103,20 +106,20 @@ export default function AIAutomationSolution() {
             </div>
 
             <div style={{ gridColumn: 'span 4', background: '#FFFFFF', padding: '2.5rem', borderRadius: '16px', border: '1px solid #E5E7EB', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)' }}>
-               <Brain size={32} color="#8B5CF6" style={{ marginBottom: '1.5rem' }} />
+               <Brain size={32} color="#4B61B8" style={{ marginBottom: '1.5rem' }} />
                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#111827', marginBottom: '1rem' }}>Anomaly Detection</h3>
                <p style={{ color: '#4B5563', fontSize: '0.95rem', lineHeight: 1.6 }}>Real-time event monitoring using Isolation Forests and Autoencoders to flag fraud, supply chain deviations, or equipment failures instantly.</p>
             </div>
             
             <div style={{ gridColumn: 'span 8', background: '#FFFFFF', padding: '2.5rem', borderRadius: '16px', border: '1px solid #E5E7EB', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)', display: 'flex', alignItems: 'center', gap: '3rem' }}>
                <div style={{ flex: 1 }}>
-                 <Cpu size={32} color="#F59E0B" style={{ marginBottom: '1.5rem' }} />
+                 <Cpu size={32} color="#4B61B8" style={{ marginBottom: '1.5rem' }} />
                  <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#111827', marginBottom: '1rem' }}>Decision Rule Engines</h3>
                  <p style={{ color: '#4B5563', fontSize: '0.95rem', lineHeight: 1.6 }}>Hybrid deterministic systems combined with ML-assisted layers. We automate approval routing and risk classification while preserving a strict, auditor-friendly paper trail.</p>
                </div>
-               <div style={{ width: '200px', flexShrink: 0, padding: '1.5rem', background: '#FFFBEB', borderRadius: '12px', border: '1px solid #FEF3C7' }}>
-                 <div style={{ fontSize: '0.8rem', color: '#B45309', fontWeight: 700, textTransform: 'uppercase', marginBottom: '0.5rem' }}>Audit Trail</div>
-                 <div style={{ fontSize: '0.9rem', color: '#92400E', lineHeight: 1.4 }}>Complete rationale logged for every automated classification.</div>
+               <div style={{ width: '200px', flexShrink: 0, padding: '1.5rem', background: '#F8FAFC', borderRadius: '12px', border: '1px solid #E2E8F0' }}>
+                 <div style={{ fontSize: '0.8rem', color: '#4B61B8', fontWeight: 700, textTransform: 'uppercase', marginBottom: '0.5rem' }}>Audit Trail</div>
+                 <div style={{ fontSize: '0.9rem', color: '#475569', lineHeight: 1.4 }}>Complete rationale logged for every automated classification.</div>
                </div>
             </div>
 

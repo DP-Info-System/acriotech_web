@@ -29,14 +29,14 @@ export default function LegalLayout({ children, activePath }: { children: React.
       
       {/* Hero Header */}
       <div style={{ background: '#0F172A', paddingTop: '10rem', paddingBottom: '4rem' }}>
-        <div className="container" style={{ maxWidth: '1200px' }}>
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div style={{ fontSize: '2.5rem', fontWeight: 800, color: '#FFFFFF' }}>Legal & Compliance Center</div>
           <p style={{ color: '#94A3B8', fontSize: '1.1rem', marginTop: '1rem' }}>Acriotech policies, terms, and compliance information.</p>
         </div>
       </div>
 
       {/* Main Content Area with Sidebar */}
-      <div className="container" style={{ maxWidth: '1200px', display: 'flex', gap: '4rem', padding: '4rem 0', flex: 1, alignItems: 'flex-start' }}>
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style={{ display: 'flex', gap: '4rem', padding: '4rem 0', flex: 1, alignItems: 'flex-start' }}>
         
         {/* Sidebar */}
         <aside style={{ width: '280px', flexShrink: 0, position: 'sticky', top: '100px' }}>

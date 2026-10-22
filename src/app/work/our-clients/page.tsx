@@ -19,11 +19,11 @@ export default function OurClientsPage() {
 
       <section style={{ paddingTop: '10rem', paddingBottom: '6rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#F1F5F9', color: '#475569', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
-            <Users size={16} /> Client Roster
+          <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#4B61B8', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '1.25rem' }}>
+            Client Roster &middot; Enterprise Partnerships
           </div>
           <h1 style={{ fontSize: '4rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
-            Trusted by the <span style={{ color: '#475569' }}>Fortune 500.</span>
+            Trusted by the <span style={{ color: '#4B61B8' }}>Fortune 500.</span>
           </h1>
           <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, maxWidth: '700px' }}>
             We sign strict NDAs with most of our enterprise clients. While we cannot always share their names publicly, we can share the industries we transform.
@@ -44,7 +44,7 @@ export default function OurClientsPage() {
                      </div>
                      <span style={{ fontSize: '1.2rem', fontWeight: 700, color: '#0F172A' }}>{ind.name}</span>
                   </div>
-                  <div style={{ background: '#F1F5F9', color: '#334155', padding: '0.5rem 1rem', borderRadius: '50px', fontSize: '0.9rem', fontWeight: 600 }}>
+                  <div style={{ background: '#F1F5F9', color: '#334155', padding: '0.4rem 0.85rem', borderRadius: '6px', fontSize: '0.85rem', fontWeight: 600 }}>
                     {ind.count} Active Deployments
                   </div>
                </div>

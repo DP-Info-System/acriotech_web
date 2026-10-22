@@ -14,49 +14,42 @@ export default function DevOpsCICD() {
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
             <div>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#ECFDF5', color: '#047857', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
-                <GitMerge size={16} /> Continuous Delivery
+              <div style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.15em', color: '#4B61B8', marginBottom: '1.25rem' }}>
+                CONTINUOUS DELIVERY & DEVOPS
               </div>
               <h1 style={{ fontSize: '4.2rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
-                A delivery path that makes <span style={{ color: '#10B981' }}>small changes safe.</span>
+                A delivery path that makes <span style={{ color: '#2563EB' }}>small changes safe.</span>
               </h1>
               <p style={{ fontSize: '1.2rem', color: '#475569', lineHeight: 1.6, marginBottom: '2.5rem', maxWidth: '600px' }}>
                 DevOps isn't a team; it's a practice. We connect code, infrastructure, security, and operational feedback so engineering organizations can release with confidence multiple times a day.
               </p>
               <div style={{ display: 'flex', gap: '1rem' }}>
-                <Link href="/contact-us" style={{ background: '#10B981', color: '#FFFFFF', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s' }}>
+                <Link href="/contact-us" style={{ background: '#2563EB', color: '#FFFFFF', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s' }}>
                   Assess Your Pipeline <ArrowRight size={18} />
                 </Link>
               </div>
             </div>
 
-            {/* Visual: Terminal Pipeline */}
-            <div style={{ background: '#0F172A', borderRadius: '16px', padding: '2rem', border: '1px solid #334155', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)' }}>
-               <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1.5rem' }}>
-                  <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#EF4444' }}></div>
-                  <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#F59E0B' }}></div>
-                  <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#10B981' }}></div>
+            {/* Architectural Specification Card */}
+            <div style={{ background: '#0F172A', borderRadius: '16px', padding: '2.5rem', border: '1px solid #334155', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)' }}>
+               <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#60A5FA', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.25rem' }}>
+                 CI/CD Pipeline Benchmarks
                </div>
-               
-               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', fontFamily: 'monospace', fontSize: '0.85rem' }}>
-                 <div style={{ display: 'flex', gap: '1rem', color: '#A5B4FC' }}>
-                   <span>$ git push origin main</span>
-                 </div>
-                 <div style={{ display: 'flex', gap: '1rem', color: '#94A3B8' }}>
-                   <span style={{ color: '#10B981' }}>✔</span> <span>Running unit tests... (1.2s)</span>
-                 </div>
-                 <div style={{ display: 'flex', gap: '1rem', color: '#94A3B8' }}>
-                   <span style={{ color: '#10B981' }}>✔</span> <span>SAST security scan... (4.5s)</span>
-                 </div>
-                 <div style={{ display: 'flex', gap: '1rem', color: '#94A3B8' }}>
-                   <span style={{ color: '#10B981' }}>✔</span> <span>Building Docker image... (12s)</span>
-                 </div>
-                 <div style={{ display: 'flex', gap: '1rem', color: '#94A3B8' }}>
-                   <span style={{ color: '#10B981' }}>✔</span> <span>Terraform apply plan... (3s)</span>
-                 </div>
-                 <div style={{ display: 'flex', gap: '1rem', color: '#F8FAFC', fontWeight: 700, marginTop: '0.5rem' }}>
-                   <span style={{ color: '#10B981' }}>➔</span> <span>Deployment successful. Production is live.</span>
-                 </div>
+               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                 {[
+                   { label: "Deployment Frequency", value: "Multiple / Day", detail: "Automated git-push-to-prod release cycle" },
+                   { label: "Lead Time to Production", value: "< 45 Mins", detail: "Parallelized build, lint, and test runner" },
+                   { label: "Automated Rollback", value: "Sub-60s", detail: "Canary traffic shifting with health gate triggers" },
+                   { label: "Environment Parity", value: "100% IaC", detail: "Terraform & Pulumi codified environments" }
+                 ].map((item, i) => (
+                   <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '0.75rem', borderBottom: i < 3 ? '1px solid #1E293B' : 'none' }}>
+                     <div>
+                       <div style={{ color: '#F8FAFC', fontWeight: 600, fontSize: '0.9rem' }}>{item.label}</div>
+                       <div style={{ color: '#94A3B8', fontSize: '0.75rem' }}>{item.detail}</div>
+                     </div>
+                     <span style={{ color: '#60A5FA', fontWeight: 700, fontSize: '0.9rem' }}>{item.value}</span>
+                   </div>
+                 ))}
                </div>
             </div>
           </div>
@@ -127,7 +120,7 @@ export default function DevOpsCICD() {
               { icon: Undo2, label: "4. Deploy & Release", text: "Using Blue/Green or Canary deployments to shift traffic slowly, ready to automatically rollback if error rates spike." }
             ].map((step, i) => (
               <div key={i} style={{ background: '#1E293B', padding: '1.5rem 2rem', borderRadius: '12px', border: '1px solid #334155', display: 'flex', alignItems: 'center', gap: '2rem' }}>
-                 <step.icon size={28} color="#10B981" />
+                 <step.icon size={28} color="#2563EB" />
                  <div>
                    <h4 style={{ fontWeight: 700, fontSize: '1.1rem', color: '#F8FAFC', marginBottom: '0.2rem' }}>{step.label}</h4>
                    <p style={{ color: '#94A3B8', fontSize: '0.95rem' }}>{step.text}</p>
@@ -155,7 +148,7 @@ export default function DevOpsCICD() {
                { title: "Time to Restore Service", goal: "Under 1 hour", metric: "Stability" }
              ].map((m, i) => (
                <div key={i} style={{ background: '#FFFFFF', padding: '2.5rem 1.5rem', textAlign: 'center' }}>
-                 <div style={{ fontSize: '0.8rem', fontWeight: 700, color: '#10B981', textTransform: 'uppercase', marginBottom: '1rem', letterSpacing: '0.05em' }}>{m.metric}</div>
+                 <div style={{ fontSize: '0.8rem', fontWeight: 700, color: '#2563EB', textTransform: 'uppercase', marginBottom: '1rem', letterSpacing: '0.05em' }}>{m.metric}</div>
                  <h4 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.5rem' }}>{m.title}</h4>
                  <p style={{ color: '#64748B', fontSize: '0.9rem' }}>Target: {m.goal}</p>
                </div>

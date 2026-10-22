@@ -15,17 +15,17 @@ export default function DataAnalyticsSolution() {
           <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
             
             <div>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#F0FDF4', color: '#166534', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
-                <BarChart3 size={16} /> Advanced Data Analytics
+              <div style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.15em', color: '#4B61B8', marginBottom: '1.25rem' }}>
+                DATA & ANALYTICS
               </div>
               <h1 style={{ fontSize: '4.2rem', fontWeight: 800, color: '#111827', letterSpacing: '-0.04em', lineHeight: 1.05, marginBottom: '2rem' }}>
-                Turn fragmented data into <span style={{ color: '#16A34A' }}>predictable growth.</span>
+                Turn fragmented data into <span style={{ color: '#4B61B8' }}>predictable growth.</span>
               </h1>
               <p style={{ fontSize: '1.2rem', color: '#4B5563', lineHeight: 1.6, marginBottom: '2.5rem', maxWidth: '600px' }}>
                 We build modern data stacks—from ELT pipelines to real-time dashboards—that give your executive team total visibility and predictive insight into business operations.
               </p>
               <div style={{ display: 'flex', gap: '1rem' }}>
-                <Link href="/contact-us" style={{ background: '#16A34A', color: '#FFFFFF', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s' }}>
+                <Link href="/contact-us" style={{ background: '#4B61B8', color: '#FFFFFF', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s' }}>
                   Request Data Audit <ArrowRight size={18} />
                 </Link>
               </div>
@@ -37,18 +37,18 @@ export default function DataAnalyticsSolution() {
                  <div style={{ fontWeight: 700, color: '#111827', fontSize: '0.9rem' }}>Revenue Intelligence</div>
                  <div style={{ display: 'flex', gap: '0.5rem' }}>
                    <div style={{ background: '#E5E7EB', borderRadius: '4px', padding: '0.2rem 0.5rem', fontSize: '0.7rem', color: '#4B5563', fontWeight: 600 }}>YTD</div>
-                   <div style={{ background: '#16A34A', borderRadius: '4px', padding: '0.2rem 0.5rem', fontSize: '0.7rem', color: '#FFFFFF', fontWeight: 600 }}>Q3</div>
+                   <div style={{ background: '#4B61B8', borderRadius: '4px', padding: '0.2rem 0.5rem', fontSize: '0.7rem', color: '#FFFFFF', fontWeight: 600 }}>Q3</div>
                  </div>
               </div>
               <div style={{ padding: '2rem' }}>
                  <div style={{ fontSize: '0.85rem', color: '#6B7280', fontWeight: 600, textTransform: 'uppercase', marginBottom: '0.5rem' }}>Total ARR</div>
                  <div style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#111827', marginBottom: '2rem', display: 'flex', alignItems: 'baseline', gap: '1rem' }}>
-                   $4.2M <span style={{ fontSize: '1rem', color: '#16A34A', display: 'flex', alignItems: 'center' }}>+18.4%</span>
+                   $4.2M <span style={{ fontSize: '1rem', color: '#4B61B8', display: 'flex', alignItems: 'center' }}>+18.4%</span>
                  </div>
                  {/* Faux Bar Chart */}
                  <div style={{ display: 'flex', alignItems: 'flex-end', gap: '0.5rem', height: '120px' }}>
                    {[40, 60, 45, 80, 65, 90, 75, 100].map((h, i) => (
-                     <div key={i} style={{ flex: 1, background: i === 7 ? '#16A34A' : '#DCFCE7', height: `${h}%`, borderRadius: '4px 4px 0 0' }}></div>
+                     <div key={i} style={{ flex: 1, background: i === 7 ? '#4B61B8' : '#DBEAFE', height: `${h}%`, borderRadius: '4px 4px 0 0' }}></div>
                    ))}
                  </div>
               </div>
@@ -74,8 +74,8 @@ export default function DataAnalyticsSolution() {
               { level: "Phase 4", title: "Prescriptive", desc: "Automated decision engines and optimization algorithms. 'What should we do?'" }
             ].map((step, i) => (
                <div key={i} style={{ background: '#FFFFFF', padding: '2.5rem 2rem', borderRadius: '16px', border: '1px solid #E2E8F0', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)', position: 'relative' }}>
-                 <div style={{ position: 'absolute', top: 0, left: '2rem', width: '40px', height: '4px', background: '#16A34A', borderRadius: '0 0 4px 4px' }}></div>
-                 <div style={{ fontSize: '0.8rem', fontWeight: 700, color: '#16A34A', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>{step.level}</div>
+                 <div style={{ position: 'absolute', top: 0, left: '2rem', width: '40px', height: '4px', background: '#4B61B8', borderRadius: '0 0 4px 4px' }}></div>
+                 <div style={{ fontSize: '0.8rem', fontWeight: 700, color: '#4B61B8', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>{step.level}</div>
                  <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#0F172A', marginBottom: '1rem' }}>{step.title}</h3>
                  <p style={{ color: '#475569', lineHeight: 1.6, fontSize: '0.95rem' }}>{step.desc}</p>
                </div>
@@ -97,7 +97,7 @@ export default function DataAnalyticsSolution() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 <div style={{ display: 'flex', gap: '1rem' }}>
                    <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                     <Filter size={20} color="#34D399" />
+                     <Filter size={20} color="#60A5FA" />
                    </div>
                    <div>
                      <h4 style={{ fontWeight: 700, fontSize: '1.1rem', marginBottom: '0.3rem' }}>ELT (Extract, Load, Transform)</h4>
@@ -131,7 +131,7 @@ export default function DataAnalyticsSolution() {
                  {/* Warehouse */}
                  <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                    <div style={{ fontSize: '0.8rem', color: '#64748B', fontWeight: 600, textTransform: 'uppercase', marginBottom: '1rem' }}>Warehouse (Snowflake)</div>
-                   <div style={{ background: 'rgba(52, 211, 153, 0.1)', padding: '2rem 1rem', borderRadius: '8px', border: '1px solid rgba(52, 211, 153, 0.2)', color: '#34D399', fontWeight: 700 }}>
+                   <div style={{ background: 'rgba(52, 211, 153, 0.1)', padding: '2rem 1rem', borderRadius: '8px', border: '1px solid rgba(52, 211, 153, 0.2)', color: '#60A5FA', fontWeight: 700 }}>
                      dbt Core Transform
                    </div>
                  </div>
@@ -166,8 +166,8 @@ export default function DataAnalyticsSolution() {
                { icon: Layers, val: "COGS", title: "Operational Efficiency", text: "Reduce inventory carrying costs and optimize supply chain routing through real-time demand signals." }
              ].map((kpi, i) => (
                 <div key={i} style={{ textAlign: 'center' }}>
-                  <div style={{ width: '64px', height: '64px', borderRadius: '16px', background: '#F0FDF4', margin: '0 auto 1.5rem auto', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <kpi.icon size={28} color="#16A34A" />
+                  <div style={{ width: '64px', height: '64px', borderRadius: '16px', background: '#EEF2FF', margin: '0 auto 1.5rem auto', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <kpi.icon size={28} color="#4B61B8" />
                   </div>
                   <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#111827', marginBottom: '0.5rem' }}>{kpi.val}</div>
                   <h4 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#374151', marginBottom: '1rem' }}>{kpi.title}</h4>

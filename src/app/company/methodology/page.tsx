@@ -44,11 +44,11 @@ export default function MethodologyPage() {
       {/* Hero Section */}
       <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '7rem', background: '#0F172A', color: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#1E293B', color: '#38BDF8', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 700, textTransform: 'uppercase', marginBottom: '2rem' }}>
-            Our Methodology
+          <div style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.15em', color: '#60A5FA', marginBottom: '1.25rem' }}>
+            Engineering Lifecycle
           </div>
           <h1 style={{ fontSize: 'var(--font-hero)', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
-            How we <span style={{ color: '#38BDF8' }}>build software.</span>
+            How we <span style={{ color: '#60A5FA' }}>build software.</span>
           </h1>
           <p style={{ fontSize: '1.25rem', color: '#94A3B8', lineHeight: 1.6, maxWidth: '700px' }}>
             We treat software engineering as a discipline, not an art. Our methodology is built on predictability, observability, and ruthless pragmatism.
@@ -67,15 +67,15 @@ export default function MethodologyPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
              {steps.map((step, i) => (
                <div key={i} style={{ background: '#FFFFFF', padding: '3rem', borderRadius: '16px', border: '1px solid #E2E8F0', position: 'relative' }}>
-                  <div style={{ position: 'absolute', top: '1.5rem', right: '2rem', fontSize: '4rem', fontWeight: 900, color: '#F1F5F9', zIndex: 0 }}>
+                  <div style={{ position: 'absolute', top: '1.5rem', right: '2rem', fontSize: '3rem', fontWeight: 900, fontFamily: 'monospace', color: '#E2E8F0', zIndex: 0 }}>
                     0{i + 1}
                   </div>
                   <div style={{ position: 'relative', zIndex: 1 }}>
-                    <div style={{ width: '48px', height: '48px', background: '#E0F2FE', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem' }}>
-                      <step.icon size={24} color="#0EA5E9" />
+                    <div style={{ color: '#2563EB', marginBottom: '1.25rem' }}>
+                      <step.icon size={28} />
                     </div>
-                    <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '1rem' }}>{step.title}</h3>
-                    <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.6 }}>{step.desc}</p>
+                    <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.75rem' }}>{step.title}</h3>
+                    <p style={{ color: '#475569', fontSize: '1rem', lineHeight: 1.6 }}>{step.desc}</p>
                   </div>
                </div>
              ))}
@@ -87,8 +87,8 @@ export default function MethodologyPage() {
       <section style={{ padding: 'var(--spacing-section) 0', background: '#0F172A', color: '#FFFFFF', textAlign: 'center' }}>
         <div className="container" style={{ maxWidth: '800px', margin: '0 auto', padding: '0 2rem' }}>
           <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, marginBottom: '1.5rem' }}>Ready to put this process to work on your roadmap?</h2>
-          <p style={{ fontSize: '1.15rem', color: '#94A3B8', marginBottom: '3rem' }}>Let's discuss your architecture and how our methodology can accelerate your roadmap.</p>
-          <Link href="/contact-us" style={{ background: '#38BDF8', color: '#0F172A', padding: '1rem 2.5rem', borderRadius: '8px', fontWeight: 700, fontSize: '1.1rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'transform 0.2s' }}>
+          <p style={{ fontSize: '1.15rem', color: '#94A3B8', marginBottom: '3rem' }}>Let&apos;s discuss your architecture and how our methodology can accelerate your roadmap.</p>
+          <Link href="/contact-us" style={{ background: '#2563EB', color: '#FFFFFF', padding: '1rem 2.5rem', borderRadius: '8px', fontWeight: 700, fontSize: '1.1rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s' }}>
             Start a Project <ArrowRight size={18} />
           </Link>
         </div>

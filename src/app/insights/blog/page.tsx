@@ -1,6 +1,6 @@
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
-import { ArrowRight, BookOpen, Clock, User } from "lucide-react";
+import { ArrowRight, Clock, User } from "lucide-react";
 import Link from "next/link";
 
 const blogPosts = [
@@ -43,16 +43,14 @@ export default function BlogIndex() {
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
       <NavBar />
 
-      {true && (
-        <>
       {/* Hero Section */}
       <section style={{ paddingTop: '10rem', paddingBottom: '6rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#F1F5F9', color: '#334155', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
-            <BookOpen size={16} /> Engineering Blog
+          <div style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.15em', color: '#4B61B8', marginBottom: '1.25rem' }}>
+            Engineering Blog
           </div>
           <h1 style={{ fontSize: '4rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
-            Opinions derived from <br/><span style={{ color: '#0EA5E9' }}>production outages.</span>
+            Opinions derived from <br/><span style={{ color: '#2563EB' }}>production outages.</span>
           </h1>
           <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, maxWidth: '700px' }}>
             We write about software engineering, system design, and the often messy reality of building enterprise products that people actually use.
@@ -67,7 +65,7 @@ export default function BlogIndex() {
              {blogPosts.map((post, i) => (
                 <article key={i} style={{ background: '#FFFFFF', padding: '3rem', borderRadius: '16px', border: '1px solid #E2E8F0', transition: 'box-shadow 0.2s' }} className="blog-card">
                   <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
-                    <span style={{ background: '#F0F9FF', color: '#0284C7', padding: '0.3rem 0.8rem', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase' }}>
+                    <span style={{ background: '#EFF6FF', color: '#2563EB', padding: '0.3rem 0.8rem', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase' }}>
                       {post.category}
                     </span>
                     <span style={{ color: '#94A3B8', fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
@@ -82,13 +80,15 @@ export default function BlogIndex() {
                   </p>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid #F1F5F9', paddingTop: '1.5rem' }}>
                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
-                       <div style={{ width: '32px', height: '32px', background: '#E2E8F0', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><User size={16} color="#64748B" /></div>
+                       <div style={{ width: '32px', height: '32px', background: '#E2E8F0', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                         <User size={16} color="#64748B" />
+                       </div>
                        <div>
                          <div style={{ fontSize: '0.9rem', fontWeight: 600, color: '#0F172A' }}>{post.author}</div>
                          <div style={{ fontSize: '0.8rem', color: '#64748B' }}>{post.readTime}</div>
                        </div>
                      </div>
-                     <Link href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#0EA5E9', fontWeight: 700, textDecoration: 'none', fontSize: '0.95rem' }}>
+                     <Link href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#2563EB', fontWeight: 700, textDecoration: 'none', fontSize: '0.95rem' }}>
                        Read Article <ArrowRight size={16} />
                      </Link>
                   </div>
@@ -103,8 +103,6 @@ export default function BlogIndex() {
           </div>
         </div>
       </section>
-        </>
-      )}
 
       <Footer />
     </div>

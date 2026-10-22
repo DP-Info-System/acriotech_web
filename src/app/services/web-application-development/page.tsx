@@ -14,8 +14,8 @@ export default function WebAppDevelopment() {
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
             <div>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#EFF6FF', color: '#1D4ED8', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
-                <Code size={16} /> Full-Stack Engineering
+              <div style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.15em', color: '#4B61B8', marginBottom: '1.25rem' }}>
+                FULL-STACK ENGINEERING
               </div>
               <h1 style={{ fontSize: '4.2rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
                 Web products built for <span style={{ color: '#2563EB' }}>the operating context.</span>
@@ -117,16 +117,16 @@ export default function WebAppDevelopment() {
              
              {/* Visual */}
              <div style={{ background: '#FFFFFF', padding: '3rem', borderRadius: '24px', border: '1px solid #E2E8F0', textAlign: 'center' }}>
-                <Zap size={48} color="#F59E0B" style={{ margin: '0 auto 1.5rem auto' }} />
+                <Zap size={48} color="#2563EB" style={{ margin: '0 auto 1.5rem auto' }} />
                 <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '1rem' }}>Optimistic UI</h3>
                 <p style={{ color: '#64748B', marginBottom: '2rem' }}>We update the UI instantly before the server responds, providing a sub-50ms perceived latency for users.</p>
                 
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem' }}>
-                   <div style={{ background: '#EFF6FF', padding: '0.5rem 1rem', borderRadius: '50px', color: '#2563EB', fontWeight: 600, fontSize: '0.9rem' }}>User Clicks "Like"</div>
+                   <div style={{ background: '#EFF6FF', padding: '0.5rem 1rem', borderRadius: '6px', color: '#2563EB', fontWeight: 600, fontSize: '0.85rem' }}>User Action</div>
                    <ArrowRight size={16} color="#94A3B8" />
-                   <div style={{ background: '#DCFCE7', padding: '0.5rem 1rem', borderRadius: '50px', color: '#16A34A', fontWeight: 600, fontSize: '0.9rem' }}>UI Updates (0ms)</div>
+                   <div style={{ background: '#F1F5F9', padding: '0.5rem 1rem', borderRadius: '6px', color: '#0F172A', fontWeight: 600, fontSize: '0.85rem' }}>UI Updates (&lt;16ms)</div>
                    <ArrowRight size={16} color="#94A3B8" />
-                   <div style={{ background: '#F8FAFC', padding: '0.5rem 1rem', borderRadius: '50px', color: '#64748B', fontWeight: 600, fontSize: '0.9rem', border: '1px solid #E2E8F0' }}>Server Syncs (300ms)</div>
+                   <div style={{ background: '#F8FAFC', padding: '0.5rem 1rem', borderRadius: '6px', color: '#64748B', fontWeight: 600, fontSize: '0.85rem', border: '1px solid #E2E8F0' }}>Server Syncs (300ms)</div>
                 </div>
              </div>
            </div>
@@ -141,19 +141,19 @@ export default function WebAppDevelopment() {
           
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem' }}>
             <div style={{ background: '#1E293B', padding: '2rem', borderRadius: '12px', border: '1px solid #334155' }}>
-               <div style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#10B981', marginBottom: '0.5rem' }}>&lt;2.5s</div>
+               <div style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#60A5FA', marginBottom: '0.5rem' }}>&lt;2.5s</div>
                <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#F8FAFC', marginBottom: '0.5rem' }}>LCP</div>
-               <p style={{ color: '#64748B', fontSize: '0.85rem' }}>Largest Contentful Paint. Ensures the main content loads rapidly.</p>
+               <p style={{ color: '#94A3B8', fontSize: '0.85rem' }}>Largest Contentful Paint. Ensures the main content loads rapidly.</p>
             </div>
             <div style={{ background: '#1E293B', padding: '2rem', borderRadius: '12px', border: '1px solid #334155' }}>
-               <div style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#10B981', marginBottom: '0.5rem' }}>&lt;100ms</div>
+               <div style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#60A5FA', marginBottom: '0.5rem' }}>&lt;100ms</div>
                <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#F8FAFC', marginBottom: '0.5rem' }}>INP</div>
-               <p style={{ color: '#64748B', fontSize: '0.85rem' }}>Interaction to Next Paint. Sub-200ms main-thread responsiveness for enterprise workflows.</p>
+               <p style={{ color: '#94A3B8', fontSize: '0.85rem' }}>Interaction to Next Paint. Sub-200ms main-thread responsiveness for enterprise workflows.</p>
             </div>
             <div style={{ background: '#1E293B', padding: '2rem', borderRadius: '12px', border: '1px solid #334155' }}>
-               <div style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#10B981', marginBottom: '0.5rem' }}>&lt;0.1</div>
+               <div style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#60A5FA', marginBottom: '0.5rem' }}>&lt;0.1</div>
                <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#F8FAFC', marginBottom: '0.5rem' }}>CLS</div>
-               <p style={{ color: '#64748B', fontSize: '0.85rem' }}>Cumulative Layout Shift. No annoying jumping content as the page loads.</p>
+               <p style={{ color: '#94A3B8', fontSize: '0.85rem' }}>Cumulative Layout Shift. No annoying jumping content as the page loads.</p>
             </div>
           </div>
         </div>

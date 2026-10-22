@@ -41,11 +41,16 @@ export default function IndustriesIndexPage() {
       </section>
 
       {/* Industry Grid */}
-      <section style={{ padding: '8rem 0', background: '#F8FAFC' }}>
+      <section style={{ padding: '6rem 0', background: '#F8FAFC' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-             <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '1rem' }}>Sectors We Serve</h2>
-             <p style={{ fontSize: '1.1rem', color: '#64748B', maxWidth: '600px', margin: '0 auto' }}>We bring deep technical domain knowledge to highly regulated and complex industries.</p>
+          <div style={{ textAlign: 'left', marginBottom: '3.5rem', maxWidth: '720px' }}>
+             <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#4B61B8', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '0.75rem' }}>
+               VERTICAL DOMAINS
+             </div>
+             <h2 style={{ fontSize: '2.4rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.025em', marginBottom: '1rem' }}>
+               Sectors We <span style={{ color: '#4B61B8' }}>Actively Serve.</span>
+             </h2>
+             <p style={{ fontSize: '1.1rem', color: '#64748B', margin: 0, lineHeight: 1.6 }}>We bring deep technical domain knowledge to highly regulated and complex industries.</p>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', gap: '2rem' }}>
@@ -53,11 +58,11 @@ export default function IndustriesIndexPage() {
               <Link 
                 href={`/industries/${ind.slug}`} 
                 key={i} 
-                style={{ background: '#FFFFFF', padding: '2.5rem', borderRadius: '16px', border: '1px solid #E2E8F0', textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', transition: 'all 0.2s', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)' }}
+                style={{ background: '#FFFFFF', padding: '2.5rem', borderRadius: '16px', border: '1px solid #E2E8F0', textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', transition: 'all 0.2s', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.03)' }}
                 className="industry-card"
               >
-                 <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: '#EEF2FF', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem' }}>
-                   <ind.icon size={24} color="#4B61B8" />
+                 <div style={{ fontFamily: 'monospace', fontSize: '0.85rem', fontWeight: 700, color: '#4B61B8', marginBottom: '1.25rem' }}>
+                   0{i + 1}
                  </div>
                  <h3 style={{ fontSize: '1.35rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.75rem' }}>{ind.name}</h3>
                  <p style={{ color: '#475569', lineHeight: 1.6, flex: 1, marginBottom: '1.5rem' }}>{ind.desc}</p>
@@ -82,7 +87,9 @@ export default function IndustriesIndexPage() {
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '6rem', alignItems: 'center' }}>
             <div>
-              <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>Built for regulated environments.</h2>
+              <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>
+                Built for <span style={{ color: '#4B61B8' }}>regulated environments.</span>
+              </h2>
               <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.7, marginBottom: '2rem' }}>
                 Every industry carries distinct regulatory, security, and operational requirements. Before writing code, our architects define strict data sensitivity controls, audit logging, and high-availability targets tailored to your sector.
               </p>

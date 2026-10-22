@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Layers, Menu, X, ChevronDown, ChevronUp } from "lucide-react";
 import { useState, useRef } from "react";
 import { usePathname } from "next/navigation";
@@ -31,8 +31,8 @@ const navData = {
     purpose: "What business problems do you solve?",
     items: ["Enterprise Software", "AI & Intelligent Automation", "Business Process Automation", "Digital Transformation", "Cloud & Infrastructure", "Legacy System Modernization", "Data & Analytics", "Custom Software Development"],
     featured: {
-      title: "Helping businesses build scalable digital platforms",
-      desc: "that improve operations, automate workflows, and accelerate growth.",
+      title: "Where the problem lives, not where the solution sounds impressive",
+      desc: "We scope solutions to fit how your business actually operates.",
       linkText: "View All Solutions"
     }
   },
@@ -40,8 +40,8 @@ const navData = {
     purpose: "How do you deliver solutions?",
     items: ["Software Consulting", "Product Discovery", "UI / UX Design", "Web Application Development", "Mobile App Development", "API Development & Integration", "Cloud Architecture", "DevOps & CI/CD", "AI Integration", "QA & Testing", "Maintenance & Support", "Dedicated Development Teams"],
     featured: {
-      title: "Comprehensive Engineering Capabilities",
-      desc: "End-to-end technical services designed to scale and optimize your enterprise architecture.",
+      title: "One delivery path. Full accountability.",
+      desc: "From the first discovery call to year three of production support.",
       linkText: "Explore All Services"
     }
   },
@@ -49,8 +49,8 @@ const navData = {
     purpose: "Explore our engineered solutions.",
     items: ["Featured Projects", "Our Clients", "Open Source"],
     featured: {
-      title: "Proven Engineering Excellence",
-      desc: "Discover how we solve complex technical problems for industry-leading enterprise clients.",
+      title: "Production code, not pitch decks.",
+      desc: "Real systems, real constraints, real results.",
       linkText: "View Case Studies"
     }
   },
@@ -58,8 +58,8 @@ const navData = {
     purpose: "Domain expertise.",
     items: ["Manufacturing", "Healthcare", "Education", "Logistics", "Retail", "Financial Services", "Hospitality", "Government", "Startups"],
     featured: {
-      title: "Deep Industry Focus",
-      desc: "Each industry page covers domain-specific challenges, custom solutions, projects, and tech stacks.",
+      title: "The problems look different. The engineering rigour does not.",
+      desc: "Sector-specific context, consistent delivery standards.",
       linkText: "Explore Industries"
     }
   },
@@ -67,47 +67,20 @@ const navData = {
     purpose: "Our content hub.",
     items: ["Case Studies", "News & Press", "Research Reports", "Tech Trends", "Webinars"],
     featured: {
-      title: "Technical Insights & Updates",
-      desc: "Deep technical dives into software architecture, artificial intelligence, and enterprise technology.",
+      title: "Things worth reading.",
+      desc: "Architecture decisions, lessons from production, and the occasional strong opinion.",
       linkText: "Explore Insights"
     }
   }
 };
 
 const getMenuDimensions = (menuKey: string) => {
-  switch (menuKey) {
-    case 'Services':
-      return { 
-        width: 'min(980px, 94vw)', 
-        columns: 'repeat(3, 1fr)', 
-        featuredWidth: '320px' 
-      };
-    case 'Solutions':
-    case 'Industries':
-      return { 
-        width: 'min(820px, 92vw)', 
-        columns: 'repeat(2, 1fr)', 
-        featuredWidth: '300px' 
-      };
-    case 'Insights':
-      return { 
-        width: 'min(700px, 90vw)', 
-        columns: 'repeat(2, 1fr)', 
-        featuredWidth: '290px' 
-      };
-    case 'Work':
-      return { 
-        width: 'min(580px, 90vw)', 
-        columns: 'repeat(1, 1fr)', 
-        featuredWidth: '280px' 
-      };
-    default:
-      return { 
-        width: 'min(760px, 90vw)', 
-        columns: 'repeat(2, 1fr)', 
-        featuredWidth: '300px' 
-      };
-  }
+  return { 
+    width: 'min(820px, 96vw)', 
+    minHeight: '260px',
+    columns: menuKey === 'Services' ? 'repeat(3, 1fr)' : (menuKey === 'Work' ? '1fr' : 'repeat(2, 1fr)'), 
+    featuredWidth: '250px' 
+  };
 };
 
 export default function NavBar() {
@@ -124,18 +97,6 @@ export default function NavBar() {
     setHoveredNav(null);
   };
   
-  const { scrollY } = useScroll();
-  
-  const navWidth = useTransform(scrollY, [0, 100], ["clamp(100%, 100vw, 100%)", "clamp(90%, 95vw, 100%)"]);
-  const navPadding = useTransform(scrollY, [0, 100], ["clamp(1.5rem, 1.5rem, 1.5rem) clamp(1.5rem, 5vw, 4rem)", "clamp(1rem, 1rem, 1rem) clamp(1rem, 3vw, 3rem)"]);
-  // Keep background slightly opaque at all times so dark text is always visible
-  const navBg = useTransform(scrollY, [0, 100], ["rgba(255, 255, 255, 0.85)", "rgba(255, 255, 255, 0.95)"]);
-  const navBorder = useTransform(scrollY, [0, 100], ["rgba(255, 255, 255, 0.2)", "rgba(255, 255, 255, 0.8)"]);
-  const navShadow = useTransform(scrollY, [0, 100], ["0 0 0 rgba(0,0,0,0)", "0 10px 40px -10px rgba(15,23,42,0.05)"]);
-  const navBlur = useTransform(scrollY, [0, 100], ["blur(12px)", "blur(18px)"]);
-  const navRadius = useTransform(scrollY, [0, 100], ["0px", "24px"]);
-  const navTop = useTransform(scrollY, [0, 100], ["0px", "20px"]);
-
   const navItems = ["Solutions", "Services", "Work", "Industries", "Insights", "About", "Contact"];
 
   const handleMouseEnter = (item: string) => {
@@ -152,42 +113,49 @@ export default function NavBar() {
   };
 
   return (
-    <motion.header
+    <header
+      className="fixed top-0 left-0 right-0 z-50 flex flex-col items-center bg-transparent pt-4 px-4 sm:px-6 pointer-events-none"
       style={{
         position: 'fixed',
-        top: navTop,
+        top: 0,
         left: 0,
         right: 0,
         zIndex: 100,
+        background: 'transparent',
+        padding: '1rem clamp(1rem, 3vw, 1.5rem) 0 clamp(1rem, 3vw, 1.5rem)',
         display: 'flex',
         justifyContent: 'center',
         flexDirection: 'column',
-        alignItems: 'center'
+        alignItems: 'center',
+        pointerEvents: 'none'
       }}
       onMouseLeave={handleMouseLeave}
     >
-      <motion.div
-        className="keep-flex-row"
+      <div
+        className="keep-flex-row w-full max-w-7xl h-16 rounded-2xl pointer-events-auto shadow-md"
         style={{
-          width: navWidth,
-          padding: navPadding,
-          background: navBg,
-          borderBottom: '1px solid',
-          borderColor: navBorder,
-          boxShadow: navShadow,
-          backdropFilter: navBlur,
-          WebkitBackdropFilter: navBlur,
-          borderRadius: navRadius,
+          width: '100%',
+          maxWidth: '1280px',
+          margin: '0 auto',
+          height: '4rem',
+          padding: '0 clamp(1.25rem, 3vw, 2rem)',
+          background: 'rgba(255, 255, 255, 0.96)',
+          border: '1px solid rgba(226, 232, 240, 0.85)',
+          boxShadow: '0 10px 30px -10px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(15, 23, 42, 0.04)',
+          backdropFilter: 'blur(16px)',
+          WebkitBackdropFilter: 'blur(16px)',
+          borderRadius: '1rem',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
           zIndex: 2,
-          position: 'relative'
+          position: 'relative',
+          pointerEvents: 'auto'
         }}
       >
         <a href="/" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
-          <div style={{ position: 'relative', width: '38px', height: '38px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <img src="/custom-logo.svg" alt="Acriotech Logo Mark" width={38} height={38} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+          <div style={{ position: 'relative', width: '28px', height: '28px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '8px', overflow: 'hidden' }}>
+            <img src="/custom-logo.svg" alt="Acriotech Logo Mark" width={28} height={28} style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '8px' }} />
           </div>
           <div style={{ display: 'flex', alignItems: 'center', marginTop: '2px' }}>
             <img src="/acriotech-name-logo.png" alt="Acriotech" width={134} height={18} style={{ height: '18px', objectFit: 'contain' }} />
@@ -264,7 +232,7 @@ export default function NavBar() {
         >
           {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
-      </motion.div>
+      </div>
 
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
@@ -286,7 +254,8 @@ export default function NavBar() {
               display: 'flex',
               flexDirection: 'column',
               padding: '100px 2rem 4rem 2rem',
-              overflowY: 'auto'
+              overflowY: 'auto',
+              pointerEvents: 'auto'
             }}
           >
             <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
@@ -415,10 +384,11 @@ export default function NavBar() {
               onMouseEnter={() => handleMouseEnter(activeMenu)}
               className="mega-menu-dropdown mega-menu-panel shadow-2xl border border-slate-200"
               style={{
-                width: getMenuDimensions(activeMenu).width,
+                width: 'min(820px, 96vw)',
+                minHeight: '260px',
                 backgroundColor: '#ffffff',
                 background: '#ffffff',
-                borderRadius: '24px',
+                borderRadius: '16px',
                 boxShadow: '0 25px 50px -12px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(15,23,42,0.06)',
                 overflow: 'hidden',
                 position: 'relative',
@@ -428,26 +398,26 @@ export default function NavBar() {
             >
               <div className="mega-menu-content" style={{ display: 'flex', backgroundColor: '#ffffff', background: '#ffffff' }}>
                 {/* Links Section */}
-                <div className="mega-menu-links" style={{ flex: 1, padding: '2rem 2.5rem', backgroundColor: '#ffffff', background: '#ffffff', borderRight: navData[activeMenu as keyof typeof navData].featured ? '1px solid rgba(15, 23, 42, 0.05)' : 'none' }}>
-                  <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#4B61B8', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '1.25rem' }}>
+                <div className="mega-menu-links" style={{ flex: 1, padding: '1.75rem 2rem', backgroundColor: '#ffffff', background: '#ffffff', borderRight: navData[activeMenu as keyof typeof navData].featured ? '1px solid rgba(15, 23, 42, 0.05)' : 'none' }}>
+                  <div style={{ fontSize: '0.72rem', fontWeight: 700, color: '#4B61B8', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '1rem' }}>
                     {navData[activeMenu as keyof typeof navData].purpose}
                   </div>
                   
                   <div style={{ 
                     display: 'grid', 
                     gridTemplateColumns: getMenuDimensions(activeMenu).columns, 
-                    gap: '0.65rem 1.5rem' 
+                    gap: activeMenu === 'Services' ? '0.45rem 0.85rem' : '0.65rem 1.5rem' 
                   }}>
                     {navData[activeMenu as keyof typeof navData].items.map((link, idx) => (
                       <a 
                         key={idx} 
                         href={generateUrl(activeMenu, link)} 
                         onClick={closeMegaMenu}
-                        style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', fontSize: '0.95rem', fontWeight: 600, color: '#0F172A', transition: 'all 0.2s ease', cursor: 'pointer', padding: '0.5rem 0.75rem', borderRadius: '10px', textDecoration: 'none' }} 
+                        style={{ display: 'flex', alignItems: 'center', gap: '0.55rem', fontSize: activeMenu === 'Services' ? '0.86rem' : '0.95rem', fontWeight: 600, color: '#0F172A', transition: 'all 0.2s ease', cursor: 'pointer', padding: activeMenu === 'Services' ? '0.35rem 0.5rem' : '0.5rem 0.75rem', borderRadius: '8px', textDecoration: 'none' }} 
                         onMouseEnter={(e) => { 
                           e.currentTarget.style.color = '#4B61B8'; 
                           e.currentTarget.style.background = 'rgba(75, 97, 184, 0.05)';
-                          e.currentTarget.style.transform = 'translateX(4px)';
+                          e.currentTarget.style.transform = 'translateX(3px)';
                         }}
                         onMouseLeave={(e) => { 
                           e.currentTarget.style.color = '#0F172A'; 
@@ -455,7 +425,7 @@ export default function NavBar() {
                           e.currentTarget.style.transform = 'translateX(0px)';
                         }}
                       >
-                        <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#4B61B8', opacity: 0.6, flexShrink: 0 }}></span>
+                        <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#4B61B8', opacity: 0.6, flexShrink: 0 }}></span>
                         {link}
                       </a>
                     ))}
@@ -514,6 +484,6 @@ export default function NavBar() {
           </div>
         ))}
       </div>
-    </motion.header>
+    </header>
   );
 }

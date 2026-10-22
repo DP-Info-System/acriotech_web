@@ -27,28 +27,33 @@ export default function ServicesIndexPage() {
       <NavBar />
 
       {/* Hero Section */}
-      <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: 'var(--spacing-section)', background: '#F8FAFC', borderBottom: '1px solid #E2E8F0' }}>
+      <section style={{ paddingTop: '140px', paddingBottom: '80px', background: '#F8FAFC', borderBottom: '1px solid #E2E8F0' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ maxWidth: '800px' }}>
-            <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#4B61B8', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>
-              Services & Engineering Capability
+            <div style={{ fontSize: '0.75rem', fontWeight: 600, color: '#4B61B8', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '1.25rem' }}>
+              SERVICES &amp; ENGINEERING CAPABILITY
             </div>
             <h1 style={{ fontSize: 'var(--font-hero)', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
-              The disciplines behind <span style={{ color: '#4B61B8' }}>durable software.</span>
+              How we <span style={{ color: '#4B61B8' }}>actually build things.</span>
             </h1>
-            <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, marginBottom: '1.5rem' }}>
-              Acriotech brings product thinking, UI design, application engineering, cloud operations, and rigorous quality practices into one accountable delivery path.
+            <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
+              Strategy, design, engineering, and operations in one team. One point of contact, one set of standards.
             </p>
           </div>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section style={{ padding: 'var(--spacing-section) 0', background: '#F8FAFC' }}>
+      <section id="capabilities" style={{ padding: '6rem 0', background: '#F8FAFC' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-             <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1rem' }}>End-to-End Capabilities</h2>
-             <p style={{ fontSize: '1.1rem', color: '#64748B', maxWidth: '600px', margin: '0 auto' }}>From early-stage product discovery to post-launch cloud maintenance, we cover the full software lifecycle.</p>
+          <div style={{ textAlign: 'left', marginBottom: '3.5rem', maxWidth: '720px' }}>
+             <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#4B61B8', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '0.75rem' }}>
+               ENGINEERING CAPABILITIES
+             </div>
+             <h2 style={{ fontSize: '2.4rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.025em', marginBottom: '1rem' }}>
+               What we can <span style={{ color: '#4B61B8' }}>do for you.</span>
+             </h2>
+             <p style={{ fontSize: '1.1rem', color: '#64748B', margin: 0, lineHeight: 1.6 }}>Twelve capabilities. Every one of them connected to the others.</p>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', gap: '2rem' }}>
@@ -56,11 +61,11 @@ export default function ServicesIndexPage() {
               <Link 
                 href={`/services/${service.slug}`} 
                 key={i} 
-                style={{ background: '#FFFFFF', padding: '2.5rem', borderRadius: '16px', border: '1px solid #E2E8F0', textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', transition: 'all 0.2s', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)' }}
+                style={{ background: '#FFFFFF', padding: '2.5rem', borderRadius: '16px', border: '1px solid #E2E8F0', textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', transition: 'all 0.2s', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.03)' }}
                 className="service-card"
               >
-                 <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: '#EEF2FF', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem' }}>
-                   <service.icon size={24} color="#4B61B8" />
+                 <div style={{ fontFamily: 'monospace', fontSize: '0.85rem', fontWeight: 700, color: '#4B61B8', marginBottom: '1.25rem' }}>
+                   {i < 9 ? `0${i + 1}` : i + 1}
                  </div>
                  <h3 style={{ fontSize: '1.35rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.75rem' }}>{service.name}</h3>
                  <p style={{ color: '#475569', lineHeight: 1.6, flex: 1, marginBottom: '1.5rem' }}>{service.desc}</p>
@@ -85,9 +90,11 @@ export default function ServicesIndexPage() {
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
             <div>
-              <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>Shape the right problem.</h2>
+              <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>
+                Start with the problem, <span style={{ color: '#4B61B8' }}>not the solution.</span>
+              </h2>
               <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.7, marginBottom: '2rem' }}>
-                Consulting and discovery turn a broad ambition into a testable product direction. We make assumptions visible before they become expensive scope.
+                Most projects fail in the requirements phase. We spend real time on discovery because finding out a constraint exists in week one is cheaper than finding it in week ten.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontWeight: 600, color: '#0F172A' }}><CheckCircle size={20} color="#4B61B8" /> Product and technical discovery</li>
@@ -97,7 +104,7 @@ export default function ServicesIndexPage() {
             </div>
             <div style={{ background: '#0F172A', padding: '4rem', borderRadius: '24px' }}>
               <div style={{ fontSize: 'var(--font-h3)', fontWeight: 800, color: '#FFFFFF', marginBottom: '1.5rem', lineHeight: 1.3 }}>
-                Build for the operating context. Design stays connected to the constraints that determine whether software is adopted.
+                The best architecture is the one that fits how your team actually works.
               </div>
               <div style={{ color: '#94A3B8', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>ACRIOTECH ENGINEERING PRINCIPLE</div>
             </div>
@@ -108,9 +115,11 @@ export default function ServicesIndexPage() {
       {/* SEO Depth + Internal Linking — expands thin hub */}
       <section style={{ padding: '4rem 0', background: '#F8FAFC', borderTop: '1px solid #E2E8F0' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <h2 style={{ fontSize: '1.75rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>How engagements work</h2>
+          <h2 style={{ fontSize: '1.75rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>
+            How engagements <span style={{ color: '#4B61B8' }}>actually work.</span>
+          </h2>
           <p style={{ color: '#475569', lineHeight: 1.7, marginBottom: '1.5rem', maxWidth: '800px' }}>
-            We offer flexible engagement models — including fixed-scope project delivery, dedicated engineering teams, and ongoing architecture retainers tailored to your roadmap. Within 24 hours of an initial discovery call, our senior architects provide a clear technical scope and delivery timeline.
+            We work as a fixed-scope project team, an embedded engineering extension, or an architecture retainer depending on what the work requires. After an initial call, you get a written scope with a timeline and a number — not a vague estimate we revise later.
           </p>
           <p style={{ color: '#64748B', fontSize: '0.9rem', lineHeight: 1.6 }}>
             Explore: <a href="/services/web-application-development" style={{ color: '#4B61B8' }}>Web App Development</a> · <a href="/services/api-development-integration" style={{ color: '#4B61B8' }}>API Integration</a> · <a href="/services/cloud-architecture" style={{ color: '#4B61B8' }}>Cloud Architecture</a> · <a href="/services/devops-ci-cd" style={{ color: '#4B61B8' }}>DevOps</a> · <a href="/services/ai-integration" style={{ color: '#4B61B8' }}>AI Integration</a> · <a href="/solutions/enterprise-software" style={{ color: '#4B61B8' }}>Enterprise Software solution</a>

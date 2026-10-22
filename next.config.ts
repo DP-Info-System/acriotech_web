@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
 
-initOpenNextCloudflareForDev();
+// Only init Cloudflare bindings inside a wrangler dev session.
+// Plain `next dev` does not provide these bindings and crashes without this guard.
+if (process.env.NEXT_DEV_CLOUDFLARE === "1") {
+  initOpenNextCloudflareForDev();
+}
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
