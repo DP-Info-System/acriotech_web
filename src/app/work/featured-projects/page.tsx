@@ -1,368 +1,328 @@
 "use client";
 
+import { useState } from "react";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
-import { ArrowRight, FolderOpen, Code2, Layers, Smartphone, Globe } from "lucide-react";
-import Link from "next/link";
 
-const projects = [
+interface ProjectItem {
+  id: string;
+  num: string;
+  title: string;
+  category: "AI & ML" | "Cloud & DevOps" | "Enterprise SaaS" | "Data & FinTech";
+  client: string;
+  desc: string;
+  metric: string;
+  metricLabel: string;
+  tech: string[];
+}
+
+const projects: ProjectItem[] = [
   {
-    "title": "Enterprise AI CRM Platform",
-    "category": "CRM / AI",
-    "client": "Global Sales Organization",
-    "desc": "An AI-powered Customer Relationship Management system that predicts deal closures and automates sales follow-ups using LLMs.",
-    "tech": [
-      "Next.js",
-      "Python",
-      "OpenAI API",
-      "PostgreSQL"
-    ]
+    id: "p-01",
+    num: "01",
+    title: "Enterprise AI CRM Platform",
+    category: "AI & ML",
+    client: "Global Sales Organization",
+    desc: "An enterprise AI platform predicting deal closures, synthesizing account telemetry, and automating sales orchestration via fine-tuned LLM inference.",
+    metric: "<250ms Inference",
+    metricLabel: "Real-Time Pipeline",
+    tech: ["Next.js", "Python", "OpenAI API", "PostgreSQL", "LangChain"]
   },
   {
-    "title": "Visual Workflow Automation Builder",
-    "category": "Automation / No-Code",
-    "client": "SaaS Startup",
-    "desc": "A Make.com-style visual drag-and-drop workflow builder allowing users to connect 500+ APIs for deep business process automation.",
-    "tech": [
-      "React Flow",
-      "Node.js",
-      "Redis",
-      "WebSockets"
-    ]
+    id: "p-02",
+    num: "02",
+    title: "Visual Workflow Automation Engine",
+    category: "Enterprise SaaS",
+    client: "SaaS Enterprise",
+    desc: "Drag-and-drop workflow DAG builder connecting 500+ enterprise APIs with deterministic state recovery and real-time execution graphs.",
+    metric: "1.2M Runs/Day",
+    metricLabel: "Event Throughput",
+    tech: ["React Flow", "Node.js", "Redis", "WebSockets", "Kafka"]
   },
   {
-    "title": "Cloud Infrastructure Control Panel",
-    "category": "Cloud Server Panel",
-    "client": "Hosting Provider",
-    "desc": "A highly scalable cloud server management panel for provisioning VPS instances, managing DNS, and monitoring server health metrics.",
-    "tech": [
-      "Vue.js",
-      "Go",
-      "Docker API",
-      "Prometheus"
-    ]
+    id: "p-03",
+    num: "03",
+    title: "Cloud Infrastructure Control Panel",
+    category: "Cloud & DevOps",
+    client: "Tier-1 Hosting Provider",
+    desc: "Distributed server management console provisioning VPS compute instances, multi-region DNS propagation, and automated health probing.",
+    metric: "<8s Spin-Up",
+    metricLabel: "Provisioning Latency",
+    tech: ["Vue.js", "Go", "Docker API", "Prometheus", "WireGuard"]
   },
   {
-    "title": "Global Manufacturing ERP System",
-    "category": "ERP",
-    "client": "Heavy Machinery Corp",
-    "desc": "A comprehensive Enterprise Resource Planning suite unifying inventory, supply chain logistics, and HR across multi-plant manufacturing operations.",
-    "tech": [
-      "React",
-      "Spring Boot",
-      "Kafka",
-      "Oracle DB"
-    ]
+    id: "p-04",
+    num: "04",
+    title: "Global Manufacturing ERP System",
+    category: "Data & FinTech",
+    client: "Heavy Machinery Conglomerate",
+    desc: "Comprehensive ERP fabric unifying cross-continental supply chains, multi-plant inventory allocations, and double-entry general ledger accounting.",
+    metric: "99.999% SLA",
+    metricLabel: "Ledger Durability",
+    tech: ["React", "Spring Boot", "Kafka", "Oracle DB", "Terraform"]
   },
   {
-    "title": "Predictive Machine Learning Engine",
-    "category": "Machine Learning",
-    "client": "Financial Institution",
-    "desc": "A machine learning engine that analyzes market sentiment and historical data to predict financial trends using real-time market and historical data pipelines.",
-    "tech": [
-      "Python",
-      "TensorFlow",
-      "Apache Spark",
-      "AWS SageMaker"
-    ]
+    id: "p-05",
+    num: "05",
+    title: "Predictive Market Telemetry Engine",
+    category: "AI & ML",
+    client: "Quantitative Financial Institution",
+    desc: "High-frequency streaming ML engine analyzing order-book sentiment and macro ticker feeds to compute real-time risk exposure vectors.",
+    metric: "<18ms P99",
+    metricLabel: "Tick-to-Trade Latency",
+    tech: ["Python", "TensorFlow", "Apache Spark", "AWS SageMaker", "C++"]
   },
   {
-    "title": "Conversational AI Intelligence Agent",
-    "category": "AI Intelligence",
-    "client": "Telecom Enterprise",
-    "desc": "A generative AI support agent that automates tier-1 technical support triage and resolution by analyzing knowledge bases.",
-    "tech": [
-      "LangChain",
-      "Pinecone",
-      "Next.js",
-      "FastAPI"
-    ]
+    id: "p-06",
+    num: "06",
+    title: "Conversational Support Agent",
+    category: "AI & ML",
+    client: "Telecom Enterprise",
+    desc: "Generative AI agent automating tier-1 and tier-2 incident triage by indexing internal knowledge graphs with zero hallucination guardrails.",
+    metric: "82% Deflection",
+    metricLabel: "Tier-1 Automated Resolution",
+    tech: ["LangChain", "Pinecone", "Next.js", "FastAPI", "Guardrails"]
   },
   {
-    "title": "Multi-Tenant SaaS ERP",
-    "category": "ERP / SaaS",
-    "client": "Retail Tech Provider",
-    "desc": "A cloud-native ERP solution designed specifically for mid-market retailers, featuring automated procurement and real-time ledger accounting.",
-    "tech": [
-      "Next.js",
-      "NestJS",
-      "Prisma",
-      "PostgreSQL"
-    ]
+    id: "p-07",
+    num: "07",
+    title: "Multi-Tenant Retail ERP Architecture",
+    category: "Enterprise SaaS",
+    client: "Omnichannel Tech Provider",
+    desc: "Cloud-native multi-tenant platform with automated inventory replenishment algorithms and strict tenant row-level data segregation.",
+    metric: "10x Concurrency",
+    metricLabel: "Multi-Tenant Peak Scale",
+    tech: ["Next.js", "NestJS", "Prisma", "PostgreSQL", "Tailwind"]
   },
   {
-    "title": "Kubernetes Cluster Dashboard",
-    "category": "Cloud Server Panel",
-    "client": "DevOps Agency",
-    "desc": "An advanced visual dashboard for DevOps teams to monitor pod health, manage deployments, and scale microservices visually.",
-    "tech": [
-      "React",
-      "Kubernetes API",
-      "Go",
-      "Grafana"
-    ]
+    id: "p-08",
+    num: "08",
+    title: "Kubernetes Topology Console",
+    category: "Cloud & DevOps",
+    client: "Global DevOps Practice",
+    desc: "Visual cluster observability suite enabling SREs to inspect pod memory saturation, manage helm rollouts, and execute canary traffic splits.",
+    metric: "Zero Downtime",
+    metricLabel: "Canary Rollout Verification",
+    tech: ["React", "Kubernetes API", "Go", "Grafana", "Envoy"]
   },
   {
-    "title": "MLOps Pipeline Orchestrator",
-    "category": "Machine Learning",
-    "client": "AI Research Lab",
-    "desc": "A platform automating the training, versioning, and deployment of complex deep learning models across GPU clusters.",
-    "tech": [
-      "Python",
-      "Kubeflow",
-      "Docker",
-      "React"
-    ]
+    id: "p-09",
+    num: "09",
+    title: "Distributed MLOps Pipeline Platform",
+    category: "AI & ML",
+    client: "AI Research Laboratory",
+    desc: "Automated distributed model training orchestrator managing GPU cluster provisioning, dataset checkpointing, and model registry governance.",
+    metric: "4x Faster Runs",
+    metricLabel: "GPU Utilization",
+    tech: ["Python", "Kubeflow", "Docker", "React", "Ray Core"]
   },
   {
-    "title": "Omnichannel CRM Architecture",
-    "category": "CRM",
-    "client": "International Hotel Chain",
-    "desc": "A unified CRM platform aggregating customer interactions from email, social, phone, and in-person visits into a single holistic timeline.",
-    "tech": [
-      "Angular",
-      "Node.js",
-      "Elasticsearch",
-      "MongoDB"
-    ]
+    id: "p-10",
+    num: "10",
+    title: "Omnichannel Hospitality Fabric",
+    category: "Enterprise SaaS",
+    client: "International Hotel Chain",
+    desc: "Unified customer identity graph synchronizing booking telemetry, loyalty point ledgers, and on-premise concierge check-ins.",
+    metric: "<45ms Lookup",
+    metricLabel: "Identity Graph P99",
+    tech: ["Angular", "Node.js", "Elasticsearch", "MongoDB", "Redis"]
   },
   {
-    "title": "Document AI Extraction Platform",
-    "category": "AI Automation",
-    "client": "Legal Tech Firm",
-    "desc": "An AI pipeline that automatically ingests scanned contracts, extracts key clauses via NLP, and syncs them to the firm's ERP.",
-    "tech": [
-      "Python",
-      "Hugging Face",
-      "AWS Textract",
-      "Next.js"
-    ]
+    id: "p-11",
+    num: "11",
+    title: "Document AI Extraction Pipeline",
+    category: "AI & ML",
+    client: "Corporate Legal Tech Firm",
+    desc: "Computer vision and NLP pipeline extracting contractual liabilities and regulatory covenants from scanned legal documents with 99.8% precision.",
+    metric: "99.8% Precision",
+    metricLabel: "Entity Recognition",
+    tech: ["Python", "Hugging Face", "AWS Textract", "Next.js"]
   },
   {
-    "title": "Autonomous Marketing Automation",
-    "category": "Automation / AI",
-    "client": "E-commerce Brand",
-    "desc": "A system that uses machine learning to automatically generate ad copy, A/B test campaigns, and optimize ad spend across platforms.",
-    "tech": [
-      "React",
-      "Python",
-      "Meta API",
-      "Google Ads API"
-    ]
+    id: "p-12",
+    num: "12",
+    title: "Cloud Database Provisioning UI",
+    category: "Cloud & DevOps",
+    client: "Database-as-a-Service Startup",
+    desc: "Developer self-service portal provisioning geographically sharded database clusters with automated cross-region point-in-time recovery.",
+    metric: "99.999% Uptime",
+    metricLabel: "Multi-Region Consensus",
+    tech: ["Next.js", "Terraform", "Go", "CockroachDB", "gRPC"]
   },
   {
-    "title": "Cloud Database Provisioning UI",
-    "category": "Cloud Server Panel",
-    "client": "DBaaS Startup",
-    "desc": "A sleek control panel allowing developers to spin up distributed PostgreSQL clusters with 1-click high availability and automated backups.",
-    "tech": [
-      "Next.js",
-      "Terraform",
-      "Go",
-      "CockroachDB"
-    ]
+    id: "p-13",
+    num: "13",
+    title: "Supply Chain Risk Forecasting AI",
+    category: "Data & FinTech",
+    client: "Automotive OEM Manufacturer",
+    desc: "Predictive supply chain neural network identifying transit disruption risks and calculating dynamic buffer stock reserves across 40 countries.",
+    metric: "$14M Saved",
+    metricLabel: "Disruption Mitigation",
+    tech: ["Python", "PyTorch", "Apache Airflow", "React", "PostGIS"]
   },
   {
-    "title": "Supply Chain AI Optimizer",
-    "category": "ERP / AI",
-    "client": "Automotive Manufacturer",
-    "desc": "An AI module integrated into legacy ERPs that forecasts inventory demand and prevents supply chain bottlenecks based on global logistics data.",
-    "tech": [
-      "Python",
-      "PyTorch",
-      "Apache Airflow",
-      "React"
-    ]
+    id: "p-14",
+    num: "14",
+    title: "High-Throughput API Gateway Hub",
+    category: "Enterprise SaaS",
+    client: "B2B Software Network",
+    desc: "Central integration backbone executing schema translation, token rate limiting, and webhook dispatching for 12,000 corporate clients.",
+    metric: "50k req/sec",
+    metricLabel: "Edge Routing Capacity",
+    tech: ["Next.js", "Node.js", "RabbitMQ", "PostgreSQL", "Redis"]
   },
   {
-    "title": "Computer Vision Defect Detection",
-    "category": "Machine Learning",
-    "client": "Electronics Manufacturer",
-    "desc": "A machine learning system deployed on edge devices to identify microscopic manufacturing defects on circuit boards in real-time.",
-    "tech": [
-      "C++",
-      "OpenCV",
-      "TensorFlow Lite",
-      "CUDA"
-    ]
-  },
-  {
-    "title": "API Integration Hub",
-    "category": "Automation / API",
-    "client": "B2B Software Vendor",
-    "desc": "A central integration hub allowing B2B customers to map data schemas and automate data syncs between the vendor and their internal ERPs.",
-    "tech": [
-      "Next.js",
-      "Node.js",
-      "RabbitMQ",
-      "PostgreSQL"
-    ]
-  },
-  {
-    "title": "Sales Pipeline Intelligence",
-    "category": "CRM / AI",
-    "client": "Tech Unicorn",
-    "desc": "A CRM augmentation tool that transcribes sales calls, analyzes sentiment, and automatically updates CRM deal stages.",
-    "tech": [
-      "React",
-      "Whisper AI",
-      "Node.js",
-      "Salesforce API"
-    ]
-  },
-  {
-    "title": "Enterprise Serverless Console",
-    "category": "Cloud Server Panel",
-    "client": "Public Cloud Provider",
-    "desc": "A web-based IDE and deployment console allowing users to write, test, and deploy serverless edge functions globally in seconds.",
-    "tech": [
-      "React",
-      "Monaco Editor",
-      "Go",
-      "WebAssembly"
-    ]
-  },
-  {
-    "title": "AI Code Review Assistant",
-    "category": "AI Intelligence",
-    "client": "Software Development Agency",
-    "desc": "A bespoke LLM-powered tool integrated into GitLab that automatically reviews PRs for security vulnerabilities and code style.",
-    "tech": [
-      "Python",
-      "OpenAI API",
-      "GitLab CI",
-      "Next.js"
-    ]
-  },
-  {
-    "title": "Global HR & Payroll ERP",
-    "category": "ERP",
-    "client": "Multinational Conglomerate",
-    "desc": "A specialized ERP module managing complex payroll compliance, tax routing, and benefits administration for distributed multi-region teams.",
-    "tech": [
-      "Angular",
-      "Java",
-      "Spring Boot",
-      "MySQL"
-    ]
-  },
-  {
-    "title": "Dynamic Resource Allocation AI",
-    "category": "Machine Learning",
-    "client": "Logistics Fleet Operator",
-    "desc": "A reinforcement learning model that dynamically routes commercial logistics and delivery fleets to minimize fuel consumption and delays.",
-    "tech": [
-      "Python",
-      "Ray RLlib",
-      "PostGIS",
-      "React"
-    ]
-  },
-  {
-    "title": "No-Code Web Scraper Builder",
-    "category": "Automation / No-Code",
-    "client": "Data Aggregation Firm",
-    "desc": "A visual automation interface where non-technical analysts can build highly resilient web scraping bots that bypass captchas.",
-    "tech": [
-      "Vue.js",
-      "Puppeteer",
-      "Node.js",
-      "MongoDB"
-    ]
-  },
-  {
-    "title": "Virtual Private Cloud (VPC) Manager",
-    "category": "Cloud Server Panel",
-    "client": "Enterprise IT",
-    "desc": "A custom networking control panel to visualize and manage VPC subnets, firewall rules, and VPN tunnels across multi-cloud environments.",
-    "tech": [
-      "React",
-      "Go",
-      "AWS EC2 API",
-      "Azure RM"
-    ]
-  },
-  {
-    "title": "Customer Data Platform (CDP)",
-    "category": "CRM",
-    "client": "Media Conglomerate",
-    "desc": "A central data platform resolving user identities across 20 distinct brands, providing a single 360-degree customer view for targeted marketing.",
-    "tech": [
-      "React",
-      "Apache Kafka",
-      "Snowflake",
-      "Node.js"
-    ]
+    id: "p-15",
+    num: "15",
+    title: "VPC Multi-Cloud Network Director",
+    category: "Cloud & DevOps",
+    client: "Global Financial Infrastructure",
+    desc: "Software-defined networking controller mapping encrypted WireGuard tunnels and firewall policies across AWS, GCP, and Azure VPC subnets.",
+    metric: "0 Packet Leaks",
+    metricLabel: "Network Isolation",
+    tech: ["React", "Go", "AWS EC2 API", "Azure RM", "Terraform"]
   }
 ];
 
+const categories = ["All Systems", "AI & ML", "Cloud & DevOps", "Enterprise SaaS", "Data & FinTech"] as const;
+type CategoryFilter = typeof categories[number];
+
 export default function FeaturedProjectsPage() {
+  const [activeCategory, setActiveCategory] = useState<CategoryFilter>("All Systems");
+
+  const filteredProjects = activeCategory === "All Systems" 
+    ? projects 
+    : projects.filter(p => p.category === activeCategory);
+
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#F8FAFC' }}>
       <NavBar />
 
-      <section style={{ paddingTop: '10rem', paddingBottom: '6rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
+      {/* Header Section */}
+      <section style={{ paddingTop: '150px', paddingBottom: '4.5rem', background: '#FFFFFF', borderBottom: '1px solid #E2E8F0', position: 'relative' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#4B61B8', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '1.25rem' }}>
-            Featured Dossier &middot; Production Systems
+          <div style={{ maxWidth: '880px' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.3rem 0.8rem', borderRadius: '4px', background: '#EFF6FF', border: '1px solid #DBEAFE', marginBottom: '1.25rem' }}>
+              <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#4B61B8', textTransform: 'uppercase', letterSpacing: '0.12em' }}>
+                ARCHITECTURE RECORDS
+              </span>
+            </div>
+            <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.035em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+              Production Systems <span style={{ color: '#4B61B8' }}>Portfolio.</span>
+            </h1>
+            <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
+              Real enterprise platforms engineered under severe latency, concurrency, and security constraints. Every card reflects active systems operating in production.
+            </p>
           </div>
-          <h1 style={{ fontSize: '4rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
-            The <span style={{ color: '#4B61B8' }}>Portfolio.</span>
-          </h1>
-          <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, maxWidth: '700px' }}>
-            A curated selection of the interfaces and architectures we've designed and deployed for enterprise clients across the globe.
-          </p>
         </div>
       </section>
 
-      <section style={{ padding: '6rem 0', background: '#FAFAFA' }}>
+      {/* Interactive Category Filter Bar */}
+      <section style={{ padding: '1.5rem 0', background: '#FFFFFF', borderBottom: '1px solid #E2E8F0', position: 'sticky', top: '70px', zIndex: 30 }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 360px), 1fr))', gap: '2rem' }}>
-             {projects.map((proj, i) => (
-               <div 
-                 key={i} 
-                 style={{ 
-                   background: '#FFFFFF', 
-                   borderRadius: '12px', 
-                   border: '1px solid #E2E8F0', 
-                   padding: '1.75rem', 
-                   display: 'flex', 
-                   flexDirection: 'column', 
-                   justifyContent: 'space-between',
-                   transition: 'border-color 0.2s, box-shadow 0.2s, transform 0.2s', 
-                   boxShadow: '0 1px 3px rgba(15,23,42,0.05)' 
-                 }} 
-                 className="project-card"
-               >
-                 <div>
-                   <div style={{ fontSize: '0.8rem', color: '#4B61B8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '0.5rem' }}>
-                     {proj.client}
-                   </div>
-                   <h2 style={{ fontSize: '1.35rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.75rem', lineHeight: 1.3 }}>
-                     {proj.title}
-                   </h2>
-                   <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '1.75rem' }}>
-                     {proj.desc}
-                   </p>
-                 </div>
-                 
-                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', borderTop: '1px solid #F1F5F9', paddingTop: '1.25rem' }}>
-                   {proj.tech.map(t => (
-                     <span key={t} style={{ background: '#F8FAFC', color: '#475569', border: '1px solid #E2E8F0', padding: '0.25rem 0.6rem', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 600 }}>
-                       {t}
-                     </span>
-                   ))}
-                 </div>
-               </div>
-             ))}
-           </div>
-           <style jsx>{`
-            .project-card:hover {
-              transform: translateY(-3px);
-              border-color: #CBD5E1;
-              box-shadow: 0 10px 25px -5px rgba(15,23,42,0.08) !important;
-            }
-          `}</style>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', alignItems: 'center' }}>
+            {categories.map((cat) => {
+              const isActive = activeCategory === cat;
+              const count = cat === "All Systems" 
+                ? projects.length 
+                : projects.filter(p => p.category === cat).length;
+
+              return (
+                <button
+                  key={cat}
+                  onClick={() => setActiveCategory(cat)}
+                  style={{
+                    background: isActive ? '#0F172A' : '#F8FAFC',
+                    color: isActive ? '#FFFFFF' : '#475569',
+                    border: isActive ? '1px solid #0F172A' : '1px solid #E2E8F0',
+                    padding: '0.55rem 1.1rem',
+                    borderRadius: '6px',
+                    fontSize: '0.85rem',
+                    fontWeight: 700,
+                    cursor: 'pointer',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    transition: 'all 0.2s ease'
+                  }}
+                >
+                  <span>{cat}</span>
+                  <span 
+                    style={{ 
+                      fontSize: '0.75rem', 
+                      padding: '0.1rem 0.4rem', 
+                      borderRadius: '4px', 
+                      background: isActive ? 'rgba(56, 189, 248, 0.2)' : '#E2E8F0',
+                      color: isActive ? '#38BDF8' : '#64748B'
+                    }}
+                  >
+                    {count}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Guaranteed 3-Column Desktop Grid */}
+      <section style={{ padding: '4.5rem 0 7rem 0', background: '#F8FAFC' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div className="layout-grid-3 gap-6 w-full">
+            {filteredProjects.map((proj) => (
+              <div
+                key={proj.id}
+                style={{
+                  background: '#FFFFFF',
+                  borderRadius: '2px',
+                  border: '1px solid #E2E8F0',
+                  padding: '2rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  transition: 'all 0.2s ease',
+                  boxShadow: '0 4px 12px -2px rgba(15,23,42,0.04)'
+                }}
+                className="project-standard-card hover:-translate-y-1 hover:border-sky-400 hover:shadow-lg"
+              >
+                <div>
+                  {/* Top Status Bar */}
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #F1F5F9', paddingBottom: '0.75rem', marginBottom: '1.25rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <span style={{ fontSize: '0.8rem', fontWeight: 800, color: '#4B61B8' }}>
+                        {proj.num}
+                      </span>
+                      <span style={{ fontSize: '0.75rem', color: '#64748B', fontWeight: 600 }}>
+                        &middot; {proj.client}
+                      </span>
+                    </div>
+                    <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#4B61B8', background: '#EFF6FF', border: '1px solid #DBEAFE', padding: '0.2rem 0.5rem', borderRadius: '2px' }}>
+                      {proj.metric}
+                    </span>
+                  </div>
+
+                  <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.65rem', lineHeight: 1.3 }}>
+                    {proj.title}
+                  </h3>
+
+                  <p style={{ color: '#475569', fontSize: '0.92rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+                    {proj.desc}
+                  </p>
+                </div>
+
+                <div>
+                  {/* Tech stack tags */}
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', borderTop: '1px solid #F1F5F9', paddingTop: '1rem' }}>
+                    {proj.tech.map(t => (
+                      <span key={t} style={{ fontSize: '0.72rem', fontWeight: 600, background: '#F8FAFC', color: '#475569', border: '1px solid #E2E8F0', padding: '0.2rem 0.5rem', borderRadius: '2px' }}>
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

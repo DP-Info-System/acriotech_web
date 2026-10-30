@@ -84,14 +84,25 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: '/:path*',
+        source: '/',
         has: [
           {
             type: 'host',
             value: 'www.acriotech.com',
           },
         ],
-        destination: 'https://acriotech.com/:path*',
+        destination: 'https://acriotech.com/',
+        permanent: true,
+      },
+      {
+        source: '/:path+',
+        has: [
+          {
+            type: 'host',
+            value: 'www.acriotech.com',
+          },
+        ],
+        destination: 'https://acriotech.com/:path+',
         permanent: true,
       },
     ];

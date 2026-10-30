@@ -3,7 +3,7 @@
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { MapPin, ArrowRight, Briefcase, HeartHandshake, MessageSquare, CheckCircle2, Building, Megaphone, TrendingUp, FileText, Code2, Compass } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function ContactUs() {
   const [formData, setFormData] = useState({
@@ -18,6 +18,20 @@ export default function ContactUs() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const subject = params.get('subject');
+      if (subject) {
+        setFormData(prev => ({
+          ...prev,
+          inquiryArea: 'Technical Advisory & Consulting',
+          message: prev.message || `Regarding: ${subject}\n\nPlease share the relevant architecture brief and availability for a discussion.`
+        }));
+      }
+    }
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -99,7 +113,7 @@ export default function ContactUs() {
               padding: '0.95rem 1.8rem', 
               background: '#0F172A', 
               color: '#FFFFFF', 
-              borderRadius: '8px', 
+              borderRadius: '2px', 
               fontWeight: 600, 
               fontSize: '0.95rem', 
               textDecoration: 'none',
@@ -129,19 +143,20 @@ export default function ContactUs() {
 
               {/* 1. Enterprise Sales */}
               <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start' }}>
-                <div style={{ width: '44px', height: '44px', borderRadius: '10px', background: '#EEF2FF', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <div style={{ width: '44px', height: '44px', borderRadius: '2px', background: '#EEF2FF', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   <Building size={22} color="#4B61B8" />
                 </div>
                 <div>
                   <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.2rem' }}>Enterprise Sales</h3>
                   <p style={{ color: '#64748B', fontSize: '0.88rem', marginBottom: '0.35rem' }}>For new project inquiries and custom software scoping.</p>
                   <a href="mailto:info@acriotech.com" style={{ color: '#4B61B8', fontWeight: 700, textDecoration: 'none', fontSize: '0.95rem' }}>info@acriotech.com</a>
+                  <a href="tel:+919408787093" style={{ color: '#4B61B8', fontWeight: 700, textDecoration: 'none', fontSize: '0.95rem', display: 'block', marginTop: '0.25rem' }}>+91 9408787093</a>
                 </div>
               </div>
 
               {/* 2. Press & Media */}
               <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start' }}>
-                <div style={{ width: '44px', height: '44px', borderRadius: '10px', background: '#F8FAFC', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <div style={{ width: '44px', height: '44px', borderRadius: '2px', background: '#F8FAFC', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   <Megaphone size={22} color="#475569" />
                 </div>
                 <div>
@@ -153,7 +168,7 @@ export default function ContactUs() {
 
               {/* 3. Investor Relations */}
               <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start' }}>
-                <div style={{ width: '44px', height: '44px', borderRadius: '10px', background: '#EFF6FF', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <div style={{ width: '44px', height: '44px', borderRadius: '2px', background: '#EFF6FF', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   <TrendingUp size={22} color="#2563EB" />
                 </div>
                 <div>
@@ -165,7 +180,7 @@ export default function ContactUs() {
 
               {/* 4. Global Headquarters */}
               <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start' }}>
-                <div style={{ width: '44px', height: '44px', borderRadius: '10px', background: '#F1F5F9', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <div style={{ width: '44px', height: '44px', borderRadius: '2px', background: '#F1F5F9', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   <MapPin size={22} color="#0F172A" />
                 </div>
                 <div>
@@ -183,10 +198,53 @@ export default function ContactUs() {
               </div>
             </div>
 
-            {/* Right Column: Clean Form Layout */}
-            <div style={{ background: '#FFFFFF', padding: 'clamp(1.75rem, 4vw, 3rem)', borderRadius: '20px', boxShadow: '0 20px 40px rgba(15, 23, 42, 0.05)', border: '1px solid #E2E8F0', flex: '1.5 1 440px', width: '100%' }}>
+            {/* Right Column: Clean Executive Enterprise Contact Form */}
+            <div 
+              style={{ 
+                background: '#FFFFFF', 
+                borderRadius: '2px', 
+                boxShadow: '0 20px 40px -15px rgba(15, 23, 42, 0.08)', 
+                border: '1px solid #CBD5E1', 
+                flex: '1.5 1 440px', 
+                width: '100%',
+                overflow: 'hidden',
+                padding: 'clamp(2rem, 4vw, 3rem)'
+              }}
+            >
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 
+                {/* Area of Inquiry Dropdown */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                  <label htmlFor="inquiryArea" style={{ fontSize: '0.88rem', fontWeight: 600, color: '#334155' }}>
+                    Area of Inquiry *
+                  </label>
+                  <select
+                    id="inquiryArea"
+                    name="inquiryArea"
+                    value={formData.inquiryArea}
+                    onChange={handleChange}
+                    style={{ 
+                      padding: '0.8rem 1rem', 
+                      borderRadius: '2px', 
+                      border: '1px solid #CBD5E1', 
+                      fontSize: '0.95rem', 
+                      background: '#FFFFFF', 
+                      color: '#0F172A', 
+                      outline: 'none',
+                      transition: 'border-color 0.2s'
+                    }}
+                    onFocus={(e) => { e.target.style.borderColor = '#2563EB'; }}
+                    onBlur={(e) => { e.target.style.borderColor = '#CBD5E1'; }}
+                  >
+                    <option value="Enterprise Software Engineering">Enterprise Software Engineering</option>
+                    <option value="AI & Intelligent Automation">AI &amp; Intelligent Automation</option>
+                    <option value="Cloud Infrastructure & SRE">Cloud Infrastructure &amp; SRE</option>
+                    <option value="Dedicated Engineering Pod">Dedicated Engineering Pod</option>
+                    <option value="Architecture Audit & Review">Architecture Audit &amp; Review</option>
+                    <option value="General Inquiry">General Inquiry</option>
+                  </select>
+                </div>
+
                 {/* Name Fields */}
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.25rem' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', flex: '1 1 200px' }}>
@@ -197,11 +255,12 @@ export default function ContactUs() {
                       type="text" 
                       name="firstName"
                       autoComplete="given-name"
+                      placeholder="Jane"
                       value={formData.firstName}
                       onChange={handleChange}
-                      style={{ padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #CBD5E1', fontSize: '0.95rem', outline: 'none', transition: 'border-color 0.2s', minWidth: '0' }}
-                      onFocus={(e) => e.target.style.borderColor = '#4B61B8'}
-                      onBlur={(e) => e.target.style.borderColor = '#CBD5E1'}
+                      style={{ padding: '0.8rem 1rem', borderRadius: '2px', border: '1px solid #CBD5E1', fontSize: '0.95rem', outline: 'none', transition: 'all 0.2s', minWidth: '0' }}
+                      onFocus={(e) => { e.target.style.borderColor = '#2563EB'; e.target.style.boxShadow = '0 0 0 3px rgba(37,99,235,0.15)'; }}
+                      onBlur={(e) => { e.target.style.borderColor = '#CBD5E1'; e.target.style.boxShadow = 'none'; }}
                     />
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', flex: '1 1 200px' }}>
@@ -212,11 +271,12 @@ export default function ContactUs() {
                       type="text" 
                       name="lastName"
                       autoComplete="family-name"
+                      placeholder="Smith"
                       value={formData.lastName}
                       onChange={handleChange}
-                      style={{ padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #CBD5E1', fontSize: '0.95rem', outline: 'none', transition: 'border-color 0.2s', minWidth: '0' }}
-                      onFocus={(e) => e.target.style.borderColor = '#4B61B8'}
-                      onBlur={(e) => e.target.style.borderColor = '#CBD5E1'}
+                      style={{ padding: '0.8rem 1rem', borderRadius: '2px', border: '1px solid #CBD5E1', fontSize: '0.95rem', outline: 'none', transition: 'all 0.2s', minWidth: '0' }}
+                      onFocus={(e) => { e.target.style.borderColor = '#2563EB'; e.target.style.boxShadow = '0 0 0 3px rgba(37,99,235,0.15)'; }}
+                      onBlur={(e) => { e.target.style.borderColor = '#CBD5E1'; e.target.style.boxShadow = 'none'; }}
                     />
                   </div>
                 </div>
@@ -231,11 +291,12 @@ export default function ContactUs() {
                       type="email" 
                       name="email"
                       autoComplete="email"
+                      placeholder="jane.smith@company.com"
                       value={formData.email}
                       onChange={handleChange}
-                      style={{ padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #CBD5E1', fontSize: '0.95rem', outline: 'none', transition: 'border-color 0.2s', minWidth: '0' }}
-                      onFocus={(e) => e.target.style.borderColor = '#4B61B8'}
-                      onBlur={(e) => e.target.style.borderColor = '#CBD5E1'}
+                      style={{ padding: '0.8rem 1rem', borderRadius: '2px', border: '1px solid #CBD5E1', fontSize: '0.95rem', outline: 'none', transition: 'all 0.2s', minWidth: '0' }}
+                      onFocus={(e) => { e.target.style.borderColor = '#2563EB'; e.target.style.boxShadow = '0 0 0 3px rgba(37,99,235,0.15)'; }}
+                      onBlur={(e) => { e.target.style.borderColor = '#CBD5E1'; e.target.style.boxShadow = 'none'; }}
                     />
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', flex: '1 1 200px' }}>
@@ -245,38 +306,21 @@ export default function ContactUs() {
                       type="text" 
                       name="company"
                       autoComplete="organization"
+                      placeholder="Acme Enterprises"
                       value={formData.company}
                       onChange={handleChange}
-                      style={{ padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #CBD5E1', fontSize: '0.95rem', outline: 'none', transition: 'border-color 0.2s', minWidth: '0' }}
-                      onFocus={(e) => e.target.style.borderColor = '#4B61B8'}
-                      onBlur={(e) => e.target.style.borderColor = '#CBD5E1'}
+                      style={{ padding: '0.8rem 1rem', borderRadius: '2px', border: '1px solid #CBD5E1', fontSize: '0.95rem', outline: 'none', transition: 'all 0.2s', minWidth: '0' }}
+                      onFocus={(e) => { e.target.style.borderColor = '#2563EB'; e.target.style.boxShadow = '0 0 0 3px rgba(37,99,235,0.15)'; }}
+                      onBlur={(e) => { e.target.style.borderColor = '#CBD5E1'; e.target.style.boxShadow = 'none'; }}
                     />
                   </div>
                 </div>
 
-                {/* Clean Select Dropdown for Area of Inquiry */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                  <label htmlFor="inquiryArea" style={{ fontSize: '0.88rem', fontWeight: 600, color: '#334155' }}>Area of Inquiry *</label>
-                  <select
-                    id="inquiryArea"
-                    name="inquiryArea"
-                    value={formData.inquiryArea}
-                    onChange={handleChange}
-                    style={{ padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #CBD5E1', fontSize: '0.95rem', outline: 'none', background: '#FFFFFF', color: '#0F172A', cursor: 'pointer', transition: 'border-color 0.2s' }}
-                    onFocus={(e) => e.target.style.borderColor = '#4B61B8'}
-                    onBlur={(e) => e.target.style.borderColor = '#CBD5E1'}
-                  >
-                    <option value="Enterprise Software Engineering">Enterprise Software Engineering</option>
-                    <option value="AI & Automation">AI &amp; Automation</option>
-                    <option value="Cloud & DevOps">Cloud &amp; DevOps</option>
-                    <option value="Dedicated Engineering Team">Dedicated Engineering Team</option>
-                    <option value="General Inquiry">General Inquiry</option>
-                  </select>
-                </div>
-
                 {/* Message Field */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                  <label htmlFor="message" style={{ fontSize: '0.88rem', fontWeight: 600, color: '#334155' }}>How can we help? *</label>
+                  <label htmlFor="message" style={{ fontSize: '0.88rem', fontWeight: 600, color: '#334155' }}>
+                    How can we help? *
+                  </label>
                   <textarea 
                     id="message"
                     required
@@ -284,9 +328,10 @@ export default function ContactUs() {
                     value={formData.message}
                     onChange={handleChange}
                     rows={4}
-                    style={{ padding: '1rem', borderRadius: '8px', border: '1px solid #CBD5E1', fontSize: '0.95rem', outline: 'none', transition: 'border-color 0.2s', resize: 'vertical' }}
-                    onFocus={(e) => e.target.style.borderColor = '#4B61B8'}
-                    onBlur={(e) => e.target.style.borderColor = '#CBD5E1'}
+                    placeholder="Describe your project goals, technical requirements, or timeline..."
+                    style={{ padding: '1rem', borderRadius: '2px', border: '1px solid #CBD5E1', fontSize: '0.95rem', outline: 'none', transition: 'all 0.2s', resize: 'vertical' }}
+                    onFocus={(e) => { e.target.style.borderColor = '#2563EB'; e.target.style.boxShadow = '0 0 0 3px rgba(37,99,235,0.15)'; }}
+                    onBlur={(e) => { e.target.style.borderColor = '#CBD5E1'; e.target.style.boxShadow = 'none'; }}
                   ></textarea>
                 </div>
 
@@ -312,7 +357,7 @@ export default function ContactUs() {
                     background: isSubmitting ? '#475569' : '#0F172A', 
                     color: '#FFFFFF', 
                     padding: '1rem 1.75rem', 
-                    borderRadius: '8px', 
+                    borderRadius: '2px', 
                     fontSize: '1rem', 
                     fontWeight: 700,
                     border: 'none',
@@ -321,27 +366,22 @@ export default function ContactUs() {
                     justifyContent: 'center',
                     alignItems: 'center',
                     gap: '0.5rem',
-                    transition: 'background 0.2s'
+                    transition: 'all 0.2s',
+                    boxShadow: '0 8px 16px rgba(15, 23, 42, 0.15)'
                   }}
                   onMouseEnter={(e) => { if (!isSubmitting) e.currentTarget.style.background = '#1E293B' }}
                   onMouseLeave={(e) => { if (!isSubmitting) e.currentTarget.style.background = '#0F172A' }}
                 >
-                  {isSubmitting ? 'Sending...' : (
-                    <>Send Message <ArrowRight size={18} /></>
-                  )}
+                  {isSubmitting ? 'Sending...' : 'Send Message →'}
                 </button>
 
-                <p style={{ fontSize: '0.82rem', color: '#64748B', margin: 0, textAlign: 'center', lineHeight: 1.5 }}>
-                  Our enterprise team typically replies within 1 business day.
-                </p>
-
                 {submitStatus === 'success' && (
-                  <div role="status" aria-live="polite" style={{ padding: '1rem', background: '#F0FDF4', color: '#166534', borderRadius: '8px', border: '1px solid #BBF7D0', textAlign: 'center', fontWeight: 500, fontSize: '0.92rem' }}>
-                    Thank you! Your message has been received. A solutions engineer will get back to you within 1 business day.
+                  <div role="status" aria-live="polite" style={{ padding: '1rem', background: '#F0FDF4', color: '#166534', borderRadius: '2px', border: '1px solid #BBF7D0', textAlign: 'center', fontWeight: 500, fontSize: '0.92rem' }}>
+                    Thank you! Your message has been received. Our team will review and respond shortly.
                   </div>
                 )}
                 {submitStatus === 'error' && (
-                  <div role="alert" aria-live="assertive" style={{ padding: '1rem', background: '#FEF2F2', color: '#991B1B', borderRadius: '8px', border: '1px solid #FECACA', textAlign: 'center', fontWeight: 500, fontSize: '0.92rem' }}>
+                  <div role="alert" aria-live="assertive" style={{ padding: '1rem', background: '#FEF2F2', color: '#991B1B', borderRadius: '2px', border: '1px solid #FECACA', textAlign: 'center', fontWeight: 500, fontSize: '0.92rem' }}>
                     Something went wrong. Please try again or email us directly at <a href="mailto:info@acriotech.com" style={{ color: '#991B1B', fontWeight: 700 }}>info@acriotech.com</a>.
                   </div>
                 )}
@@ -397,7 +437,7 @@ export default function ContactUs() {
               <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.6, marginBottom: '2rem' }}>
                 We take on new projects a few times a year. If the scope and timing align, we will tell you directly. Send the form above or write to the team.
               </p>
-              <a href="mailto:info@acriotech.com" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: '1rem 2rem', background: '#0F172A', color: '#FFFFFF', borderRadius: '8px', fontWeight: 600, fontSize: '1rem', textDecoration: 'none' }}>
+              <a href="mailto:info@acriotech.com" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: '1rem 2rem', background: '#0F172A', color: '#FFFFFF', borderRadius: '2px', fontWeight: 600, fontSize: '1rem', textDecoration: 'none' }}>
                 Contact Sales
               </a>
             </div>

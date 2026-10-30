@@ -132,7 +132,7 @@ export default function CookieBanner() {
             <div className="cookie-banner-buttons" style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
               <button
                 onClick={() => setShowPreferences(true)}
-                style={{ padding: "0.6rem 1.25rem", minHeight: "48px", background: "transparent", color: "#4B61B8", fontWeight: 600, border: "1px solid rgba(75, 97, 184, 0.3)", borderRadius: "6px", cursor: "pointer", transition: "background 0.2s", fontSize: "0.9rem" }}
+                style={{ padding: "0.6rem 1.25rem", minHeight: "48px", background: "transparent", color: "#4B61B8", fontWeight: 600, border: "1px solid rgba(75, 97, 184, 0.3)", borderRadius: "2px", cursor: "pointer", transition: "background 0.2s", fontSize: "0.9rem" }}
                 onMouseEnter={(e) => e.currentTarget.style.background = "rgba(75, 97, 184, 0.05)"}
                 onMouseLeave={(e) => e.currentTarget.style.background = "transparent"}
               >
@@ -140,7 +140,7 @@ export default function CookieBanner() {
               </button>
               <button
                 onClick={handleDeclineAll}
-                style={{ padding: "0.6rem 1.25rem", minHeight: "48px", background: "#F1F5F9", color: "#0F172A", fontWeight: 600, border: "none", borderRadius: "6px", cursor: "pointer", transition: "background 0.2s", fontSize: "0.9rem" }}
+                style={{ padding: "0.6rem 1.25rem", minHeight: "48px", background: "#F1F5F9", color: "#0F172A", fontWeight: 600, border: "none", borderRadius: "2px", cursor: "pointer", transition: "background 0.2s", fontSize: "0.9rem" }}
                 onMouseEnter={(e) => e.currentTarget.style.background = "#E2E8F0"}
                 onMouseLeave={(e) => e.currentTarget.style.background = "#F1F5F9"}
               >
@@ -148,7 +148,7 @@ export default function CookieBanner() {
               </button>
               <button
                 onClick={handleAcceptAll}
-                style={{ padding: "0.6rem 1.25rem", minHeight: "48px", background: "#4B61B8", color: "#FFFFFF", fontWeight: 600, border: "none", borderRadius: "6px", cursor: "pointer", transition: "background 0.2s", fontSize: "0.9rem" }}
+                style={{ padding: "0.6rem 1.25rem", minHeight: "48px", background: "#4B61B8", color: "#FFFFFF", fontWeight: 600, border: "none", borderRadius: "2px", cursor: "pointer", transition: "background 0.2s", fontSize: "0.9rem" }}
                 onMouseEnter={(e) => e.currentTarget.style.background = "#3A4D94"}
                 onMouseLeave={(e) => e.currentTarget.style.background = "#4B61B8"}
               >
@@ -185,7 +185,7 @@ export default function CookieBanner() {
               exit={{ scale: 0.95, opacity: 0 }}
               style={{
                 background: "#FFFFFF",
-                borderRadius: "16px",
+                borderRadius: "2px",
                 padding: "2rem",
                 maxWidth: "600px",
                 width: "100%",
@@ -207,7 +207,7 @@ export default function CookieBanner() {
                     <h4 style={{ margin: "0 0 0.25rem 0", fontSize: "1rem", color: "#0F172A" }}>Strictly Necessary</h4>
                     <p style={{ margin: 0, fontSize: "0.85rem", color: "#5B6472", lineHeight: 1.4 }}>These cookies are necessary for the website to function and cannot be switched off.</p>
                   </div>
-                  <div style={{ padding: "0.25rem 0.75rem", background: "#E2E8F0", borderRadius: "100px", fontSize: "0.8rem", fontWeight: 600, color: "#64748B" }}>
+                  <div style={{ padding: "0.25rem 0.75rem", background: "#E2E8F0", borderRadius: "2px", fontSize: "0.8rem", fontWeight: 600, color: "#64748B" }}>
                     Always Active
                   </div>
                 </div>
@@ -301,7 +301,7 @@ export default function CookieBanner() {
                 </button>
                 <button
                   onClick={handleSavePreferences}
-                  style={{ padding: "0.75rem 1.5rem", background: "#4B61B8", color: "#FFFFFF", fontWeight: 600, border: "none", borderRadius: "8px", cursor: "pointer", transition: "background 0.2s" }}
+                  style={{ padding: "0.75rem 1.5rem", background: "#4B61B8", color: "#FFFFFF", fontWeight: 600, border: "none", borderRadius: "2px", cursor: "pointer", transition: "background 0.2s" }}
                   onMouseEnter={(e) => e.currentTarget.style.background = "#3A4D94"}
                   onMouseLeave={(e) => e.currentTarget.style.background = "#4B61B8"}
                 >

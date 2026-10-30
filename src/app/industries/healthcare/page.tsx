@@ -2,7 +2,6 @@ import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { ArrowRight, Stethoscope, ShieldCheck, FileText, Database, Lock, ActivitySquare } from "lucide-react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 export default function HealthcareIndustry() {
   return (
@@ -109,31 +108,112 @@ export default function HealthcareIndustry() {
         </div>
       </section>
 
-      {/* NEW SECTION 2: HL7/FHIR Data Standards (Tech) */}
-      <section className="dark-section" style={{ padding: '6rem 0', background: '#0F172A', color: '#FFFFFF' }}>
-        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-             <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '1rem' }}>Interoperability</h2>
-             <p style={{ fontSize: '1.1rem', color: '#94A3B8', maxWidth: '700px', margin: '0 auto' }}>Health tech that cannot communicate with Epic or Cerner is useless. We engineer deep EHR integrations.</p>
+      {/* SECTION 2: 3-Column Connected Clinical Integration Hub */}
+      <section className="dark-section" style={{ padding: '6.5rem 0', background: '#0F172A', color: '#FFFFFF', position: 'relative' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+             <div style={{ fontFamily: 'monospace', fontSize: '0.75rem', color: '#38BDF8', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+               BI-DIRECTIONAL EHR INTEGRATION FABRIC
+             </div>
+             <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', fontWeight: 800, color: '#FFFFFF', marginBottom: '1rem' }}>
+               Clinical Interoperability Hub
+             </h2>
+             <p style={{ fontSize: '1.15rem', color: '#94A3B8', maxWidth: '720px', margin: '0 auto', lineHeight: 1.6 }}>
+               Health technology that cannot exchange bi-directional clinical records with Epic, Cerner, and hospital PACS is functionally stranded. We engineer hardened integration backbones.
+             </p>
           </div>
-          
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '1.5rem' }}>
-             <div style={{ padding: '2rem', border: '1px solid #334155', borderRadius: '12px', background: '#1E293B', textAlign: 'center' }}>
-                <Database size={32} color="#60A5FA" style={{ margin: '0 auto 1rem auto' }} />
-                <h4 style={{ fontWeight: 700, fontSize: '1.1rem', marginBottom: '0.5rem' }}>HL7 v2 & v3</h4>
-                <p style={{ color: '#94A3B8', fontSize: '0.9rem', lineHeight: 1.5 }}>Parsing legacy clinical messaging feeds (ADT, ORU) using robust integration engines (Mirth Connect).</p>
+
+          {/* Central Integration Engine Header Node */}
+          <div style={{ maxWidth: '680px', margin: '0 auto 2rem auto', background: '#1E293B', border: '1px solid #38BDF8', borderRadius: '12px', padding: '1.25rem 2rem', textAlign: 'center', position: 'relative', boxShadow: '0 10px 25px -5px rgba(56, 189, 248, 0.2)' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.35rem' }}>
+              <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#34D399', boxShadow: '0 0 8px #34D399' }} />
+              <span style={{ fontFamily: 'monospace', fontSize: '0.8rem', fontWeight: 800, color: '#38BDF8', letterSpacing: '0.1em' }}>
+                CENTRAL ROUTING NODE: ACRIOTECH CLINICAL INTEGRATION ENGINE
+              </span>
+            </div>
+            <div style={{ fontSize: '0.85rem', color: '#CBD5E1', fontFamily: 'monospace' }}>
+              PROTOCOL TRANSLATION &middot; FIELD-LEVEL AES-256 ENCRYPTION &middot; EHR BIO-GATEWAY
+            </div>
+          </div>
+
+          {/* Glowing Sky Blue SVG Connector Circuit Lines (Desktop) */}
+          <div className="hidden lg:block" style={{ maxWidth: '960px', margin: '0 auto' }}>
+            <svg viewBox="0 0 960 50" style={{ width: '100%', height: '50px', display: 'block' }}>
+              <line x1="480" y1="0" x2="480" y2="25" stroke="#38BDF8" strokeWidth="2" />
+              <line x1="160" y1="25" x2="800" y2="25" stroke="#38BDF8" strokeWidth="2" strokeDasharray="4 4" />
+              <line x1="160" y1="25" x2="160" y2="50" stroke="#38BDF8" strokeWidth="2" />
+              <line x1="480" y1="25" x2="480" y2="50" stroke="#38BDF8" strokeWidth="2" />
+              <line x1="800" y1="25" x2="800" y2="50" stroke="#38BDF8" strokeWidth="2" />
+              <circle cx="160" cy="50" r="4" fill="#38BDF8" />
+              <circle cx="480" cy="50" r="4" fill="#38BDF8" />
+              <circle cx="800" cy="50" r="4" fill="#38BDF8" />
+            </svg>
+          </div>
+
+          {/* 3-Column Connected Integration Protocol Cards (Equal 3-Col Layout) */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+             {/* Protocol 1: HL7 */}
+             <div className="w-full min-w-0" style={{ background: '#1E293B', border: '1px solid #334155', borderRadius: '14px', padding: '2rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', position: 'relative' }}>
+                <div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #334155', paddingBottom: '0.75rem', marginBottom: '1.25rem' }}>
+                    <span style={{ fontFamily: 'monospace', fontSize: '0.75rem', fontWeight: 700, color: '#38BDF8' }}>PROTOCOL 01</span>
+                    <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', color: '#94A3B8' }}>LEGACY CORE</span>
+                  </div>
+                  <Database size={28} color="#38BDF8" style={{ marginBottom: '1rem' }} />
+                  <h4 style={{ fontWeight: 800, fontSize: '1.25rem', color: '#FFFFFF', marginBottom: '0.75rem' }}>HL7 v2 & v3 Messaging</h4>
+                  <p style={{ color: '#94A3B8', fontSize: '0.92rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+                    Ingesting and dispatching legacy clinical telemetry feeds (ADT admission/discharge, ORU lab orders, MDM notes) via Mirth Connect pipelines.
+                  </p>
+                </div>
+                <div style={{ borderTop: '1px solid #334155', paddingTop: '1rem', display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+                  {["Mirth Connect", "ADT / ORU Parsers", "Bi-Directional Feeds"].map(tag => (
+                    <span key={tag} style={{ fontFamily: 'monospace', fontSize: '0.7rem', color: '#93C5FD', background: '#0F172A', border: '1px solid #334155', padding: '0.2rem 0.5rem', borderRadius: '4px' }}>{tag}</span>
+                  ))}
+                </div>
              </div>
-             <div style={{ padding: '2rem', border: '1px solid #334155', borderRadius: '12px', background: '#1E293B', textAlign: 'center' }}>
-                <FileText size={32} color="#60A5FA" style={{ margin: '0 auto 1rem auto' }} />
-                <h4 style={{ fontWeight: 700, fontSize: '1.1rem', marginBottom: '0.5rem' }}>FHIR APIs</h4>
-                <p style={{ color: '#94A3B8', fontSize: '0.9rem', lineHeight: 1.5 }}>Building modern, RESTful endpoints that adhere strictly to the SMART on FHIR specifications.</p>
+
+             {/* Protocol 2: FHIR */}
+             <div className="w-full min-w-0" style={{ background: '#1E293B', border: '1px solid #38BDF8', borderRadius: '14px', padding: '2rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', position: 'relative', boxShadow: '0 10px 25px -5px rgba(56, 189, 248, 0.15)' }}>
+                <div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #334155', paddingBottom: '0.75rem', marginBottom: '1.25rem' }}>
+                    <span style={{ fontFamily: 'monospace', fontSize: '0.75rem', fontWeight: 700, color: '#38BDF8' }}>PROTOCOL 02</span>
+                    <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', color: '#34D399', background: 'rgba(52, 211, 153, 0.1)', padding: '0.1rem 0.4rem', borderRadius: '4px' }}>SMART STANDARD</span>
+                  </div>
+                  <FileText size={28} color="#38BDF8" style={{ marginBottom: '1rem' }} />
+                  <h4 style={{ fontWeight: 800, fontSize: '1.25rem', color: '#FFFFFF', marginBottom: '0.75rem' }}>SMART on FHIR v4.0</h4>
+                  <p style={{ color: '#CBD5E1', fontSize: '0.92rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+                    Modern, high-velocity RESTful endpoints interfacing directly with Epic MyChart and Cerner Millennium EHR app stores with OAuth2 scopes.
+                  </p>
+                </div>
+                <div style={{ borderTop: '1px solid #334155', paddingTop: '1rem', display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+                  {["OAuth2 / OIDC", "Epic App Orchard", "Cerner Code Ready"].map(tag => (
+                    <span key={tag} style={{ fontFamily: 'monospace', fontSize: '0.7rem', color: '#38BDF8', background: '#0F172A', border: '1px solid rgba(56, 189, 248, 0.3)', padding: '0.2rem 0.5rem', borderRadius: '4px' }}>{tag}</span>
+                  ))}
+                </div>
              </div>
-             <div style={{ padding: '2rem', border: '1px solid #334155', borderRadius: '12px', background: '#1E293B', textAlign: 'center' }}>
-                <ShieldCheck size={32} color="#60A5FA" style={{ margin: '0 auto 1rem auto' }} />
-                <h4 style={{ fontWeight: 700, fontSize: '1.1rem', marginBottom: '0.5rem' }}>DICOM & PACS</h4>
-                <p style={{ color: '#94A3B8', fontSize: '0.9rem', lineHeight: 1.5 }}>Securely transferring, viewing, and annotating high-resolution radiological imagery in the cloud.</p>
+
+             {/* Protocol 3: DICOM & PACS */}
+             <div className="w-full min-w-0" style={{ background: '#1E293B', border: '1px solid #334155', borderRadius: '14px', padding: '2rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', position: 'relative' }}>
+                <div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #334155', paddingBottom: '0.75rem', marginBottom: '1.25rem' }}>
+                    <span style={{ fontFamily: 'monospace', fontSize: '0.75rem', fontWeight: 700, color: '#38BDF8' }}>PROTOCOL 03</span>
+                    <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', color: '#94A3B8' }}>IMAGING VAULT</span>
+                  </div>
+                  <ShieldCheck size={28} color="#38BDF8" style={{ marginBottom: '1rem' }} />
+                  <h4 style={{ fontWeight: 800, fontSize: '1.25rem', color: '#FFFFFF', marginBottom: '0.75rem' }}>DICOM & PACS Archiving</h4>
+                  <p style={{ color: '#94A3B8', fontSize: '0.92rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+                    Lossless transmission, client-side zero-footprint WebGL rendering, and cloud PACS archiving for high-resolution CT, MRI, and X-Ray studies.
+                  </p>
+                </div>
+                <div style={{ borderTop: '1px solid #334155', paddingTop: '1rem', display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+                  {["DICOMweb (WADO-RS)", "C-STORE Protocol", "WebGL Radiology"].map(tag => (
+                    <span key={tag} style={{ fontFamily: 'monospace', fontSize: '0.7rem', color: '#93C5FD', background: '#0F172A', border: '1px solid #334155', padding: '0.2rem 0.5rem', borderRadius: '4px' }}>{tag}</span>
+                  ))}
+                </div>
              </div>
           </div>
+
+
         </div>
       </section>
 

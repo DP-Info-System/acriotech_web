@@ -21,7 +21,7 @@ export default function DedicatedTeams() {
                 An engineering pod that <span style={{ color: '#2563EB' }}>fits your rhythm.</span>
               </h1>
               <p style={{ fontSize: '1.2rem', color: '#475569', lineHeight: 1.6, marginBottom: '2.5rem', maxWidth: '600px' }}>
-                Don't outsource to a black box. Our dedicated engineering pods embed directly into your company's Slack, Jira, and deployment cycles, operating as a seamless extension of your internal team.
+                Don't outsource to an opaque vendor. Acriotech engineering pods commit directly into your repositories, attend your sprint ceremonies, and operate under your existing CI/CD controls with direct lead engineer accountability.
               </p>
               <div style={{ display: 'flex', gap: '1rem' }}>
                 <Link href="/contact-us" style={{ background: '#2563EB', color: '#FFFFFF', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s' }}>
@@ -37,11 +37,11 @@ export default function DedicatedTeams() {
                    <div style={{ width: '60px', height: '60px', background: '#F1F5F9', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 0.5rem auto' }}>
                      <Building2 size={24} color="#64748B" />
                    </div>
-                   <div style={{ fontSize: '0.8rem', fontWeight: 700, color: '#0F172A' }}>Your Company</div>
+                   <div style={{ fontSize: '0.8rem', fontWeight: 700, color: '#0F172A' }}>Client Engineering Org</div>
                  </div>
                  
                  <div style={{ flex: 1, height: '2px', background: '#E2E8F0', margin: '0 1rem', position: 'relative' }}>
-                    <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', background: '#EFF6FF', color: '#2563EB', padding: '0.2rem 0.5rem', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 700, border: '1px solid #BFDBFE' }}>Seamless Integration</div>
+                    <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', background: '#EFF6FF', color: '#2563EB', padding: '0.2rem 0.5rem', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 700, border: '1px solid #BFDBFE' }}>Direct Slack &amp; Git Sync</div>
                  </div>
                  
                  <div style={{ textAlign: 'center' }}>

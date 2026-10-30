@@ -10,6 +10,12 @@
   --shadow-soft: 0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.06);
   --shadow-hover: 0 4px 12px rgba(15, 23, 42, 0.08), 0 2px 4px rgba(15, 23, 42, 0.06);
 
+  /* Unified Border Radius Scale (Modern 2026 SaaS Standard) */
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+  --radius-xs: 6px;
+
   /* Fluid Typography Variables */
   --font-hero: clamp(2.125rem, 4vw + 1.5rem, 4.5rem);
   --font-h1: clamp(2rem, 3.5vw + 1.25rem, 3.5rem);
@@ -33,6 +39,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -129,12 +136,44 @@ a {
   }
 }
 
+/* 6-Phase Lifecycle Stepper */
+.lifecycle-stepper-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.75rem;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .lifecycle-circuit-track {
+    display: none !important;
+  }
+  .lifecycle-stepper-grid {
+    display: flex !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding-bottom: 0.75rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    scrollbar-width: none !important;
+  }
+  .lifecycle-stepper-grid::-webkit-scrollbar {
+    display: none !important;
+  }
+  .lifecycle-stepper-item {
+    flex: 0 0 160px !important;
+    min-width: 160px !important;
+  }
+}
+
 /* Background - solid, no grid */
 .bg-engine {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   z-index: -2;
   background-color: var(--background);
@@ -192,7 +231,7 @@ a {
 .card {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
-  border-radius: 12px;
+  border-radius: var(--radius-md, 12px);
   box-shadow: var(--shadow-soft);
   transition: box-shadow 0.2s ease, border-color 0.2s ease;
   position: relative;
@@ -234,7 +273,7 @@ p {
   min-height: 48px;
   background: linear-gradient(180deg, var(--primary-blue), #3A4B8F);
   color: #ffffff;
-  border-radius: 8px; /* More structured, less pill-shaped */
+  border-radius: var(--radius-sm, 8px);
   font-weight: 500;
   font-size: 0.95rem;
   border: 1px solid rgba(0,0,0,0.1);
@@ -265,7 +304,7 @@ p {
   background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(10px);
   color: var(--text-main);
-  border-radius: 8px;
+  border-radius: var(--radius-sm, 8px);
   font-weight: 500;
   font-size: 0.95rem;
   border: 1px solid rgba(15, 23, 42, 0.1);
@@ -292,7 +331,7 @@ p {
 }
 
 .capabilities-card {
-  border-radius: 12px;
+  border-radius: var(--radius-md, 12px);
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -625,3 +664,262 @@ p {
   -webkit-backdrop-filter: none !important;
 }
 
+/* ==========================================================================
+   ROCK-SOLID RESPONSIVE GRID LAYOUT UTILITIES
+   Guaranteed multi-column layouts across all viewports (Mobile, Tablet, Desktop)
+   ========================================================================== */
+
+.layout-grid-2,
+.layout-grid-3,
+.layout-grid-4,
+.layout-split-hero,
+.layout-grid-2-asym {
+  display: grid !important;
+  width: 100% !important;
+  gap: 1.5rem !important;
+}
+
+.layout-grid-2 > *,
+.layout-grid-3 > *,
+.layout-grid-4 > *,
+.layout-split-hero > *,
+.layout-grid-2-asym > * {
+  min-width: 0 !important;
+}
+
+/* 2-Column Grid: 1 col on mobile (<768px), 2 equal cols on tablet/desktop (>=768px) */
+.layout-grid-2 {
+  grid-template-columns: 1fr !important;
+}
+@media (min-width: 768px) {
+  .layout-grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+/* 3-Column Grid: 1 col on mobile (<768px), 2 cols on tablet (768-1023px), 3 cols on desktop (>=1024px) */
+.layout-grid-3 {
+  grid-template-columns: 1fr !important;
+}
+@media (min-width: 768px) {
+  .layout-grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+@media (min-width: 1024px) {
+  .layout-grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+/* 4-Column Grid: 1 col on mobile, 2 cols on tablet, 4 cols on desktop */
+.layout-grid-4 {
+  grid-template-columns: 1fr !important;
+}
+@media (min-width: 640px) {
+  .layout-grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+@media (min-width: 1024px) {
+  .layout-grid-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+}
+
+/* Standard CSS Grid Fallbacks for Tailwind-like utility classes */
+.grid {
+  display: grid !important;
+}
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+}
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+
+@media (min-width: 640px) {
+  .sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+  .md\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+}
+
+/* Gap Utilities */
+.gap-2 { gap: 0.5rem !important; }
+.gap-3 { gap: 0.75rem !important; }
+.gap-4 { gap: 1rem !important; }
+.gap-5 { gap: 1.25rem !important; }
+.gap-6 { gap: 1.5rem !important; }
+.gap-8 { gap: 2rem !important; }
+.gap-10 { gap: 2.5rem !important; }
+
+/* Hero 2-Column Split: 1 col on mobile/tablet (<1024px), 1.15fr 0.85fr on desktop (>=1024px) */
+.layout-split-hero {
+  grid-template-columns: 1fr !important;
+}
+@media (min-width: 1024px) {
+  .layout-split-hero {
+    grid-template-columns: 1.15fr 0.85fr !important;
+  }
+}
+
+/* Asymmetric 2-Column (e.g. Flagship 1.25fr 1fr) */
+.layout-grid-2-asym {
+  grid-template-columns: 1fr !important;
+}
+@media (min-width: 1024px) {
+  .layout-grid-2-asym {
+    grid-template-columns: 1.25fr 1fr !important;
+  }
+}
+
+/* Universal Interactive Card Styling to Prevent Hover Contrast Issues & Enforce Square Enterprise Geometry */
+.interactive-card {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  background: #FFFFFF;
+  color: #0F172A;
+  border: 1px solid #E2E8F0;
+  border-radius: var(--radius-md, 12px) !important;
+  display: flex;
+  flex-direction: column;
+  justifyContent: space-between;
+  box-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.03);
+}
+
+.card-badge {
+  border-radius: var(--radius-xs, 6px) !important;
+}
+
+.card-tag {
+  border-radius: var(--radius-xs, 6px) !important;
+}
+
+.interactive-card:hover,
+.interactive-card.is-active {
+  background: #0B132B !important;
+  color: #FFFFFF !important;
+  border-color: #38BDF8 !important;
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.35) !important;
+}
+
+.interactive-card:hover h3,
+.interactive-card:hover h4,
+.interactive-card.is-active h3,
+.interactive-card.is-active h4 {
+  color: #FFFFFF !important;
+}
+
+.interactive-card:hover p,
+.interactive-card.is-active p {
+  color: #CBD5E1 !important;
+}
+
+.interactive-card:hover .card-badge,
+.interactive-card.is-active .card-badge {
+  color: #38BDF8 !important;
+  background: rgba(56, 189, 248, 0.15) !important;
+  border-color: rgba(56, 189, 248, 0.3) !important;
+  border-radius: var(--radius-xs, 6px) !important;
+}
+
+.interactive-card:hover .card-tag,
+.interactive-card.is-active .card-tag {
+  color: #93C5FD !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  border-radius: var(--radius-xs, 6px) !important;
+}
+
+.interactive-card:hover .card-link,
+.interactive-card.is-active .card-link {
+  color: #38BDF8 !important;
+  border-top-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Universal Enterprise Rectilinear Clean Standards */
+button, input, select, textarea {
+  border-radius: var(--radius-sm, 8px);
+}
+
+/* Restored Standard Radius Utilities */
+.rounded-xs { border-radius: var(--radius-xs, 6px) !important; }
+.rounded-sm { border-radius: var(--radius-sm, 8px) !important; }
+.rounded-md { border-radius: var(--radius-sm, 8px) !important; }
+.rounded-lg { border-radius: var(--radius-md, 12px) !important; }
+.rounded-xl { border-radius: var(--radius-lg, 16px) !important; }
+.rounded-2xl { border-radius: 20px !important; }
+.rounded-full { border-radius: 9999px !important; }
+
+
+
+
+
+/* ==========================================================================
+   MODERN BENTO GRID ARCHITECTURE (2026 SaaS Pattern)
+   ========================================================================== */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+.bento-cell {
+  background: rgba(15, 23, 42, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md, 12px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justifyContent: space-between;
+}
+
+.bento-cell:hover {
+  transform: translateY(-3px);
+  border-color: rgba(56, 189, 248, 0.45);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5), 0 0 30px -5px rgba(56, 189, 248, 0.15);
+}
+
+.bento-col-12 { grid-column: span 12 / span 12; }
+.bento-col-8 { grid-column: span 12 / span 12; }
+.bento-col-7 { grid-column: span 12 / span 12; }
+.bento-col-5 { grid-column: span 12 / span 12; }
+.bento-col-4 { grid-column: span 12 / span 12; }
+
+@media (min-width: 1024px) {
+  .bento-col-8 { grid-column: span 8 / span 8; }
+  .bento-col-7 { grid-column: span 7 / span 7; }
+  .bento-col-5 { grid-column: span 5 / span 5; }
+  .bento-col-4 { grid-column: span 4 / span 4; }
+}

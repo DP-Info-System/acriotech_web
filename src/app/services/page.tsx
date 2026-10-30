@@ -1,129 +1,452 @@
 "use client";
 
+import { useState } from "react";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
-import { ArrowRight, Code, Database, Search, Layout, Smartphone, Network, Cloud, GitBranch, Cpu, ShieldCheck, HeartHandshake, Users, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
-const serviceList = [
-  { slug: "software-consulting", name: "Software Consulting", desc: "Senior technical judgment when the architectural path is unclear.", icon: Database },
-  { slug: "product-discovery", name: "Product Discovery", desc: "Connect user need, business intent, and technical feasibility.", icon: Search },
-  { slug: "ui-ux-design", name: "UI & UX Design", desc: "Interfaces that make complex enterprise work easier to perform.", icon: Layout },
-  { slug: "web-application-development", name: "Web App Development", desc: "Responsive web applications connecting UX to dependable domain logic.", icon: Code },
-  { slug: "mobile-app-development", name: "Mobile App Development", desc: "Experiences that respect context, connectivity, and device permissions.", icon: Smartphone },
-  { slug: "api-development-integration", name: "API & Integration", desc: "Resilient event-driven and REST/GraphQL API architectures built for high throughput and fault tolerance.", icon: Network },
-  { slug: "cloud-architecture", name: "Cloud Architecture", desc: "Foundations shaped around how your team operates and scales.", icon: Cloud },
-  { slug: "devops-ci-cd", name: "DevOps and CI/CD", desc: "A delivery path that connects code, infrastructure, and operational feedback.", icon: GitBranch },
-  { slug: "ai-integration", name: "AI Integration", desc: "Production-grade LLM and machine learning integrations engineered with strict data governance and reliability.", icon: Cpu },
-  { slug: "qa-testing", name: "QA and Testing", desc: "Quality practice matched to the exact cost and risk of failure.", icon: ShieldCheck },
-  { slug: "maintenance-support", name: "Maintenance & Support", desc: "Steady care for software the business absolutely depends on.", icon: HeartHandshake },
-  { slug: "dedicated-development-teams", name: "Dedicated Teams", desc: "An engineering team that fits seamlessly into your way of working.", icon: Users },
+interface ServiceItem {
+  slug: string;
+  num: string;
+  name: string;
+  desc: string;
+  tags: string[];
+}
+
+interface DomainGroup {
+  domainId: string;
+  domainNumber: string;
+  title: string;
+  tagline: string;
+  badge: string;
+  services: ServiceItem[];
+}
+
+const serviceDomains: DomainGroup[] = [
+  {
+    domainId: "strategy-discovery-design",
+    domainNumber: "01",
+    title: "Strategy, Discovery & Design",
+    tagline: "De-risking architectural decisions and engineering ergonomics before code is committed.",
+    badge: "Precision Architecture",
+    services: [
+      {
+        slug: "software-consulting",
+        num: "01",
+        name: "Software Consulting",
+        desc: 'Objective architectural audits, feasibility assessments, and formal decision records for complex systems.',
+        tags: ["System Modeling", "ADR Formulation", "TCO Modeling", "Vendor Neutrality"]
+      },
+      {
+        slug: "product-discovery",
+        num: "02",
+        name: "Product Discovery",
+        desc: 'Validating user requirements and technical feasibility to produce prioritized, execution-ready engineering backlogs.',
+        tags: ["Feasibility Spikes", "PRD Matrix", "Backlog Slicing", "De-risking"]
+      },
+      {
+        slug: "ui-ux-design",
+        num: "03",
+        name: "UI & UX Design",
+        desc: 'High-density design systems and accessibility-compliant component libraries built for data-heavy workflows.',
+        tags: ["Design Systems", "Component Tokens", "WCAG AA", "Micro-Interactions"]
+      },
+      {
+        slug: "dedicated-development-teams",
+        num: "04",
+        name: "Dedicated Teams",
+        desc: 'Embedded senior engineering pods integrated into your sprints, git repositories, and release pipelines.',
+        tags: ["Pod Model", "Direct Commits", "CI/CD Native", "Agile Rhythms"]
+      }
+    ]
+  },
+  {
+    domainId: "core-application-api",
+    domainNumber: "02",
+    title: "Core Application & API Engineering",
+    tagline: "High-throughput application runtimes, resilient microservices, and battle-tested API backbones.",
+    badge: "Core Application Runtimes",
+    services: [
+      {
+        slug: "web-application-development",
+        num: "05",
+        name: "Web App Development",
+        desc: 'Edge-rendered, highly responsive web platforms engineered for sub-second page loads and high concurrency.',
+        tags: ["Next.js / React", "TypeScript", "SSR / ISR", "State Hydration"]
+      },
+      {
+        slug: "mobile-app-development",
+        num: "06",
+        name: "Mobile App Development",
+        desc: 'Native and cross-platform mobile apps built with offline-first synchronization and hardware optimization.',
+        tags: ["React Native", "Flutter", "Offline Sync", "Zero-Latency UI"]
+      },
+      {
+        slug: "api-development-integration",
+        num: "07",
+        name: "API & Integration",
+        desc: 'Resilient event-driven message brokers, GraphQL layers, and high-throughput REST gateways with idempotency.',
+        tags: ["Kafka / gRPC", "OpenAPI Spec", "Circuit Breakers", "Idempotency"]
+      },
+      {
+        slug: "qa-testing",
+        num: "08",
+        name: "QA and Testing",
+        desc: 'Automated regression testing, contract verification, and security testing calibrated to failure risk.',
+        tags: ["Playwright", "Contract Testing", "Accessibility Audits", "Visual Diffing"]
+      }
+    ]
+  },
+  {
+    domainId: "cloud-ai-operations",
+    domainNumber: "03",
+    title: "Cloud, AI & Production Operations",
+    tagline: "Scalable cloud topologies, automated release pipelines, and secure enterprise AI workflows.",
+    badge: "Cloud & Intelligence",
+    services: [
+      {
+        slug: "cloud-architecture",
+        num: "09",
+        name: "Cloud Architecture",
+        desc: 'Resilient multi-cloud topologies across AWS, GCP, and Azure with codified Terraform configurations and continuous telemetry.',
+        tags: ["AWS / GCP / Azure", "Terraform IaC", "Multi-Region", "High Availability"]
+      },
+      {
+        slug: "devops-ci-cd",
+        num: "10",
+        name: "DevOps and CI/CD",
+        desc: 'Immutable build pipelines and Kubernetes container orchestration featuring automated canary rollouts and zero deployment stalls.',
+        tags: ["Kubernetes", "GitOps", "Canary Deploys", "Telemetry"]
+      },
+      {
+        slug: "ai-integration",
+        num: "11",
+        name: "AI Integration",
+        desc: 'Private-cloud LLM pipelines, vector databases, and retrieval-augmented generation with strict governance.',
+        tags: ["RAG Pipelines", "Vector Indices", "Guardrails", "Data Privacy"]
+      },
+      {
+        slug: "maintenance-support",
+        num: "12",
+        name: "Maintenance & Support",
+        desc: 'Proactive telemetry monitoring, routine security patching, and SLA-backed tier-3 incident escalation.',
+        tags: ["24/7/365 SRE", "Rapid Response", "Patching Cadence", "Root Cause Analysis"]
+      }
+    ]
+  }
 ];
 
 export default function ServicesIndexPage() {
+  const [hoveredService, setHoveredService] = useState<string | null>(null);
+
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FFFFFF' }}>
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#F8FAFC' }}>
       <NavBar />
 
       {/* Hero Section */}
-      <section style={{ paddingTop: '140px', paddingBottom: '80px', background: '#F8FAFC', borderBottom: '1px solid #E2E8F0' }}>
-        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ maxWidth: '800px' }}>
-            <div style={{ fontSize: '0.75rem', fontWeight: 600, color: '#4B61B8', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '1.25rem' }}>
-              SERVICES &amp; ENGINEERING CAPABILITY
+      <section style={{ paddingTop: '150px', paddingBottom: '90px', background: '#0F172A', color: '#FFFFFF', position: 'relative', overflow: 'hidden' }}>
+        {/* Subtle Architectural Blueprint Grid */}
+        <div 
+          style={{
+            position: 'absolute',
+            inset: 0,
+            opacity: 0.12,
+            backgroundImage: `
+              linear-gradient(to right, #38BDF8 1px, transparent 1px),
+              linear-gradient(to bottom, #38BDF8 1px, transparent 1px)
+            `,
+            backgroundSize: '48px 48px',
+            pointerEvents: 'none'
+          }}
+        />
+        
+        {/* Radial highlight glow */}
+        <div 
+          style={{
+            position: 'absolute',
+            top: '-20%',
+            right: '10%',
+            width: '600px',
+            height: '600px',
+            borderRadius: '50%',
+            display: 'none',
+            pointerEvents: 'none'
+          }}
+        />
+
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem', position: 'relative', zIndex: 1 }}>
+          <div style={{ maxWidth: '880px' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem', padding: '0.35rem 0.85rem', borderRadius: '6px', background: 'rgba(56, 189, 248, 0.1)', border: '1px solid rgba(56, 189, 248, 0.3)', marginBottom: '1.5rem' }}>
+              <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#38BDF8', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                SERVICES &amp; ENGINEERING CAPABILITY
+              </span>
             </div>
-            <h1 style={{ fontSize: 'var(--font-hero)', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
-              How we <span style={{ color: '#4B61B8' }}>actually build things.</span>
+
+            <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.035em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+              How we <span style={{ color: '#38BDF8' }}>actually build</span> software.
             </h1>
-            <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
-              Strategy, design, engineering, and operations in one team. One point of contact, one set of standards.
+            
+            <p style={{ fontSize: '1.25rem', color: '#94A3B8', lineHeight: 1.7, marginBottom: '2.5rem', maxWidth: '780px' }}>
+              Strategy, design, core runtime engineering, and continuous cloud operations united under a single accountable standard. We do not toss handoffs over organizational fences.
             </p>
+
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', alignItems: 'center' }}>
+              <a 
+                href="#strategy-discovery-design" 
+                style={{ background: '#4B61B8', color: '#FFFFFF', padding: '0.9rem 1.8rem', borderRadius: '8px', fontWeight: 600, fontSize: '0.95rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'all 0.2s', boxShadow: '0 10px 15px -3px rgba(75, 97, 184, 0.3)' }}
+              >
+                Explore Capabilities Matrix ↓
+              </a>
+              <Link 
+                href="/contact-us" 
+                style={{ color: '#94A3B8', border: '1px solid #334155', background: 'rgba(30, 41, 59, 0.6)', padding: '0.9rem 1.8rem', borderRadius: '8px', fontWeight: 600, fontSize: '0.95rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'all 0.2s' }}
+              >
+                Schedule Architecture Scoping →
+              </Link>
+            </div>
           </div>
         </div>
+
+        {/* Hairline bottom transition divider */}
+        <div style={{ position: 'relative', marginTop: '4rem', height: '1px', background: '#334155' }} />
       </section>
 
-      {/* Services Grid */}
-      <section id="capabilities" style={{ padding: '6rem 0', background: '#F8FAFC' }}>
+      {/* 3 Grouped Architectural Domains */}
+      <section style={{ padding: '5rem 0 6rem 0', background: '#F8FAFC' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ textAlign: 'left', marginBottom: '3.5rem', maxWidth: '720px' }}>
-             <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#4B61B8', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '0.75rem' }}>
-               ENGINEERING CAPABILITIES
-             </div>
-             <h2 style={{ fontSize: '2.4rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.025em', marginBottom: '1rem' }}>
-               What we can <span style={{ color: '#4B61B8' }}>do for you.</span>
-             </h2>
-             <p style={{ fontSize: '1.1rem', color: '#64748B', margin: 0, lineHeight: 1.6 }}>Twelve capabilities. Every one of them connected to the others.</p>
-          </div>
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', gap: '2rem' }}>
-            {serviceList.map((service, i) => (
-              <Link 
-                href={`/services/${service.slug}`} 
-                key={i} 
-                style={{ background: '#FFFFFF', padding: '2.5rem', borderRadius: '16px', border: '1px solid #E2E8F0', textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', transition: 'all 0.2s', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.03)' }}
-                className="service-card"
-              >
-                 <div style={{ fontFamily: 'monospace', fontSize: '0.85rem', fontWeight: 700, color: '#4B61B8', marginBottom: '1.25rem' }}>
-                   {i < 9 ? `0${i + 1}` : i + 1}
-                 </div>
-                 <h3 style={{ fontSize: '1.35rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.75rem' }}>{service.name}</h3>
-                 <p style={{ color: '#475569', lineHeight: 1.6, flex: 1, marginBottom: '1.5rem' }}>{service.desc}</p>
-                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#4B61B8', fontWeight: 600, fontSize: '0.95rem', marginTop: 'auto' }}>
-                   View service <ArrowRight size={16} />
-                 </div>
-              </Link>
+          <div style={{ marginBottom: '4rem', maxWidth: '800px' }}>
+            <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#4B61B8', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '0.75rem' }}>
+              THREE STRATEGIC DOMAINS
+            </div>
+            <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.025em', marginBottom: '1rem' }}>
+              Engineered as an interconnected matrix.
+            </h2>
+            <p style={{ fontSize: '1.15rem', color: '#64748B', lineHeight: 1.6, margin: 0 }}>
+              Hover or tap any service node below to inspect architectural specifications, stack primitives, and verification deliverables.
+            </p>
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '4.5rem' }}>
+            {serviceDomains.map((domain) => (
+              <div key={domain.domainId} id={domain.domainId}>
+                {/* Domain Header Strip - Unboxed, Clean & Modern */}
+                <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-end', gap: '1rem', borderBottom: '1px solid #E2E8F0', paddingBottom: '1.25rem', marginBottom: '1.75rem' }}>
+                  <div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', marginBottom: '0.4rem' }}>
+                      <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#4B61B8', background: '#EFF6FF', border: '1px solid #DBEAFE', padding: '0.15rem 0.55rem', borderRadius: '6px' }}>
+                        {domain.domainNumber}
+                      </span>
+                      <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#64748B', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                        {domain.badge}
+                      </span>
+                    </div>
+                    <h3 style={{ fontSize: '1.65rem', fontWeight: 800, color: '#0F172A', margin: 0 }}>
+                      {domain.title}
+                    </h3>
+                  </div>
+                  <p style={{ color: '#64748B', fontSize: '0.92rem', maxWidth: '480px', margin: 0, lineHeight: 1.55 }}>
+                    {domain.tagline}
+                  </p>
+                </div>
+
+                {/* 4-column compact grid per domain with guaranteed multi-column layout and gap */}
+                <div className="layout-grid-4 gap-5 w-full">
+                  {domain.services.map((svc) => {
+                    const isActive = hoveredService === svc.slug;
+
+                    return (
+                      <div 
+                        key={svc.slug} 
+                        className="w-full min-w-0"
+                        onMouseEnter={() => setHoveredService(svc.slug)}
+                        onMouseLeave={() => setHoveredService(null)}
+                      >
+                        <Link
+                          href={`/services/${svc.slug}`}
+                          className={`interactive-card ${isActive ? 'is-active' : ''}`}
+                          style={{
+                            background: isActive ? '#0B132B' : '#FFFFFF',
+                            color: isActive ? '#FFFFFF' : '#0F172A',
+                            padding: '1.35rem',
+                            borderRadius: '12px',
+                            border: isActive ? '1px solid #38BDF8' : '1px solid #E2E8F0',
+                            textDecoration: 'none',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'space-between',
+                            transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
+                            boxShadow: isActive 
+                              ? '0 20px 40px -15px rgba(15, 23, 42, 0.35)' 
+                              : '0 4px 12px -2px rgba(15, 23, 42, 0.03)',
+                            transform: isActive ? 'translateY(-3px)' : 'none',
+                            height: '100%',
+                            minHeight: '260px'
+                          }}
+                        >
+                          <div>
+                            {/* Header: High-Contrast Index Badge */}
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: isActive ? '1px solid rgba(255,255,255,0.08)' : '1px solid #F1F5F9', paddingBottom: '0.65rem', marginBottom: '0.85rem' }}>
+                              <span 
+                                className="card-badge"
+                                style={{ 
+                                  fontSize: '0.75rem', 
+                                  fontWeight: 700, 
+                                  color: isActive ? '#38BDF8' : '#1E293B',
+                                  background: isActive ? 'rgba(56, 189, 248, 0.15)' : '#F1F5F9',
+                                  border: isActive ? '1px solid rgba(56, 189, 248, 0.3)' : '1px solid #E2E8F0',
+                                  padding: '0.15rem 0.55rem',
+                                  borderRadius: '6px',
+                                  letterSpacing: '0.04em'
+                                }}
+                              >
+                                {svc.num}
+                              </span>
+                            </div>
+
+                            <h4 style={{ fontSize: '1.05rem', fontWeight: 800, margin: '0 0 0.5rem 0', letterSpacing: '-0.015em', color: isActive ? '#FFFFFF' : '#0F172A', lineHeight: 1.3 }}>
+                              {svc.name}
+                            </h4>
+
+                            <p style={{ color: isActive ? '#CBD5E1' : '#64748B', lineHeight: 1.55, fontSize: '0.84rem', marginBottom: '1rem', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                              {svc.desc}
+                            </p>
+                          </div>
+
+                          <div>
+                            {/* 2-3 Compact Square Tags */}
+                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem', marginBottom: '1rem' }}>
+                              {svc.tags?.slice(0, 3).map((tag) => (
+                                <span
+                                  key={tag}
+                                  className="card-tag"
+                                  style={{
+                                    fontSize: '11px',
+                                    fontWeight: 600,
+                                    background: isActive ? 'rgba(255,255,255,0.06)' : '#F8FAFC',
+                                    color: isActive ? '#93C5FD' : '#64748B',
+                                    border: isActive ? '1px solid rgba(255,255,255,0.1)' : '1px solid #E2E8F0',
+                                    padding: '0.15rem 0.6rem',
+                                    borderRadius: '6px'
+                                  }}
+                                >
+                                  {tag}
+                                </span>
+                              ))}
+                            </div>
+
+                            <div 
+                              className="card-link"
+                              style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: isActive ? '#38BDF8' : '#4B61B8', fontWeight: 700, fontSize: '0.82rem', borderTop: isActive ? '1px solid rgba(255,255,255,0.08)' : '1px solid #F1F5F9', paddingTop: '0.75rem' }}
+                            >
+                              Explore service <ArrowRight size={13} />
+                            </div>
+                          </div>
+                        </Link>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
             ))}
           </div>
-          <style jsx>{`
-            .service-card:hover {
-              transform: translateY(-5px);
-              box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
-              border-color: #C7D2FE !important;
-            }
-          `}</style>
+
         </div>
       </section>
 
       {/* Philosophy Section */}
-      <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF' }}>
+      <section style={{ padding: '5rem 0', background: '#FFFFFF', borderTop: '1px solid #E2E8F0', borderBottom: '1px solid #E2E8F0' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 420px), 1fr))', gap: '3.5rem', alignItems: 'center' }}>
             <div>
-              <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#4B61B8', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '0.75rem' }}>
+                FOUNDATIONAL CRITERIA
+              </div>
+              <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.6rem)', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.025em', marginBottom: '1.5rem', lineHeight: 1.2 }}>
                 Start with the problem, <span style={{ color: '#4B61B8' }}>not the solution.</span>
               </h2>
               <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.7, marginBottom: '2rem' }}>
-                Most projects fail in the requirements phase. We spend real time on discovery because finding out a constraint exists in week one is cheaper than finding it in week ten.
+                Most software initiatives fail during requirements definition. We invest deep focus into architecture discovery because finding out a constraint exists in week one is vastly cheaper than discovering it in week ten during production rollout.
               </p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontWeight: 600, color: '#0F172A' }}><CheckCircle size={20} color="#4B61B8" /> Product and technical discovery</li>
-                <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontWeight: 600, color: '#0F172A' }}><CheckCircle size={20} color="#4B61B8" /> Architecture options with tradeoffs</li>
-                <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontWeight: 600, color: '#0F172A' }}><CheckCircle size={20} color="#4B61B8" /> Sequenced delivery plans</li>
-              </ul>
-            </div>
-            <div style={{ background: '#0F172A', padding: '4rem', borderRadius: '24px' }}>
-              <div style={{ fontSize: 'var(--font-h3)', fontWeight: 800, color: '#FFFFFF', marginBottom: '1.5rem', lineHeight: 1.3 }}>
-                The best architecture is the one that fits how your team actually works.
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontWeight: 600, color: '#0F172A', fontSize: '1rem' }}>
+                  <CheckCircle2 size={20} color="#4B61B8" /> 
+                  <span>Product and technical discovery before line-of-code commitment</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontWeight: 600, color: '#0F172A', fontSize: '1rem' }}>
+                  <CheckCircle2 size={20} color="#4B61B8" /> 
+                  <span>Architecture options evaluated across practical engineering tradeoffs</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontWeight: 600, color: '#0F172A', fontSize: '1rem' }}>
+                  <CheckCircle2 size={20} color="#4B61B8" /> 
+                  <span>Sequenced delivery runbooks with deterministic quality gates</span>
+                </div>
               </div>
-              <div style={{ color: '#94A3B8', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>ACRIOTECH ENGINEERING PRINCIPLE</div>
+            </div>
+
+            {/* Architectural Callout Block */}
+            <div 
+              style={{ 
+                background: '#0F172A', 
+                padding: '3.5rem', 
+                borderRadius: '2px', 
+                color: '#FFFFFF',
+                border: '1px solid #334155',
+                position: 'relative'
+              }}
+            >
+              <div style={{ fontSize: '0.75rem', color: '#38BDF8', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
+                ENGINEERING PRINCIPLE
+              </div>
+              
+              <div style={{ fontSize: 'clamp(1.4rem, 2vw, 1.75rem)', fontWeight: 800, color: '#FFFFFF', marginBottom: '1.5rem', lineHeight: 1.35 }}>
+                &ldquo;The best architecture is not the most theoretically complex one. It is the one that fits how your team actually operates and scales.&rdquo;
+              </div>
+              
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', borderTop: '1px solid #334155', paddingTop: '1.5rem' }}>
+                <div>
+                  <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#F8FAFC' }}>Principal Engineering Team</div>
+                  <div style={{ fontSize: '0.75rem', color: '#94A3B8' }}>Verified Over 80+ Enterprise Deployments</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SEO Depth + Internal Linking — expands thin hub */}
-      <section style={{ padding: '4rem 0', background: '#F8FAFC', borderTop: '1px solid #E2E8F0' }}>
+      {/* Engagement Scoping Strip */}
+      <section style={{ padding: '4.5rem 0', background: '#F8FAFC' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <h2 style={{ fontSize: '1.75rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>
-            How engagements <span style={{ color: '#4B61B8' }}>actually work.</span>
-          </h2>
-          <p style={{ color: '#475569', lineHeight: 1.7, marginBottom: '1.5rem', maxWidth: '800px' }}>
-            We work as a fixed-scope project team, an embedded engineering extension, or an architecture retainer depending on what the work requires. After an initial call, you get a written scope with a timeline and a number — not a vague estimate we revise later.
-          </p>
-          <p style={{ color: '#64748B', fontSize: '0.9rem', lineHeight: 1.6 }}>
-            Explore: <a href="/services/web-application-development" style={{ color: '#4B61B8' }}>Web App Development</a> · <a href="/services/api-development-integration" style={{ color: '#4B61B8' }}>API Integration</a> · <a href="/services/cloud-architecture" style={{ color: '#4B61B8' }}>Cloud Architecture</a> · <a href="/services/devops-ci-cd" style={{ color: '#4B61B8' }}>DevOps</a> · <a href="/services/ai-integration" style={{ color: '#4B61B8' }}>AI Integration</a> · <a href="/solutions/enterprise-software" style={{ color: '#4B61B8' }}>Enterprise Software solution</a>
-          </p>
+          <div style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '2px', padding: '2.5rem', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '2rem' }}>
+            <div style={{ maxWidth: '750px' }}>
+              <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.5rem' }}>
+                Transparent scoping. No arbitrary estimates.
+              </h3>
+              <p style={{ color: '#475569', fontSize: '1rem', lineHeight: 1.6, margin: 0 }}>
+                Whether engaging as a dedicated project pod or on an architecture advisory retainer, you receive an explicit technical deliverable schedule with milestones and fixed cost parameters before any engagement starts.
+              </p>
+            </div>
+            <Link
+              href="/contact-us"
+              style={{
+                background: '#0F172A',
+                color: '#FFFFFF',
+                padding: '0.9rem 1.8rem',
+                borderRadius: '8px',
+                fontWeight: 600,
+                fontSize: '0.95rem',
+                textDecoration: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                flexShrink: 0,
+                transition: 'all 0.2s'
+              }}
+            >
+              Request Engineering Scope <ArrowRight size={16} />
+            </Link>
+          </div>
         </div>
       </section>
 

@@ -65,7 +65,7 @@ const navData = {
   },
   Insights: {
     purpose: "Our content hub.",
-    items: ["Case Studies", "News & Press", "Research Reports", "Tech Trends", "Webinars"],
+    items: ["Case Studies", "News & Press", "Research Reports", "Tech Trends"],
     featured: {
       title: "Things worth reading.",
       desc: "Architecture decisions, lessons from production, and the occasional strong opinion.",
@@ -74,12 +74,106 @@ const navData = {
   }
 };
 
+// --- Dynamic Item Previews for Mega-Menu Right Panel ---
+const itemPreviews: Record<string, { title: string; desc: string; tag: string; type: 'mesh' | 'circuit' | 'dag' | 'vault' | 'core' }> = {
+  // Solutions
+  "Enterprise Software": { title: "Distributed Core Architecture", desc: "Event-driven microservices with sharded PostgreSQL and Kafka streams.", tag: "Distributed Systems", type: "mesh" },
+  "AI & Intelligent Automation": { title: "Private AI Pipelines", desc: "Localized sovereign inference pipelines without third-party data egress.", tag: "Private Cloud AI", type: "dag" },
+  "Business Process Automation": { title: "Traceable Operations", desc: "Automated compliance workflows replacing manual email approval chains.", tag: "Process Automation", type: "circuit" },
+  "Digital Transformation": { title: "Decoupled Modernization", desc: "Strangler fig migrations ensuring continuous production uptime.", tag: "Modernization", type: "core" },
+  "Cloud & Infrastructure": { title: "Terraform IaC & SRE", desc: "Immutable multi-region clusters with automated latency failover.", tag: "Cloud Infrastructure", type: "circuit" },
+  "Legacy System Modernization": { title: "Incremental Decoupling", desc: "Module-by-module extraction under active business workloads.", tag: "System Modernization", type: "core" },
+  "Data & Analytics": { title: "Unified Data Marts", desc: "Automated dbt pipelines and self-healing analytical warehouses.", tag: "Data Engineering", type: "dag" },
+  "Custom Software Development": { title: "Full-Stack Pods", desc: "Complete product delivery with 100% intellectual property ownership.", tag: "Engineering Pods", type: "vault" },
+
+  // Services
+  "Software Consulting": { title: "Technical Judgment", desc: "Architecture decision records and system feasibility reviews.", tag: "Technical Advisory", type: "core" },
+  "Product Discovery": { title: "Constraint Discovery", desc: "Connecting operational intent to testable technical specifications.", tag: "Product Discovery", type: "circuit" },
+  "UI / UX Design": { title: "Enterprise Utility", desc: "Design systems engineered for WCAG AA compliance and dense data flows.", tag: "UI / UX Systems", type: "mesh" },
+  "Web Application Development": { title: "High-Performance Web", desc: "Edge-rendered applications with sub-second Time to Interactive.", tag: "Web Applications", type: "circuit" },
+  "Mobile App Development": { title: "Resilient Offline Mobile", desc: "Context-aware native experiences with reliable background synchronization.", tag: "Mobile Engineering", type: "mesh" },
+  "API Development & Integration": { title: "Fault-Tolerant Gateways", desc: "gRPC and REST interfaces with circuit breakers and idempotency keys.", tag: "API Architecture", type: "dag" },
+  "Cloud Architecture": { title: "Resilient Foundations", desc: "Multi-cloud Kubernetes topology designed for automated disaster recovery.", tag: "Cloud Architecture", type: "circuit" },
+  "DevOps & CI/CD": { title: "Automated Delivery", desc: "Zero-touch CI/CD pipelines with ephemeral pull request environments.", tag: "DevOps & SRE", type: "dag" },
+  "AI Integration": { title: "Model Governance", desc: "Production LLM integrations with strict token rate limiting and security gates.", tag: "AI Integration", type: "vault" },
+  "QA & Testing": { title: "Chaos & Contract Testing", desc: "Multi-layer testing suites matching the exact cost and risk of failure.", tag: "Quality Assurance", type: "core" },
+  "Maintenance & Support": { title: "Contractual SLAs", desc: "Direct-to-engineer Tier 3 support backed by 99.99% uptime guarantees.", tag: "Production Support", type: "vault" },
+  "Dedicated Development Teams": { title: "Embedded Engineering Pods", desc: "Seamless pod integration into your agile sprint delivery channels.", tag: "Dedicated Pods", type: "mesh" },
+
+  // Work
+  "Featured Projects": { title: "Production Case Studies", desc: "High-concurrency systems deployed across banking, logistics, and healthcare.", tag: "Production Systems", type: "core" },
+  "Our Clients": { title: "Enterprise Tenure", desc: "Organizations running consequential operations with an average 3+ year partnership.", tag: "Client Partnerships", type: "vault" },
+  "Open Source": { title: "Engineering Standards", desc: "Cloud-native tooling and architectural frameworks published for the community.", tag: "Open Source", type: "circuit" },
+
+  // Industries
+  "Healthcare": { title: "HIPAA & Interoperability", desc: "Clinical data pipelines enforcing strict BAA agreements and FHIR/HL7 standards.", tag: "Healthcare", type: "vault" },
+  "Financial Services": { title: "PCI-DSS High-Throughput", desc: "Sub-millisecond ledger transactions with cryptographic audit trails.", tag: "Financial Services", type: "core" },
+  "Manufacturing": { title: "IIoT & Telemetry", desc: "Industrial sensor streaming with edge resilience and predictive maintenance.", tag: "Manufacturing", type: "circuit" },
+  "Logistics": { title: "Routing & Fleet Dispatch", desc: "High-volume spatial routing algorithms with real-time waypoint synchronization.", tag: "Logistics", type: "dag" },
+};
+
+function MenuSchematicVisual({ type }: { type?: string }) {
+  if (type === 'dag') {
+    return (
+      <svg width="100%" height="90" viewBox="0 0 200 90" fill="none" preserveAspectRatio="xMidYMid meet" style={{ margin: "0.75rem 0", overflow: "visible" }}>
+        <circle cx="30" cy="45" r="7" fill="#60A5FA" />
+        <circle cx="100" cy="20" r="7" fill="#38BDF8" />
+        <circle cx="100" cy="70" r="7" fill="#38BDF8" />
+        <circle cx="170" cy="45" r="7" fill="#60A5FA" />
+        <path d="M37 45 L93 20" stroke="#4B61B8" strokeWidth="1.5" strokeDasharray="3 3" />
+        <path d="M37 45 L93 70" stroke="#4B61B8" strokeWidth="1.5" strokeDasharray="3 3" />
+        <path d="M107 20 L163 45" stroke="#60A5FA" strokeWidth="1.5" />
+        <path d="M107 70 L163 45" stroke="#60A5FA" strokeWidth="1.5" />
+        <circle cx="65" cy="32.5" r="3" fill="#93C5FD">
+          <animate attributeName="cx" values="37;93" dur="2s" repeatCount="indefinite" />
+          <animate attributeName="cy" values="45;20" dur="2s" repeatCount="indefinite" />
+        </circle>
+      </svg>
+    );
+  }
+  if (type === 'circuit') {
+    return (
+      <svg width="100%" height="90" viewBox="0 0 200 90" fill="none" preserveAspectRatio="xMidYMid meet" style={{ margin: "0.75rem 0", overflow: "visible" }}>
+        <path d="M20 45 H70 V25 H130 V65 H180" stroke="#4B61B8" strokeWidth="1.5" />
+        <path d="M20 45 H60 V65 H140 V25 H180" stroke="#60A5FA" strokeWidth="1" strokeDasharray="4 2" />
+        <circle cx="70" cy="25" r="4" fill="#38BDF8" />
+        <circle cx="130" cy="65" r="4" fill="#60A5FA" />
+        <circle cx="140" cy="25" r="3" fill="#93C5FD" />
+        <rect x="90" y="35" width="20" height="20" rx="3" fill="#0F172A" stroke="#38BDF8" strokeWidth="1.5" />
+      </svg>
+    );
+  }
+  if (type === 'vault') {
+    return (
+      <svg width="100%" height="90" viewBox="0 0 200 90" fill="none" preserveAspectRatio="xMidYMid meet" style={{ margin: "0.75rem 0", overflow: "visible" }}>
+        <polygon points="100,10 160,35 160,70 100,85 40,70 40,35" fill="none" stroke="#60A5FA" strokeWidth="1.5" />
+        <circle cx="100" cy="48" r="14" stroke="#38BDF8" strokeWidth="1.5" strokeDasharray="2 2" />
+        <path d="M100 38 V58 M90 48 H110" stroke="#60A5FA" strokeWidth="1.5" />
+      </svg>
+    );
+  }
+  // Default / Mesh
+  return (
+    <svg width="100%" height="90" viewBox="0 0 200 90" fill="none" preserveAspectRatio="xMidYMid meet" style={{ margin: "0.75rem 0", overflow: "visible" }}>
+      <line x1="20" y1="20" x2="180" y2="20" stroke="#1E293B" strokeWidth="1" />
+      <line x1="20" y1="70" x2="180" y2="70" stroke="#1E293B" strokeWidth="1" />
+      <line x1="60" y1="10" x2="60" y2="80" stroke="#1E293B" strokeWidth="1" />
+      <line x1="140" y1="10" x2="140" y2="80" stroke="#1E293B" strokeWidth="1" />
+      <circle cx="60" cy="20" r="5" fill="#60A5FA" />
+      <circle cx="140" cy="20" r="5" fill="#38BDF8" />
+      <circle cx="60" cy="70" r="5" fill="#38BDF8" />
+      <circle cx="140" cy="70" r="5" fill="#60A5FA" />
+      <path d="M60 20 L140 70 M140 20 L60 70" stroke="#4B61B8" strokeWidth="1.5" opacity="0.8" />
+    </svg>
+  );
+}
+
 const getMenuDimensions = (menuKey: string) => {
   return { 
-    width: 'min(820px, 96vw)', 
-    minHeight: '260px',
-    columns: menuKey === 'Services' ? 'repeat(3, 1fr)' : (menuKey === 'Work' ? '1fr' : 'repeat(2, 1fr)'), 
-    featuredWidth: '250px' 
+    width: 'min(860px, 96vw)', 
+    minHeight: menuKey === 'Services' ? '330px' : '280px',
+    columns: menuKey === 'Work' ? '1fr' : 'repeat(2, 1fr)', 
+    featuredWidth: '280px' 
   };
 };
 
@@ -87,6 +181,7 @@ export default function NavBar() {
   const pathname = usePathname();
   const [hoveredNav, setHoveredNav] = useState<string | null>(null);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [hoveredSubItem, setHoveredSubItem] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [expandedMobileMenus, setExpandedMobileMenus] = useState<string[]>([]);
   const menuTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -95,6 +190,7 @@ export default function NavBar() {
     if (menuTimeoutRef.current) clearTimeout(menuTimeoutRef.current);
     setActiveMenu(null);
     setHoveredNav(null);
+    setHoveredSubItem(null);
   };
   
   const navItems = ["Solutions", "Services", "Work", "Industries", "Insights", "About", "Contact"];
@@ -107,6 +203,7 @@ export default function NavBar() {
 
   const handleMouseLeave = () => {
     setHoveredNav(null);
+    setHoveredSubItem(null);
     menuTimeoutRef.current = setTimeout(() => {
       setActiveMenu(null);
     }, 150);
@@ -132,7 +229,7 @@ export default function NavBar() {
       onMouseLeave={handleMouseLeave}
     >
       <div
-        className="keep-flex-row w-full max-w-7xl h-16 rounded-2xl pointer-events-auto shadow-md"
+        className="keep-flex-row w-full max-w-7xl h-16 pointer-events-auto shadow-md"
         style={{
           width: '100%',
           maxWidth: '1280px',
@@ -144,18 +241,14 @@ export default function NavBar() {
           boxShadow: '0 10px 30px -10px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(15, 23, 42, 0.04)',
           backdropFilter: 'blur(16px)',
           WebkitBackdropFilter: 'blur(16px)',
-          borderRadius: '1rem',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          zIndex: 2,
+          borderRadius: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', zIndex: 2,
           position: 'relative',
           pointerEvents: 'auto'
         }}
       >
         <a href="/" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
-          <div style={{ position: 'relative', width: '28px', height: '28px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '8px', overflow: 'hidden' }}>
-            <img src="/custom-logo.svg" alt="Acriotech Logo Mark" width={28} height={28} style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '8px' }} />
+          <div style={{ position: 'relative', width: '28px', height: '28px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '6px', overflow: 'hidden' }}>
+            <img src="/custom-logo.svg" alt="Acriotech Logo Mark" width={28} height={28} style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '2px' }} />
           </div>
           <div style={{ display: 'flex', alignItems: 'center', marginTop: '2px' }}>
             <img src="/acriotech-name-logo.png" alt="Acriotech" width={134} height={18} style={{ height: '18px', objectFit: 'contain' }} />
@@ -185,7 +278,7 @@ export default function NavBar() {
                   <motion.div
                     layoutId="nav-pill"
                     layout
-                    style={{ position: 'absolute', top: '-6px', bottom: '-6px', left: '-12px', right: '-12px', background: 'rgba(75, 97, 184, 0.05)', borderRadius: '8px', zIndex: -1, border: '1px solid rgba(75, 97, 184, 0.1)' }}
+                    style={{ position: 'absolute', top: '-6px', bottom: '-6px', left: '-12px', right: '-12px', background: 'rgba(75, 97, 184, 0.05)', borderRadius: '6px', zIndex: -1, border: '1px solid rgba(75, 97, 184, 0.1)' }}
                     transition={{ type: "spring", bounce: 0, duration: 0.4 }}
                   />
                 )}
@@ -363,7 +456,7 @@ export default function NavBar() {
               transition={{ delay: 0.5 }}
               style={{ marginTop: '2rem', paddingTop: '2rem', borderTop: '1px solid rgba(15,23,42,0.05)' }}
             >
-               <a href="/contact-us" onClick={() => setIsMobileMenuOpen(false)} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#0F172A', color: '#fff', padding: '1rem', borderRadius: '12px', fontSize: '1.1rem', fontWeight: 600, textDecoration: 'none', minHeight: '48px' }}>
+               <a href="/contact-us" onClick={() => setIsMobileMenuOpen(false)} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#0F172A', color: '#fff', padding: '1rem', borderRadius: '8px', fontSize: '1.1rem', fontWeight: 600, textDecoration: 'none', minHeight: '48px' }}>
                   Let's Talk
                </a>
             </motion.div>
@@ -384,12 +477,9 @@ export default function NavBar() {
               onMouseEnter={() => handleMouseEnter(activeMenu)}
               className="mega-menu-dropdown mega-menu-panel shadow-2xl border border-slate-200"
               style={{
-                width: 'min(820px, 96vw)',
-                minHeight: '260px',
-                backgroundColor: '#ffffff',
-                background: '#ffffff',
-                borderRadius: '16px',
-                boxShadow: '0 25px 50px -12px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(15,23,42,0.06)',
+                width: getMenuDimensions(activeMenu).width,
+                minHeight: getMenuDimensions(activeMenu).minHeight,
+                backgroundColor: '#ffffff', background: '#ffffff', borderRadius: '16px', boxShadow: '0 25px 50px -12px rgba(15, 23, 42, 0.22), 0 0 0 1px rgba(15,23,42,0.08)',
                 overflow: 'hidden',
                 position: 'relative',
                 backdropFilter: 'none',
@@ -397,67 +487,136 @@ export default function NavBar() {
               }}
             >
               <div className="mega-menu-content" style={{ display: 'flex', backgroundColor: '#ffffff', background: '#ffffff' }}>
-                {/* Links Section */}
-                <div className="mega-menu-links" style={{ flex: 1, padding: '1.75rem 2rem', backgroundColor: '#ffffff', background: '#ffffff', borderRight: navData[activeMenu as keyof typeof navData].featured ? '1px solid rgba(15, 23, 42, 0.05)' : 'none' }}>
-                  <div style={{ fontSize: '0.72rem', fontWeight: 700, color: '#4B61B8', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '1rem' }}>
-                    {navData[activeMenu as keyof typeof navData].purpose}
+                {/* Links Section with Blueprint Structural Hairlines */}
+                <div 
+                  className="mega-menu-links" 
+                  style={{ 
+                    flex: 1, 
+                    minWidth: 0, 
+                    padding: '1.75rem 2rem', 
+                    backgroundColor: '#ffffff', 
+                    background: '#ffffff', 
+                    borderRight: '1px solid #E2E8F0',
+                    position: 'relative'
+                  }}
+                >
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem', paddingBottom: '0.65rem', borderBottom: '1px solid #F1F5F9' }}>
+                    <div style={{ fontSize: '0.72rem', fontWeight: 800, color: '#4B61B8', textTransform: 'uppercase', letterSpacing: '0.14em' }}>
+                      {navData[activeMenu as keyof typeof navData].purpose}
+                    </div>
                   </div>
                   
                   <div style={{ 
                     display: 'grid', 
                     gridTemplateColumns: getMenuDimensions(activeMenu).columns, 
-                    gap: activeMenu === 'Services' ? '0.45rem 0.85rem' : '0.65rem 1.5rem' 
+                    gap: '0.4rem 0.6rem'
                   }}>
-                    {navData[activeMenu as keyof typeof navData].items.map((link, idx) => (
-                      <a 
-                        key={idx} 
-                        href={generateUrl(activeMenu, link)} 
-                        onClick={closeMegaMenu}
-                        style={{ display: 'flex', alignItems: 'center', gap: '0.55rem', fontSize: activeMenu === 'Services' ? '0.86rem' : '0.95rem', fontWeight: 600, color: '#0F172A', transition: 'all 0.2s ease', cursor: 'pointer', padding: activeMenu === 'Services' ? '0.35rem 0.5rem' : '0.5rem 0.75rem', borderRadius: '8px', textDecoration: 'none' }} 
-                        onMouseEnter={(e) => { 
-                          e.currentTarget.style.color = '#4B61B8'; 
-                          e.currentTarget.style.background = 'rgba(75, 97, 184, 0.05)';
-                          e.currentTarget.style.transform = 'translateX(3px)';
-                        }}
-                        onMouseLeave={(e) => { 
-                          e.currentTarget.style.color = '#0F172A'; 
-                          e.currentTarget.style.background = 'transparent';
-                          e.currentTarget.style.transform = 'translateX(0px)';
-                        }}
-                      >
-                        <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#4B61B8', opacity: 0.6, flexShrink: 0 }}></span>
-                        {link}
-                      </a>
-                    ))}
+                    {navData[activeMenu as keyof typeof navData].items.map((link, idx) => {
+                      const isHovered = hoveredSubItem === link;
+                      return (
+                        <a 
+                          key={idx} 
+                          href={generateUrl(activeMenu, link)} 
+                          onClick={closeMegaMenu}
+                          onMouseEnter={() => setHoveredSubItem(link)}
+                          style={{ 
+                            display: 'flex', 
+                            alignItems: 'center', 
+                            justifyContent: 'space-between',
+                            gap: '0.5rem', 
+                            fontSize: activeMenu === 'Services' ? '0.84rem' : '0.92rem', 
+                            fontWeight: isHovered ? 700 : 600, 
+                            color: isHovered ? '#4B61B8' : '#0F172A', 
+                            background: isHovered ? 'rgba(75, 97, 184, 0.06)' : 'transparent',
+                            border: isHovered ? '1px solid rgba(75, 97, 184, 0.2)' : '1px solid #F1F5F9', borderRadius: '6px',
+                            padding: activeMenu === 'Services' ? '0.45rem 0.65rem' : '0.6rem 0.85rem',
+                            textDecoration: 'none',
+                            transition: 'all 0.18s ease',
+                            cursor: 'pointer'
+                          }} 
+                        >
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.55rem', overflow: 'hidden' }}>
+                            <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', fontWeight: 700, color: isHovered ? '#4B61B8' : '#94A3B8', flexShrink: 0 }}>
+                              {idx < 9 ? `0${idx + 1}` : idx + 1}
+                            </span>
+                            <span style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                              {link}
+                            </span>
+                          </div>
+                          <span style={{ fontSize: '0.75rem', color: isHovered ? '#4B61B8' : 'transparent', transition: 'color 0.15s ease' }}>
+                            &rarr;
+                          </span>
+                        </a>
+                      );
+                    })}
                   </div>
                 </div>
 
-                {/* Featured Section (Optional) */}
-                {navData[activeMenu as keyof typeof navData].featured && (
-                  <div style={{ width: getMenuDimensions(activeMenu).featuredWidth, flexShrink: 0, padding: '2rem 2.25rem', background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)', display: 'flex', flexDirection: 'column', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}>
-                    {/* decorative circuit element */}
-                    <div style={{ position: 'absolute', top: -40, right: -40, width: 160, height: 160, borderRadius: '50%', background: 'radial-gradient(circle, rgba(75, 97, 184, 0.2) 0%, rgba(75, 97, 184, 0) 70%)' }}></div>
-                    
-                    <div style={{ width: '42px', height: '42px', borderRadius: '10px', background: 'rgba(255, 255, 255, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.25rem', border: '1px solid rgba(255, 255, 255, 0.05)' }}>
-                      <Layers size={20} color="#60A5FA" />
-                    </div>
-                    <h4 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '0.75rem', color: '#FFFFFF', letterSpacing: '-0.02em', lineHeight: 1.25 }}>
-                      {navData[activeMenu as keyof typeof navData].featured?.title}
-                    </h4>
-                    <p style={{ fontSize: '0.875rem', color: '#94A3B8', marginBottom: '1.5rem', lineHeight: 1.5 }}>
-                      {navData[activeMenu as keyof typeof navData].featured?.desc}
-                    </p>
-                    <a 
-                      href={featuredLinks[activeMenu]} 
-                      onClick={closeMegaMenu}
-                      style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', fontWeight: 600, color: '#60A5FA', transition: 'gap 0.2s ease', textDecoration: 'none' }}
-                      onMouseEnter={(e) => e.currentTarget.style.gap = '0.75rem'}
-                      onMouseLeave={(e) => e.currentTarget.style.gap = '0.5rem'}
+                {/* Dynamic Reactive Right-Hand Navy Architectural Preview Card */}
+                {(() => {
+                  const activePreview = (hoveredSubItem && itemPreviews[hoveredSubItem]) || null;
+                  const defaultFeatured = navData[activeMenu as keyof typeof navData].featured;
+
+                  return (
+                    <div 
+                      style={{ 
+                        width: getMenuDimensions(activeMenu).featuredWidth, 
+                        flexShrink: 0, 
+                        padding: '1.75rem 2rem', 
+                        background: '#0F172A', 
+                        display: 'flex', 
+                        flexDirection: 'column', 
+                        justifyContent: 'space-between', 
+                        position: 'relative', 
+                        overflow: 'hidden',
+                        borderLeft: '1px solid rgba(255, 255, 255, 0.08)'
+                      }}
                     >
-                      {navData[activeMenu as keyof typeof navData].featured?.linkText} <ArrowRight size={15} />
-                    </a>
-                  </div>
-                )}
+                      {/* Ambient Subtle Radial Glow */}
+
+
+                      <div style={{ position: 'relative', zIndex: 2 }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
+                          <span style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.12em', color: '#60A5FA', textTransform: 'uppercase' }}>
+                            {activeMenu}
+                          </span>
+                        </div>
+
+                        <h4 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.02em', lineHeight: 1.25, marginBottom: '0.5rem' }}>
+                          {activePreview ? activePreview.title : (defaultFeatured?.title || activeMenu)}
+                        </h4>
+                        
+                        <p style={{ fontSize: '0.82rem', color: '#94A3B8', lineHeight: 1.5, margin: 0 }}>
+                          {activePreview ? activePreview.desc : (defaultFeatured?.desc || '')}
+                        </p>
+
+                        {/* Animated SVG Technical Schematic */}
+                        <MenuSchematicVisual type={activePreview?.type || 'mesh'} />
+                      </div>
+
+                      <div style={{ position: 'relative', zIndex: 2, paddingTop: '0.75rem', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+                        <a 
+                          href={hoveredSubItem ? generateUrl(activeMenu, hoveredSubItem) : featuredLinks[activeMenu]} 
+                          onClick={closeMegaMenu}
+                          style={{ 
+                            display: 'inline-flex', 
+                            alignItems: 'center', 
+                            gap: '0.45rem', 
+                            fontSize: '0.84rem', 
+                            fontWeight: 700, 
+                            color: '#60A5FA', 
+                            textDecoration: 'none',
+                            transition: 'gap 0.2s ease'
+                          }}
+                          onMouseEnter={(e) => e.currentTarget.style.gap = '0.7rem'}
+                          onMouseLeave={(e) => e.currentTarget.style.gap = '0.45rem'}
+                        >
+                          {hoveredSubItem ? `Explore ${hoveredSubItem} \u2192` : `${defaultFeatured?.linkText || 'Explore'} \u2192`}
+                        </a>
+                      </div>
+                    </div>
+                  );
+                })()}
               </div>
             </motion.div>
           )}
@@ -465,7 +624,7 @@ export default function NavBar() {
       </div>
 
       {/* SEO Links Block (Visually hidden, explicitly for search engine crawlers to discover all deep links) */}
-      <div style={{ position: 'absolute', width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', whiteSpace: 'nowrap', borderWidth: 0 }}>
+      <div style={{ position: 'absolute', top: 0, left: 0, width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', whiteSpace: 'normal', borderWidth: 0, pointerEvents: 'none', zIndex: -1 }}>
         {Object.entries(navData).map(([menu, data]) => (
           <div key={`seo-${menu}`}>
             <h2>{menu}</h2>

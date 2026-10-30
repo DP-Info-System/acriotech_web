@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -133,7 +133,7 @@ export default function ChatWidget() {
           right: '24px',
           width: '60px',
           height: '60px',
-          borderRadius: '30px',
+          borderRadius: '2px',
           background: '#0F172A',
           color: '#FFFFFF',
           border: 'none',
@@ -166,7 +166,7 @@ export default function ChatWidget() {
               height: '600px',
               maxHeight: 'calc(100vh - 48px)',
               background: '#FFFFFF',
-              borderRadius: '16px',
+              borderRadius: '2px',
               boxShadow: '0 25px 50px -12px rgba(15,23,42,0.25)',
               display: 'flex',
               flexDirection: 'column',
@@ -178,7 +178,7 @@ export default function ChatWidget() {
             {/* Header */}
             <div style={{ background: '#0F172A', color: '#FFFFFF', padding: '16px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <div style={{ width: '32px', height: '32px', borderRadius: '16px', background: 'rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ width: '32px', height: '32px', borderRadius: '2px', background: 'rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <Bot size={20} />
                 </div>
                 <div>
@@ -218,7 +218,7 @@ export default function ChatWidget() {
                         <div style={{ 
                           maxWidth: '85%', 
                           padding: '12px 16px', 
-                          borderRadius: '12px', 
+                          borderRadius: '2px', 
                           background: msg.role === 'user' ? '#3B82F6' : '#F1F5F9',
                           color: msg.role === 'user' ? '#FFFFFF' : '#0F172A',
                           borderBottomRightRadius: msg.role === 'user' ? '4px' : '12px',
@@ -249,12 +249,12 @@ export default function ChatWidget() {
                         placeholder="Ask a question..." 
                         value={inputMessage}
                         onChange={e => setInputMessage(e.target.value)}
-                        style={{ flex: 1, padding: '12px 16px', borderRadius: '24px', border: '1px solid #E2E8F0', outline: 'none', fontSize: '0.95rem', background: '#F8FAFC' }}
+                        style={{ flex: 1, padding: '12px 16px', borderRadius: '2px', border: '1px solid #E2E8F0', outline: 'none', fontSize: '0.95rem', background: '#F8FAFC' }}
                       />
                       <button 
                         type="submit"
                         disabled={!inputMessage.trim()}
-                        style={{ width: '42px', height: '42px', borderRadius: '21px', background: inputMessage.trim() ? '#3B82F6' : '#E2E8F0', color: '#FFFFFF', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: inputMessage.trim() ? 'pointer' : 'default', transition: 'background 0.2s' }}
+                        style={{ width: '42px', height: '42px', borderRadius: '2px', background: inputMessage.trim() ? '#3B82F6' : '#E2E8F0', color: '#FFFFFF', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: inputMessage.trim() ? 'pointer' : 'default', transition: 'background 0.2s' }}
                       >
                         <Send size={18} style={{ marginLeft: '2px' }} />
                       </button>
@@ -280,7 +280,7 @@ export default function ChatWidget() {
                         <label style={{ fontSize: '0.75rem', fontWeight: 600, color: '#475569' }}>Full Name *</label>
                         <div style={{ position: 'relative' }}>
                           <User size={15} color="#94A3B8" style={{ position: 'absolute', left: '10px', top: '10px' }} />
-                          <input required type="text" placeholder="John Doe" value={formData.fullName} onChange={e => setFormData({...formData, fullName: e.target.value})} style={{ width: '100%', padding: '7px 10px 7px 32px', borderRadius: '7px', border: '1px solid #E2E8F0', outline: 'none', fontSize: '0.875rem' }} />
+                          <input required type="text" placeholder="John Doe" value={formData.fullName} onChange={e => setFormData({...formData, fullName: e.target.value})} style={{ width: '100%', padding: '7px 10px 7px 32px', borderRadius: '2px', border: '1px solid #E2E8F0', outline: 'none', fontSize: '0.875rem' }} />
                         </div>
                       </div>
 
@@ -288,7 +288,7 @@ export default function ChatWidget() {
                         <label style={{ fontSize: '0.75rem', fontWeight: 600, color: '#475569' }}>Company Name</label>
                         <div style={{ position: 'relative' }}>
                           <Building size={15} color="#94A3B8" style={{ position: 'absolute', left: '10px', top: '10px' }} />
-                          <input type="text" placeholder="Acme Inc." value={formData.companyName} onChange={e => setFormData({...formData, companyName: e.target.value})} style={{ width: '100%', padding: '7px 10px 7px 32px', borderRadius: '7px', border: '1px solid #E2E8F0', outline: 'none', fontSize: '0.875rem' }} />
+                          <input type="text" placeholder="Acme Inc." value={formData.companyName} onChange={e => setFormData({...formData, companyName: e.target.value})} style={{ width: '100%', padding: '7px 10px 7px 32px', borderRadius: '2px', border: '1px solid #E2E8F0', outline: 'none', fontSize: '0.875rem' }} />
                         </div>
                       </div>
 
@@ -297,28 +297,28 @@ export default function ChatWidget() {
                           <label style={{ fontSize: '0.75rem', fontWeight: 600, color: '#475569' }}>Email *</label>
                           <div style={{ position: 'relative' }}>
                             <Mail size={15} color="#94A3B8" style={{ position: 'absolute', left: '10px', top: '10px' }} />
-                            <input required type="email" placeholder="john@company.com" value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} style={{ width: '100%', padding: '7px 10px 7px 32px', borderRadius: '7px', border: '1px solid #E2E8F0', outline: 'none', fontSize: '0.875rem' }} />
+                            <input required type="email" placeholder="john@company.com" value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} style={{ width: '100%', padding: '7px 10px 7px 32px', borderRadius: '2px', border: '1px solid #E2E8F0', outline: 'none', fontSize: '0.875rem' }} />
                           </div>
                         </div>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
                           <label style={{ fontSize: '0.75rem', fontWeight: 600, color: '#475569' }}>Mobile *</label>
                           <div style={{ position: 'relative' }}>
                             <Phone size={15} color="#94A3B8" style={{ position: 'absolute', left: '10px', top: '10px' }} />
-                            <input required type="tel" placeholder="+1 (555) 000-0000" value={formData.mobile} onChange={e => setFormData({...formData, mobile: e.target.value})} style={{ width: '100%', padding: '7px 10px 7px 32px', borderRadius: '7px', border: '1px solid #E2E8F0', outline: 'none', fontSize: '0.875rem' }} />
+                            <input required type="tel" placeholder="+1 (555) 000-0000" value={formData.mobile} onChange={e => setFormData({...formData, mobile: e.target.value})} style={{ width: '100%', padding: '7px 10px 7px 32px', borderRadius: '2px', border: '1px solid #E2E8F0', outline: 'none', fontSize: '0.875rem' }} />
                           </div>
                         </div>
                       </div>
 
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
                         <label style={{ fontSize: '0.75rem', fontWeight: 600, color: '#475569' }}>Message *</label>
-                        <textarea required placeholder="How can we help?" value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})} rows={3} style={{ width: '100%', padding: '8px 10px', borderRadius: '7px', border: '1px solid #E2E8F0', outline: 'none', fontSize: '0.875rem', resize: 'none' }} />
+                        <textarea required placeholder="How can we help?" value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})} rows={3} style={{ width: '100%', padding: '8px 10px', borderRadius: '2px', border: '1px solid #E2E8F0', outline: 'none', fontSize: '0.875rem', resize: 'none' }} />
                       </div>
 
                       {formStatus === 'error' && (
                         <p style={{ color: '#EF4444', fontSize: '0.8rem', margin: 0 }}>Something went wrong. Please try again.</p>
                       )}
 
-                      <button type="submit" disabled={formStatus === 'loading'} style={{ background: '#0F172A', color: '#FFFFFF', padding: '10px', borderRadius: '7px', border: 'none', fontWeight: 600, fontSize: '0.9rem', cursor: formStatus === 'loading' ? 'not-allowed' : 'pointer', marginTop: '4px', opacity: formStatus === 'loading' ? 0.7 : 1 }}>
+                      <button type="submit" disabled={formStatus === 'loading'} style={{ background: '#0F172A', color: '#FFFFFF', padding: '10px', borderRadius: '2px', border: 'none', fontWeight: 600, fontSize: '0.9rem', cursor: formStatus === 'loading' ? 'not-allowed' : 'pointer', marginTop: '4px', opacity: formStatus === 'loading' ? 0.7 : 1 }}>
                         {formStatus === 'loading' ? 'Sending...' : 'Send Message'}
                       </button>
                     </form>

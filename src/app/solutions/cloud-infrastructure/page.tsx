@@ -66,7 +66,7 @@ export default function CloudInfrastructurePage() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'var(--spacing-section-sm)', alignItems: 'center', marginBottom: '6rem' }}>
             <div>
-              <div style={{ fontSize: '4rem', fontWeight: 900, color: '#EEF2FF', lineHeight: 1, marginBottom: '1rem' }}>01</div>
+              <div style={{ fontSize: '4rem', fontWeight: 900, color: '#0F172A', lineHeight: 1, marginBottom: '1rem', letterSpacing: '-0.03em' }}>01</div>
               <h3 style={{ fontSize: 'var(--font-h3)', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>Audit & Infrastructure as Code (IaC)</h3>
               <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.7 }}>We don&apos;t use click-ops. The first step in any modernization is capturing your entire infrastructure state in Terraform or Pulumi. This ensures every environment (dev, staging, prod) is perfectly reproducible and peer-reviewed via Git.</p>
             </div>
@@ -77,16 +77,16 @@ export default function CloudInfrastructurePage() {
                </div>
                <pre style={{ margin: 0, color: '#94A3B8', fontFamily: 'monospace', fontSize: '0.85rem', lineHeight: 1.6 }}>
                  <code>
-                   module &quot;production_cluster&quot; &#123;{'\n'}
-                   {'  '}source = &quot;./modules/eks&quot;{'\n'}
-                   {'  '}node_groups = &#123;{'\n'}
-                   {'    '}primary = &#123;{'\n'}
-                   {'      '}instance_types = [&quot;m5.large&quot;]{'\n'}
-                   {'      '}min_size = 3{'\n'}
-                   {'      '}max_size = 15{'\n'}
-                   {'    &#125;\n'}
-                   {'  &#125;\n'}
-                   &#125;
+{`module "production_cluster" {
+  source = "./modules/eks"
+  node_groups = {
+    primary = {
+      instance_types = ["m5.large"]
+      min_size = 3
+      max_size = 15
+    }
+  }
+}`}
                  </code>
                </pre>
             </div>
@@ -94,7 +94,7 @@ export default function CloudInfrastructurePage() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
             <div style={{ order: 2 }}>
-              <div style={{ fontSize: '4rem', fontWeight: 900, color: '#EEF2FF', lineHeight: 1, marginBottom: '1rem' }}>02</div>
+              <div style={{ fontSize: '4rem', fontWeight: 900, color: '#0F172A', lineHeight: 1, marginBottom: '1rem', letterSpacing: '-0.03em' }}>02</div>
               <h3 style={{ fontSize: 'var(--font-h3)', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>Container Orchestration</h3>
               <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.7 }}>We migrate legacy applications into isolated containers orchestrated by Kubernetes. Failed pods restart automatically, autoscaling absorbs traffic spikes, and each service gets its own resource limits.</p>
             </div>

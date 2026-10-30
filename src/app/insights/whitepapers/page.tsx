@@ -2,7 +2,8 @@
 
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
-import { Download, Lock, LayoutTemplate, Presentation } from "lucide-react";
+import { ArrowRight, Lock, LayoutTemplate, Presentation } from "lucide-react";
+import Link from "next/link";
 
 const whitepapers = [
   {
@@ -10,7 +11,7 @@ const whitepapers = [
     theme: "Architecture",
     icon: LayoutTemplate,
     desc: "A data-driven analysis of when distributed systems actually make financial sense, and when you should stick to a modular monolith. Includes cost-benefit matrices based on AWS/GCP pricing.",
-    pages: 42,
+    pages: "Architecture Briefing",
     date: "March 2026"
   },
   {
@@ -18,7 +19,7 @@ const whitepapers = [
     theme: "Security",
     icon: Lock,
     desc: "How to implement continuous verification across microservices boundaries. A practical guide to mTLS, JWT validation, and RBAC policy enforcement at the API gateway level.",
-    pages: 35,
+    pages: "Security Briefing",
     date: "January 2026"
   },
   {
@@ -26,7 +27,7 @@ const whitepapers = [
     theme: "FinOps",
     icon: Presentation,
     desc: "An engineering leader's guide to predicting AWS Lambda and DynamoDB bills at scale. We analyze cold start penalties, API Gateway overhead, and when to migrate back to containers.",
-    pages: 28,
+    pages: "FinOps Briefing",
     date: "November 2025"
   }
 ];
@@ -45,7 +46,7 @@ export default function WhitepapersPage() {
             Deep architectural <span style={{ color: '#4B61B8' }}>research.</span>
           </h1>
           <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, maxWidth: '700px' }}>
-            Comprehensive, multi-page engineering guides written by our Principal Engineers. We dive past marketing claims into the actual code patterns and cost structures of modern systems.
+            Comprehensive engineering briefs authored directly by our Principal Engineers. Detailed analysis into actual code patterns, boundary constraints, and cost structures of production systems.
           </p>
         </div>
       </section>
@@ -57,19 +58,24 @@ export default function WhitepapersPage() {
                <div key={i} style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '16px', padding: '3rem', display: 'flex', gap: '3rem', alignItems: 'center', transition: 'box-shadow 0.2s' }} className="wp-card">
                  <div style={{ width: '120px', height: '160px', background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '8px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', flexShrink: 0, gap: '1rem', boxShadow: '5px 5px 15px rgba(0,0,0,0.05)' }}>
                     <wp.icon size={32} color="#4B61B8" />
-                    <div style={{ fontSize: '0.7rem', color: '#64748B', fontWeight: 700, textTransform: 'uppercase' }}>PDF</div>
+                    <div style={{ fontSize: '0.65rem', color: '#64748B', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>BRIEFING</div>
                  </div>
                  <div style={{ flex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
                       <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#4B61B8', background: '#EFF6FF', padding: '0.2rem 0.6rem', borderRadius: '4px', textTransform: 'uppercase' }}>{wp.theme}</span>
-                      <span style={{ fontSize: '0.85rem', color: '#64748B' }}>{wp.pages} Pages • {wp.date}</span>
+                      <span style={{ fontSize: '0.85rem', color: '#64748B' }}>{wp.pages} • {wp.date}</span>
                     </div>
                     <h2 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#0F172A', marginBottom: '1rem', lineHeight: 1.2 }}>{wp.title}</h2>
                     <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.6, marginBottom: '2rem' }}>{wp.desc}</p>
                     
-                    <a href="/sample-whitepaper.txt" download={`${wp.title}.txt`} style={{ background: '#0F172A', color: '#FFFFFF', border: 'none', padding: '0.9rem 1.8rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer', transition: 'background 0.2s', textDecoration: 'none' }}>
-                      <Download size={18} /> Download Whitepaper
-                    </a>
+                    <Link 
+                      href={`/contact-us?subject=${encodeURIComponent('Architecture Briefing Request: ' + wp.title)}`} 
+                      style={{ background: '#0F172A', color: '#FFFFFF', border: 'none', padding: '0.9rem 1.8rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer', transition: 'background 0.2s', textDecoration: 'none' }}
+                      onMouseEnter={(e) => e.currentTarget.style.background = '#4B61B8'}
+                      onMouseLeave={(e) => e.currentTarget.style.background = '#0F172A'}
+                    >
+                      Request Architecture Briefing <ArrowRight size={18} />
+                    </Link>
                  </div>
                </div>
              ))}

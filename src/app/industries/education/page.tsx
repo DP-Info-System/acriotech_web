@@ -1,28 +1,35 @@
+"use client";
+
+import { useEffect } from "react";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
-import { ArrowRight, Video, ShieldCheck, Database, Layers, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Video, ShieldCheck, Database, Layers } from "lucide-react";
 import Link from "next/link";
 
 export default function EducationIndustry() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
       <NavBar />
 
       {/* Hero Section */}
       <section style={{ paddingTop: '10rem', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
-        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '5rem', alignItems: 'center' }}>
-            <div>
+        <div className="container max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="layout-split-hero gap-12 items-center w-full">
+            <div className="w-full min-w-0">
               <div style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.15em', color: '#4B61B8', marginBottom: '1.25rem' }}>
-                EdTech & E-Learning Engineering
+                EdTech &amp; E-Learning Engineering
               </div>
-              <h1 style={{ fontSize: '4.2rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+              <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 4.2rem)', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
                 Platforms built for <span style={{ color: '#4B61B8' }}>high-concurrency learning.</span>
               </h1>
               <p style={{ fontSize: '1.2rem', color: '#475569', lineHeight: 1.6, marginBottom: '2.5rem', maxWidth: '600px' }}>
                 We build scalable Learning Management Systems (LMS), real-time WebRTC video classrooms, and student data platforms engineered to absorb 1,000% morning concurrency surges while maintaining strict FERPA and COPPA compliance.
               </p>
-              <div style={{ display: 'flex', gap: '1rem' }}>
+              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                 <Link href="/contact-us" style={{ background: '#4B61B8', color: '#FFFFFF', padding: '1.1rem 2rem', borderRadius: '8px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s' }}>
                   Discuss Your EdTech Product <ArrowRight size={18} />
                 </Link>
@@ -33,10 +40,10 @@ export default function EducationIndustry() {
             <div style={{ background: '#0F172A', borderRadius: '16px', padding: '2rem', border: '1px solid #1E293B', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem', borderBottom: '1px solid #1E293B', paddingBottom: '1rem' }}>
                 <div style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: '#60A5FA' }}>
-                  ARCHITECTURAL BENCHMARKS
+                  SYSTEM ARCHITECTURE
                 </div>
-                <div style={{ fontSize: '0.75rem', color: '#94A3B8', fontFamily: 'monospace' }}>
-                  FERPA / COPPA VERIFIED
+                <div style={{ fontSize: '0.75rem', color: '#94A3B8', fontWeight: 600 }}>
+                  FERPA &amp; COPPA
                 </div>
               </div>
 
@@ -48,7 +55,7 @@ export default function EducationIndustry() {
                   <div style={{ fontSize: '0.95rem', fontWeight: 700, color: '#F8FAFC' }}>
                     Selective Forwarding Unit (SFU) with Adaptive Bitrate
                   </div>
-                  <div style={{ fontSize: '0.8rem', color: '#60A5FA', marginTop: '0.35rem', fontFamily: 'monospace' }}>
+                  <div style={{ fontSize: '0.8rem', color: '#60A5FA', marginTop: '0.35rem' }}>
                     Sub-150ms real-time audio/video latency across 500+ peers
                   </div>
                 </div>
@@ -58,9 +65,9 @@ export default function EducationIndustry() {
                     Concurrency Surge Absorption
                   </div>
                   <div style={{ fontSize: '0.95rem', fontWeight: 700, color: '#F8FAFC' }}>
-                    Serverless Event Handlers & Auto-Scaling Kubernetes
+                    Serverless Event Handlers &amp; Auto-Scaling Kubernetes
                   </div>
-                  <div style={{ fontSize: '0.8rem', color: '#60A5FA', marginTop: '0.35rem', fontFamily: 'monospace' }}>
+                  <div style={{ fontSize: '0.8rem', color: '#60A5FA', marginTop: '0.35rem' }}>
                     25,000+ concurrent students supported at 8:00 AM rush
                   </div>
                 </div>
@@ -70,9 +77,9 @@ export default function EducationIndustry() {
                     Institutional Standards
                   </div>
                   <div style={{ fontSize: '0.95rem', fontWeight: 700, color: '#F8FAFC' }}>
-                    Multi-Tenant Isolation & LTI 1.3 / Advantage Protocol
+                    Multi-Tenant Isolation &amp; LTI 1.3 / Advantage Protocol
                   </div>
-                  <div style={{ fontSize: '0.8rem', color: '#60A5FA', marginTop: '0.35rem', fontFamily: 'monospace' }}>
+                  <div style={{ fontSize: '0.8rem', color: '#60A5FA', marginTop: '0.35rem' }}>
                     Zero cross-tenant data leakage; seamless LMS tool embed
                   </div>
                 </div>
@@ -85,7 +92,7 @@ export default function EducationIndustry() {
       {/* Real-time Video Infrastructure */}
       <section style={{ padding: '8rem 0', background: '#F8FAFC' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '6rem', alignItems: 'center' }}>
+           <div className="layout-split-hero gap-12 items-center w-full">
              
              {/* Visual */}
              <div style={{ background: '#FFFFFF', padding: '3rem', borderRadius: '24px', border: '1px solid #E2E8F0', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.05)' }}>
@@ -113,7 +120,7 @@ export default function EducationIndustry() {
                 <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.7, marginBottom: '2rem' }}>
                   A live lecture with 500 students requires vastly different architecture than a standard API. We build specialized WebRTC video pipelines that prioritize audio clarity and low latency.
                 </p>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem' }}>
+                <div className="layout-grid-2 gap-6 w-full">
                   <div>
                     <h4 style={{ fontWeight: 700, fontSize: '1.1rem', color: '#0F172A', marginBottom: '0.5rem' }}>Adaptive Bitrate</h4>
                     <p style={{ color: '#64748B', fontSize: '0.95rem' }}>Automatically degrading video quality for students on constrained internet connections so audio never drops.</p>
@@ -130,24 +137,24 @@ export default function EducationIndustry() {
 
       {/* FERPA Compliance */}
       <section className="dark-section" style={{ padding: '6rem 0', background: '#0F172A', color: '#FFFFFF' }}>
-        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
+        <div className="container max-w-7xl mx-auto px-6 lg:px-8">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
              <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '1rem' }}>Protecting the Student</h2>
              <p style={{ fontSize: '1.1rem', color: '#94A3B8', maxWidth: '700px', margin: '0 auto' }}>Student records are heavily protected by law. We engineer systems that make compliance with FERPA and COPPA structural, not an afterthought.</p>
           </div>
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '1.5rem' }}>
-             <div style={{ padding: '2rem', border: '1px solid #334155', borderRadius: '12px', background: '#1E293B', textAlign: 'center' }}>
+          <div className="layout-grid-3 gap-6 w-full">
+             <div className="w-full min-w-0" style={{ padding: '2rem', border: '1px solid #334155', borderRadius: '12px', background: '#1E293B', textAlign: 'center' }}>
                 <ShieldCheck size={32} color="#60A5FA" style={{ margin: '0 auto 1rem auto' }} />
                 <h4 style={{ fontWeight: 700, fontSize: '1.1rem', marginBottom: '0.5rem' }}>FERPA / COPPA</h4>
                 <p style={{ color: '#94A3B8', fontSize: '0.9rem', lineHeight: 1.5 }}>Implementing strict data retention policies and parental consent gates for underage learners.</p>
              </div>
-             <div style={{ padding: '2rem', border: '1px solid #334155', borderRadius: '12px', background: '#1E293B', textAlign: 'center' }}>
+             <div className="w-full min-w-0" style={{ padding: '2rem', border: '1px solid #334155', borderRadius: '12px', background: '#1E293B', textAlign: 'center' }}>
                 <Database size={32} color="#60A5FA" style={{ margin: '0 auto 1rem auto' }} />
                 <h4 style={{ fontWeight: 700, fontSize: '1.1rem', marginBottom: '0.5rem' }}>Data Segregation</h4>
                 <p style={{ color: '#94A3B8', fontSize: '0.9rem', lineHeight: 1.5 }}>Multi-tenant database architectures that guarantee School District A cannot access School District B data.</p>
              </div>
-             <div style={{ padding: '2rem', border: '1px solid #334155', borderRadius: '12px', background: '#1E293B', textAlign: 'center' }}>
+             <div className="w-full min-w-0" style={{ padding: '2rem', border: '1px solid #334155', borderRadius: '12px', background: '#1E293B', textAlign: 'center' }}>
                 <Layers size={32} color="#60A5FA" style={{ margin: '0 auto 1rem auto' }} />
                 <h4 style={{ fontWeight: 700, fontSize: '1.1rem', marginBottom: '0.5rem' }}>LTI Integration</h4>
                 <p style={{ color: '#94A3B8', fontSize: '0.9rem', lineHeight: 1.5 }}>Seamlessly integrating custom tools into existing systems like Canvas or Blackboard using LTI standards.</p>
@@ -159,7 +166,7 @@ export default function EducationIndustry() {
       {/* Scalability */}
       <section style={{ padding: '6rem 0', background: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '4rem', alignItems: 'center' }}>
+           <div className="layout-split-hero gap-16 items-center w-full">
               <div>
                 <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>The 8 AM Spike</h2>
                 <p style={{ fontSize: '1.1rem', color: '#64748B', lineHeight: 1.7 }}>

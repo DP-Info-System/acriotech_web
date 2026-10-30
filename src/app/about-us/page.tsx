@@ -1,8 +1,31 @@
+"use client";
+
+import { useState } from "react";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
-import { ArrowRight, Eye, ShieldCheck, Handshake } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function AboutUs() {
+  const [activePrinciple, setActivePrinciple] = useState(0);
+
+  const principles = [
+    {
+      num: "01",
+      title: "Transparency",
+      desc: "We write weekly status reports that include what was done, what is blocked, and what changed from the original estimate. If something slips, you hear it from us — not when you check the repo."
+    },
+    {
+      num: "02",
+      title: "Quality Over Speed",
+      desc: "We build systems we would be comfortable inheriting ourselves. That means documented decisions, typed interfaces, and no clever abstractions that only the author understands."
+    },
+    {
+      num: "03",
+      title: "Long-term Partnership",
+      desc: "The engineers who build a system are the ones who support it. We do not hand off to a separate team after go-live. When something breaks at 2am, someone who wrote the code answers the alert."
+    }
+  ];
+
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FFFFFF' }}>
       <NavBar />
@@ -10,7 +33,7 @@ export default function AboutUs() {
       {/* Clean, minimalist Hero */}
       <section style={{ paddingTop: '10rem', paddingBottom: '5rem', background: '#F8FAFC', borderBottom: '1px solid #E2E8F0' }}>
         <div className="container max-w-7xl mx-auto px-6 lg:px-8" style={{ textAlign: 'left' }}>
-          <div style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#4B61B8', marginBottom: '0.85rem' }}>
+          <div style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#4B61B8', marginBottom: '0.85rem' }}>
             ABOUT ACRIOTECH &middot; EST. 2012
           </div>
           <h1 style={{ fontSize: 'clamp(2.8rem, 4.5vw, 4rem)', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.03em', marginBottom: '1.5rem', textAlign: 'left', lineHeight: 1.1 }}>
@@ -27,47 +50,55 @@ export default function AboutUs() {
         <div className="container max-w-7xl mx-auto px-6 lg:px-8">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 460px), 1fr))', gap: '4.5rem', alignItems: 'center' }}>
             
-            {/* Left: Rich dark navy architectural card with Unsplash Photography */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            {/* Left: Rich dark navy architectural card with Photography and Overlapping Delivery Ledger */}
+            <div className="relative">
               <div 
                 style={{ 
-                  borderRadius: '16px', 
+                  borderRadius: '12px', 
                   overflow: 'hidden', 
                   boxShadow: '0 20px 40px rgba(15,23,42,0.12)',
-                  border: '1px solid #E2E8F0',
-                  height: '300px'
+                  border: '1px solid #CBD5E1',
+                  height: '340px',
+                  position: 'relative'
                 }}
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80" 
-                  alt="Acriotech Engineering Studio" 
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80" 
+                  alt="Acriotech Senior Engineering Pod Collaborating with Laptops" 
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(15,23,42,0.4), transparent)' }} />
               </div>
 
-              {/* Delivery Facts Card */}
+              {/* Overlapping Delivery Facts Ledger */}
               <div 
+                className="mt-4 lg:-mt-16 lg:ml-12 relative z-10"
                 style={{ 
                   background: '#0F172A', 
                   color: '#FFFFFF', 
                   padding: '2rem', 
-                  borderRadius: '16px', 
-                  boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.25)', 
-                  border: '1px solid #1E293B',
-                  position: 'relative'
+                  borderRadius: '12px', 
+                  boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.45)', 
+                  border: '1px solid #334155',
                 }}
               >
-                <div style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: '0.85rem' }}>
-                  GLOBAL DELIVERY HQ &middot; BHAVNAGAR, INDIA
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.85rem' }}>
+                  <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#60A5FA' }}>
+                    Global Delivery HQ
+                  </span>
+                  <span style={{ fontSize: '0.75rem', color: '#94A3B8', fontWeight: 600 }}>
+                    Bhavnagar, India
+                  </span>
                 </div>
+
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginTop: '1rem' }}>
-                  <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.07)', borderRadius: '10px', padding: '1rem' }}>
-                    <div style={{ fontSize: '1.6rem', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.02em', lineHeight: 1 }}>12+ Years</div>
-                    <div style={{ fontSize: '0.75rem', color: '#94A3B8', marginTop: '0.4rem', fontWeight: 500 }}>In Business since 2012</div>
+                  <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '1rem' }}>
+                    <div style={{ fontSize: '1.75rem', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.02em', lineHeight: 1 }}>12+ Years</div>
+                    <div style={{ fontSize: '0.75rem', color: '#94A3B8', marginTop: '0.4rem', fontWeight: 500 }}>Continuous Operation Since 2012</div>
                   </div>
-                  <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.07)', borderRadius: '10px', padding: '1rem' }}>
-                    <div style={{ fontSize: '1.6rem', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.02em', lineHeight: 1 }}>80+ Systems</div>
-                    <div style={{ fontSize: '0.75rem', color: '#94A3B8', marginTop: '0.4rem', fontWeight: 500 }}>In Production</div>
+                  <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '1rem' }}>
+                    <div style={{ fontSize: '1.75rem', fontWeight: 800, color: '#38BDF8', letterSpacing: '-0.02em', lineHeight: 1 }}>80+ Systems</div>
+                    <div style={{ fontSize: '0.75rem', color: '#94A3B8', marginTop: '0.4rem', fontWeight: 500 }}>Hardened Under Production Load</div>
                   </div>
                 </div>
               </div>
@@ -93,7 +124,7 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* Clean 3-Column Core Values */}
+      {/* Guaranteed 3-Column "How We Work" with Interactive Dark-Navy Card Hover */}
       <section style={{ padding: '6rem 0', background: '#F8FAFC', borderTop: '1px solid #E2E8F0', borderBottom: '1px solid #E2E8F0' }}>
         <div className="container max-w-7xl mx-auto px-6 lg:px-8">
           
@@ -107,45 +138,51 @@ export default function AboutUs() {
             <p style={{ fontSize: '1.1rem', color: '#475569', margin: 0, lineHeight: 1.6 }}>Three principles that determine whether a software project succeeds or fails quietly.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '3rem' }}>
-            
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-              <div style={{ fontFamily: 'monospace', fontSize: '0.85rem', fontWeight: 700, color: '#4B61B8', marginBottom: '0.25rem' }}>
-                01
-              </div>
-              <h3 style={{ fontSize: '1.3rem', fontWeight: 700, color: '#0F172A' }}>Transparency</h3>
-              <p style={{ color: '#475569', lineHeight: 1.65, fontSize: '0.95rem' }}>
-                We write weekly status reports that include what was done, what is blocked, and what changed from the original estimate. If something slips, you hear it from us &mdash; not when you check the repo.
-              </p>
-            </div>
+          <div className="layout-grid-3 gap-6 w-full">
+            {principles.map((item, idx) => {
+              const isActive = activePrinciple === idx;
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-              <div style={{ fontFamily: 'monospace', fontSize: '0.85rem', fontWeight: 700, color: '#4B61B8', marginBottom: '0.25rem' }}>
-                02
-              </div>
-              <h3 style={{ fontSize: '1.3rem', fontWeight: 700, color: '#0F172A' }}>Quality Over Speed</h3>
-              <p style={{ color: '#475569', lineHeight: 1.65, fontSize: '0.95rem' }}>
-                We build systems we would be comfortable inheriting ourselves. That means documented decisions, typed interfaces, and no clever abstractions that only the author understands.
-              </p>
-            </div>
-
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-              <div style={{ fontFamily: 'monospace', fontSize: '0.85rem', fontWeight: 700, color: '#4B61B8', marginBottom: '0.25rem' }}>
-                03
-              </div>
-              <h3 style={{ fontSize: '1.3rem', fontWeight: 700, color: '#0F172A' }}>Long-term Partnership</h3>
-              <p style={{ color: '#475569', lineHeight: 1.65, fontSize: '0.95rem' }}>
-                The engineers who build a system are the ones who support it. We do not hand off to a separate team after go-live. When something breaks at 2am, someone who wrote the code answers the alert.
-              </p>
-            </div>
-
+              return (
+                <div
+                  key={idx}
+                  onMouseEnter={() => setActivePrinciple(idx)}
+                  className="w-full min-w-0"
+                  style={{
+                    background: isActive ? '#0F172A' : '#FFFFFF',
+                    color: isActive ? '#FFFFFF' : '#0F172A',
+                    border: isActive ? '1px solid #38BDF8' : '1px solid #E2E8F0',
+                    borderRadius: '12px',
+                    padding: '2.5rem 2rem',
+                    boxShadow: isActive ? '0 20px 40px -15px rgba(15,23,42,0.35)' : '0 4px 15px rgba(15, 23, 42, 0.03)',
+                    transform: isActive ? 'translateY(-3px)' : 'none',
+                    transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between'
+                  }}
+                >
+                  <div>
+                    <div style={{ fontSize: '1.6rem', fontWeight: 800, color: isActive ? '#38BDF8' : '#4B61B8', marginBottom: '1rem', lineHeight: 1 }}>
+                      {item.num}
+                    </div>
+                    <h3 style={{ fontSize: '1.35rem', fontWeight: 800, color: isActive ? '#FFFFFF' : '#0F172A', marginBottom: '0.85rem' }}>
+                      {item.title}
+                    </h3>
+                    <p style={{ color: isActive ? '#CBD5E1' : '#475569', lineHeight: 1.65, fontSize: '0.95rem', margin: 0 }}>
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Leadership / Team Section with Curated Photography */}
+      {/* Leadership / Team Section */}
       <section style={{ padding: '6rem 0', background: '#FFFFFF' }}>
-        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style={{ margin: '0 auto', padding: '0 2rem' }}>
+        <div className="container max-w-7xl mx-auto px-6 lg:px-8">
           <div style={{ textAlign: 'left', marginBottom: '4rem', maxWidth: '640px' }}>
             <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#4B61B8', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '0.75rem' }}>
               CORE TEAM
@@ -169,29 +206,29 @@ export default function AboutUs() {
               </p>
             </div>
             
-            {/* Photography Container with Geometric Architectural Framing */}
+            {/* Photography Container */}
             <div 
               style={{ 
                 position: 'relative',
                 padding: '0.75rem',
                 background: '#F8FAFC',
-                borderRadius: '20px',
+                borderRadius: '12px',
                 border: '1px solid #E2E8F0',
                 boxShadow: '0 20px 40px rgba(15,23,42,0.08)'
               }}
             >
               <div 
                 style={{ 
-                  borderRadius: '14px', 
+                  borderRadius: '12px', 
                   overflow: 'hidden', 
-                  border: '1px solid #CBD5E1',
-                  height: '380px',
-                  position: 'relative'
+                  border: '1px solid #CBD5E1', 
+                  height: '380px', 
+                  position: 'relative' 
                 }}
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80" 
-                  alt="Software Engineers Collaborating" 
+                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80" 
+                  alt="Acriotech Engineering Team Collaborating on Production Architecture" 
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </div>
@@ -200,24 +237,98 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* Technology Partners / Stack */}
-      <section style={{ padding: '6rem 0', background: '#F8FAFC', borderTop: '1px solid #E2E8F0' }}>
-        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style={{ margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ textAlign: 'left', marginBottom: '3rem' }}>
-            <h2 style={{ fontSize: '2.2rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.75rem', letterSpacing: '-0.02em' }}>
+      {/* Technology Partnerships: Compact 3-Column Desktop Grid fitting ~350px height */}
+      <section style={{ padding: '5rem 0', background: '#F8FAFC', borderTop: '1px solid #E2E8F0' }}>
+        <div className="container max-w-7xl mx-auto px-6 lg:px-8">
+          <div style={{ textAlign: 'left', marginBottom: '2.5rem' }}>
+            <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#4B61B8', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+              PROVEN FOUNDATION
+            </div>
+            <h2 style={{ fontSize: '2.2rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.5rem', letterSpacing: '-0.02em' }}>
               Technology <span style={{ color: '#4B61B8' }}>Partnerships.</span>
             </h2>
-            <p style={{ fontSize: '1.1rem', color: '#475569', maxWidth: '640px' }}>
-              We work with tools we can defend &mdash; chosen because they solve the problem, not because they are on a vendor&rsquo;s partner program.
+            <p style={{ fontSize: '1.05rem', color: '#475569', maxWidth: '680px', margin: 0 }}>
+              We work with tools chosen because they solve the problem with high availability, not because of vendor kickbacks.
             </p>
           </div>
           
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
-             {['Amazon Web Services', 'Microsoft Azure', 'Google Cloud Platform', 'React & Next.js', 'Node.js', 'PostgreSQL', 'Docker & Kubernetes'].map((tech, idx) => (
-               <span key={idx} style={{ padding: '0.75rem 1.5rem', background: '#FFFFFF', color: '#334155', borderRadius: '8px', fontSize: '0.95rem', fontWeight: 600, border: '1px solid #E2E8F0', boxShadow: '0 2px 4px rgba(0,0,0,0.02)' }}>
-                 {tech}
-               </span>
-             ))}
+          {/* Compact 3-Column Grid */}
+          <div className="layout-grid-3 gap-6 w-full">
+            {/* Column 1: Cloud Foundations */}
+            <div className="w-full min-w-0" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '12px', padding: '1.75rem' }}>
+              <div style={{ marginBottom: '1.25rem', paddingBottom: '0.75rem', borderBottom: '1px solid #F1F5F9' }}>
+                <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#0F172A', margin: 0 }}>Cloud Foundations</h3>
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                {[
+                  { name: 'Amazon Web Services', tags: ['EKS', 'Aurora', 'KMS'] },
+                  { name: 'Microsoft Azure', tags: ['AKS', 'Azure SQL', 'Entra ID'] },
+                  { name: 'Google Cloud Platform', tags: ['GKE', 'BigQuery', 'Cloud Run'] },
+                ].map((item, idx) => (
+                  <div key={idx}>
+                    <div style={{ fontSize: '0.92rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.35rem' }}>{item.name}</div>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.3rem' }}>
+                      {item.tags.map(t => (
+                        <span key={t} style={{ fontSize: '0.72rem', color: '#4B61B8', background: '#F1F5F9', padding: '0.15rem 0.45rem', borderRadius: '6px', fontWeight: 600 }}>
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Column 2: Application & Runtime */}
+            <div className="w-full min-w-0" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '12px', padding: '1.75rem' }}>
+              <div style={{ marginBottom: '1.25rem', paddingBottom: '0.75rem', borderBottom: '1px solid #F1F5F9' }}>
+                <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#0F172A', margin: 0 }}>Application &amp; Runtime</h3>
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                {[
+                  { name: 'React & Next.js', tags: ['TypeScript', 'SSR', 'Tailwind'] },
+                  { name: 'Node.js & Go', tags: ['Fastify', 'gRPC', 'REST APIs'] },
+                  { name: 'Python & PyTorch', tags: ['Machine Learning', 'Vector DB', 'Airflow'] },
+                ].map((item, idx) => (
+                  <div key={idx}>
+                    <div style={{ fontSize: '0.92rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.35rem' }}>{item.name}</div>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.3rem' }}>
+                      {item.tags.map(t => (
+                        <span key={t} style={{ fontSize: '0.72rem', color: '#4B61B8', background: '#F1F5F9', padding: '0.15rem 0.45rem', borderRadius: '6px', fontWeight: 600 }}>
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Column 3: Data & Orchestration */}
+            <div className="w-full min-w-0" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '12px', padding: '1.75rem' }}>
+              <div style={{ marginBottom: '1.25rem', paddingBottom: '0.75rem', borderBottom: '1px solid #F1F5F9' }}>
+                <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#0F172A', margin: 0 }}>Data &amp; Orchestration</h3>
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                {[
+                  { name: 'PostgreSQL & Redis', tags: ['pgvector', 'Replicas', 'Multi-AZ'] },
+                  { name: 'Docker & Kubernetes', tags: ['Helm', 'ArgoCD', 'Autoscaling'] },
+                  { name: 'Kafka & RabbitMQ', tags: ['Event Streams', 'Queues', 'Idempotency'] },
+                ].map((item, idx) => (
+                  <div key={idx}>
+                    <div style={{ fontSize: '0.92rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.35rem' }}>{item.name}</div>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.3rem' }}>
+                      {item.tags.map(t => (
+                        <span key={t} style={{ fontSize: '0.72rem', color: '#4B61B8', background: '#F1F5F9', padding: '0.15rem 0.45rem', borderRadius: '6px', fontWeight: 600 }}>
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -231,17 +342,17 @@ export default function AboutUs() {
           <p style={{ fontSize: '1.1rem', color: '#94A3B8', lineHeight: 1.8, marginBottom: '2.5rem', maxWidth: '700px' }}>
             We are not hiring for headcount &mdash; we are a small team that moves carefully. If you write clean code, care about what happens after deployment, and want to work on systems with real stakes, read the open roles.
           </p>
-          <a href="/company/careers" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: '0.95rem 2rem', background: '#4B61B8', color: '#FFFFFF', borderRadius: '8px', fontWeight: 600, fontSize: '1rem', textDecoration: 'none' }}>
+          <a href="/company/careers" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: '0.95rem 2rem', background: '#4B61B8', color: '#FFFFFF', borderRadius: '12px', fontWeight: 600, fontSize: '1rem', textDecoration: 'none' }}>
             View Open Positions
           </a>
         </div>
       </section>
 
-      {/* Engineering Methodology Section with High-Contrast Blue Badges */}
+      {/* Engineering Methodology Section */}
       <section style={{ padding: '8rem 0', background: '#FFFFFF', borderTop: '1px solid #F1F5F9' }}>
         <div className="container max-w-7xl mx-auto px-6 lg:px-8">
           
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '4rem', alignItems: 'flex-start' }}>
+          <div className="layout-split-hero gap-16 items-start w-full">
             
             {/* Left Column: Section Title */}
             <div style={{ position: 'sticky', top: '120px' }}>
@@ -254,7 +365,7 @@ export default function AboutUs() {
             </div>
 
             {/* Right Column: Steps with High-Contrast Blue Badges */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '3.5rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
               
               {[
                 { step: "01", title: "Discovery & Architecture", desc: "We audit what exists, map the constraints you have not told us about yet, and define an architecture we can defend before anyone writes a line of code." },
@@ -267,13 +378,12 @@ export default function AboutUs() {
                     style={{ 
                       width: '44px', 
                       height: '44px', 
-                      borderRadius: '10px', 
+                      borderRadius: '12px', 
                       background: '#EFF6FF', 
                       border: '1px solid #BFDBFE', 
                       color: '#4B61B8', 
                       fontWeight: 800, 
                       fontSize: '1.05rem', 
-                      fontFamily: 'monospace', 
                       display: 'flex', 
                       alignItems: 'center', 
                       justifyContent: 'center', 
@@ -283,8 +393,8 @@ export default function AboutUs() {
                     {item.step}
                   </div>
                   <div>
-                    <h3 style={{ fontSize: '1.4rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.75rem' }}>{item.title}</h3>
-                    <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.7, margin: 0 }}>{item.desc}</p>
+                    <h3 style={{ fontSize: '1.35rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.65rem' }}>{item.title}</h3>
+                    <p style={{ fontSize: '1.02rem', color: '#475569', lineHeight: 1.7, margin: 0 }}>{item.desc}</p>
                   </div>
                 </div>
               ))}

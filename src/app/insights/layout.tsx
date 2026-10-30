@@ -4,7 +4,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = pageMetadata({
   title: 'Insights, Research & Tech Trends',
-  description: 'Engineering insights from Acriotech - case studies, research reports, tech trends, webinars and whitepapers on enterprise software, AI and cloud.',
+  description: 'Engineering insights from Acriotech - case studies, research reports, tech trends, and whitepapers on enterprise software, AI and cloud.',
   path: '/insights',
 });
 

@@ -180,49 +180,91 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Newsletter Box */}
-            <div className="newsletter-box" style={{ marginTop: '3rem', padding: '2.5rem 2.5rem', background: '#FFFFFF', borderRadius: '16px', border: '1px solid rgba(15,23,42,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', boxShadow: '0 10px 30px rgba(0,0,0,0.02)', flexWrap: 'wrap', gap: '1.5rem' }}>
-               <div>
-                  <h4 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#0F172A', margin: 0, marginBottom: '0.4rem' }}>Worth reading.</h4>
-                  <p style={{ fontSize: '0.95rem', color: '#64748B', margin: 0 }}>Architecture notes, release highlights, and the occasional opinion — sent when we have something to say.</p>
-               </div>
-               <div className="newsletter-form-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
-                 <div className="newsletter-form" style={{ display: 'flex', gap: '0.5rem' }}>
+            {/* Architectural Console Row Newsletter */}
+            <div 
+              className="newsletter-box" 
+              style={{ 
+                marginTop: '3.5rem', 
+                padding: '1.75rem 2rem', 
+                background: '#0F172A', 
+                borderRadius: '14px', 
+                border: '1px solid rgba(255,255,255,0.08)', 
+                display: 'flex', 
+                alignItems: 'center', 
+                justifyContent: 'space-between', 
+                boxShadow: '0 12px 30px -8px rgba(15,23,42,0.25)', 
+                flexWrap: 'wrap', 
+                gap: '1.5rem',
+                position: 'relative',
+                overflow: 'hidden'
+              }}
+            >
+
+              <div>
+                <h4 style={{ fontSize: '1.1rem', fontWeight: 800, color: '#FFFFFF', margin: 0, marginBottom: '0.25rem' }}>Worth reading.</h4>
+                <p style={{ fontSize: '0.88rem', color: '#94A3B8', margin: 0, maxWidth: '440px', lineHeight: 1.5 }}>Architecture notes, release telemetry, and engineering opinions — sent only when we have something to say.</p>
+              </div>
+
+              <div className="newsletter-form-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                <div className="newsletter-form" style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '8px', padding: '0 0.85rem' }}>
                     <input 
                       type="email" 
-                      aria-label="Email address for newsletter"
-                      placeholder="Email address" 
+                      aria-label="Email address for engineering newsletter"
+                      placeholder="Enter your email address" 
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       disabled={status === 'loading'}
                       className="newsletter-input"
-                      style={{ padding: '0.85rem 1.2rem', borderRadius: '8px', border: '1px solid #E2E8F0', outline: 'none', width: '260px', maxWidth: '100%', fontSize: '0.95rem', background: '#F8FAFC' }} 
+                      style={{ 
+                        padding: '0.75rem 0', 
+                        border: 'none', 
+                        outline: 'none', 
+                        width: '240px', 
+                        maxWidth: '100%', 
+                        fontSize: '0.88rem', 
+                        color: '#FFFFFF', 
+                        background: 'transparent' 
+                      }} 
                     />
-                    <button 
-                      className="newsletter-btn"
-                      onClick={handleSubscribe}
-                      disabled={status === 'loading'}
-                      style={{ padding: '0.85rem 1.8rem', minHeight: '48px', borderRadius: '8px', background: '#0F172A', color: '#FFFFFF', border: 'none', fontWeight: 600, cursor: status === 'loading' ? 'not-allowed' : 'pointer', fontSize: '0.95rem', transition: 'background 0.2s', opacity: status === 'loading' ? 0.7 : 1 }} 
-                      onMouseEnter={(e) => e.currentTarget.style.background = status === 'loading' ? '#0F172A' : '#4B61B8'} 
-                      onMouseLeave={(e) => e.currentTarget.style.background = '#0F172A'}
-                    >
-                      {status === 'loading' ? 'Sending...' : 'Subscribe'}
-                    </button>
-                 </div>
-                 {message && (
-                   <p style={{ 
-                     fontSize: '0.85rem', 
-                     marginTop: '0.5rem', 
-                     color: status === 'success' ? '#10B981' : '#EF4444', 
-                     fontWeight: 500,
-                     textAlign: 'right',
-                     width: '100%',
-                     margin: '0.5rem 0 0 0'
-                   }}>
-                     {message}
-                   </p>
-                 )}
-               </div>
+                  </div>
+                  <button 
+                    className="newsletter-btn"
+                    onClick={handleSubscribe}
+                    disabled={status === 'loading'}
+                    style={{ 
+                      padding: '0.75rem 1.4rem', 
+                      minHeight: '42px', 
+                      borderRadius: '8px', 
+                      background: '#4B61B8', 
+                      color: '#FFFFFF', 
+                      border: 'none', 
+                      fontWeight: 700, 
+                      cursor: status === 'loading' ? 'not-allowed' : 'pointer', 
+                      fontSize: '0.88rem', 
+                      transition: 'background 0.2s', 
+                      opacity: status === 'loading' ? 0.7 : 1,
+                      letterSpacing: '0.02em'
+                    }} 
+                    onMouseEnter={(e) => e.currentTarget.style.background = status === 'loading' ? '#4B61B8' : '#2563EB'} 
+                    onMouseLeave={(e) => e.currentTarget.style.background = '#4B61B8'}
+                  >
+                    {status === 'loading' ? 'Subscribing...' : 'Subscribe'}
+                  </button>
+                </div>
+                {message && (
+                  <p style={{ 
+                    fontSize: '0.8rem', 
+                    marginTop: '0.45rem', 
+                    color: status === 'success' ? '#4ADE80' : '#F87171', 
+                    fontWeight: 600,
+                    margin: '0.45rem 0 0 0',
+                    fontFamily: 'monospace'
+                  }}>
+                    {message}
+                  </p>
+                )}
+              </div>
             </div>
           </div>
         </div>

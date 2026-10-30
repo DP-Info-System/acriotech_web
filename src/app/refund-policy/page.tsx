@@ -70,7 +70,7 @@ export default function RefundPolicy() {
           <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, marginBottom: '1rem' }}>To initiate a refund or cancellation, follow these steps:</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {[
-              { step: '1', action: 'Submit a written request', detail: 'Email legal@acriotech.com with the subject line "Refund Request — [Your Company Name]". Include your invoice number, the reason for the refund request, and supporting documentation if applicable.' },
+              { step: '1', action: 'Submit a written request', detail: 'Email legal@acriotech.com with the subject line "Refund Request — Acriotech Pvt. Ltd.". Include your invoice number, your organization name, the reason for the refund request, and supporting documentation if applicable.' },
               { step: '2', action: 'Acriotech Review', detail: 'Our accounts team will review your request within 5 business days and may request additional information or schedule a call to understand the situation.' },
               { step: '3', action: 'Decision & Processing', detail: 'If your refund is approved, it will be processed to your original payment method within 7-14 business days, depending on your bank or payment processor.' },
             ].map((item) => (
